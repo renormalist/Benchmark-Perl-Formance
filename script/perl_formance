@@ -3,26 +3,33 @@
 use Getopt::Long;
 
 sub usage {
-        print "$0 --sections=SA,RC\n\n";
-        print "'sections' is list of comma separated values of\n";
-        print "  SA ... SpamAssassin\n";
-        print "  RC ... Regexp::Common\n";
-        print "  default is a list of all avalable sections\n";
+        print "Perl::Formance - Perl Benchmark Suite\n\n";
+        print "Usage:\n";
+        print "$0 [ --sections=SA,Fib,Rx ]\n\n";
+        print " 'sections' is list of comma separated values of\n";
+        print "   SA ... SpamAssassin\n";
+        print "   Fib ... Fibonnacci numbers\n";
+        print "   Rx ... Regex and String stuff\n";
+        print "   default is a list of all available sections\n";
 }
 
-my $sections = 'SA,RC';
-my $ok = GetOptions ("sections=s" => \$sections);
-exit usage() if not $ok;
+my $help     = 0;
+my $sections = 'Rx,RC,SA,Fib';
+my $ok       = GetOptions ("help|h"     => \$help,
+                           "sections=s" => \$sections);
+
+do { usage; exit  0 } if $help;
+do { usage; exit -1 } if not $ok;
 
 my @sections = split ',', $sections;
 
-
-foreach (@sections) {
+my @run_sections = grep {
         eval "use Perl::Formance::Section::$_";
-        die "Cannot load section $_:\n$@" if $@;
-}
+        print "Skip section $_:\n$@" if $@;
+        not $@;
+} @sections;
 
-foreach (@sections) {
+foreach (@run_sections) {
         #print STDERR "Do Perl::Formance::Section::$_ ...\n";
         "Perl::Formance::Section::$_"->main();
 }

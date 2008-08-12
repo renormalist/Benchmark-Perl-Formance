@@ -20,7 +20,7 @@ sub main {
         my $after  = gettimeofday();
         my $diff   = ($after - $before);
 
-        print sprintf("Section SA: time: %0.4f\n", $diff);
+        print sprintf("SA.learn time: %0.4f\n", $diff);
 }
 
 1;
