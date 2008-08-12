@@ -1,0 +1,35 @@
+Received: from internal.example.com [127.0.0.1] by localhost
+    for recipient@example.com; Fri, 07 Oct 2002 09:02:00 +0000
+Received: from external.example.org [150.51.53.1] by internal.example.com
+    for recipient@example.com; Fri, 07 Oct 2002 09:01:00 +0000
+Message-ID: <clean.1010101@example.com>
+Date: Mon, 07 Oct 2002 09:00:00 +0000
+From: Sender <sender@example.com>
+MIME-Version: 1.0
+To: Recipient <recipient@example.com>
+Subject: this trivial message should have no hits
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

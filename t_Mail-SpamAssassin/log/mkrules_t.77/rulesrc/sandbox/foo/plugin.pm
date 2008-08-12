@@ -1,0 +1,1 @@
+package Good;use Mail::SpamAssassin::Plugin; our @ISA = qw(Mail::SpamAssassin::Plugin);sub new { my ($class, $m) = @_; $class = ref($class) || $class;my $self = bless $class->SUPER::new($m), $class;$self->register_eval_rule("check_foo"); return $self; }sub check_foo { my ($self, $pms) = @_; return 1; }

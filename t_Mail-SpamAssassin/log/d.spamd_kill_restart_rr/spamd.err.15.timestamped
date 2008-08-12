@@ -1,0 +1,1308 @@
+Wed Jul 23 22:50:29 2008 [16644] dbg: logger: successfully added file method
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: will perform setuids? 0
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: creating INET socket:
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: Listen: 128
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: LocalAddr: 127.0.0.1
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: LocalPort: 49386
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: Proto: 6
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: ReuseAddr: 1
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: Type: 1
+Wed Jul 23 22:50:29 2008 [16644] dbg: logger: adding facilities: all
+Wed Jul 23 22:50:29 2008 [16644] dbg: logger: logging level is DBG
+Wed Jul 23 22:50:29 2008 [16644] dbg: generic: SpamAssassin version 3.2.5
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: score set 0 chosen.
+Wed Jul 23 22:50:29 2008 [16644] dbg: dns: no ipv6
+Wed Jul 23 22:50:29 2008 [16644] dbg: dns: is Net::DNS::Resolver available? yes
+Wed Jul 23 22:50:29 2008 [16644] dbg: dns: Net::DNS version: 0.63
+Wed Jul 23 22:50:29 2008 [16644] dbg: spamd: Preloading modules with HOME=/tmp/spamd-16644-init
+Wed Jul 23 22:50:29 2008 [16644] dbg: ignore: test message to precompile patterns and load modules
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules pre files
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/init.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v310.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v312.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v320.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for sys rules pre files
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/init.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v310.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v312.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v320.pre
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for default rules dir
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/01_test_rules.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/10_default_prefs.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_advance_fee.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_body_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_compensate.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dnsbl_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_drugs.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dynrdns.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_fake_helo_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_head_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_html_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_imageinfo.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_meta_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_net_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_phrases.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_porn.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_ratware.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_uri_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_vbounce.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/23_bayes.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_accessdb.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_antivirus.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_asn.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dcc.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dkim.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_domainkeys.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_hashcash.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_pyzor.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_razor2.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_replace.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_spf.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_textcat.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_uribl.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_de.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_fr.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_it.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_nl.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pl.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pt_br.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/50_scores.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_awl.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_shortcircuit.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dk.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dkim.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_spf.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_subject.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_active.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_removed.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/99_test_default.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/local.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/regression_tests.cf
+Wed Jul 23 22:50:29 2008 [16644] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules dir
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDNSBL from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::Hashcash from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::SPF from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::Pyzor from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: pyzor: local tests only, disabling Pyzor
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::Razor2 from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: razor2: local tests only, skipping Razor
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::SpamCop from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: reporter: local tests only, disabling SpamCop
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::AWL from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::AutoLearnThreshold from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::WhiteListSubject from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEHeader from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::ReplaceTags from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::Check from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTTPSMismatch from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDetail from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::Bayes from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::BodyEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::DNSEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTMLEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::HeaderEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::RelayEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::WLBLEval from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::VBounce from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: loading Mail::SpamAssassin::Plugin::ImageInfo from @INC
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDNSBL, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Hashcash, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SPF, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Pyzor, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Razor2, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SpamCop, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AWL, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AutoLearnThreshold, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WhiteListSubject, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEHeader, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ReplaceTags, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Check, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTTPSMismatch, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDetail, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Bayes, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::BodyEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::DNSEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTMLEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HeaderEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::RelayEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WLBLEval, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::VBounce, already registered
+Wed Jul 23 22:50:29 2008 [16644] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ImageInfo, already registered
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_9B90B merged duplicates: __MO_OL_C65FA
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: FORGED_YAHOO_RCVD merged duplicates: TEST_FORGED_YAHOO_RCVD
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __XM_OL_22B61 merged duplicates: __XM_OL_A842E
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_07794 merged duplicates: __MO_OL_8627E __MO_OL_F3B05
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __XM_OL_07794 merged duplicates: __XM_OL_25340 __XM_OL_3857F __XM_OL_4F240 __XM_OL_58CB5 __XM_OL_6554A __XM_OL_812FF __XM_OL_C65FA __XM_OL_CF0C0 __XM_OL_F475E __XM_OL_F6D01
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: FH_MSGID_01C67 merged duplicates: __MSGID_VGA
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: FS_NEW_SOFT_UPLOAD merged duplicates: HS_SUBJ_NEW_SOFTWARE
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __FH_HAS_XMSMAIL merged duplicates: __HAS_MSMAIL_PRI
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_015D5 merged duplicates: __MO_OL_6554A
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __XM_OL_015D5 merged duplicates: __XM_OL_4BF4C __XM_OL_4EEDB __XM_OL_5B79A __XM_OL_9B90B __XM_OL_ADFF7 __XM_OL_B30D1 __XM_OL_B4B40 __XM_OL_BC7E6 __XM_OL_F3B05 __XM_OL_FF5C8
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_91287 merged duplicates: __MO_OL_B30D1 __MO_OL_CF0C0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: KAM_STOCKOTC merged duplicates: KAM_STOCKTIP15 KAM_STOCKTIP20 KAM_STOCKTIP21 KAM_STOCKTIP4 KAM_STOCKTIP6
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_22B61 merged duplicates: __MO_OL_4F240 __MO_OL_ADFF7
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_812FF merged duplicates: __MO_OL_BC7E6
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_25340 merged duplicates: __MO_OL_4EEDB __MO_OL_7533E
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: EXCUSE_4 merged duplicates: TEST_EXCUSE_4
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_58CB5 merged duplicates: __MO_OL_B4B40
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: NORMAL_HTTP_TO_IP merged duplicates: TEST_NORMAL_HTTP_TO_IP
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __DOS_HAS_ANY_URI merged duplicates: __HAS_ANY_URI
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: TEST_ENDSNUMS merged duplicates: __FROM_ENDS_IN_NUMS
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: AXB_RCVD_ZOOBSEND merged duplicates: BROKEN_RATWARE_BOM CTYPE_001C_A DEAR_HOMEOWNER DIV_CENTER_A_HREF DRUG_RA_PRICE FM_DDDD_TIMES_2 FM_SEX_HOSTDDDD HG_HORMONE HS_PHARMA_1 HS_UPLOADED_SOFTWARE OEBOUND STOX_RCVD_N_NN_N URIBL_RHS_ABUSE URIBL_RHS_BOGUSMX URIBL_RHS_DSN URIBL_RHS_POST URIBL_RHS_TLD_WHOIS URIBL_RHS_WHOIS URIBL_XS_SURBL URI_L_PHP XMAILER_MIMEOLE_OL_5E7ED XMAILER_MIMEOLE_OL_C7C33 XMAILER_MIMEOLE_OL_D03AB X_LIBRARY YOUR_CRD_RATING
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_72641 merged duplicates: __MO_OL_A842E
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_4BF4C merged duplicates: __MO_OL_F6D01
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: __MO_OL_F475E merged duplicates: __MO_OL_FF5C8
+Wed Jul 23 22:50:30 2008 [16644] dbg: conf: finish parsing
+Wed Jul 23 22:50:30 2008 [16644] dbg: plugin: Mail::SpamAssassin::Plugin::ReplaceTags=HASH(0x8b7c5c8) implements 'finish_parsing_end', priority 0
+Wed Jul 23 22:50:30 2008 [16644] dbg: replacetags: replacing tags
+Wed Jul 23 22:50:30 2008 [16644] dbg: replacetags: done replacing tags
+Wed Jul 23 22:50:30 2008 [16644] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 23 22:50:30 2008 [16644] dbg: config: score set 0 chosen.
+Wed Jul 23 22:50:30 2008 [16644] dbg: message: main message type: text/plain
+Wed Jul 23 22:50:30 2008 [16644] dbg: message: ---- MIME PARSER START ----
+Wed Jul 23 22:50:30 2008 [16644] dbg: message: parsing normal part
+Wed Jul 23 22:50:30 2008 [16644] dbg: message: ---- MIME PARSER END ----
+Wed Jul 23 22:50:30 2008 [16644] dbg: plugin: Mail::SpamAssassin::Plugin::DNSEval=HASH(0x8bfb158) implements 'check_start', priority 0
+Wed Jul 23 22:50:30 2008 [16644] dbg: bayes: no dbs present, cannot tie DB R/O: /tmp/spamd-16644-init/.spamassassin/bayes_toks
+Wed Jul 23 22:50:30 2008 [16644] dbg: plugin: Mail::SpamAssassin::Plugin::Check=HASH(0x8bc1470) implements 'check_main', priority 0
+Wed Jul 23 22:50:30 2008 [16644] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 23 22:50:30 2008 [16644] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 23 22:50:30 2008 [16644] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 23 22:50:30 2008 [16644] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 23 22:50:30 2008 [16644] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 23 22:50:30 2008 [16644] dbg: message: no encoding detected
+Wed Jul 23 22:50:30 2008 [16644] dbg: plugin: Mail::SpamAssassin::Plugin::URIDNSBL=HASH(0x8a1ef88) implements 'parsed_metadata', priority 0
+Wed Jul 23 22:50:30 2008 [16644] dbg: dns: is_dns_available() last checked 1216846230.0 seconds ago; re-checking
+Wed Jul 23 22:50:30 2008 [16644] dbg: dns: is DNS available? 0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: running tests for priority: -1000
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled head tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: eval: all '*From' addrs: ignore@compiling.spamassassin.taint.org
+Wed Jul 23 22:50:30 2008 [16644] dbg: eval: all '*To' addrs: 
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled body tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled uri tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled full tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled meta tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: running tests for priority: -950
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled head tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled body tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled uri tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled full tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled meta tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: running tests for priority: -900
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled head tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled body tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled uri tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled full tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled meta tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: running tests for priority: -400
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled head tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled body tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled uri tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled full tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled meta tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: running tests for priority: 0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled head tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@spamassassin_spamd_init>"
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule __MSGID_OK_DIGITS ======> got hit: "1216846229"
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: Message-Id: "
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<1216846229.81611@spamassassin_spamd_init>
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: "
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule MISSING_DATE ======> got hit: "UNSET"
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "ignore@compiling.spamassassin.taint.org
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: "
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran eval rule MISSING_HEADERS ======> got hit (1)
+Wed Jul 23 22:50:30 2008 [16644] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running body tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled body tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "I"
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled uri tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: eval: stock info total: 0
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running full tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled full tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled meta tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: running tests for priority: 500
+Wed Jul 23 22:50:30 2008 [16644] dbg: dns: harvest_dnsbl_queries
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running head tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled head tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running body tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled body tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled uri tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running full tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled full tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: meta test DIGEST_MULTIPLE has undefined dependency 'DCC_CHECK'
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled meta tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: running tests for priority: 1000
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running head tests; score so far=9.205
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled head tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.16644
+Wed Jul 23 22:50:30 2008 [16644] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 23 22:50:30 2008 [16644] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 23 22:50:30 2008 [16644] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 23 22:50:30 2008 [16644] dbg: auto-whitelist: db-based ignore@compiling.spamassassin.taint.org|ip=none scores 0/0
+Wed Jul 23 22:50:30 2008 [16644] dbg: auto-whitelist: AWL active, pre-score: 9.205, autolearn score: 9.205, mean: undef, IP: undef
+Wed Jul 23 22:50:30 2008 [16644] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 23 22:50:30 2008 [16644] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 23 22:50:30 2008 [16644] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 23 22:50:30 2008 [16644] dbg: auto-whitelist: post auto-whitelist score: 9.205
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running body tests; score so far=9.205
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled body tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running uri tests; score so far=9.205
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled uri tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running rawbody tests; score so far=9.205
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running full tests; score so far=9.205
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled full tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: running meta tests; score so far=9.205
+Wed Jul 23 22:50:30 2008 [16644] dbg: rules: compiled meta tests
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: is spam? score=9.205 required=5
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: tests=MISSING_DATE,MISSING_HEADERS,MISSING_SUBJECT,NO_RECEIVED,NO_RELAYS,TEST_NOREALNAME
+Wed Jul 23 22:50:30 2008 [16644] dbg: check: subtests=__GATED_THROUGH_RCVD_REMOVER,__HAS_MSGID,__MISSING_REF,__MSGID_OK_DIGITS,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NONEMPTY_BODY,__SANE_MSGID,__UNUSABLE_MSGID
+Wed Jul 23 22:50:30 2008 [16644] dbg: learn: initializing learner
+Wed Jul 23 22:50:30 2008 [16644] dbg: config: copying current conf to backup
+Wed Jul 23 22:50:30 2008 [16644] info: spamd: server started on port 49386/tcp (running version 3.2.5)
+Wed Jul 23 22:50:30 2008 [16644] info: spamd: server pid: 16644
+Wed Jul 23 22:50:30 2008 [16644] info: spamd: server successfully spawned child process, pid 16651
+Wed Jul 23 22:50:30 2008 [16644] info: spamd: server successfully spawned child process, pid 16652
+Wed Jul 23 22:50:30 2008 [16644] info: spamd: server successfully spawned child process, pid 16653
+Wed Jul 23 22:50:30 2008 [16644] info: spamd: server successfully spawned child process, pid 16654
+Wed Jul 23 22:50:30 2008 [16644] info: spamd: server successfully spawned child process, pid 16655
+Wed Jul 23 22:50:32 2008 [16644] info: spamd: server killed by SIGINT, shutting down
+Wed Jul 23 22:55:27 2008 [17873] dbg: logger: successfully added file method
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: will perform setuids? 0
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: creating INET socket:
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: Listen: 128
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: LocalAddr: 127.0.0.1
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: LocalPort: 50611
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: Proto: 6
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: ReuseAddr: 1
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: Type: 1
+Wed Jul 23 22:55:27 2008 [17873] dbg: logger: adding facilities: all
+Wed Jul 23 22:55:27 2008 [17873] dbg: logger: logging level is DBG
+Wed Jul 23 22:55:27 2008 [17873] dbg: generic: SpamAssassin version 3.2.5
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: score set 0 chosen.
+Wed Jul 23 22:55:27 2008 [17873] dbg: dns: no ipv6
+Wed Jul 23 22:55:27 2008 [17873] dbg: dns: is Net::DNS::Resolver available? yes
+Wed Jul 23 22:55:27 2008 [17873] dbg: dns: Net::DNS version: 0.63
+Wed Jul 23 22:55:27 2008 [17873] dbg: spamd: Preloading modules with HOME=/tmp/spamd-17873-init
+Wed Jul 23 22:55:27 2008 [17873] dbg: ignore: test message to precompile patterns and load modules
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules pre files
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/init.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v310.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v312.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v320.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for sys rules pre files
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/init.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v310.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v312.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v320.pre
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for default rules dir
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/01_test_rules.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/10_default_prefs.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_advance_fee.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_body_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_compensate.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dnsbl_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_drugs.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dynrdns.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_fake_helo_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_head_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_html_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_imageinfo.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_meta_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_net_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_phrases.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_porn.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_ratware.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_uri_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_vbounce.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/23_bayes.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_accessdb.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_antivirus.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_asn.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dcc.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dkim.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_domainkeys.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_hashcash.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_pyzor.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_razor2.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_replace.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_spf.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_textcat.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_uribl.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_de.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_fr.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_it.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_nl.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pl.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pt_br.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/50_scores.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_awl.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_shortcircuit.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dk.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dkim.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_spf.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_subject.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_active.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_removed.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/99_test_default.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/local.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/regression_tests.cf
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules dir
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDNSBL from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::Hashcash from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::SPF from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::Pyzor from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: pyzor: local tests only, disabling Pyzor
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::Razor2 from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: razor2: local tests only, skipping Razor
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::SpamCop from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: reporter: local tests only, disabling SpamCop
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::AWL from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::AutoLearnThreshold from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::WhiteListSubject from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEHeader from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::ReplaceTags from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::Check from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTTPSMismatch from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDetail from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::Bayes from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::BodyEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::DNSEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTMLEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::HeaderEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::RelayEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::WLBLEval from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::VBounce from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: loading Mail::SpamAssassin::Plugin::ImageInfo from @INC
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDNSBL, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Hashcash, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SPF, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Pyzor, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Razor2, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SpamCop, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AWL, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AutoLearnThreshold, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WhiteListSubject, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEHeader, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ReplaceTags, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Check, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTTPSMismatch, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDetail, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Bayes, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::BodyEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::DNSEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTMLEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HeaderEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::RelayEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WLBLEval, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::VBounce, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ImageInfo, already registered
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_9B90B merged duplicates: __MO_OL_C65FA
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: FORGED_YAHOO_RCVD merged duplicates: TEST_FORGED_YAHOO_RCVD
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __XM_OL_22B61 merged duplicates: __XM_OL_A842E
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_07794 merged duplicates: __MO_OL_8627E __MO_OL_F3B05
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __XM_OL_07794 merged duplicates: __XM_OL_25340 __XM_OL_3857F __XM_OL_4F240 __XM_OL_58CB5 __XM_OL_6554A __XM_OL_812FF __XM_OL_C65FA __XM_OL_CF0C0 __XM_OL_F475E __XM_OL_F6D01
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: FH_MSGID_01C67 merged duplicates: __MSGID_VGA
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: FS_NEW_SOFT_UPLOAD merged duplicates: HS_SUBJ_NEW_SOFTWARE
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __FH_HAS_XMSMAIL merged duplicates: __HAS_MSMAIL_PRI
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_015D5 merged duplicates: __MO_OL_6554A
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __XM_OL_015D5 merged duplicates: __XM_OL_4BF4C __XM_OL_4EEDB __XM_OL_5B79A __XM_OL_9B90B __XM_OL_ADFF7 __XM_OL_B30D1 __XM_OL_B4B40 __XM_OL_BC7E6 __XM_OL_F3B05 __XM_OL_FF5C8
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_91287 merged duplicates: __MO_OL_B30D1 __MO_OL_CF0C0
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: KAM_STOCKOTC merged duplicates: KAM_STOCKTIP15 KAM_STOCKTIP20 KAM_STOCKTIP21 KAM_STOCKTIP4 KAM_STOCKTIP6
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_22B61 merged duplicates: __MO_OL_4F240 __MO_OL_ADFF7
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_812FF merged duplicates: __MO_OL_BC7E6
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_25340 merged duplicates: __MO_OL_4EEDB __MO_OL_7533E
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: EXCUSE_4 merged duplicates: TEST_EXCUSE_4
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_58CB5 merged duplicates: __MO_OL_B4B40
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: NORMAL_HTTP_TO_IP merged duplicates: TEST_NORMAL_HTTP_TO_IP
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __DOS_HAS_ANY_URI merged duplicates: __HAS_ANY_URI
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: TEST_ENDSNUMS merged duplicates: __FROM_ENDS_IN_NUMS
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: AXB_RCVD_ZOOBSEND merged duplicates: BROKEN_RATWARE_BOM CTYPE_001C_A DEAR_HOMEOWNER DIV_CENTER_A_HREF DRUG_RA_PRICE FM_DDDD_TIMES_2 FM_SEX_HOSTDDDD HG_HORMONE HS_PHARMA_1 HS_UPLOADED_SOFTWARE OEBOUND STOX_RCVD_N_NN_N URIBL_RHS_ABUSE URIBL_RHS_BOGUSMX URIBL_RHS_DSN URIBL_RHS_POST URIBL_RHS_TLD_WHOIS URIBL_RHS_WHOIS URIBL_XS_SURBL URI_L_PHP XMAILER_MIMEOLE_OL_5E7ED XMAILER_MIMEOLE_OL_C7C33 XMAILER_MIMEOLE_OL_D03AB X_LIBRARY YOUR_CRD_RATING
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_72641 merged duplicates: __MO_OL_A842E
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_4BF4C merged duplicates: __MO_OL_F6D01
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: __MO_OL_F475E merged duplicates: __MO_OL_FF5C8
+Wed Jul 23 22:55:27 2008 [17873] dbg: conf: finish parsing
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: Mail::SpamAssassin::Plugin::ReplaceTags=HASH(0x8b7c5c8) implements 'finish_parsing_end', priority 0
+Wed Jul 23 22:55:27 2008 [17873] dbg: replacetags: replacing tags
+Wed Jul 23 22:55:27 2008 [17873] dbg: replacetags: done replacing tags
+Wed Jul 23 22:55:27 2008 [17873] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 23 22:55:27 2008 [17873] dbg: config: score set 0 chosen.
+Wed Jul 23 22:55:27 2008 [17873] dbg: message: main message type: text/plain
+Wed Jul 23 22:55:27 2008 [17873] dbg: message: ---- MIME PARSER START ----
+Wed Jul 23 22:55:27 2008 [17873] dbg: message: parsing normal part
+Wed Jul 23 22:55:27 2008 [17873] dbg: message: ---- MIME PARSER END ----
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: Mail::SpamAssassin::Plugin::DNSEval=HASH(0x8bfb158) implements 'check_start', priority 0
+Wed Jul 23 22:55:27 2008 [17873] dbg: bayes: no dbs present, cannot tie DB R/O: /tmp/spamd-17873-init/.spamassassin/bayes_toks
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: Mail::SpamAssassin::Plugin::Check=HASH(0x8bc1470) implements 'check_main', priority 0
+Wed Jul 23 22:55:27 2008 [17873] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 23 22:55:27 2008 [17873] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 23 22:55:27 2008 [17873] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 23 22:55:27 2008 [17873] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 23 22:55:27 2008 [17873] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 23 22:55:27 2008 [17873] dbg: message: no encoding detected
+Wed Jul 23 22:55:27 2008 [17873] dbg: plugin: Mail::SpamAssassin::Plugin::URIDNSBL=HASH(0x8a1ef88) implements 'parsed_metadata', priority 0
+Wed Jul 23 22:55:27 2008 [17873] dbg: dns: is_dns_available() last checked 1216846527.0 seconds ago; re-checking
+Wed Jul 23 22:55:27 2008 [17873] dbg: dns: is DNS available? 0
+Wed Jul 23 22:55:27 2008 [17873] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: running tests for priority: -1000
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled head tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: eval: all '*From' addrs: ignore@compiling.spamassassin.taint.org
+Wed Jul 23 22:55:28 2008 [17873] dbg: eval: all '*To' addrs: 
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled body tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled uri tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled full tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled meta tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: running tests for priority: -950
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled head tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled body tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled uri tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled full tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled meta tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: running tests for priority: -900
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled head tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled body tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled uri tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled full tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled meta tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: running tests for priority: -400
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled head tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running body tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled body tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled uri tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running full tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled full tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled meta tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: running tests for priority: 0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running head tests; score so far=0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled head tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@spamassassin_spamd_init>"
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule __MSGID_OK_DIGITS ======> got hit: "1216846527"
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: Message-Id: "
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<1216846527.38539@spamassassin_spamd_init>
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: "
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule MISSING_DATE ======> got hit: "UNSET"
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "ignore@compiling.spamassassin.taint.org
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: "
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran eval rule MISSING_HEADERS ======> got hit (1)
+Wed Jul 23 22:55:28 2008 [17873] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running body tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled body tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "I"
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled uri tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: eval: stock info total: 0
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running full tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled full tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled meta tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: running tests for priority: 500
+Wed Jul 23 22:55:28 2008 [17873] dbg: dns: harvest_dnsbl_queries
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running head tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled head tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running body tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled body tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled uri tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running full tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled full tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: meta test DIGEST_MULTIPLE has undefined dependency 'DCC_CHECK'
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled meta tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: running tests for priority: 1000
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running head tests; score so far=9.205
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled head tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.17873
+Wed Jul 23 22:55:28 2008 [17873] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 23 22:55:28 2008 [17873] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 23 22:55:28 2008 [17873] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 23 22:55:28 2008 [17873] dbg: auto-whitelist: db-based ignore@compiling.spamassassin.taint.org|ip=none scores 0/0
+Wed Jul 23 22:55:28 2008 [17873] dbg: auto-whitelist: AWL active, pre-score: 9.205, autolearn score: 9.205, mean: undef, IP: undef
+Wed Jul 23 22:55:28 2008 [17873] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 23 22:55:28 2008 [17873] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 23 22:55:28 2008 [17873] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 23 22:55:28 2008 [17873] dbg: auto-whitelist: post auto-whitelist score: 9.205
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running body tests; score so far=9.205
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled body tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running uri tests; score so far=9.205
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled uri tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running rawbody tests; score so far=9.205
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled rawbody tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running full tests; score so far=9.205
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled full tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: running meta tests; score so far=9.205
+Wed Jul 23 22:55:28 2008 [17873] dbg: rules: compiled meta tests
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: is spam? score=9.205 required=5
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: tests=MISSING_DATE,MISSING_HEADERS,MISSING_SUBJECT,NO_RECEIVED,NO_RELAYS,TEST_NOREALNAME
+Wed Jul 23 22:55:28 2008 [17873] dbg: check: subtests=__GATED_THROUGH_RCVD_REMOVER,__HAS_MSGID,__MISSING_REF,__MSGID_OK_DIGITS,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NONEMPTY_BODY,__SANE_MSGID,__UNUSABLE_MSGID
+Wed Jul 23 22:55:28 2008 [17873] dbg: learn: initializing learner
+Wed Jul 23 22:55:28 2008 [17873] dbg: config: copying current conf to backup
+Wed Jul 23 22:55:28 2008 [17873] info: spamd: server started on port 50611/tcp (running version 3.2.5)
+Wed Jul 23 22:55:28 2008 [17873] info: spamd: server pid: 17873
+Wed Jul 23 22:55:28 2008 [17873] info: spamd: server successfully spawned child process, pid 17876
+Wed Jul 23 22:55:28 2008 [17873] info: spamd: server successfully spawned child process, pid 17877
+Wed Jul 23 22:55:28 2008 [17873] info: spamd: server successfully spawned child process, pid 17878
+Wed Jul 23 22:55:28 2008 [17873] info: spamd: server successfully spawned child process, pid 17879
+Wed Jul 23 22:55:28 2008 [17873] info: spamd: server successfully spawned child process, pid 17880
+Wed Jul 23 22:55:30 2008 [17873] info: spamd: server killed by SIGINT, shutting down
+Wed Jul 23 23:11:21 2008 [20252] dbg: logger: successfully added file method
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: will perform setuids? 0
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: creating INET socket:
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: Listen: 128
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: LocalAddr: 127.0.0.1
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: LocalPort: 52994
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: Proto: 6
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: ReuseAddr: 1
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: Type: 1
+Wed Jul 23 23:11:21 2008 [20252] dbg: logger: adding facilities: all
+Wed Jul 23 23:11:21 2008 [20252] dbg: logger: logging level is DBG
+Wed Jul 23 23:11:21 2008 [20252] dbg: generic: SpamAssassin version 3.2.5
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: score set 0 chosen.
+Wed Jul 23 23:11:21 2008 [20252] dbg: dns: no ipv6
+Wed Jul 23 23:11:21 2008 [20252] dbg: dns: is Net::DNS::Resolver available? yes
+Wed Jul 23 23:11:21 2008 [20252] dbg: dns: Net::DNS version: 0.63
+Wed Jul 23 23:11:21 2008 [20252] dbg: spamd: Preloading modules with HOME=/tmp/spamd-20252-init
+Wed Jul 23 23:11:21 2008 [20252] dbg: ignore: test message to precompile patterns and load modules
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules pre files
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/init.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v310.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v312.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v320.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for sys rules pre files
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/init.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v310.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v312.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v320.pre
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for default rules dir
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/01_test_rules.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/10_default_prefs.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_advance_fee.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_body_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_compensate.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dnsbl_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_drugs.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dynrdns.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_fake_helo_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_head_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_html_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_imageinfo.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_meta_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_net_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_phrases.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_porn.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_ratware.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_uri_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_vbounce.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/23_bayes.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_accessdb.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_antivirus.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_asn.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dcc.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dkim.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_domainkeys.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_hashcash.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_pyzor.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_razor2.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_replace.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_spf.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_textcat.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_uribl.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_de.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_fr.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_it.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_nl.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pl.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pt_br.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/50_scores.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_awl.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_shortcircuit.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dk.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dkim.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_spf.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_subject.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_active.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_removed.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/99_test_default.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/local.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/regression_tests.cf
+Wed Jul 23 23:11:21 2008 [20252] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules dir
+Wed Jul 23 23:11:21 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDNSBL from @INC
+Wed Jul 23 23:11:21 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::Hashcash from @INC
+Wed Jul 23 23:11:21 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::SPF from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::Pyzor from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: pyzor: local tests only, disabling Pyzor
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::Razor2 from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: razor2: local tests only, skipping Razor
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::SpamCop from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: reporter: local tests only, disabling SpamCop
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::AWL from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::AutoLearnThreshold from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::WhiteListSubject from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEHeader from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::ReplaceTags from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::Check from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTTPSMismatch from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDetail from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::Bayes from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::BodyEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::DNSEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTMLEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::HeaderEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::RelayEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::WLBLEval from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::VBounce from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: loading Mail::SpamAssassin::Plugin::ImageInfo from @INC
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDNSBL, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Hashcash, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SPF, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Pyzor, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Razor2, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SpamCop, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AWL, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AutoLearnThreshold, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WhiteListSubject, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEHeader, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ReplaceTags, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Check, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTTPSMismatch, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDetail, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Bayes, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::BodyEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::DNSEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTMLEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HeaderEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::RelayEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WLBLEval, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::VBounce, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ImageInfo, already registered
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_9B90B merged duplicates: __MO_OL_C65FA
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: FORGED_YAHOO_RCVD merged duplicates: TEST_FORGED_YAHOO_RCVD
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __XM_OL_22B61 merged duplicates: __XM_OL_A842E
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_07794 merged duplicates: __MO_OL_8627E __MO_OL_F3B05
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __XM_OL_07794 merged duplicates: __XM_OL_25340 __XM_OL_3857F __XM_OL_4F240 __XM_OL_58CB5 __XM_OL_6554A __XM_OL_812FF __XM_OL_C65FA __XM_OL_CF0C0 __XM_OL_F475E __XM_OL_F6D01
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: FH_MSGID_01C67 merged duplicates: __MSGID_VGA
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: FS_NEW_SOFT_UPLOAD merged duplicates: HS_SUBJ_NEW_SOFTWARE
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __FH_HAS_XMSMAIL merged duplicates: __HAS_MSMAIL_PRI
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_015D5 merged duplicates: __MO_OL_6554A
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __XM_OL_015D5 merged duplicates: __XM_OL_4BF4C __XM_OL_4EEDB __XM_OL_5B79A __XM_OL_9B90B __XM_OL_ADFF7 __XM_OL_B30D1 __XM_OL_B4B40 __XM_OL_BC7E6 __XM_OL_F3B05 __XM_OL_FF5C8
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_91287 merged duplicates: __MO_OL_B30D1 __MO_OL_CF0C0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: KAM_STOCKOTC merged duplicates: KAM_STOCKTIP15 KAM_STOCKTIP20 KAM_STOCKTIP21 KAM_STOCKTIP4 KAM_STOCKTIP6
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_22B61 merged duplicates: __MO_OL_4F240 __MO_OL_ADFF7
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_812FF merged duplicates: __MO_OL_BC7E6
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_25340 merged duplicates: __MO_OL_4EEDB __MO_OL_7533E
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: EXCUSE_4 merged duplicates: TEST_EXCUSE_4
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_58CB5 merged duplicates: __MO_OL_B4B40
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: NORMAL_HTTP_TO_IP merged duplicates: TEST_NORMAL_HTTP_TO_IP
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __DOS_HAS_ANY_URI merged duplicates: __HAS_ANY_URI
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: TEST_ENDSNUMS merged duplicates: __FROM_ENDS_IN_NUMS
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: AXB_RCVD_ZOOBSEND merged duplicates: BROKEN_RATWARE_BOM CTYPE_001C_A DEAR_HOMEOWNER DIV_CENTER_A_HREF DRUG_RA_PRICE FM_DDDD_TIMES_2 FM_SEX_HOSTDDDD HG_HORMONE HS_PHARMA_1 HS_UPLOADED_SOFTWARE OEBOUND STOX_RCVD_N_NN_N URIBL_RHS_ABUSE URIBL_RHS_BOGUSMX URIBL_RHS_DSN URIBL_RHS_POST URIBL_RHS_TLD_WHOIS URIBL_RHS_WHOIS URIBL_XS_SURBL URI_L_PHP XMAILER_MIMEOLE_OL_5E7ED XMAILER_MIMEOLE_OL_C7C33 XMAILER_MIMEOLE_OL_D03AB X_LIBRARY YOUR_CRD_RATING
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_72641 merged duplicates: __MO_OL_A842E
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_4BF4C merged duplicates: __MO_OL_F6D01
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: __MO_OL_F475E merged duplicates: __MO_OL_FF5C8
+Wed Jul 23 23:11:22 2008 [20252] dbg: conf: finish parsing
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: Mail::SpamAssassin::Plugin::ReplaceTags=HASH(0x8b7c5c8) implements 'finish_parsing_end', priority 0
+Wed Jul 23 23:11:22 2008 [20252] dbg: replacetags: replacing tags
+Wed Jul 23 23:11:22 2008 [20252] dbg: replacetags: done replacing tags
+Wed Jul 23 23:11:22 2008 [20252] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 23 23:11:22 2008 [20252] dbg: config: score set 0 chosen.
+Wed Jul 23 23:11:22 2008 [20252] dbg: message: main message type: text/plain
+Wed Jul 23 23:11:22 2008 [20252] dbg: message: ---- MIME PARSER START ----
+Wed Jul 23 23:11:22 2008 [20252] dbg: message: parsing normal part
+Wed Jul 23 23:11:22 2008 [20252] dbg: message: ---- MIME PARSER END ----
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: Mail::SpamAssassin::Plugin::DNSEval=HASH(0x8bfb158) implements 'check_start', priority 0
+Wed Jul 23 23:11:22 2008 [20252] dbg: bayes: no dbs present, cannot tie DB R/O: /tmp/spamd-20252-init/.spamassassin/bayes_toks
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: Mail::SpamAssassin::Plugin::Check=HASH(0x8bc1470) implements 'check_main', priority 0
+Wed Jul 23 23:11:22 2008 [20252] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 23 23:11:22 2008 [20252] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 23 23:11:22 2008 [20252] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 23 23:11:22 2008 [20252] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 23 23:11:22 2008 [20252] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 23 23:11:22 2008 [20252] dbg: message: no encoding detected
+Wed Jul 23 23:11:22 2008 [20252] dbg: plugin: Mail::SpamAssassin::Plugin::URIDNSBL=HASH(0x8a1ef88) implements 'parsed_metadata', priority 0
+Wed Jul 23 23:11:22 2008 [20252] dbg: dns: is_dns_available() last checked 1216847482.0 seconds ago; re-checking
+Wed Jul 23 23:11:22 2008 [20252] dbg: dns: is DNS available? 0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: running tests for priority: -1000
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running head tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled head tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: eval: all '*From' addrs: ignore@compiling.spamassassin.taint.org
+Wed Jul 23 23:11:22 2008 [20252] dbg: eval: all '*To' addrs: 
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running body tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled body tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled uri tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled rawbody tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running full tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled full tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled meta tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: running tests for priority: -950
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running head tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled head tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running body tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled body tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled uri tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled rawbody tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running full tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled full tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled meta tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: running tests for priority: -900
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running head tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled head tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running body tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled body tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled uri tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled rawbody tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running full tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled full tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled meta tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: running tests for priority: -400
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running head tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled head tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running body tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled body tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running uri tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled uri tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled rawbody tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running full tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled full tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running meta tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled meta tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: running tests for priority: 0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running head tests; score so far=0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled head tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@spamassassin_spamd_init>"
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule __MSGID_OK_DIGITS ======> got hit: "1216847481"
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: Message-Id: "
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<1216847481.92825@spamassassin_spamd_init>
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: "
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule MISSING_DATE ======> got hit: "UNSET"
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "ignore@compiling.spamassassin.taint.org
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: "
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran eval rule MISSING_HEADERS ======> got hit (1)
+Wed Jul 23 23:11:22 2008 [20252] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running body tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled body tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "I"
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled uri tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: eval: stock info total: 0
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled rawbody tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running full tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled full tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled meta tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: running tests for priority: 500
+Wed Jul 23 23:11:22 2008 [20252] dbg: dns: harvest_dnsbl_queries
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running head tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled head tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running body tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled body tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled uri tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled rawbody tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running full tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled full tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: meta test DIGEST_MULTIPLE has undefined dependency 'DCC_CHECK'
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled meta tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: running tests for priority: 1000
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running head tests; score so far=9.205
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled head tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.20252
+Wed Jul 23 23:11:22 2008 [20252] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 23 23:11:22 2008 [20252] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 23 23:11:22 2008 [20252] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 23 23:11:22 2008 [20252] dbg: auto-whitelist: db-based ignore@compiling.spamassassin.taint.org|ip=none scores 0/0
+Wed Jul 23 23:11:22 2008 [20252] dbg: auto-whitelist: AWL active, pre-score: 9.205, autolearn score: 9.205, mean: undef, IP: undef
+Wed Jul 23 23:11:22 2008 [20252] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 23 23:11:22 2008 [20252] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 23 23:11:22 2008 [20252] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 23 23:11:22 2008 [20252] dbg: auto-whitelist: post auto-whitelist score: 9.205
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running body tests; score so far=9.205
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled body tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running uri tests; score so far=9.205
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled uri tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running rawbody tests; score so far=9.205
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled rawbody tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running full tests; score so far=9.205
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled full tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: running meta tests; score so far=9.205
+Wed Jul 23 23:11:22 2008 [20252] dbg: rules: compiled meta tests
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: is spam? score=9.205 required=5
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: tests=MISSING_DATE,MISSING_HEADERS,MISSING_SUBJECT,NO_RECEIVED,NO_RELAYS,TEST_NOREALNAME
+Wed Jul 23 23:11:22 2008 [20252] dbg: check: subtests=__GATED_THROUGH_RCVD_REMOVER,__HAS_MSGID,__MISSING_REF,__MSGID_OK_DIGITS,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NONEMPTY_BODY,__SANE_MSGID,__UNUSABLE_MSGID
+Wed Jul 23 23:11:22 2008 [20252] dbg: learn: initializing learner
+Wed Jul 23 23:11:22 2008 [20252] dbg: config: copying current conf to backup
+Wed Jul 23 23:11:22 2008 [20252] info: spamd: server started on port 52994/tcp (running version 3.2.5)
+Wed Jul 23 23:11:22 2008 [20252] info: spamd: server pid: 20252
+Wed Jul 23 23:11:22 2008 [20252] info: spamd: server successfully spawned child process, pid 20258
+Wed Jul 23 23:11:22 2008 [20252] info: spamd: server successfully spawned child process, pid 20259
+Wed Jul 23 23:11:22 2008 [20252] info: spamd: server successfully spawned child process, pid 20260
+Wed Jul 23 23:11:22 2008 [20252] info: spamd: server successfully spawned child process, pid 20261
+Wed Jul 23 23:11:22 2008 [20252] info: spamd: server successfully spawned child process, pid 20262
+Wed Jul 23 23:11:24 2008 [20252] info: spamd: server killed by SIGINT, shutting down
+Thu Aug  7 21:40:03 2008 [11758] dbg: logger: successfully added file method
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: will perform setuids? 0
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: creating INET socket:
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: Listen: 128
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: LocalAddr: 127.0.0.1
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: LocalPort: 44497
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: Proto: 6
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: ReuseAddr: 1
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: Type: 1
+Thu Aug  7 21:40:03 2008 [11758] dbg: logger: adding facilities: all
+Thu Aug  7 21:40:03 2008 [11758] dbg: logger: logging level is DBG
+Thu Aug  7 21:40:03 2008 [11758] dbg: generic: SpamAssassin version 3.2.5
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: score set 0 chosen.
+Thu Aug  7 21:40:03 2008 [11758] dbg: dns: no ipv6
+Thu Aug  7 21:40:03 2008 [11758] dbg: dns: is Net::DNS::Resolver available? yes
+Thu Aug  7 21:40:03 2008 [11758] dbg: dns: Net::DNS version: 0.63
+Thu Aug  7 21:40:03 2008 [11758] dbg: spamd: Preloading modules with HOME=/tmp/spamd-11758-init
+Thu Aug  7 21:40:03 2008 [11758] dbg: ignore: test message to precompile patterns and load modules
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules pre files
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/init.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v310.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v312.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp/v320.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for sys rules pre files
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/init.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v310.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v312.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/v320.pre
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy" for default rules dir
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/01_test_rules.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/10_default_prefs.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_advance_fee.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_body_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_compensate.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dnsbl_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_drugs.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_dynrdns.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_fake_helo_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_head_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_html_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_imageinfo.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_meta_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_net_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_phrases.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_porn.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_ratware.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_uri_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/20_vbounce.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/23_bayes.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_accessdb.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_antivirus.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_asn.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dcc.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_dkim.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_domainkeys.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_hashcash.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_pyzor.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_razor2.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_replace.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_spf.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_textcat.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/25_uribl.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_de.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_fr.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_it.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_nl.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pl.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/30_text_pt_br.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/50_scores.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_awl.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_shortcircuit.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dk.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_dkim.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_spf.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/60_whitelist_subject.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_active.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/72_removed.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/99_test_default.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/local.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: read file /home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/test_rules_copy/regression_tests.cf
+Thu Aug  7 21:40:03 2008 [11758] dbg: config: using "/home/ss5/local/projects/Perl-Spec/t_Mail-SpamAssassin/log/localrules.tmp" for site rules dir
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDNSBL from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::Hashcash from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::SPF from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::Pyzor from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: pyzor: local tests only, disabling Pyzor
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::Razor2 from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: razor2: local tests only, skipping Razor
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::SpamCop from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: reporter: local tests only, disabling SpamCop
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::AWL from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::AutoLearnThreshold from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::WhiteListSubject from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEHeader from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::ReplaceTags from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::Check from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTTPSMismatch from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDetail from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::Bayes from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::BodyEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::DNSEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTMLEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::HeaderEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::RelayEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::WLBLEval from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::VBounce from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: loading Mail::SpamAssassin::Plugin::ImageInfo from @INC
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDNSBL, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Hashcash, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SPF, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Pyzor, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Razor2, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SpamCop, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AWL, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AutoLearnThreshold, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WhiteListSubject, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEHeader, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ReplaceTags, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Check, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTTPSMismatch, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDetail, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Bayes, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::BodyEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::DNSEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTMLEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HeaderEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::RelayEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WLBLEval, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::VBounce, already registered
+Thu Aug  7 21:40:03 2008 [11758] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ImageInfo, already registered
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_9B90B merged duplicates: __MO_OL_C65FA
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: FORGED_YAHOO_RCVD merged duplicates: TEST_FORGED_YAHOO_RCVD
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __XM_OL_22B61 merged duplicates: __XM_OL_A842E
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_07794 merged duplicates: __MO_OL_8627E __MO_OL_F3B05
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __XM_OL_07794 merged duplicates: __XM_OL_25340 __XM_OL_3857F __XM_OL_4F240 __XM_OL_58CB5 __XM_OL_6554A __XM_OL_812FF __XM_OL_C65FA __XM_OL_CF0C0 __XM_OL_F475E __XM_OL_F6D01
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: FH_MSGID_01C67 merged duplicates: __MSGID_VGA
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: FS_NEW_SOFT_UPLOAD merged duplicates: HS_SUBJ_NEW_SOFTWARE
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __FH_HAS_XMSMAIL merged duplicates: __HAS_MSMAIL_PRI
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_015D5 merged duplicates: __MO_OL_6554A
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __XM_OL_015D5 merged duplicates: __XM_OL_4BF4C __XM_OL_4EEDB __XM_OL_5B79A __XM_OL_9B90B __XM_OL_ADFF7 __XM_OL_B30D1 __XM_OL_B4B40 __XM_OL_BC7E6 __XM_OL_F3B05 __XM_OL_FF5C8
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_91287 merged duplicates: __MO_OL_B30D1 __MO_OL_CF0C0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: KAM_STOCKOTC merged duplicates: KAM_STOCKTIP15 KAM_STOCKTIP20 KAM_STOCKTIP21 KAM_STOCKTIP4 KAM_STOCKTIP6
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_22B61 merged duplicates: __MO_OL_4F240 __MO_OL_ADFF7
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_812FF merged duplicates: __MO_OL_BC7E6
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_25340 merged duplicates: __MO_OL_4EEDB __MO_OL_7533E
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: EXCUSE_4 merged duplicates: TEST_EXCUSE_4
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_58CB5 merged duplicates: __MO_OL_B4B40
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: NORMAL_HTTP_TO_IP merged duplicates: TEST_NORMAL_HTTP_TO_IP
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __DOS_HAS_ANY_URI merged duplicates: __HAS_ANY_URI
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: TEST_ENDSNUMS merged duplicates: __FROM_ENDS_IN_NUMS
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: AXB_RCVD_ZOOBSEND merged duplicates: BROKEN_RATWARE_BOM CTYPE_001C_A DEAR_HOMEOWNER DIV_CENTER_A_HREF DRUG_RA_PRICE FM_DDDD_TIMES_2 FM_SEX_HOSTDDDD HG_HORMONE HS_PHARMA_1 HS_UPLOADED_SOFTWARE OEBOUND STOX_RCVD_N_NN_N URIBL_RHS_ABUSE URIBL_RHS_BOGUSMX URIBL_RHS_DSN URIBL_RHS_POST URIBL_RHS_TLD_WHOIS URIBL_RHS_WHOIS URIBL_XS_SURBL URI_L_PHP XMAILER_MIMEOLE_OL_5E7ED XMAILER_MIMEOLE_OL_C7C33 XMAILER_MIMEOLE_OL_D03AB X_LIBRARY YOUR_CRD_RATING
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_72641 merged duplicates: __MO_OL_A842E
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_4BF4C merged duplicates: __MO_OL_F6D01
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: __MO_OL_F475E merged duplicates: __MO_OL_FF5C8
+Thu Aug  7 21:40:04 2008 [11758] dbg: conf: finish parsing
+Thu Aug  7 21:40:04 2008 [11758] dbg: plugin: Mail::SpamAssassin::Plugin::ReplaceTags=HASH(0x8b7c4d8) implements 'finish_parsing_end', priority 0
+Thu Aug  7 21:40:04 2008 [11758] dbg: replacetags: replacing tags
+Thu Aug  7 21:40:04 2008 [11758] dbg: replacetags: done replacing tags
+Thu Aug  7 21:40:04 2008 [11758] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Thu Aug  7 21:40:04 2008 [11758] dbg: config: score set 0 chosen.
+Thu Aug  7 21:40:04 2008 [11758] dbg: message: main message type: text/plain
+Thu Aug  7 21:40:04 2008 [11758] dbg: message: ---- MIME PARSER START ----
+Thu Aug  7 21:40:04 2008 [11758] dbg: message: parsing normal part
+Thu Aug  7 21:40:04 2008 [11758] dbg: message: ---- MIME PARSER END ----
+Thu Aug  7 21:40:04 2008 [11758] dbg: plugin: Mail::SpamAssassin::Plugin::DNSEval=HASH(0x8bfb068) implements 'check_start', priority 0
+Thu Aug  7 21:40:04 2008 [11758] dbg: bayes: no dbs present, cannot tie DB R/O: /tmp/spamd-11758-init/.spamassassin/bayes_toks
+Thu Aug  7 21:40:04 2008 [11758] dbg: plugin: Mail::SpamAssassin::Plugin::Check=HASH(0x8bc1380) implements 'check_main', priority 0
+Thu Aug  7 21:40:04 2008 [11758] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Thu Aug  7 21:40:04 2008 [11758] dbg: metadata: X-Spam-Relays-Trusted: 
+Thu Aug  7 21:40:04 2008 [11758] dbg: metadata: X-Spam-Relays-Untrusted: 
+Thu Aug  7 21:40:04 2008 [11758] dbg: metadata: X-Spam-Relays-Internal: 
+Thu Aug  7 21:40:04 2008 [11758] dbg: metadata: X-Spam-Relays-External: 
+Thu Aug  7 21:40:04 2008 [11758] dbg: message: no encoding detected
+Thu Aug  7 21:40:04 2008 [11758] dbg: plugin: Mail::SpamAssassin::Plugin::URIDNSBL=HASH(0x8a1ee78) implements 'parsed_metadata', priority 0
+Thu Aug  7 21:40:04 2008 [11758] dbg: dns: is_dns_available() last checked 1218138004.0 seconds ago; re-checking
+Thu Aug  7 21:40:04 2008 [11758] dbg: dns: is DNS available? 0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: local tests only, ignoring RBL eval
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: running tests for priority: -1000
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running head tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled head tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: eval: all '*From' addrs: ignore@compiling.spamassassin.taint.org
+Thu Aug  7 21:40:04 2008 [11758] dbg: eval: all '*To' addrs: 
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running body tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled body tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running uri tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled uri tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running rawbody tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled rawbody tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running full tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled full tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running meta tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled meta tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: running tests for priority: -950
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running head tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled head tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running body tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled body tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running uri tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled uri tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running rawbody tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled rawbody tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running full tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled full tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running meta tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled meta tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: running tests for priority: -900
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running head tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled head tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running body tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled body tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running uri tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled uri tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running rawbody tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled rawbody tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running full tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled full tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running meta tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled meta tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: running tests for priority: -400
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running head tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled head tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running body tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled body tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running uri tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled uri tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running rawbody tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled rawbody tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running full tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled full tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running meta tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled meta tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: running tests for priority: 0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running head tests; score so far=0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled head tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@spamassassin_spamd_init>"
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule __MSGID_OK_DIGITS ======> got hit: "1218138003"
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: Message-Id: "
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<1218138003.57507@spamassassin_spamd_init>
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: "
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule MISSING_DATE ======> got hit: "UNSET"
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "ignore@compiling.spamassassin.taint.org
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: "
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: cannot get Envelope-From, cannot use SPF
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran eval rule MISSING_HEADERS ======> got hit (1)
+Thu Aug  7 21:40:04 2008 [11758] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running body tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled body tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "I"
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running uri tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled uri tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: eval: stock info total: 0
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running rawbody tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled rawbody tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running full tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled full tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running meta tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled meta tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: running tests for priority: 500
+Thu Aug  7 21:40:04 2008 [11758] dbg: dns: harvest_dnsbl_queries
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running head tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled head tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running body tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled body tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running uri tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled uri tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running rawbody tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled rawbody tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running full tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled full tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running meta tests; score so far=6.899
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: meta test DIGEST_MULTIPLE has undefined dependency 'DCC_CHECK'
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled meta tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: running tests for priority: 1000
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running head tests; score so far=9.205
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled head tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.11758
+Thu Aug  7 21:40:04 2008 [11758] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Thu Aug  7 21:40:04 2008 [11758] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Thu Aug  7 21:40:04 2008 [11758] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Thu Aug  7 21:40:04 2008 [11758] dbg: auto-whitelist: db-based ignore@compiling.spamassassin.taint.org|ip=none scores 0/0
+Thu Aug  7 21:40:04 2008 [11758] dbg: auto-whitelist: AWL active, pre-score: 9.205, autolearn score: 9.205, mean: undef, IP: undef
+Thu Aug  7 21:40:04 2008 [11758] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Thu Aug  7 21:40:04 2008 [11758] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Thu Aug  7 21:40:04 2008 [11758] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Thu Aug  7 21:40:04 2008 [11758] dbg: auto-whitelist: post auto-whitelist score: 9.205
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running body tests; score so far=9.205
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled body tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running uri tests; score so far=9.205
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled uri tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running rawbody tests; score so far=9.205
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled rawbody tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running full tests; score so far=9.205
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled full tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: running meta tests; score so far=9.205
+Thu Aug  7 21:40:04 2008 [11758] dbg: rules: compiled meta tests
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: is spam? score=9.205 required=5
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: tests=MISSING_DATE,MISSING_HEADERS,MISSING_SUBJECT,NO_RECEIVED,NO_RELAYS,TEST_NOREALNAME
+Thu Aug  7 21:40:04 2008 [11758] dbg: check: subtests=__GATED_THROUGH_RCVD_REMOVER,__HAS_MSGID,__MISSING_REF,__MSGID_OK_DIGITS,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NONEMPTY_BODY,__SANE_MSGID,__UNUSABLE_MSGID
+Thu Aug  7 21:40:04 2008 [11758] dbg: learn: initializing learner
+Thu Aug  7 21:40:04 2008 [11758] dbg: config: copying current conf to backup
+Thu Aug  7 21:40:04 2008 [11758] info: spamd: server started on port 44497/tcp (running version 3.2.5)
+Thu Aug  7 21:40:04 2008 [11758] info: spamd: server pid: 11758
+Thu Aug  7 21:40:04 2008 [11758] info: spamd: server successfully spawned child process, pid 11761
+Thu Aug  7 21:40:04 2008 [11758] info: spamd: server successfully spawned child process, pid 11762
+Thu Aug  7 21:40:04 2008 [11758] info: spamd: server successfully spawned child process, pid 11763
+Thu Aug  7 21:40:04 2008 [11758] info: spamd: server successfully spawned child process, pid 11764
+Thu Aug  7 21:40:04 2008 [11758] info: spamd: server successfully spawned child process, pid 11765
+Thu Aug  7 21:40:06 2008 [11758] info: spamd: server killed by SIGINT, shutting down

@@ -1,0 +1,35 @@
+Spam detection software, running on the system "vinyl.webit.de", has
+identified this incoming email as possible spam.  The original message
+has been attached to this so you can view it (if it isn't spam) or label
+similar future email.  If you have any questions, see
+@@CONTACT_ADDRESS@@ for details.
+
+Content preview:  For tests that use this mesasge to work, it must contain spammy
+   phrases, the body must be at least 2048 bytes long, the first 1024 bytes
+  of the body must remain unchanged, the last line must remain unchanged and
+   the very first line of this file must remain unchanged. [...] 
+
+Content analysis details:   (54.7 points, 5.0 required)
+
+ pts rule name              description
+---- ---------------------- --------------------------------------------------
+ 5.0 TEST_INVALID_DATE      Invalid Date: header (not RFC 2822)
+ 2.3 INVALID_DATE           Invalid Date: header (not RFC 2822)
+ 0.2 MSGID_SHORT            Message-ID is unusually short
+ 5.0 TEST_NOREALNAME        From: does not include a real name
+ 5.0 TEST_ENDSNUMS          From: ends in many numbers
+ 2.3 DATE_IN_FUTURE_03_06   Date: is 3 to 6 hours after Received: date
+ 2.3 FORGED_YAHOO_RCVD      'From' yahoo.com does not match 'Received' headers
+ 5.0 TEST_FORGED_YAHOO_RCVD 'From' yahoo.com does not match 'Received'
+                            headers
+ 2.0 EXCUSE_4               BODY: Claims you can be removed from the list
+ 5.0 TEST_EXCUSE_4          BODY: Claims you can be removed from the list
+ 2.5 DIET_1                 BODY: Lose Weight Spam
+ 0.0 FUZZY_CPILL            BODY: Attempt to obfuscate words in spam
+ 5.0 TEST_EXCUSE_12         BODY: Nobody's perfect
+ 2.6 FB_CIALIS_LEO3         BODY: Uses a mis-spelled version of cialis.
+ 0.1 NORMAL_HTTP_TO_IP      URI: Uses a dotted-decimal IP address in URL
+ 5.0 TEST_NORMAL_HTTP_TO_IP URI: Uses a dotted-decimal IP address in URL
+ 2.4 DRUGS_ERECTILE         Refers to an erectile drug
+ 3.0 INVALID_MSGID          Message-Id is not valid, according to RFC 2822
+

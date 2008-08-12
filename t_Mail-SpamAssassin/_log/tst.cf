@@ -1,0 +1,7 @@
+
+        
+    bayes_path ./log/user_state/bayes
+    auto_whitelist_path ./log/user_state/auto-whitelist
+  
+        whitelist_to announce*
+	

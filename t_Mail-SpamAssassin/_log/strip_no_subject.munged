@@ -1,0 +1,20 @@
+X-Spam-Flag: YES
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on vinyl.webit.de
+X-Spam-Level: **************************************************
+X-Spam-Status: Yes, score=1005.2 required=5.0 tests=GTUBE,MISSING_SUBJECT,
+	NO_RECEIVED,NO_RELAYS,TVD_SPACE_RATIO autolearn=no version=3.2.5
+X-Spam-Report: 
+	* -0.0 NO_RELAYS Informational: message was not relayed via SMTP
+	* 1000 GTUBE BODY: Generic Test for Unsolicited Bulk Email
+	*  2.9 TVD_SPACE_RATIO BODY: TVD_SPACE_RATIO
+	*  2.3 MISSING_SUBJECT Missing Subject: header
+	* -0.0 NO_RECEIVED Informational: message has no Received headers
+Message-ID: <GTUBE1.1010101@example.net>
+Date: Wed, 23 Jul 2003 23:30:00 +0200
+From: Sender <sender@example.net>
+To: Recipient <recipient@example.net>
+Subject: ***SPAM*** 
+X-Spam-Prev-Subject: (nonexistent)
+
+XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X
+

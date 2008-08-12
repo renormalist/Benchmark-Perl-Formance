@@ -1,0 +1,78 @@
+Received: from localhost by vinyl.webit.de
+	with SpamAssassin (version 3.2.5);
+	Wed, 16 Jul 2008 08:50:15 +0200
+From: "Jerzy Krykowski" <crico@lowicz.opoka.org.pl>
+To: "Jozef Naumowicz" <jnaum@interia.pl>
+Subject: This message has no body! (EOM)
+Date: Mon, 10 Jun 2002 00:52:45 +0200
+Message-Id: <000301c21009$256f5ac0$190863d9@ppp>
+X-Spam-Flag: YES
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on vinyl.webit.de
+X-Spam-Level: **************************************************
+X-Spam-Status: Yes, score=107.4 required=5.0 tests=MISSING_HB_SEP,NO_RECEIVED,
+	NO_RELAYS,RATWARE_MS_HASH,RATWARE_OUTLOOK_NONAME,TEST_ALWAYS
+	autolearn=unavailable version=3.2.5
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----------=_487D9A27.EA6EB471"
+
+This is a multi-part message in MIME format.
+
+------------=_487D9A27.EA6EB471
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+
+Spam detection software, running on the system "vinyl.webit.de", has
+identified this incoming email as possible spam.  The original message
+has been attached to this so you can view it (if it isn't spam) or label
+similar future email.  If you have any questions, see
+@@CONTACT_ADDRESS@@ for details.
+
+Content preview:  [...] 
+
+Content analysis details:   (107.4 points, 5.0 required)
+
+ pts rule name              description
+---- ---------------------- --------------------------------------------------
+-0.0 NO_RELAYS              Informational: message was not relayed via SMTP
+ 2.5 MISSING_HB_SEP         Missing blank line between message header and body
+ 100 TEST_ALWAYS            BODY: TEST_ALWAYS
+ 2.9 RATWARE_OUTLOOK_NONAME Bulk email fingerprint (Outlook no name) found
+-0.0 NO_RECEIVED            Informational: message has no Received headers
+ 2.0 RATWARE_MS_HASH        Bulk email fingerprint (msgid ms hash) found
+
+
+
+------------=_487D9A27.EA6EB471
+Content-Type: message/rfc822; x-spam-type=original
+Content-Description: original message before SpamAssassin
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+
+Message-ID: <000301c21009$256f5ac0$190863d9@ppp>
+From: "Jerzy Krykowski" <crico@lowicz.opoka.org.pl>
+To: "Jozef Naumowicz" <jnaum@interia.pl>
+Subject: This message has no body! (EOM)
+Date: Mon, 10 Jun 2002 00:52:45 +0200
+
+------------=_487D9A27.EA6EB471--
+
+Spam detection software, running on the system "vinyl.webit.de", has
+identified this incoming email as possible spam.  The original message
+has been attached to this so you can view it (if it isn't spam) or label
+similar future email.  If you have any questions, see
+@@CONTACT_ADDRESS@@ for details.
+
+Content preview:  [...] 
+
+Content analysis details:   (107.4 points, 5.0 required)
+
+ pts rule name              description
+---- ---------------------- --------------------------------------------------
+-0.0 NO_RELAYS              Informational: message was not relayed via SMTP
+ 2.5 MISSING_HB_SEP         Missing blank line between message header and body
+ 100 TEST_ALWAYS            BODY: TEST_ALWAYS
+ 2.9 RATWARE_OUTLOOK_NONAME Bulk email fingerprint (Outlook no name) found
+-0.0 NO_RECEIVED            Informational: message has no Received headers
+ 2.0 RATWARE_MS_HASH        Bulk email fingerprint (msgid ms hash) found
+

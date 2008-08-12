@@ -1,0 +1,11 @@
+
+
+	header MYFOO Content-Transfer-Encoding =~ /quoted-printable/
+        body MYBODY /KIFF/
+        rawbody MYRAWBODY /KIFF/
+        full MYFULL /KIFF/
+	score MYFOO 3
+        score MYBODY 3
+        score MYRAWBODY 3
+        score MYFULL 3
+

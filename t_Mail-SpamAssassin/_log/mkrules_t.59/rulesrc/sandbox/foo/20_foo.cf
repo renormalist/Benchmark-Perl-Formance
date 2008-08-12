@@ -1,0 +1,5 @@
+loadplugin Good plugin.pm
+ifplugin Good
+body GOOD eval:check_foo()
+describe GOOD desc_found
+endif

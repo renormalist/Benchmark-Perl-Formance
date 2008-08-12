@@ -1,0 +1,937 @@
+Wed Jul 16 08:50:00 2008 [13504] dbg: logger: successfully added file method
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: will perform setuids? 0
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: creating INET socket:
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: Listen: 128
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: LocalAddr: 127.0.0.1
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: LocalPort: 46268
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: Proto: 6
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: ReuseAddr: 1
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: Type: 1
+Wed Jul 16 08:50:00 2008 [13504] dbg: logger: adding facilities: all
+Wed Jul 16 08:50:00 2008 [13504] dbg: logger: logging level is DBG
+Wed Jul 16 08:50:00 2008 [13504] dbg: generic: SpamAssassin version 3.2.5
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: score set 0 chosen.
+Wed Jul 16 08:50:00 2008 [13504] dbg: dns: no ipv6
+Wed Jul 16 08:50:00 2008 [13504] dbg: dns: is Net::DNS::Resolver available? yes
+Wed Jul 16 08:50:00 2008 [13504] dbg: dns: Net::DNS version: 0.63
+Wed Jul 16 08:50:00 2008 [13504] dbg: spamd: Preloading modules with HOME=/tmp/spamd-13504-init
+Wed Jul 16 08:50:00 2008 [13504] dbg: ignore: test message to precompile patterns and load modules
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp" for site rules pre files
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/init.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/v310.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/v312.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/v320.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy" for sys rules pre files
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/init.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/v310.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/v312.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/v320.pre
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy" for default rules dir
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/01_test_rules.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/10_default_prefs.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_advance_fee.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_body_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_compensate.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_dnsbl_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_drugs.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_dynrdns.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_fake_helo_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_head_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_html_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_imageinfo.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_meta_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_net_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_phrases.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_porn.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_ratware.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_uri_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_vbounce.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/23_bayes.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_accessdb.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_antivirus.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_asn.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_dcc.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_dkim.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_domainkeys.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_hashcash.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_pyzor.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_razor2.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_replace.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_spf.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_textcat.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_uribl.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_de.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_fr.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_it.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_nl.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_pl.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_pt_br.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/50_scores.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_awl.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_shortcircuit.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_dk.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_dkim.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_spf.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_subject.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/72_active.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/72_removed.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/99_test_default.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/local.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/regression_tests.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp" for site rules dir
+Wed Jul 16 08:50:00 2008 [13504] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/00test.cf
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDNSBL from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::Hashcash from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::SPF from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::Pyzor from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: pyzor: local tests only, disabling Pyzor
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::Razor2 from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: razor2: local tests only, skipping Razor
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::SpamCop from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: reporter: local tests only, disabling SpamCop
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::AWL from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::AutoLearnThreshold from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::WhiteListSubject from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEHeader from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::ReplaceTags from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::Check from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTTPSMismatch from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDetail from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::Bayes from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::BodyEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::DNSEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTMLEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::HeaderEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::RelayEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::WLBLEval from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::VBounce from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: loading Mail::SpamAssassin::Plugin::ImageInfo from @INC
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDNSBL, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Hashcash, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SPF, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Pyzor, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Razor2, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SpamCop, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AWL, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AutoLearnThreshold, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WhiteListSubject, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEHeader, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ReplaceTags, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Check, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTTPSMismatch, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDetail, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Bayes, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::BodyEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::DNSEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTMLEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HeaderEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::RelayEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WLBLEval, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::VBounce, already registered
+Wed Jul 16 08:50:00 2008 [13504] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ImageInfo, already registered
+Wed Jul 16 08:50:01 2008 [13504] dbg: config: allowing user rules!
+Wed Jul 16 08:50:01 2008 [13504] dbg: conf: finish parsing
+Wed Jul 16 08:50:01 2008 [13504] dbg: plugin: Mail::SpamAssassin::Plugin::ReplaceTags=HASH(0x8b79f90) implements 'finish_parsing_end', priority 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: replacetags: replacing tags
+Wed Jul 16 08:50:01 2008 [13504] dbg: replacetags: done replacing tags
+Wed Jul 16 08:50:01 2008 [13504] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 16 08:50:01 2008 [13504] dbg: config: score set 0 chosen.
+Wed Jul 16 08:50:01 2008 [13504] dbg: message: main message type: text/plain
+Wed Jul 16 08:50:01 2008 [13504] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:50:01 2008 [13504] dbg: message: parsing normal part
+Wed Jul 16 08:50:01 2008 [13504] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:50:01 2008 [13504] dbg: plugin: Mail::SpamAssassin::Plugin::DNSEval=HASH(0x8bf96c0) implements 'check_start', priority 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: bayes: no dbs present, cannot tie DB R/O: /tmp/spamd-13504-init/.spamassassin/bayes_toks
+Wed Jul 16 08:50:01 2008 [13504] dbg: plugin: Mail::SpamAssassin::Plugin::Check=HASH(0x8bbe808) implements 'check_main', priority 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:50:01 2008 [13504] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:50:01 2008 [13504] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 16 08:50:01 2008 [13504] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:50:01 2008 [13504] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 16 08:50:01 2008 [13504] dbg: message: no encoding detected
+Wed Jul 16 08:50:01 2008 [13504] dbg: plugin: Mail::SpamAssassin::Plugin::URIDNSBL=HASH(0x8a1bd20) implements 'parsed_metadata', priority 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: dns: is_dns_available() last checked 1216191001.0 seconds ago; re-checking
+Wed Jul 16 08:50:01 2008 [13504] dbg: dns: is DNS available? 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: running tests for priority: -1000
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled head tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: eval: all '*From' addrs: ignore@compiling.spamassassin.taint.org
+Wed Jul 16 08:50:01 2008 [13504] dbg: eval: all '*To' addrs: 
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled body tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled uri tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled full tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled meta tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: running tests for priority: -950
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled head tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled body tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled uri tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled full tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled meta tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: running tests for priority: -900
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled head tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled body tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled uri tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled full tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled meta tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: running tests for priority: -400
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled head tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled body tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled uri tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled full tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled meta tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: running tests for priority: 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled head tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@spamassassin_spamd_init>"
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule __MSGID_OK_DIGITS ======> got hit: "1216191000"
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: Message-Id: "
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<1216191000.57601@spamassassin_spamd_init>
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: "
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule MISSING_DATE ======> got hit: "UNSET"
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "ignore@compiling.spamassassin.taint.org
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: "
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran eval rule MISSING_HEADERS ======> got hit (1)
+Wed Jul 16 08:50:01 2008 [13504] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running body tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled body tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "I"
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled uri tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: eval: stock info total: 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running full tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled full tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled meta tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: running tests for priority: 500
+Wed Jul 16 08:50:01 2008 [13504] dbg: dns: harvest_dnsbl_queries
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running head tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled head tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running body tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled body tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled uri tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running full tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled full tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: meta test DIGEST_MULTIPLE has undefined dependency 'DCC_CHECK'
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled meta tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: running tests for priority: 1000
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running head tests; score so far=9.205
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled head tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.13504
+Wed Jul 16 08:50:01 2008 [13504] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 16 08:50:01 2008 [13504] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 16 08:50:01 2008 [13504] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 16 08:50:01 2008 [13504] dbg: auto-whitelist: db-based ignore@compiling.spamassassin.taint.org|ip=none scores 0/0
+Wed Jul 16 08:50:01 2008 [13504] dbg: auto-whitelist: AWL active, pre-score: 9.205, autolearn score: 9.205, mean: undef, IP: undef
+Wed Jul 16 08:50:01 2008 [13504] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 16 08:50:01 2008 [13504] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 16 08:50:01 2008 [13504] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 16 08:50:01 2008 [13504] dbg: auto-whitelist: post auto-whitelist score: 9.205
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running body tests; score so far=9.205
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled body tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running uri tests; score so far=9.205
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled uri tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running rawbody tests; score so far=9.205
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running full tests; score so far=9.205
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled full tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: running meta tests; score so far=9.205
+Wed Jul 16 08:50:01 2008 [13504] dbg: rules: compiled meta tests
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: is spam? score=9.205 required=5
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: tests=MISSING_DATE,MISSING_HEADERS,MISSING_SUBJECT,NO_RECEIVED,NO_RELAYS,TEST_NOREALNAME
+Wed Jul 16 08:50:01 2008 [13504] dbg: check: subtests=__GATED_THROUGH_RCVD_REMOVER,__HAS_MSGID,__MISSING_REF,__MSGID_OK_DIGITS,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NONEMPTY_BODY,__SANE_MSGID,__UNUSABLE_MSGID
+Wed Jul 16 08:50:01 2008 [13504] dbg: learn: initializing learner
+Wed Jul 16 08:50:01 2008 [13504] dbg: config: copying current conf to backup
+Wed Jul 16 08:50:01 2008 [13504] info: spamd: server started on port 46268/tcp (running version 3.2.5)
+Wed Jul 16 08:50:01 2008 [13504] info: spamd: server pid: 13504
+Wed Jul 16 08:50:01 2008 [13511] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:50:01 2008 [13504] info: spamd: server successfully spawned child process, pid 13511
+Wed Jul 16 08:50:01 2008 [13504] dbg: prefork: child 13511: entering state 0
+Wed Jul 16 08:50:01 2008 [13504] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:50:01 2008 [13504] dbg: prefork: child 13511: entering state 1
+Wed Jul 16 08:50:01 2008 [13504] dbg: prefork: new lowest idle kid: 13511
+Wed Jul 16 08:50:01 2008 [13504] dbg: prefork: child reports idle
+Wed Jul 16 08:50:01 2008 [13504] info: prefork: child states: I
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: ordered 13511 to accept
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: sysread(7) not ready, wait max 300 secs
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: child 13511: entering state 2
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:50:02 2008 [13511] info: spamd: connection from localhost [127.0.0.1] at port 36555
+Wed Jul 16 08:50:02 2008 [13511] info: spamd: using default config for testuser1: log/virtualconfig/testuser1/user_prefs
+Wed Jul 16 08:50:02 2008 [13511] dbg: conf: finish parsing
+Wed Jul 16 08:50:02 2008 [13511] dbg: plugin: Mail::SpamAssassin::Plugin::ReplaceTags=HASH(0x8b79f90) implements 'user_conf_parsing_end', priority 0
+Wed Jul 16 08:50:02 2008 [13511] dbg: replacetags: replacing tags
+Wed Jul 16 08:50:02 2008 [13511] dbg: replacetags: done replacing tags
+Wed Jul 16 08:50:02 2008 [13511] dbg: info: user has changed
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 16 08:50:02 2008 [13511] dbg: config: score set 0 chosen.
+Wed Jul 16 08:50:02 2008 [13511] dbg: spamd: running as uid 1000
+Wed Jul 16 08:50:02 2008 [13511] dbg: dns: name server: 192.168.178.1, LocalAddr: 0.0.0.0
+Wed Jul 16 08:50:02 2008 [13511] dbg: dns: resolver socket rx buffer size is 110592 bytes
+Wed Jul 16 08:50:02 2008 [13511] dbg: message: main message type: text/html
+Wed Jul 16 08:50:02 2008 [13511] info: spamd: processing message <78w08.t365th3y6x7h@yahoo.com> for testuser1:1000
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 16 08:50:02 2008 [13511] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:50:02 2008 [13511] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:50:02 2008 [13511] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 16 08:50:02 2008 [13511] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:50:02 2008 [13511] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 16 08:50:02 2008 [13511] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:50:02 2008 [13511] dbg: message: parsing normal part
+Wed Jul 16 08:50:02 2008 [13511] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:50:02 2008 [13511] dbg: message: decoding quoted-printable
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: running tests for priority: -1000
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: eval: all '*From' addrs: renterr989@hotmail.com
+Wed Jul 16 08:50:02 2008 [13511] dbg: eval: all '*To' addrs: jenny33436@netscape.net
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: running tests for priority: -950
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: running tests for priority: -900
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: running tests for priority: -400
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: running tests for priority: 0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __CTYPE_HTML ======> got hit: "text/html"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __CT ======> got hit: "t"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __NAKED_TO ======> got hit: "jenny33436@netscape.net"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __TOCC_EXISTS ======> got hit: "j"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@yahoo.com>"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: Message-Id: "
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<78w08.t365th3y6x7h@yahoo.com>
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: "
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __AT_YAHOO_MSGID ======> got hit: "@yahoo.com"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __CTE ======> got hit: "q"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule MYFOO ======> got hit: "quoted-printable"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __FROM_HOTMAIL_COM ======> got hit: "@hotmail.com"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "renterr989@hotmail.com
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: "
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran header rule __HAS_SUBJECT ======> got hit: "f"
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:02 2008 [13511] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running body tests; score so far=7.999
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule __VA_WORD ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule DRUG_ED_CAPS ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule MYBODY ======> got hit: "KIFF"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule __DRUGS_ERECTILE_V ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule BAD_CREDIT ======> got hit: "NO CREDIT"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule __HAS_ANY_EMAIL ======> got hit: "s@foo.n"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule __DRUGS_ERECTILE1 ======> got hit: " VIAGRA "
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule __FB_NUM_PERCNT ======> got hit: "0%"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "f"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running uri tests; score so far=13.93
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran uri rule NORMAL_HTTP_TO_IP ======> got hit: "http://163.125.6.199"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran uri rule URI_HEX ======> got hit: "http://2742879943"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran uri rule NUMERIC_HTTP_ADDR ======> got hit: "http://2742879"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran uri rule __DOS_HAS_ANY_URI ======> got hit: "h"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran uri rule __HAS_ANY_URI ======> got hit: "h"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran uri rule TEST_NORMAL_HTTP_TO_IP ======> got hit: "http://163.125.6.199"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule __TAG_EXISTS_BODY ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule __MIME_HTML ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule HTML_MESSAGE ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule HTML_FONT_FACE_BAD ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule __UPPERCASE_25_50 ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule __TAG_EXISTS_HTML ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule HTML_FONT_SIZE_LARGE ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule MIME_HTML_ONLY ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running rawbody tests; score so far=25.097
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran rawbody rule MYRAWBODY ======> got hit: "KIFF"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran rawbody rule __DRUGS_ERECTILE10 ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule MIME_QP_LONG_LINE ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran eval rule __MIME_QP ======> got hit (1)
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running full tests; score so far=30.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: ran full rule MYFULL ======> got hit: "KIFF"
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running meta tests; score so far=33.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: running tests for priority: 500
+Wed Jul 16 08:50:02 2008 [13511] dbg: dns: harvest_dnsbl_queries
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running head tests; score so far=33.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running body tests; score so far=33.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running uri tests; score so far=33.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running rawbody tests; score so far=33.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running full tests; score so far=33.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running meta tests; score so far=33.596
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: running tests for priority: 1000
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running head tests; score so far=38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.13511
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 16 08:50:02 2008 [13511] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 16 08:50:02 2008 [13511] dbg: auto-whitelist: db-based renterr989@hotmail.com|ip=none scores 0/0
+Wed Jul 16 08:50:02 2008 [13511] dbg: auto-whitelist: AWL active, pre-score: 38.355, autolearn score: 38.355, mean: undef, IP: undef
+Wed Jul 16 08:50:02 2008 [13511] dbg: auto-whitelist: add_score: new count: 1, new totscore: 38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 16 08:50:02 2008 [13511] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 16 08:50:02 2008 [13511] dbg: auto-whitelist: post auto-whitelist score: 38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running body tests; score so far=38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running uri tests; score so far=38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running rawbody tests; score so far=38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running full tests; score so far=38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: running meta tests; score so far=38.355
+Wed Jul 16 08:50:02 2008 [13511] dbg: plugin: Mail::SpamAssassin::Plugin::AutoLearnThreshold=HASH(0x8aa3ed8) implements 'autolearn_discriminator', priority 0
+Wed Jul 16 08:50:02 2008 [13511] dbg: learn: auto-learn: currently using scoreset 0
+Wed Jul 16 08:50:02 2008 [13511] dbg: learn: auto-learn: message score: 38.355, computed score for autolearn: 38.357
+Wed Jul 16 08:50:02 2008 [13511] dbg: learn: auto-learn? ham=0.1, spam=12, body-points=25.597, head-points=16.499, learned-points=0
+Wed Jul 16 08:50:02 2008 [13511] dbg: learn: auto-learn? yes, spam (38.357 > 12)
+Wed Jul 16 08:50:02 2008 [13511] dbg: learn: initializing learner
+Wed Jul 16 08:50:02 2008 [13511] dbg: learn: learning spam
+Wed Jul 16 08:50:02 2008 [13511] dbg: plugin: Mail::SpamAssassin::Plugin::WLBLEval=HASH(0x8c86320) implements 'check_wb_list', priority 0
+Wed Jul 16 08:50:02 2008 [13511] dbg: eval: all '*From' addrs: renterr989@hotmail.com
+Wed Jul 16 08:50:02 2008 [13511] dbg: eval: all '*To' addrs: jenny33436@netscape.net
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.13511
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: new db, set db version 3 and 0 tokens
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: learned 'b104d2d262922d4b3fc51b13977709b4865ed1f8@sa_generated', atime: 999208800
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: untie-ing
+Wed Jul 16 08:50:02 2008 [13511] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:50:02 2008 [13511] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:50:02 2008 [13511] dbg: learn: initializing learner
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 8 to 1
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 10 to 1
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 12 to 1
+Wed Jul 16 08:50:02 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 14 to 1
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: is spam? score=38.355 required=5
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: tests=BAD_CREDIT,DRUGS_ERECTILE,DRUG_ED_CAPS,FORGED_MSGID_YAHOO,HTML_FONT_FACE_BAD,HTML_FONT_SIZE_LARGE,HTML_MESSAGE,MIME_HTML_ONLY,MIME_QP_LONG_LINE,MYBODY,MYFOO,MYFULL,MYRAWBODY,NORMAL_HTTP_TO_IP,NO_RECEIVED,NO_RELAYS,NUMERIC_HTTP_ADDR,TEST_NOREALNAME,TEST_NORMAL_HTTP_TO_IP,URI_HEX
+Wed Jul 16 08:50:02 2008 [13511] dbg: check: subtests=__AT_YAHOO_MSGID,__CT,__CTE,__CTYPE_HTML,__DOS_HAS_ANY_URI,__DRUGS_ERECTILE1,__DRUGS_ERECTILE10,__DRUGS_ERECTILE_V,__FB_NUM_PERCNT,__FROM_HOTMAIL_COM,__GATED_THROUGH_RCVD_REMOVER,__HAS_ANY_EMAIL,__HAS_ANY_URI,__HAS_MSGID,__HAS_SUBJECT,__MIME_HTML,__MIME_QP,__MISSING_REF,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NAKED_TO,__NONEMPTY_BODY,__SANE_MSGID,__TAG_EXISTS_BODY,__TAG_EXISTS_HTML,__TOCC_EXISTS,__UNUSABLE_MSGID,__UPPERCASE_25_50,__VA_WORD
+Wed Jul 16 08:50:02 2008 [13511] info: spamd: identified spam (38.4/5.0) for testuser1:1000 in 0.6 seconds, 3055 bytes.
+Wed Jul 16 08:50:02 2008 [13511] info: spamd: result: Y 38 - BAD_CREDIT,DRUGS_ERECTILE,DRUG_ED_CAPS,FORGED_MSGID_YAHOO,HTML_FONT_FACE_BAD,HTML_FONT_SIZE_LARGE,HTML_MESSAGE,MIME_HTML_ONLY,MIME_QP_LONG_LINE,MYBODY,MYFOO,MYFULL,MYRAWBODY,NORMAL_HTTP_TO_IP,NO_RECEIVED,NO_RELAYS,NUMERIC_HTTP_ADDR,TEST_NOREALNAME,TEST_NORMAL_HTTP_TO_IP,URI_HEX scantime=0.6,size=3055,user=testuser1,uid=1000,required_score=5.0,rhost=localhost,raddr=127.0.0.1,rport=36555,mid=<78w08.t365th3y6x7h@yahoo.com>,autolearn=spam
+Wed Jul 16 08:50:02 2008 [13511] dbg: config: copying current conf from backup
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: no spare children to accept, waiting for one to complete
+Wed Jul 16 08:50:02 2008 [13511] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: child 13511: entering state 1
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: new lowest idle kid: 13511
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: child reports idle
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: overloaded, immediately telling kid to accept
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: ordered 13511 to accept
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: sysread(7) not ready, wait max 300 secs
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: child 13511: entering state 2
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:50:02 2008 [13511] info: spamd: connection from localhost [127.0.0.1] at port 36556
+Wed Jul 16 08:50:02 2008 [13504] dbg: prefork: no longer overloaded
+Wed Jul 16 08:50:02 2008 [13504] info: prefork: child states: B
+Wed Jul 16 08:50:02 2008 [13504] info: prefork: server reached --max-children setting, consider raising it
+Wed Jul 16 08:50:02 2008 [13511] info: spamd: using default config for testuser2: log/virtualconfig/testuser2/user_prefs
+Wed Jul 16 08:50:02 2008 [13511] dbg: conf: finish parsing
+Wed Jul 16 08:50:02 2008 [13511] dbg: replacetags: replacing tags
+Wed Jul 16 08:50:03 2008 [13511] dbg: replacetags: done replacing tags
+Wed Jul 16 08:50:03 2008 [13511] dbg: info: user has changed
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: not available for scanning, only 1 spam(s) in bayes DB < 200
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: untie-ing
+Wed Jul 16 08:50:03 2008 [13511] dbg: config: score set 0 chosen.
+Wed Jul 16 08:50:03 2008 [13511] dbg: spamd: running as uid 1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: main message type: text/html
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: processing message <78w08.t365th3y6x7h@yahoo.com> for testuser2:1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: not available for scanning, only 1 spam(s) in bayes DB < 200
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: untie-ing
+Wed Jul 16 08:50:03 2008 [13511] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: parsing normal part
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: decoding quoted-printable
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*From' addrs: renterr989@hotmail.com
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*To' addrs: jenny33436@netscape.net
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -950
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -900
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -400
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __CTYPE_HTML ======> got hit: "text/html"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __CT ======> got hit: "t"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __NAKED_TO ======> got hit: "jenny33436@netscape.net"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __TOCC_EXISTS ======> got hit: "j"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@yahoo.com>"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: Message-Id: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<78w08.t365th3y6x7h@yahoo.com>
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __AT_YAHOO_MSGID ======> got hit: "@yahoo.com"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __CTE ======> got hit: "q"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __FROM_HOTMAIL_COM ======> got hit: "@hotmail.com"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "renterr989@hotmail.com
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __HAS_SUBJECT ======> got hit: "f"
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=4.999
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __VA_WORD ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule DRUG_ED_CAPS ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __DRUGS_ERECTILE_V ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule BAD_CREDIT ======> got hit: "NO CREDIT"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __HAS_ANY_EMAIL ======> got hit: "s@foo.n"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __DRUGS_ERECTILE1 ======> got hit: " VIAGRA "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __FB_NUM_PERCNT ======> got hit: "0%"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "f"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=7.93
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule NORMAL_HTTP_TO_IP ======> got hit: "http://163.125.6.199"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule URI_HEX ======> got hit: "http://2742879943"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule NUMERIC_HTTP_ADDR ======> got hit: "http://2742879"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule __DOS_HAS_ANY_URI ======> got hit: "h"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule __HAS_ANY_URI ======> got hit: "h"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule TEST_NORMAL_HTTP_TO_IP ======> got hit: "http://163.125.6.199"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __TAG_EXISTS_BODY ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __MIME_HTML ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule HTML_MESSAGE ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule HTML_FONT_FACE_BAD ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __UPPERCASE_25_50 ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __TAG_EXISTS_HTML ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule HTML_FONT_SIZE_LARGE ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule MIME_HTML_ONLY ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=19.097
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran rawbody rule __DRUGS_ERECTILE10 ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule MIME_QP_LONG_LINE ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __MIME_QP ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: 500
+Wed Jul 16 08:50:03 2008 [13511] dbg: dns: harvest_dnsbl_queries
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: 1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=26.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled head tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.13511
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: db-based renterr989@hotmail.com|ip=none scores 1/38.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: AWL active, pre-score: 26.355, autolearn score: 26.355, mean: 38.355, IP: undef
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: add_score: new count: 2, new totscore: 64.71
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: post auto-whitelist score: 32.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=32.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=32.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=32.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=32.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled full tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=32.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn: currently using scoreset 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn: message score: 32.355, computed score for autolearn: 26.357
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn? ham=0.1, spam=12, body-points=16.597, head-points=7.499, learned-points=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn? yes, spam (26.357 > 12)
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: initializing learner
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: learning spam
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*From' addrs: renterr989@hotmail.com
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*To' addrs: jenny33436@netscape.net
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.13511
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: b104d2d262922d4b3fc51b13977709b4865ed1f8@sa_generated already learnt correctly, not learning twice
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: untie-ing
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: initializing learner
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 8 to 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 10 to 1
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 12 to 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 14 to 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: is spam? score=32.355 required=5
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: tests=AWL,BAD_CREDIT,DRUGS_ERECTILE,DRUG_ED_CAPS,FORGED_MSGID_YAHOO,HTML_FONT_FACE_BAD,HTML_FONT_SIZE_LARGE,HTML_MESSAGE,MIME_HTML_ONLY,MIME_QP_LONG_LINE,NORMAL_HTTP_TO_IP,NO_RECEIVED,NO_RELAYS,NUMERIC_HTTP_ADDR,TEST_NOREALNAME,TEST_NORMAL_HTTP_TO_IP,URI_HEX
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: subtests=__AT_YAHOO_MSGID,__CT,__CTE,__CTYPE_HTML,__DOS_HAS_ANY_URI,__DRUGS_ERECTILE1,__DRUGS_ERECTILE10,__DRUGS_ERECTILE_V,__FB_NUM_PERCNT,__FROM_HOTMAIL_COM,__GATED_THROUGH_RCVD_REMOVER,__HAS_ANY_EMAIL,__HAS_ANY_URI,__HAS_MSGID,__HAS_SUBJECT,__MIME_HTML,__MIME_QP,__MISSING_REF,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NAKED_TO,__NONEMPTY_BODY,__SANE_MSGID,__TAG_EXISTS_BODY,__TAG_EXISTS_HTML,__TOCC_EXISTS,__UNUSABLE_MSGID,__UPPERCASE_25_50,__VA_WORD
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: identified spam (32.4/5.0) for testuser2:1000 in 0.5 seconds, 3055 bytes.
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: result: Y 32 - AWL,BAD_CREDIT,DRUGS_ERECTILE,DRUG_ED_CAPS,FORGED_MSGID_YAHOO,HTML_FONT_FACE_BAD,HTML_FONT_SIZE_LARGE,HTML_MESSAGE,MIME_HTML_ONLY,MIME_QP_LONG_LINE,NORMAL_HTTP_TO_IP,NO_RECEIVED,NO_RELAYS,NUMERIC_HTTP_ADDR,TEST_NOREALNAME,TEST_NORMAL_HTTP_TO_IP,URI_HEX scantime=0.5,size=3055,user=testuser2,uid=1000,required_score=5.0,rhost=localhost,raddr=127.0.0.1,rport=36556,mid=<78w08.t365th3y6x7h@yahoo.com>,autolearn=unavailable
+Wed Jul 16 08:50:03 2008 [13511] dbg: config: copying current conf from backup
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: no spare children to accept, waiting for one to complete
+Wed Jul 16 08:50:03 2008 [13511] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: child 13511: entering state 1
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: new lowest idle kid: 13511
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: child reports idle
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: overloaded, immediately telling kid to accept
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: ordered 13511 to accept
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: sysread(7) not ready, wait max 300 secs
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: child 13511: entering state 2
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: connection from localhost [127.0.0.1] at port 36557
+Wed Jul 16 08:50:03 2008 [13504] dbg: prefork: no longer overloaded
+Wed Jul 16 08:50:03 2008 [13504] info: prefork: child states: B
+Wed Jul 16 08:50:03 2008 [13504] info: prefork: server reached --max-children setting, consider raising it
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: using default config for testuser3: log/virtualconfig/testuser3/user_prefs
+Wed Jul 16 08:50:03 2008 [13511] dbg: conf: finish parsing
+Wed Jul 16 08:50:03 2008 [13511] dbg: replacetags: replacing tags
+Wed Jul 16 08:50:03 2008 [13511] dbg: replacetags: done replacing tags
+Wed Jul 16 08:50:03 2008 [13511] dbg: info: user has changed
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: not available for scanning, only 1 spam(s) in bayes DB < 200
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: untie-ing
+Wed Jul 16 08:50:03 2008 [13511] dbg: config: score set 0 chosen.
+Wed Jul 16 08:50:03 2008 [13511] dbg: spamd: running as uid 1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: main message type: text/html
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: processing message <78w08.t365th3y6x7h@yahoo.com> for testuser3:1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: not available for scanning, only 1 spam(s) in bayes DB < 200
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: untie-ing
+Wed Jul 16 08:50:03 2008 [13511] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: parsing normal part
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:50:03 2008 [13511] dbg: message: decoding quoted-printable
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*From' addrs: renterr989@hotmail.com
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*To' addrs: jenny33436@netscape.net
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -950
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -900
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: -400
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __CTYPE_HTML ======> got hit: "text/html"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __CT ======> got hit: "t"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __NAKED_TO ======> got hit: "jenny33436@netscape.net"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __TOCC_EXISTS ======> got hit: "j"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@yahoo.com>"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: Message-Id: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<78w08.t365th3y6x7h@yahoo.com>
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __AT_YAHOO_MSGID ======> got hit: "@yahoo.com"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __CTE ======> got hit: "q"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __FROM_HOTMAIL_COM ======> got hit: "@hotmail.com"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "renterr989@hotmail.com
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran header rule __HAS_SUBJECT ======> got hit: "f"
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:50:03 2008 [13511] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=4.999
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __VA_WORD ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule DRUG_ED_CAPS ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __DRUGS_ERECTILE_V ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule BAD_CREDIT ======> got hit: "NO CREDIT"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __HAS_ANY_EMAIL ======> got hit: "s@foo.n"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __DRUGS_ERECTILE1 ======> got hit: " VIAGRA "
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __FB_NUM_PERCNT ======> got hit: "0%"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "f"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=7.93
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule NORMAL_HTTP_TO_IP ======> got hit: "http://163.125.6.199"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule URI_HEX ======> got hit: "http://2742879943"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule NUMERIC_HTTP_ADDR ======> got hit: "http://2742879"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule __DOS_HAS_ANY_URI ======> got hit: "h"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule __HAS_ANY_URI ======> got hit: "h"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran uri rule TEST_NORMAL_HTTP_TO_IP ======> got hit: "http://163.125.6.199"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __TAG_EXISTS_BODY ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __MIME_HTML ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule HTML_MESSAGE ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule HTML_FONT_FACE_BAD ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __UPPERCASE_25_50 ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __TAG_EXISTS_HTML ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule HTML_FONT_SIZE_LARGE ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule MIME_HTML_ONLY ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=19.097
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran rawbody rule __DRUGS_ERECTILE10 ======> got hit: "VIAGRA"
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule MIME_QP_LONG_LINE ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: ran eval rule __MIME_QP ======> got hit (1)
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: 500
+Wed Jul 16 08:50:03 2008 [13511] dbg: dns: harvest_dnsbl_queries
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=21.596
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: running tests for priority: 1000
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running head tests; score so far=26.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.13511
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: db-based renterr989@hotmail.com|ip=none scores 2/64.71
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: AWL active, pre-score: 26.355, autolearn score: 26.355, mean: 32.355, IP: undef
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: add_score: new count: 3, new totscore: 91.065
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: auto-whitelist: post auto-whitelist score: 29.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running body tests; score so far=29.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: compiled body tests
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running uri tests; score so far=29.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running rawbody tests; score so far=29.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running full tests; score so far=29.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: running meta tests; score so far=29.355
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn: currently using scoreset 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn: message score: 29.355, computed score for autolearn: 26.357
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn? ham=0.1, spam=12, body-points=16.597, head-points=7.499, learned-points=0
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: auto-learn? yes, spam (26.357 > 12)
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: initializing learner
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: learning spam
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*From' addrs: renterr989@hotmail.com
+Wed Jul 16 08:50:03 2008 [13511] dbg: eval: all '*To' addrs: jenny33436@netscape.net
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.13511
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: b104d2d262922d4b3fc51b13977709b4865ed1f8@sa_generated already learnt correctly, not learning twice
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: untie-ing
+Wed Jul 16 08:50:03 2008 [13511] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:50:03 2008 [13511] dbg: learn: initializing learner
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 8 to 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 10 to 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 12 to 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: rules: user rules done; ticking want_rebuild counter for type 14 to 0
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: is spam? score=29.355 required=5
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: tests=AWL,BAD_CREDIT,DRUGS_ERECTILE,DRUG_ED_CAPS,FORGED_MSGID_YAHOO,HTML_FONT_FACE_BAD,HTML_FONT_SIZE_LARGE,HTML_MESSAGE,MIME_HTML_ONLY,MIME_QP_LONG_LINE,NORMAL_HTTP_TO_IP,NO_RECEIVED,NO_RELAYS,NUMERIC_HTTP_ADDR,TEST_NOREALNAME,TEST_NORMAL_HTTP_TO_IP,URI_HEX
+Wed Jul 16 08:50:03 2008 [13511] dbg: check: subtests=__AT_YAHOO_MSGID,__CT,__CTE,__CTYPE_HTML,__DOS_HAS_ANY_URI,__DRUGS_ERECTILE1,__DRUGS_ERECTILE10,__DRUGS_ERECTILE_V,__FB_NUM_PERCNT,__FROM_HOTMAIL_COM,__GATED_THROUGH_RCVD_REMOVER,__HAS_ANY_EMAIL,__HAS_ANY_URI,__HAS_MSGID,__HAS_SUBJECT,__MIME_HTML,__MIME_QP,__MISSING_REF,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NAKED_TO,__NONEMPTY_BODY,__SANE_MSGID,__TAG_EXISTS_BODY,__TAG_EXISTS_HTML,__TOCC_EXISTS,__UNUSABLE_MSGID,__UPPERCASE_25_50,__VA_WORD
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: identified spam (29.4/5.0) for testuser3:1000 in 0.4 seconds, 3055 bytes.
+Wed Jul 16 08:50:03 2008 [13511] info: spamd: result: Y 29 - AWL,BAD_CREDIT,DRUGS_ERECTILE,DRUG_ED_CAPS,FORGED_MSGID_YAHOO,HTML_FONT_FACE_BAD,HTML_FONT_SIZE_LARGE,HTML_MESSAGE,MIME_HTML_ONLY,MIME_QP_LONG_LINE,NORMAL_HTTP_TO_IP,NO_RECEIVED,NO_RELAYS,NUMERIC_HTTP_ADDR,TEST_NOREALNAME,TEST_NORMAL_HTTP_TO_IP,URI_HEX scantime=0.4,size=3055,user=testuser3,uid=1000,required_score=5.0,rhost=localhost,raddr=127.0.0.1,rport=36557,mid=<78w08.t365th3y6x7h@yahoo.com>,autolearn=unavailable
+Wed Jul 16 08:50:03 2008 [13511] dbg: config: copying current conf from backup
+Wed Jul 16 08:50:03 2008 [13504] info: spamd: server killed by SIGTERM, shutting down

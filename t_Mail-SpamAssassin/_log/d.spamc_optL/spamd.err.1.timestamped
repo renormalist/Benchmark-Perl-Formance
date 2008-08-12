@@ -1,0 +1,640 @@
+Wed Jul 16 08:46:10 2008 [12536] dbg: logger: successfully added file method
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: will perform setuids? 0
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: creating INET socket:
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: Listen: 128
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: LocalAddr: 127.0.0.1
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: LocalPort: 45300
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: Proto: 6
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: ReuseAddr: 1
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: Type: 1
+Wed Jul 16 08:46:10 2008 [12536] dbg: logger: adding facilities: all
+Wed Jul 16 08:46:10 2008 [12536] dbg: logger: logging level is DBG
+Wed Jul 16 08:46:10 2008 [12536] dbg: generic: SpamAssassin version 3.2.5
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:10 2008 [12536] dbg: dns: no ipv6
+Wed Jul 16 08:46:10 2008 [12536] dbg: dns: is Net::DNS::Resolver available? yes
+Wed Jul 16 08:46:10 2008 [12536] dbg: dns: Net::DNS version: 0.63
+Wed Jul 16 08:46:10 2008 [12536] dbg: spamd: Preloading modules with HOME=/tmp/spamd-12536-init
+Wed Jul 16 08:46:10 2008 [12536] dbg: ignore: test message to precompile patterns and load modules
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp" for site rules pre files
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/init.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/v310.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/v312.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/v320.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy" for sys rules pre files
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/init.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/v310.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/v312.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/v320.pre
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy" for default rules dir
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/01_test_rules.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/10_default_prefs.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_advance_fee.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_body_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_compensate.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_dnsbl_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_drugs.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_dynrdns.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_fake_helo_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_head_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_html_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_imageinfo.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_meta_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_net_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_phrases.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_porn.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_ratware.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_uri_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/20_vbounce.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/23_bayes.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_accessdb.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_antivirus.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_asn.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_dcc.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_dkim.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_domainkeys.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_hashcash.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_pyzor.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_razor2.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_replace.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_spf.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_textcat.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/25_uribl.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_de.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_fr.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_it.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_nl.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_pl.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/30_text_pt_br.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/50_scores.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_awl.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_shortcircuit.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_dk.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_dkim.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_spf.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/60_whitelist_subject.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/72_active.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/72_removed.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/99_test_default.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/local.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/test_rules_copy/regression_tests.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: using "/home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp" for site rules dir
+Wed Jul 16 08:46:10 2008 [12536] dbg: config: read file /home/ss5/.cpan/build/Mail-SpamAssassin-3.2.5-oZ5U9h/t/log/localrules.tmp/00test.cf
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDNSBL from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::Hashcash from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::SPF from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::Pyzor from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: pyzor: local tests only, disabling Pyzor
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::Razor2 from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: razor2: local tests only, skipping Razor
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::SpamCop from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: reporter: local tests only, disabling SpamCop
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::AWL from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::AutoLearnThreshold from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::WhiteListSubject from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEHeader from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::ReplaceTags from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::Check from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTTPSMismatch from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIDetail from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::Bayes from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::BodyEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::DNSEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::HTMLEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::HeaderEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::MIMEEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::RelayEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::URIEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::WLBLEval from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::VBounce from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: loading Mail::SpamAssassin::Plugin::ImageInfo from @INC
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDNSBL, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Hashcash, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SPF, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Pyzor, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Razor2, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::SpamCop, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AWL, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::AutoLearnThreshold, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WhiteListSubject, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEHeader, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ReplaceTags, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Check, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTTPSMismatch, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIDetail, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::Bayes, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::BodyEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::DNSEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HTMLEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::HeaderEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::MIMEEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::RelayEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::URIEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::WLBLEval, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::VBounce, already registered
+Wed Jul 16 08:46:10 2008 [12536] dbg: plugin: did not register Mail::SpamAssassin::Plugin::ImageInfo, already registered
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_9B90B merged duplicates: __MO_OL_C65FA
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: FORGED_YAHOO_RCVD merged duplicates: TEST_FORGED_YAHOO_RCVD
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __XM_OL_22B61 merged duplicates: __XM_OL_A842E
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_07794 merged duplicates: __MO_OL_8627E __MO_OL_F3B05
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __XM_OL_07794 merged duplicates: __XM_OL_25340 __XM_OL_3857F __XM_OL_4F240 __XM_OL_58CB5 __XM_OL_6554A __XM_OL_812FF __XM_OL_C65FA __XM_OL_CF0C0 __XM_OL_F475E __XM_OL_F6D01
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: FH_MSGID_01C67 merged duplicates: __MSGID_VGA
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: FS_NEW_SOFT_UPLOAD merged duplicates: HS_SUBJ_NEW_SOFTWARE
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __FH_HAS_XMSMAIL merged duplicates: __HAS_MSMAIL_PRI
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_015D5 merged duplicates: __MO_OL_6554A
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __XM_OL_015D5 merged duplicates: __XM_OL_4BF4C __XM_OL_4EEDB __XM_OL_5B79A __XM_OL_9B90B __XM_OL_ADFF7 __XM_OL_B30D1 __XM_OL_B4B40 __XM_OL_BC7E6 __XM_OL_F3B05 __XM_OL_FF5C8
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_91287 merged duplicates: __MO_OL_B30D1 __MO_OL_CF0C0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: KAM_STOCKOTC merged duplicates: KAM_STOCKTIP15 KAM_STOCKTIP20 KAM_STOCKTIP21 KAM_STOCKTIP4 KAM_STOCKTIP6
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_22B61 merged duplicates: __MO_OL_4F240 __MO_OL_ADFF7
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_812FF merged duplicates: __MO_OL_BC7E6
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_25340 merged duplicates: __MO_OL_4EEDB __MO_OL_7533E
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: EXCUSE_4 merged duplicates: TEST_EXCUSE_4
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_58CB5 merged duplicates: __MO_OL_B4B40
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: NORMAL_HTTP_TO_IP merged duplicates: TEST_NORMAL_HTTP_TO_IP
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __DOS_HAS_ANY_URI merged duplicates: __HAS_ANY_URI
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: TEST_ENDSNUMS merged duplicates: __FROM_ENDS_IN_NUMS
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: AXB_RCVD_ZOOBSEND merged duplicates: BROKEN_RATWARE_BOM CTYPE_001C_A DEAR_HOMEOWNER DIV_CENTER_A_HREF DRUG_RA_PRICE FM_DDDD_TIMES_2 FM_SEX_HOSTDDDD HG_HORMONE HS_PHARMA_1 HS_UPLOADED_SOFTWARE OEBOUND STOX_RCVD_N_NN_N URIBL_RHS_ABUSE URIBL_RHS_BOGUSMX URIBL_RHS_DSN URIBL_RHS_POST URIBL_RHS_TLD_WHOIS URIBL_RHS_WHOIS URIBL_XS_SURBL URI_L_PHP XMAILER_MIMEOLE_OL_5E7ED XMAILER_MIMEOLE_OL_C7C33 XMAILER_MIMEOLE_OL_D03AB X_LIBRARY YOUR_CRD_RATING
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_72641 merged duplicates: __MO_OL_A842E
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_4BF4C merged duplicates: __MO_OL_F6D01
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: __MO_OL_F475E merged duplicates: __MO_OL_FF5C8
+Wed Jul 16 08:46:11 2008 [12536] dbg: conf: finish parsing
+Wed Jul 16 08:46:11 2008 [12536] dbg: plugin: Mail::SpamAssassin::Plugin::ReplaceTags=HASH(0x8b7b498) implements 'finish_parsing_end', priority 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: replacetags: replacing tags
+Wed Jul 16 08:46:11 2008 [12536] dbg: replacetags: done replacing tags
+Wed Jul 16 08:46:11 2008 [12536] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 16 08:46:11 2008 [12536] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:11 2008 [12536] dbg: message: main message type: text/plain
+Wed Jul 16 08:46:11 2008 [12536] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:46:11 2008 [12536] dbg: message: parsing normal part
+Wed Jul 16 08:46:11 2008 [12536] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:46:11 2008 [12536] dbg: plugin: Mail::SpamAssassin::Plugin::DNSEval=HASH(0x8bf9ee8) implements 'check_start', priority 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: bayes: no dbs present, cannot tie DB R/O: /tmp/spamd-12536-init/.spamassassin/bayes_toks
+Wed Jul 16 08:46:11 2008 [12536] dbg: plugin: Mail::SpamAssassin::Plugin::Check=HASH(0x8bc0110) implements 'check_main', priority 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:46:11 2008 [12536] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:46:11 2008 [12536] dbg: metadata: X-Spam-Relays-Untrusted: 
+Wed Jul 16 08:46:11 2008 [12536] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:46:11 2008 [12536] dbg: metadata: X-Spam-Relays-External: 
+Wed Jul 16 08:46:11 2008 [12536] dbg: message: no encoding detected
+Wed Jul 16 08:46:11 2008 [12536] dbg: plugin: Mail::SpamAssassin::Plugin::URIDNSBL=HASH(0x8a1dcf8) implements 'parsed_metadata', priority 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: dns: is_dns_available() last checked 1216190771.0 seconds ago; re-checking
+Wed Jul 16 08:46:11 2008 [12536] dbg: dns: is DNS available? 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: local tests only, ignoring RBL eval
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: running tests for priority: -1000
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled head tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: eval: all '*From' addrs: ignore@compiling.spamassassin.taint.org
+Wed Jul 16 08:46:11 2008 [12536] dbg: eval: all '*To' addrs: 
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled body tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled uri tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled full tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled meta tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: running tests for priority: -950
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled head tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled body tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled uri tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled full tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled meta tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: running tests for priority: -900
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled head tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled body tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled uri tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled full tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled meta tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: running tests for priority: -400
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled head tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running body tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled body tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running uri tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled uri tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running rawbody tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running full tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled full tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running meta tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled meta tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: running tests for priority: 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running head tests; score so far=0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled head tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule __MISSING_REF ======> got hit: "UNSET"
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule __MSGID_OK_HOST ======> got hit: "@spamassassin_spamd_init>"
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule __MSGID_OK_DIGITS ======> got hit: "1216190770"
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule __MSOE_MID_WRONG_CASE ======> got hit: "
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: Message-Id: "
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule __HAS_MSGID ======> got hit: "<"
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule __SANE_MSGID ======> got hit: "<1216190770.52726@spamassassin_spamd_init>
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: "
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule MISSING_DATE ======> got hit: "UNSET"
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran header rule TEST_NOREALNAME ======> got hit: "ignore@compiling.spamassassin.taint.org
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: "
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: checking to see if the message has a Received-SPF header that we can use
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran eval rule NO_RELAYS ======> got hit (1)
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran eval rule __GATED_THROUGH_RCVD_REMOVER ======> got hit (1)
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: cannot get Envelope-From, cannot use SPF
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: def_spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: already checked for Received-SPF headers, proceeding with DNS based checks
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran eval rule MISSING_HEADERS ======> got hit (1)
+Wed Jul 16 08:46:11 2008 [12536] dbg: spf: spf_whitelist_from: could not find useable envelope sender
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running body tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled body tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: ran body rule __NONEMPTY_BODY ======> got hit: "I"
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled uri tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: eval: stock info total: 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running full tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled full tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled meta tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: running tests for priority: 500
+Wed Jul 16 08:46:11 2008 [12536] dbg: dns: harvest_dnsbl_queries
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running head tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled head tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running body tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled body tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running uri tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled uri tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running rawbody tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running full tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled full tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running meta tests; score so far=6.899
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: meta test DIGEST_MULTIPLE has undefined dependency 'DCC_CHECK'
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled meta tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: running tests for priority: 1000
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running head tests; score so far=9.205
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled head tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: locker: safe_lock: created ./log/user_state/auto-whitelist.lock.vinyl.webit.de.12536
+Wed Jul 16 08:46:11 2008 [12536] dbg: locker: safe_lock: trying to get lock on ./log/user_state/auto-whitelist with 0 retries
+Wed Jul 16 08:46:11 2008 [12536] dbg: locker: safe_lock: link to ./log/user_state/auto-whitelist.lock: link ok
+Wed Jul 16 08:46:11 2008 [12536] dbg: auto-whitelist: tie-ing to DB file of type DB_File R/W in ./log/user_state/auto-whitelist
+Wed Jul 16 08:46:11 2008 [12536] dbg: auto-whitelist: db-based ignore@compiling.spamassassin.taint.org|ip=none scores 0/0
+Wed Jul 16 08:46:11 2008 [12536] dbg: auto-whitelist: AWL active, pre-score: 9.205, autolearn score: 9.205, mean: undef, IP: undef
+Wed Jul 16 08:46:11 2008 [12536] dbg: auto-whitelist: DB addr list: untie-ing and unlocking
+Wed Jul 16 08:46:11 2008 [12536] dbg: auto-whitelist: DB addr list: file locked, breaking lock
+Wed Jul 16 08:46:11 2008 [12536] dbg: locker: safe_unlock: unlink ./log/user_state/auto-whitelist.lock
+Wed Jul 16 08:46:11 2008 [12536] dbg: auto-whitelist: post auto-whitelist score: 9.205
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running body tests; score so far=9.205
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled body tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running uri tests; score so far=9.205
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled uri tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running rawbody tests; score so far=9.205
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled rawbody tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running full tests; score so far=9.205
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled full tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: running meta tests; score so far=9.205
+Wed Jul 16 08:46:11 2008 [12536] dbg: rules: compiled meta tests
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: is spam? score=9.205 required=5
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: tests=MISSING_DATE,MISSING_HEADERS,MISSING_SUBJECT,NO_RECEIVED,NO_RELAYS,TEST_NOREALNAME
+Wed Jul 16 08:46:11 2008 [12536] dbg: check: subtests=__GATED_THROUGH_RCVD_REMOVER,__HAS_MSGID,__MISSING_REF,__MSGID_OK_DIGITS,__MSGID_OK_HOST,__MSOE_MID_WRONG_CASE,__NONEMPTY_BODY,__SANE_MSGID,__UNUSABLE_MSGID
+Wed Jul 16 08:46:11 2008 [12536] dbg: learn: initializing learner
+Wed Jul 16 08:46:11 2008 [12536] dbg: config: copying current conf to backup
+Wed Jul 16 08:46:11 2008 [12536] info: spamd: server started on port 45300/tcp (running version 3.2.5)
+Wed Jul 16 08:46:11 2008 [12536] info: spamd: server pid: 12536
+Wed Jul 16 08:46:11 2008 [12539] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:46:11 2008 [12536] info: spamd: server successfully spawned child process, pid 12539
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: child 12539: entering state 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:46:11 2008 [12540] dbg: prefork: sysread(9) not ready, wait max 300 secs
+Wed Jul 16 08:46:11 2008 [12536] info: spamd: server successfully spawned child process, pid 12540
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: child 12540: entering state 0
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: child 12539: entering state 1
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: new lowest idle kid: 12539
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: child reports idle
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: child 12540: entering state 1
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: new lowest idle kid: 12539
+Wed Jul 16 08:46:11 2008 [12536] dbg: prefork: child reports idle
+Wed Jul 16 08:46:11 2008 [12536] info: prefork: child states: II
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: ordered 12539 to accept
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: sysread(7) not ready, wait max 300 secs
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: child 12539: entering state 2
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: new lowest idle kid: 12540
+Wed Jul 16 08:46:12 2008 [12539] info: spamd: connection from localhost [127.0.0.1] at port 35101
+Wed Jul 16 08:46:12 2008 [12539] dbg: info: user has changed
+Wed Jul 16 08:46:12 2008 [12539] dbg: bayes: no dbs present, cannot tie DB R/O: ./log/user_state/bayes_toks
+Wed Jul 16 08:46:12 2008 [12539] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:12 2008 [12539] dbg: spamd: running as uid 1000
+Wed Jul 16 08:46:12 2008 [12539] dbg: dns: name server: 192.168.178.1, LocalAddr: 0.0.0.0
+Wed Jul 16 08:46:12 2008 [12539] dbg: dns: resolver socket rx buffer size is 110592 bytes
+Wed Jul 16 08:46:12 2008 [12539] dbg: message: main message type: text/plain
+Wed Jul 16 08:46:12 2008 [12539] dbg: learn: learning spam
+Wed Jul 16 08:46:12 2008 [12539] dbg: plugin: Mail::SpamAssassin::Plugin::WLBLEval=HASH(0x8c86cf8) implements 'check_wb_list', priority 0
+Wed Jul 16 08:46:12 2008 [12539] dbg: eval: all '*From' addrs: sb55sb123456789@yahoo.com sb55sb55@yahoo.com <sb55sb55@yahoo.com
+Wed Jul 16 08:46:12 2008 [12539] dbg: eval: all '*To' addrs: jm7@netnoteinc.com jm@netnoteinc.com
+Wed Jul 16 08:46:12 2008 [12539] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:46:12 2008 [12539] dbg: received-header: parsed as [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12539] dbg: received-header: do not trust any hosts from here on
+Wed Jul 16 08:46:12 2008 [12539] dbg: received-header: relay 193.120.211.219 trusted? no internal? no msa? no
+Wed Jul 16 08:46:12 2008 [12539] dbg: received-header: parsed as [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12539] dbg: received-header: relay 24.226.157.50 trusted? no internal? no msa? no
+Wed Jul 16 08:46:12 2008 [12539] dbg: received-header: parsed as [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12539] dbg: received-header: relay 216.214.106.173 trusted? no internal? no msa? no
+Wed Jul 16 08:46:12 2008 [12539] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:46:12 2008 [12539] dbg: metadata: X-Spam-Relays-Untrusted: [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ] [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ] [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12539] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:46:12 2008 [12539] dbg: metadata: X-Spam-Relays-External: [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ] [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ] [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12539] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:46:12 2008 [12539] dbg: message: parsing normal part
+Wed Jul 16 08:46:12 2008 [12539] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:46:12 2008 [12539] dbg: message: no encoding detected
+Wed Jul 16 08:46:12 2008 [12539] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.12539
+Wed Jul 16 08:46:12 2008 [12539] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:46:12 2008 [12539] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:46:12 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:46:12 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:46:12 2008 [12539] dbg: bayes: new db, set db version 3 and 0 tokens
+Wed Jul 16 08:46:12 2008 [12539] dbg: bayes: learned 'ce33e4a8bc5798c65428d6018380bae346c7c126@sa_generated', atime: 982591049
+Wed Jul 16 08:46:12 2008 [12539] dbg: bayes: untie-ing
+Wed Jul 16 08:46:12 2008 [12539] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:46:12 2008 [12539] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:46:12 2008 [12539] info: spamd: Tell: Setting local for ss5:1000 in 0.1 seconds, 3138 bytes
+Wed Jul 16 08:46:12 2008 [12539] dbg: config: copying current conf from backup
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: ordered 12540 to accept
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: child 12540: entering state 2
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:46:12 2008 [12540] info: spamd: connection from localhost [127.0.0.1] at port 35102
+Wed Jul 16 08:46:12 2008 [12540] dbg: info: user has changed
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: not available for scanning, only 1 spam(s) in bayes DB < 200
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: untie-ing
+Wed Jul 16 08:46:12 2008 [12540] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:12 2008 [12540] dbg: spamd: running as uid 1000
+Wed Jul 16 08:46:12 2008 [12540] dbg: dns: name server: 192.168.178.1, LocalAddr: 0.0.0.0
+Wed Jul 16 08:46:12 2008 [12540] dbg: dns: resolver socket rx buffer size is 110592 bytes
+Wed Jul 16 08:46:12 2008 [12540] dbg: message: main message type: text/plain
+Wed Jul 16 08:46:12 2008 [12540] dbg: learn: learning spam
+Wed Jul 16 08:46:12 2008 [12540] dbg: plugin: Mail::SpamAssassin::Plugin::WLBLEval=HASH(0x8c86cf8) implements 'check_wb_list', priority 0
+Wed Jul 16 08:46:12 2008 [12540] dbg: eval: all '*From' addrs: sb55sb123456789@yahoo.com sb55sb55@yahoo.com <sb55sb55@yahoo.com
+Wed Jul 16 08:46:12 2008 [12540] dbg: eval: all '*To' addrs: jm7@netnoteinc.com jm@netnoteinc.com
+Wed Jul 16 08:46:12 2008 [12540] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:46:12 2008 [12540] dbg: received-header: parsed as [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12540] dbg: received-header: do not trust any hosts from here on
+Wed Jul 16 08:46:12 2008 [12540] dbg: received-header: relay 193.120.211.219 trusted? no internal? no msa? no
+Wed Jul 16 08:46:12 2008 [12540] dbg: received-header: parsed as [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12540] dbg: received-header: relay 24.226.157.50 trusted? no internal? no msa? no
+Wed Jul 16 08:46:12 2008 [12540] dbg: received-header: parsed as [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12540] dbg: received-header: relay 216.214.106.173 trusted? no internal? no msa? no
+Wed Jul 16 08:46:12 2008 [12540] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:46:12 2008 [12540] dbg: metadata: X-Spam-Relays-Untrusted: [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ] [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ] [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12540] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:46:12 2008 [12540] dbg: metadata: X-Spam-Relays-External: [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ] [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ] [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:12 2008 [12540] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:46:12 2008 [12540] dbg: message: parsing normal part
+Wed Jul 16 08:46:12 2008 [12540] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:46:12 2008 [12540] dbg: message: no encoding detected
+Wed Jul 16 08:46:12 2008 [12540] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.12540
+Wed Jul 16 08:46:12 2008 [12540] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:46:12 2008 [12540] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: ce33e4a8bc5798c65428d6018380bae346c7c126@sa_generated already learnt correctly, not learning twice
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: untie-ing
+Wed Jul 16 08:46:12 2008 [12540] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:46:12 2008 [12540] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:46:12 2008 [12540] info: spamd: Tell: Did nothing for ss5:1000 in 0.0 seconds, 3138 bytes
+Wed Jul 16 08:46:12 2008 [12540] dbg: config: copying current conf from backup
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: child 12539: entering state 1
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: new lowest idle kid: 12539
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: child reports idle
+Wed Jul 16 08:46:12 2008 [12536] info: prefork: child states: IB
+Wed Jul 16 08:46:12 2008 [12539] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: child 12540: entering state 1
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: new lowest idle kid: 12539
+Wed Jul 16 08:46:12 2008 [12536] dbg: prefork: child reports idle
+Wed Jul 16 08:46:12 2008 [12536] info: prefork: child states: II
+Wed Jul 16 08:46:12 2008 [12540] dbg: prefork: sysread(9) not ready, wait max 300 secs
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: ordered 12539 to accept
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: sysread(7) not ready, wait max 300 secs
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child 12539: entering state 2
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: new lowest idle kid: 12540
+Wed Jul 16 08:46:13 2008 [12539] info: spamd: connection from localhost [127.0.0.1] at port 35103
+Wed Jul 16 08:46:13 2008 [12539] dbg: info: user has changed
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: not available for scanning, only 1 spam(s) in bayes DB < 200
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: untie-ing
+Wed Jul 16 08:46:13 2008 [12539] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:13 2008 [12539] dbg: spamd: running as uid 1000
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: main message type: text/plain
+Wed Jul 16 08:46:13 2008 [12539] dbg: learn: forgetting message
+Wed Jul 16 08:46:13 2008 [12539] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: parsed as [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: do not trust any hosts from here on
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: relay 193.120.211.219 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: parsed as [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: relay 24.226.157.50 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: parsed as [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: relay 216.214.106.173 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-Untrusted: [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ] [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ] [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-External: [ ip=193.120.211.219 rdns=mail.webnote.net helo=webnote.net by=mail.netnoteinc.com ident= envfrom= intl=0 id=09C18114095 auth= msa=0 ] [ ip=24.226.157.50 rdns=USR-157-050.dr.cgocable.ca helo=netsvr.Internet by=webnote.net ident= envfrom= intl=0 id=IAA29903 auth= msa=0 ] [ ip=216.214.106.173 rdns=max1-45.losangeles.corecomm.net helo=R00UqS18S by=netsvr.Internet ident= envfrom= intl=0 id=1429NTL5 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: parsing normal part
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: no encoding detected
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.12539
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: untie-ing
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:46:13 2008 [12539] info: spamd: Tell: Removing local for ss5:1000 in 0.0 seconds, 3138 bytes
+Wed Jul 16 08:46:13 2008 [12539] dbg: config: copying current conf from backup
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: ordered 12540 to accept
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child 12540: entering state 2
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:46:13 2008 [12540] info: spamd: connection from localhost [127.0.0.1] at port 35104
+Wed Jul 16 08:46:13 2008 [12540] dbg: info: user has changed
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: not available for scanning, only 0 spam(s) in bayes DB < 200
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: untie-ing
+Wed Jul 16 08:46:13 2008 [12540] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:13 2008 [12540] dbg: spamd: running as uid 1000
+Wed Jul 16 08:46:13 2008 [12540] dbg: message: main message type: text/plain
+Wed Jul 16 08:46:13 2008 [12540] dbg: learn: learning ham
+Wed Jul 16 08:46:13 2008 [12540] dbg: eval: all '*From' addrs: jm@dogma.slashnull.org evolve@ximian.com
+Wed Jul 16 08:46:13 2008 [12540] dbg: eval: all '*To' addrs: jm@netnoteinc.com jm-ximian@jmason.org announce@ximian.com
+Wed Jul 16 08:46:13 2008 [12540] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: parsed as [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: do not trust any hosts from here on
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: relay 212.17.35.15 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: parsed as [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: relay 141.154.95.22 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: parsed as [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: relay 127.0.0.1 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: parsed as [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12540] dbg: received-header: relay 62.122.4.47 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12540] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:46:13 2008 [12540] dbg: metadata: X-Spam-Relays-Untrusted: [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ] [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ] [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ] [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12540] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:46:13 2008 [12540] dbg: metadata: X-Spam-Relays-External: [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ] [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ] [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ] [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12540] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:46:13 2008 [12540] dbg: message: parsing normal part
+Wed Jul 16 08:46:13 2008 [12540] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:46:13 2008 [12540] dbg: message: no encoding detected
+Wed Jul 16 08:46:13 2008 [12540] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.12540
+Wed Jul 16 08:46:13 2008 [12540] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:46:13 2008 [12540] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:13 2008 [12539] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child 12539: entering state 1
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: new lowest idle kid: 12539
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child reports idle
+Wed Jul 16 08:46:13 2008 [12536] info: prefork: child states: IB
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: learned '81e140c3cf9f7d809766e46d0f2b05b025feb7e4@sa_generated', atime: 989970033
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: untie-ing
+Wed Jul 16 08:46:13 2008 [12540] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:46:13 2008 [12540] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:46:13 2008 [12540] info: spamd: Tell: Setting local for ss5:1000 in 0.0 seconds, 3556 bytes
+Wed Jul 16 08:46:13 2008 [12540] dbg: config: copying current conf from backup
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: ordered 12539 to accept
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: sysread(7) not ready, wait max 300 secs
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child 12539: entering state 2
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: new lowest idle kid: none
+Wed Jul 16 08:46:13 2008 [12539] info: spamd: connection from localhost [127.0.0.1] at port 35105
+Wed Jul 16 08:46:13 2008 [12539] dbg: info: user has changed
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: not available for scanning, only 0 spam(s) in bayes DB < 200
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: untie-ing
+Wed Jul 16 08:46:13 2008 [12539] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:13 2008 [12539] dbg: spamd: running as uid 1000
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: main message type: text/plain
+Wed Jul 16 08:46:13 2008 [12539] dbg: learn: learning ham
+Wed Jul 16 08:46:13 2008 [12539] dbg: eval: all '*From' addrs: jm@dogma.slashnull.org evolve@ximian.com
+Wed Jul 16 08:46:13 2008 [12539] dbg: eval: all '*To' addrs: jm@netnoteinc.com jm-ximian@jmason.org announce@ximian.com
+Wed Jul 16 08:46:13 2008 [12539] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: parsed as [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: do not trust any hosts from here on
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: relay 212.17.35.15 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: parsed as [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: relay 141.154.95.22 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: parsed as [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: relay 127.0.0.1 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: parsed as [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: received-header: relay 62.122.4.47 trusted? no internal? no msa? no
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-Untrusted: [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ] [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ] [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ] [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:46:13 2008 [12539] dbg: metadata: X-Spam-Relays-External: [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ] [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ] [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ] [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: parsing normal part
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:46:13 2008 [12539] dbg: message: no encoding detected
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.12539
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: 81e140c3cf9f7d809766e46d0f2b05b025feb7e4@sa_generated already learnt correctly, not learning twice
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: untie-ing
+Wed Jul 16 08:46:13 2008 [12539] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:46:13 2008 [12539] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:46:13 2008 [12539] info: spamd: Tell: Did nothing for ss5:1000 in 0.0 seconds, 3556 bytes
+Wed Jul 16 08:46:13 2008 [12539] dbg: config: copying current conf from backup
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child 12540: entering state 1
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: new lowest idle kid: 12540
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child reports idle
+Wed Jul 16 08:46:13 2008 [12536] info: prefork: child states: BI
+Wed Jul 16 08:46:13 2008 [12540] dbg: prefork: sysread(9) not ready, wait max 300 secs
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child 12539: entering state 1
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: new lowest idle kid: 12539
+Wed Jul 16 08:46:13 2008 [12536] dbg: prefork: child reports idle
+Wed Jul 16 08:46:13 2008 [12536] info: prefork: child states: II
+Wed Jul 16 08:46:13 2008 [12539] dbg: prefork: sysread(8) not ready, wait max 300 secs
+Wed Jul 16 08:46:14 2008 [12536] dbg: prefork: ordered 12539 to accept
+Wed Jul 16 08:46:14 2008 [12536] dbg: prefork: sysread(7) not ready, wait max 300 secs
+Wed Jul 16 08:46:14 2008 [12536] dbg: prefork: child 12539: entering state 2
+Wed Jul 16 08:46:14 2008 [12536] dbg: prefork: new lowest idle kid: 12540
+Wed Jul 16 08:46:14 2008 [12539] info: spamd: connection from localhost [127.0.0.1] at port 35106
+Wed Jul 16 08:46:14 2008 [12539] dbg: info: user has changed
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_toks
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: tie-ing to DB file R/O ./log/user_state/bayes_seen
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: DB journal sync: last sync: 0
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: not available for scanning, only 0 spam(s) in bayes DB < 200
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: untie-ing
+Wed Jul 16 08:46:14 2008 [12539] dbg: config: score set 0 chosen.
+Wed Jul 16 08:46:14 2008 [12539] dbg: spamd: running as uid 1000
+Wed Jul 16 08:46:14 2008 [12539] dbg: message: main message type: text/plain
+Wed Jul 16 08:46:14 2008 [12539] dbg: learn: forgetting message
+Wed Jul 16 08:46:14 2008 [12539] dbg: conf: trusted_networks are not configured; it is recommended that you configure trusted_networks manually
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: parsed as [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ]
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: do not trust any hosts from here on
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: relay 212.17.35.15 trusted? no internal? no msa? no
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: parsed as [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ]
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: relay 141.154.95.22 trusted? no internal? no msa? no
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: parsed as [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ]
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: relay 127.0.0.1 trusted? no internal? no msa? no
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: parsed as [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:14 2008 [12539] dbg: received-header: relay 62.122.4.47 trusted? no internal? no msa? no
+Wed Jul 16 08:46:14 2008 [12539] dbg: metadata: X-Spam-Relays-Trusted: 
+Wed Jul 16 08:46:14 2008 [12539] dbg: metadata: X-Spam-Relays-Untrusted: [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ] [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ] [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ] [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:14 2008 [12539] dbg: metadata: X-Spam-Relays-Internal: 
+Wed Jul 16 08:46:14 2008 [12539] dbg: metadata: X-Spam-Relays-External: [ ip=212.17.35.15 rdns=dogma.slashnull.org helo=dogma.slashnull.org by=mail.netnoteinc.com ident= envfrom= intl=0 id=830E5115158 auth= msa=0 ] [ ip=141.154.95.22 rdns= helo=trna.ximian.com by=dogma.slashnull.org ident= envfrom= intl=0 id=AAA30867 auth= msa=0 ] [ ip=127.0.0.1 rdns=localhost helo=trna.ximian.com by=trna.ximian.com ident=nobody envfrom= intl=0 id=SAA19408 auth= msa=0 ] [ ip=62.122.4.47 rdns=62-122-4-47.flat.galactica.it helo=milkplus by=trna.ximian.com ident= envfrom= intl=0 id=RAA19544 auth= msa=0 ]
+Wed Jul 16 08:46:14 2008 [12539] dbg: message: ---- MIME PARSER START ----
+Wed Jul 16 08:46:14 2008 [12539] dbg: message: parsing normal part
+Wed Jul 16 08:46:14 2008 [12539] dbg: message: ---- MIME PARSER END ----
+Wed Jul 16 08:46:14 2008 [12539] dbg: message: no encoding detected
+Wed Jul 16 08:46:14 2008 [12539] dbg: locker: safe_lock: created ./log/user_state/bayes.lock.vinyl.webit.de.12539
+Wed Jul 16 08:46:14 2008 [12539] dbg: locker: safe_lock: trying to get lock on ./log/user_state/bayes with 0 retries
+Wed Jul 16 08:46:14 2008 [12539] dbg: locker: safe_lock: link to ./log/user_state/bayes.lock: link ok
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_toks
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: tie-ing to DB file R/W ./log/user_state/bayes_seen
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: found bayes db version 3
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: untie-ing
+Wed Jul 16 08:46:14 2008 [12539] dbg: bayes: files locked, now unlocking lock
+Wed Jul 16 08:46:14 2008 [12539] dbg: locker: safe_unlock: unlink ./log/user_state/bayes.lock
+Wed Jul 16 08:46:14 2008 [12539] info: spamd: Tell: Removing local for ss5:1000 in 0.0 seconds, 3556 bytes
+Wed Jul 16 08:46:14 2008 [12539] dbg: config: copying current conf from backup
+Wed Jul 16 08:46:14 2008 [12536] info: spamd: server killed by SIGTERM, shutting down

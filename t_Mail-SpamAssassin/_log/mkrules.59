@@ -1,0 +1,4 @@
+log/mkrules_t/rulesrc/sandbox/foo/20_foo.cf: WARNING: plugin code file 'log/mkrules_t/rulesrc/sandbox/foo/plugin.pm' not found, line ignored: loadplugin Good plugin.pm
+log/mkrules_t/rules/70_sandbox.cf: WARNING: not listed in manifest file
+log/mkrules_t/rules/72_active.cf: WARNING: not listed in manifest file
+log/mkrules_t/rulesrc/sandbox/foo/20_foo.cf: 1 active rules, 0 other

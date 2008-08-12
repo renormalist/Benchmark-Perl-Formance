@@ -1,0 +1,37 @@
+Return-Path: <foo@example.com>
+X-Spam-Checker-Version: SpamAssassin 3.2.5 (2008-06-10) on vinyl.webit.de
+X-Spam-Level: 
+X-Spam-Status: No, score=-89.6 required=5.0 tests=DATE_IN_PAST_03_06,
+	DATE_SPAMWARE_Y2K,INVALID_DATE,MSGID_RANDY,USER_IN_WHITELIST autolearn=no
+	version=3.2.5
+Received: from example.com (mail1.example.com [80.8.136.186])
+          by b.mx.sonic.net (8.12.10/8.12.7) with SMTP id i19FLtmt026870
+          for <user@example.com>; Mon, 9 Feb 2004 07:21:57 -0800
+Received: from [8.141.200.111] by mail1.example.com with SMTP; Mon, 09 Feb 2004 23:17:44 -0600
+Message-ID: <ut-4b--$u$5$11r-ev2b$m0$r@y1uuyl.v.18>
+From: "Foo Test" <foo@example.com>
+To: user@example.com
+Subject: whitelist test case
+Date: Mon, 09 Feb 04 23:17:44 GMT
+MIME-Version: 1.0
+Content-Type: text/plain
+
+Test whitelist_from_rcvd foo@example.com
+Spam detection software, running on the system "vinyl.webit.de", has
+identified this incoming email as possible spam.  The original message
+has been attached to this so you can view it (if it isn't spam) or label
+similar future email.  If you have any questions, see
+@@CONTACT_ADDRESS@@ for details.
+
+Content preview:  Test whitelist_from_rcvd foo@example.com [...] 
+
+Content analysis details:   (-89.6 points, 5.0 required)
+
+ pts rule name              description
+---- ---------------------- --------------------------------------------------
+-100 USER_IN_WHITELIST      From: address is in the user's white-list
+ 2.3 INVALID_DATE           Invalid Date: header (not RFC 2822)
+ 2.1 DATE_SPAMWARE_Y2K      Date header uses unusual Y2K formatting
+ 2.3 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
+ 3.7 MSGID_RANDY            Message-Id has pattern used in spam
+

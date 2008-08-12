@@ -1,0 +1,4 @@
+log/mkrules_t/rulesrc/sandbox/foo/20_foo.cf: WARNING: 'log/mkrules_t/rules/plugin.pm' not listed in manifest file, making 'tryplugin': loadplugin Good plugin.pm
+log/mkrules_t/rules/70_sandbox.cf: WARNING: not listed in manifest file
+log/mkrules_t/rules/72_active.cf: WARNING: not listed in manifest file
+log/mkrules_t/rulesrc/sandbox/foo/20_foo.cf: 0 active rules, 2 other

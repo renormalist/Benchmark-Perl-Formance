@@ -1,0 +1,29 @@
+#! /usr/bin/env perl
+
+use Getopt::Long;
+
+sub usage {
+        print "$0 --sections=SA,RC\n\n";
+        print "'sections' is list of comma separated values of\n";
+        print "  SA ... SpamAssassin\n";
+        print "  RC ... Regexp::Common\n";
+        print "  default is a list of all avalable sections\n";
+}
+
+my $sections = 'SA,RC';
+my $ok = GetOptions ("sections=s" => \$sections);
+exit usage() if not $ok;
+
+my @sections = split ',', $sections;
+
+
+foreach (@sections) {
+        eval "use Perl::Formance::Section::$_";
+        die "Cannot load section $_:\n$@" if $@;
+}
+
+foreach (@sections) {
+        #print STDERR "Do Perl::Formance::Section::$_ ...\n";
+        "Perl::Formance::Section::$_"->main();
+}
+

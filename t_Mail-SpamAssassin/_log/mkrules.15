@@ -1,0 +1,8 @@
+lint: config: invalid regexp for rule GOOD: /***: missing or invalid delimiters
+
+ERROR: LINT FAILED, suppressing output: log/mkrules_t/rules/72_active.cf
+
+log/mkrules_t/rules/70_sandbox.cf: WARNING: not listed in manifest file
+log/mkrules_t/rules/72_active.cf: WARNING: not listed in manifest file
+log/mkrules_t/rulesrc/sandbox/foo/20_foo.cf: 1 active rules, 0 other
+log/mkrules_t/rules/72_active.cf: no rules promoted
