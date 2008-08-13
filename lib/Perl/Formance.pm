@@ -3,6 +3,8 @@ package Perl::Formance;
 use warnings;
 use strict;
 
+use 5.005; # I don't really know yet, but that's the goal
+
 use vars qw($VERSION); $VERSION = '0.01';
 
 =head1 NAME

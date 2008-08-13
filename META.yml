@@ -17,7 +17,9 @@ requires:
   Mail::SpamAssassin: 0
   Net::DNS: 0
   Net::IP: 0
+  Perl::Formance::Cargo: 0
   Regexp::Common: 0
+  perl: 5.005
 resources:
   license: http://dev.perl.org/licenses/
 version: 0.01
