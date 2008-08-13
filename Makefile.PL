@@ -9,6 +9,7 @@ requires       'Net::IP';
 requires       'Net::DNS';
 requires       'Mail::SpamAssassin';
 requires       'Regexp::Common';
+requires       'Perl::Formance::Cargo';
 
 install_script('perl_formance');
 WriteAll;

@@ -10,7 +10,7 @@ use Time::HiRes qw(gettimeofday);
 
 sub main {
         my $dstdir = tempdir( CLEANUP => 1 );
-        my $srcdir = module_dir('Perl::Formance::Section::SA');
+        my $srcdir = module_dir('Perl::Formance::Cargo::SA');
 
         dircopy($srcdir, $dstdir);
         my $cmd    = "time /usr/bin/env perl -T `which sa-learn` --ham -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/easy_ham/*' 2> /dev/null";
