@@ -1,1 +1,0 @@
-meta GOOD (GOOD_SUB && !BAD_SUB)

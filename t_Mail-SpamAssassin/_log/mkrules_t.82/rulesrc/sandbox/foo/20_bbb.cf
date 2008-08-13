@@ -1,2 +1,0 @@
-header GOOD_SUB Foo =~ /good/
-header BAD_SUB Foo =~ /bad/

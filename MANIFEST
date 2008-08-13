@@ -126,6 +126,7 @@ log/test_rules_copy/01_test_rules.cf
 Makefile.PL
 MANIFEST
 META.yml			# Will be created by "make dist"
+Perl-Formance-0.01.tar.gz
 Perl-Formance-0.01/Build.PL
 Perl-Formance-0.01/ChangeLog
 Perl-Formance-0.01/MANIFEST
