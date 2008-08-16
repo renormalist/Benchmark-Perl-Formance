@@ -1,11 +1,122 @@
 package Perl::Formance;
 
+use 5.005; # I don't really know yet, but that's the goal
+
 use warnings;
 use strict;
 
-use 5.005; # I don't really know yet, but that's the goal
+use Getopt::Long qw(:config no_ignore_case bundling);
+use Data::YAML::Writer;
+use Pod::Help;
+
+use Config;
 
 use vars qw($VERSION); $VERSION = '0.01';
+
+use Exporter 'import';
+use vars qw(@EXPORT_OK);
+@EXPORT_OK = qw(run print_results);
+
+# incrementaly interesting Perl Config keys
+my %CONFIG_KEYS = (
+                   0 => [],
+                   1 => [
+                         qw(perlpath
+                            version
+                            archname
+                            archname64
+                            osvers
+                          )],
+                   2 => [
+                         qw(gccversion
+                            gnulibc_version
+                            usemymalloc
+                            config_args
+                            optimize
+                          )],
+                   3 => [qw(ccflags
+                            cppflags
+                            nm_so_opt
+                          )],
+                   4 => [qw(
+                          )],
+                   5 => [
+                         sort keys %Config
+                        ],
+                  );
+
+sub new {
+        bless {}, shift;
+}
+
+sub usage { Pod::Help->help } # show POD from script/perl-formance
+
+sub run {
+        my ($self) = @_;
+
+        my $help       = 0;
+        my $showconfig = 0;
+        my $verbose    = 0;
+        my $plugins    = 'Rx,Fib,SA';
+        my $options    = {};
+
+        # get options
+        my $ok         = GetOptions ("help|h"        => \$help,
+                                     "verbose|v+"    => \$verbose,
+                                     "showconfig|c+" => \$showconfig,
+                                     "plugins=s"     => \$plugins);
+
+        do { usage; exit  0 } if $help;
+        do { usage; exit -1 } if not $ok;
+
+        # fill options
+        $options = {
+                    help       => $help,
+                    verbose    => $verbose,
+                    showconfig => $showconfig,
+                    plugins    => $plugins,
+                   };
+
+        # check plugins
+        my @plugins = split ',', $plugins;
+        my @run_plugins = grep {
+                eval "use Perl::Formance::Plugin::$_";
+                if ($@) {
+                        print "Skip plugin $_" if $verbose;
+                        print ":$@"            if $verbose >= 2;
+                        print "\n"             if $verbose;
+                }
+                not $@;
+        } @plugins;
+
+        # run plugins
+        my %RESULTS;
+        foreach (@run_plugins) {
+                print STDERR "Run $_ ...\n" if $verbose;
+                $RESULTS{results}{$_} = "Perl::Formance::Plugin::$_"->main();
+        }
+
+        # Perl Config
+        if ($showconfig)
+        {
+                my @cfgkeys;
+                push @cfgkeys, @{$CONFIG_KEYS{$_}} foreach 1..$showconfig;
+                $RESULTS{perl_config} = \%Config;
+#                 {
+#                  map { $_ => $Config{$_} } sort @cfgkeys
+#                 };
+        }
+
+        return \%RESULTS;
+}
+
+sub print_results
+{
+        my ($self, $RESULTS) = @_;
+
+        my $yw = new Data::YAML::Writer;
+        $yw->write($RESULTS, sub { print shift,"\n" });
+}
 
 =head1 NAME
 
@@ -17,12 +128,6 @@ This benchmark suite tries to run some stressful programs and outputs
 values that you can compare against other runs of this suite,
 e.g. with other versions of Perl, modified compile parameter, or
 another set of dependent libraries.
-
-=head1 SYNOPSIS
-
-    use Perl::Formance;
-
-    my $foo = Perl::Formance->new();
 
 
 =head1 AUTHOR

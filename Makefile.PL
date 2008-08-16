@@ -7,9 +7,10 @@ all_from       'lib/Perl/Formance.pm';
 # Specific dependencies
 requires       'Net::IP';
 requires       'Net::DNS';
-requires       'Mail::SpamAssassin';
 requires       'Regexp::Common';
+requires       'Data::YAML::Writer';
+requires       'Mail::SpamAssassin';
 requires       'Perl::Formance::Cargo';
 
-install_script('perl_formance');
+install_script('script/perl-formance');
 WriteAll;

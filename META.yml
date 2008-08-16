@@ -14,6 +14,7 @@ no_index:
     - inc
     - t
 requires:
+  Data::YAML::Writer: 0
   Mail::SpamAssassin: 0
   Net::DNS: 0
   Net::IP: 0

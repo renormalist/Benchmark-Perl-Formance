@@ -1,0 +1,136 @@
+#! /usr/bin/env perl
+
+use Perl::Formance;
+
+my $pf = Perl::Formance->new;
+
+my $results = $pf->run;
+$pf->print_results($results);
+
+=pod
+
+=head1 NAME
+
+perl-formance - Frontend for Perl::Formance
+
+=head1 ABOUT
+
+This is the frontend commandline tool for starting the performance
+benchmark runs.
+
+After running it prints out the results which you can take to compare
+them to runs with other Perl versions, other architectures, different
+compile time configuration or on different machines.
+
+=head1 SYNOPSIS
+
+Usage:
+
+  $ perl-formance
+  $ perl-formance --plugins=SA,Fib,Rx
+  $ perl-formance --plugins=SA,Fib,Rx -v
+  $ perl-formance --plugins=SA,Fib,Rx -v -c
+  $ perl-formance --plugins=SA,Fib,Rx -v -ccccc
+
+
+If run directly it uses the perl in your PATH:
+
+  $ /path/to/perl-formance
+
+
+To use another Perl start it via
+
+  $ /other/path/to/bin/perl /path/to/perl-formance
+
+
+To provide environment variables (for some plugins) you can do
+
+  $ PERLFORMANCE_SALEARN="/path/to/sa-learn" perl-formance
+
+=head1 OPTIONS
+
+There are some options available.
+
+=over 4
+
+=item --help
+
+=item -h
+
+prints out a help page.
+
+=item --plugins=SA,Fib,Rx
+
+Use only a particular list of sub benchmarks. The comma-separated list
+refers to Perl::Formance::Plugin::* respectively.
+
+=item --verbose
+
+=item -v
+
+=item -vv
+
+=item -vvv
+
+Increases the verbosity level during the run of the
+benchmarks. Default is only print the result (and maybe some output
+from external tools).
+
+To increase the number of keys from your Perl Config that are included
+in the result use one or more -c options.
+
+=item --showconfig
+
+=item -c
+
+gives you the most basic information like Perl version, operating
+system name and architecture, i.e., C<perlpath>, C<version>,
+C<archname>, C<archname64>, C<osvers>.
+
+=item -cc
+
+adds C<gccversion>, C<gnulibc_version>, C<usemymalloc>,
+C<config_args>, C<optimize>.
+
+=item -ccc
+
+adds C<ccflags>, C<cppflags>, C<nm_so_opt>.
+
+=item -cccc
+
+currently does not increase information.
+
+=item -ccccc
+
+includes all info from Perls %Config hash.
+
+=back
+
+=head1 PLUGINS
+
+Please read the documentation for the used plugins, as they might need
+special configuration, usually via environment variables.
+
+=over 4
+
+=item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
+
+SpamAssassin
+
+=item L<Perl::Formance::Plugin::Rx|Perl::Formance::Plugin::Rx>
+
+Regular expressions
+
+=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::Fib>
+
+Fibonnacci numbers.
+
+Or generally recursion, function calls.
+
+=item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
+
+=back
+
+
+=cut
+

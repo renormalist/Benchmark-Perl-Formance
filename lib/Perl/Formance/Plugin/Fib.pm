@@ -1,4 +1,4 @@
-package Perl::Formance::Section::Fib;
+package Perl::Formance::Plugin::Fib;
 
 # Fibonacci numbers
 
@@ -18,12 +18,16 @@ sub fib
 
 sub main
 {
+        my ($options) = @_;
+
         my $before = gettimeofday();
         my $ret    = fib(40);
         my $after  = gettimeofday();
         my $diff   = ($after - $before);
 
-        print sprintf("Fib.plain time: %0.4f\n", $diff);
+        return {
+                plain_time => sprintf("%0.4f", $diff)
+               };
 }
 
 1;
