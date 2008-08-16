@@ -1,6 +1,6 @@
 package Perl::Formance;
 
-use 5.005; # I don't really know yet, but that's the goal
+use 5.006001; # I don't really know yet, but that's the goal
 
 use warnings;
 use strict;
@@ -13,9 +13,13 @@ use Config;
 
 use vars qw($VERSION); $VERSION = '0.01';
 
-use Exporter 'import';
-use vars qw(@EXPORT_OK);
+use Exporter;
+use vars qw(@ISA @EXPORT_OK);
+push @ISA, 'Exporter';
 @EXPORT_OK = qw(run print_results);
+
+# comma separated list of default plugins
+my $DEFAULT_PLUGINS = 'Rx,Fib,SA';
 
 # incrementaly interesting Perl Config keys
 my %CONFIG_KEYS = (
@@ -57,7 +61,7 @@ sub run {
         my $help       = 0;
         my $showconfig = 0;
         my $verbose    = 0;
-        my $plugins    = 'Rx,Fib,SA';
+        my $plugins    = $DEFAULT_PLUGINS;
         my $options    = {};
 
         # get options
@@ -78,11 +82,11 @@ sub run {
                    };
 
         # check plugins
-        my @plugins = split ',', $plugins;
+        my @plugins = grep /\w/, split '\s*,\s*', $plugins;
         my @run_plugins = grep {
                 eval "use Perl::Formance::Plugin::$_";
                 if ($@) {
-                        print "Skip plugin $_" if $verbose;
+                        print "Skip plugin '$_'" if $verbose;
                         print ":$@"            if $verbose >= 2;
                         print "\n"             if $verbose;
                 }
@@ -92,7 +96,7 @@ sub run {
         # run plugins
         my %RESULTS;
         foreach (@run_plugins) {
-                print STDERR "Run $_ ...\n" if $verbose;
+                print STDERR "Run $_...\n" if $verbose;
                 $RESULTS{results}{$_} = "Perl::Formance::Plugin::$_"->main();
         }
 
@@ -101,10 +105,10 @@ sub run {
         {
                 my @cfgkeys;
                 push @cfgkeys, @{$CONFIG_KEYS{$_}} foreach 1..$showconfig;
-                $RESULTS{perl_config} = \%Config;
-#                 {
-#                  map { $_ => $Config{$_} } sort @cfgkeys
-#                 };
+                $RESULTS{perl_config} =
+                {
+                 map { $_ => $Config{$_} } sort @cfgkeys
+                };
         }
 
         return \%RESULTS;

@@ -5,6 +5,8 @@ package Perl::Formance::Plugin::Skeleton;
 use warnings;
 use strict;
 
+use Time::HiRes qw(gettimeofday);
+
 sub main {
         my ($options) = @_;
 
@@ -39,12 +41,12 @@ You can create your own plugins by just creating a module in the
 namespace C<Perl::Formance::Plugin::*> which simply has to provide a
 
  package Perl::Formance::Plugin::HotStuff;
-
+ 
  sub main {
      my ($options) = @_;
-
+     
      # do something
-
+     
      return { result_key1 => $value1,
               result_key2 => $value2,
             }
@@ -55,8 +57,8 @@ To use it call the frontend tool and provide your pluginname via
 
   $ perl-formance --plugins=HotStuff
 
-If your module should be part of the official Perl::Formance benchmark
-suite, then patch the default list in Perl/Formance.pm.
+If your module should be a default part of the Perl::Formance suite,
+then patch the C<$DEFAULT_PLUGINS> in lib/Perl/Formance.pm.
 
 =cut
 
