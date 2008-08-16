@@ -6,6 +6,7 @@ use warnings;
 use strict;
 
 use Time::HiRes qw(gettimeofday);
+use Benchmark;
 
 # find sequence in large sequence
 sub large_seq
@@ -28,7 +29,7 @@ sub large_seq
                 $search_seq .= $c;
         }
         my $rand_seq = '';
-        foreach (1..1_000_000) {
+        foreach (1..10_000_000) {
                 my $c = chr(65 + int (rand 62));
                 $c = $c eq '\\' ? 'X' : $c;
                 $rand_seq .= $c;
@@ -50,13 +51,15 @@ sub large_seq
 
         # ----------------------------------------------------
         $before = gettimeofday();
-        @count  = $rand_seq =~ /$search_seq(.*?)$search_seq/g;
-        #print STDERR "found ".(scalar @count)." times.\n";
+        @count  = $rand_seq =~ /($search_seq(.*?)$search_seq)/g;
         $after  = gettimeofday();
         # ----------------------------------------------------
         $diff   = ($after - $before);
         $results{large_seq_time} = sprintf("%0.4f", $diff);
+        $results{large_seq_time_count} = @count;
         # ----------------------------------------------------
+
+        return \%results;
 }
 
 sub pathological
@@ -69,38 +72,54 @@ sub pathological
 
         my $before;
         my $after;
+        my $count;
         my %results = ();
         my $i;
 
-        my $aaa = "a" x 1_000_000;
-        my $bbb = "b" x 1_000_000;
+        my $aaa;
+        my $bbb;
+
 
         # ----------------------------------------------------
+        $aaa = "a" x 1_000_000; # 10_000_000
         $before = gettimeofday();
-        for ($i=0; $i < 10_000; $i++) { $aaa =~ /a?a?a?aaa/g } # matches
+        for ($i=0; $i < 1; $i++) { # 100
+                $count = scalar @{[ $aaa =~ /(a?a?a?aaa)/g ]};
+        }
         $after  = gettimeofday();
-        $results{anaaa} = sprintf("%0.4f", $after - $before);
-        # ----------------------------------------------------
-
-        # ----------------------------------------------------
-        $before = gettimeofday();
-        for ($i=0; $i < 10_000; $i++) { $aaa =~ /a*.*a*/g } # matches
-        $after  = gettimeofday();
-        $results{a_stars} = sprintf("%0.4f", $after - $before);
-        # ----------------------------------------------------
-
-        # ----------------------------------------------------
-        $before = gettimeofday();
-        for ($i=0; $i < 10_000; $i++) { $bbb =~ /a*.*a*/g } # not matches
-        $after  = gettimeofday();
-        $results{not_a_stars} = sprintf("%0.4f", $after - $before);
+        $results{_01_anaaa} = sprintf("%0.4f", $after - $before);
+        $results{_01_anaaa_count} = $count;
         # ----------------------------------------------------
 
         # ----------------------------------------------------
+        $aaa = "a" x 5_000_000; # 10_000_000
+        print STDERR "1...\n";
         $before = gettimeofday();
-        my @res = split (//, $aaa);
+        $count  = scalar @{[ $aaa =~ /(a*?a*?a*?)/g]};
+
+        print STDERR "2...\n";
         $after  = gettimeofday();
-        $results{split_empty} = sprintf("%0.4f", $after - $before);
+        $results{_02_a_stars} = sprintf("%0.4f", $after - $before);
+        $results{_02_a_stars_count} = $count;
+        # ----------------------------------------------------
+
+        # ----------------------------------------------------
+        $bbb = "b" x 1_000_000; # 10_000_000
+        $before = gettimeofday();
+        #for ($i=0; $i < 10_000; $i++) {
+                $count = scalar @{[ $bbb =~ /(a*.*a*)/g ]};
+        #}
+        $after  = gettimeofday();
+        $results{_03_not_a_stars} = sprintf("%0.4f", $after - $before);
+        $results{_03_not_a_stars_count} = $count;
+        # ----------------------------------------------------
+
+        # ----------------------------------------------------
+#         $before = gettimeofday();
+#         $count  = scalar @{[ split (//, $aaa) ]};
+#         $after  = gettimeofday();
+#         $results{split_empty} = sprintf("%0.4f", $after - $before);
+#         $results{split_empty_count} = $count;
         # ----------------------------------------------------
 
         return \%results;

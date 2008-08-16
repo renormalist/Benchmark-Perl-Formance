@@ -79,6 +79,10 @@ from external tools).
 To increase the number of keys from your Perl Config that are included
 in the result use one or more -c options.
 
+Please note that only one -v is not enough to see errors that occur
+when trying to load a plugin. They are only marked as "skipped". Use
+-vv to see the error message.
+
 =item --showconfig
 
 =item -c

@@ -5,18 +5,17 @@ use 5.006001; # I don't really know yet, but that's the goal
 use warnings;
 use strict;
 
-use Getopt::Long qw(:config no_ignore_case bundling);
-use Data::YAML::Writer;
-use Pod::Help;
-
 use Config;
-
-use vars qw($VERSION); $VERSION = '0.01';
-
 use Exporter;
-use vars qw(@ISA @EXPORT_OK);
-push @ISA, 'Exporter';
-@EXPORT_OK = qw(run print_results);
+use Pod::Help;
+use Data::YAML::Writer;
+use Getopt::Long qw(:config no_ignore_case bundling);
+
+use vars qw($VERSION @ISA @EXPORT_OK);
+
+$VERSION = '0.01';
+
+push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = 'Rx,Fib,SA';
