@@ -10,4 +10,6 @@ Perl-Formance-*
 cover_db
 META.yml
 MANIFEST.bak
+nytprof.out
+nytprof
 

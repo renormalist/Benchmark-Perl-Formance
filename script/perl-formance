@@ -110,6 +110,25 @@ includes all info from Perls %Config hash.
 
 =back
 
+=head1 ENVIRONMENT VARIABLES
+
+There are some options available.
+
+=over 4
+
+=item PERLFORMANCE_TESTMODE_FAST
+
+If this variable is set to 1 then some plugins try to scale down the
+stress to take less time (with stupid results, of course). Mostly for
+easier development.
+
+=item PERLFORMANCE_SALEARN
+
+See L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>. Contains
+the path to the "sa-learn" executable.
+
+=back
+
 =head1 PLUGINS
 
 Please read the documentation for the used plugins, as they might need

@@ -1,21 +1,24 @@
-package Perl::Formance::Plugin::Skeleton;
+package Perl::Formance::Plugin::Mem;
 
 use warnings;
 use strict;
 
+use vars qw($goal);
+$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
+
 use Time::HiRes qw(gettimeofday);
+
+sub fib
+{
+        my $n = shift;
+}
 
 sub main {
         my ($options) = @_;
 
-        # $options->{help}
-        # $options->{verbose}
-        # $options->{plugins}
-        # $options->{showconfig}
-
         my $before   = gettimeofday();
 
-        sleep 1; # your benchmark runs here
+        my $ret      = lots_of_malloc;
 
         my $after    = gettimeofday();
         my $duration = ($after - $before);

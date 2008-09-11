@@ -8,6 +8,9 @@ use strict;
 use Time::HiRes qw(gettimeofday);
 use Benchmark;
 
+use vars qw($goal);
+$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 10_000 : 10_000_000;
+
 # find sequence in large sequence
 sub large_seq
 {
@@ -29,7 +32,7 @@ sub large_seq
                 $search_seq .= $c;
         }
         my $rand_seq = '';
-        foreach (1..10_000_000) {
+        foreach (1..100_000) {
                 my $c = chr(65 + int (rand 62));
                 $c = $c eq '\\' ? 'X' : $c;
                 $rand_seq .= $c;
@@ -81,7 +84,7 @@ sub pathological
 
 
         # ----------------------------------------------------
-        $aaa = "a" x 1_000_000; # 10_000_000
+        $aaa = "a" x $goal;
         $before = gettimeofday();
         for ($i=0; $i < 1; $i++) { # 100
                 $count = scalar @{[ $aaa =~ /(a?a?a?aaa)/g ]};
@@ -92,7 +95,7 @@ sub pathological
         # ----------------------------------------------------
 
         # ----------------------------------------------------
-        $aaa = "a" x 5_000_000; # 10_000_000
+        $aaa = "a" x $goal;
         print STDERR "1...\n";
         $before = gettimeofday();
         $count  = scalar @{[ $aaa =~ /(a*?a*?a*?)/g]};
@@ -104,7 +107,7 @@ sub pathological
         # ----------------------------------------------------
 
         # ----------------------------------------------------
-        $bbb = "b" x 1_000_000; # 10_000_000
+        $bbb = "b" x $goal;
         $before = gettimeofday();
         #for ($i=0; $i < 10_000; $i++) {
                 $count = scalar @{[ $bbb =~ /(a*.*a*)/g ]};

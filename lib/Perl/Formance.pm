@@ -7,7 +7,6 @@ use strict;
 
 use Config;
 use Exporter;
-use Pod::Help;
 use Data::YAML::Writer;
 use Getopt::Long qw(:config no_ignore_case bundling);
 
@@ -29,6 +28,8 @@ my %CONFIG_KEYS = (
                             archname
                             archname64
                             osvers
+                            usethreads
+                            useithreads
                           )],
                    2 => [
                          qw(gccversion
@@ -52,7 +53,12 @@ sub new {
         bless {}, shift;
 }
 
-sub usage { Pod::Help->help } # show POD from script/perl-formance
+# show POD from script/perl-formance
+sub usage
+{
+        require Pod::Help;
+        Pod::Help->help;
+}
 
 sub run {
         my ($self) = @_;

@@ -13,6 +13,8 @@ requires       'Regexp::Common';
 requires       'Data::YAML::Writer';
 requires       'Mail::SpamAssassin';
 requires       'Perl::Formance::Cargo';
+requires       'Moose';
+requires       'Mouse';
 
 install_script('script/perl-formance');
 WriteAll;

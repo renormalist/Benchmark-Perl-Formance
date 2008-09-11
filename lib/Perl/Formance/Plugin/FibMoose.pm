@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Fib;
+package Perl::Formance::Plugin::FibMoose;
 
 # Fibonacci numbers
 
@@ -10,21 +10,26 @@ $goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
 
 use Time::HiRes qw(gettimeofday);
 
+use Moose;
+
 sub fib
 {
-        my $n = shift;
+        my $self = shift;
+        my $n    = shift;
 
         $n < 2
          ? 1
-          : fib($n-1) + fib($n-2);
+          : $self->fib($n-1) + $self->fib($n-2);
 }
 
 sub main
 {
         my ($options) = @_;
 
+        my $fib    = new Perl::Formance::Plugin::FibMoose;
+
         my $before = gettimeofday();
-        my $ret    = fib($goal);
+        my $ret    = $fib->fib($goal);
         my $after  = gettimeofday();
         my $diff   = ($after - $before);
 
