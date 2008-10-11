@@ -63,9 +63,7 @@ another "sa-learn" please set an environment variable
   $ export PERLFORMANCE_SALEARN=/usr/local/bin/sa-learn
   $ perl-formance --plugins=SA
 
-
 =cut
-
 
 __END__
 

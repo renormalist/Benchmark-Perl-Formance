@@ -41,3 +41,12 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Perl::Formance::Plugin::FibThreads - Stress recursion and method calls
+
+=cut
+

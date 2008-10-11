@@ -127,6 +127,12 @@ easier development.
 See L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>. Contains
 the path to the "sa-learn" executable.
 
+=item PERLFORMANCE_THREADCOUNT
+
+See
+L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>. Use
+this many count of threads. Default is 16.
+
 =back
 
 =head1 PLUGINS
@@ -146,9 +152,23 @@ Regular expressions
 
 =item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::Fib>
 
-Fibonnacci numbers.
+Fibonnacci numbers to stress recursion and function calls.
 
-Or generally recursion, function calls.
+=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibMoose>
+
+Fibonnacci numbers with Moose to stress recursion and method calls.
+
+=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibMouse>
+
+Fibonnacci numbers with Mouse to stress recursion and method calls.
+
+=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibOO>
+
+Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
+
+=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibThreads>
+
+Fibonnacci numbers with threads to stress thread handling.
 
 =item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
 
