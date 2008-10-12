@@ -11,10 +11,11 @@ my $builder = Module::Build->new(
         'Test::More' => 0,
     },
     requires => {
-                 'Net::IP' => 0, # for SpamAssassin
-                 'Net::DNS' => 0, # for SpamAssassin
+                 'Net::IP'            => 0, # for SpamAssassin
+                 'Net::DNS'           => 0, # for SpamAssassin
                  'Mail::SpamAssassin' => 0,
-                 'Regexp::Common' => 0,
+                 'Regexp::Common'     => 0,
+                 'forks'              => 0,
                 },
     add_to_cleanup      => [ 'Perl-Formance-*' ],
 );

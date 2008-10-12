@@ -12,7 +12,7 @@ use Time::HiRes qw(gettimeofday);
 
 sub fib
 {
-        my $n = shift;
+        my $n = shift; sleep 1;
 
         $n < 2
          ? 1
@@ -29,7 +29,8 @@ sub main
         my $diff   = ($after - $before);
 
         return {
-                plain_time => sprintf("%0.4f", $diff)
+                plain_time => sprintf("%0.4f", $diff),
+                result     => $ret,
                };
 }
 

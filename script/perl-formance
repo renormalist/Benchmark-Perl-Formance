@@ -133,6 +133,14 @@ See
 L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>. Use
 this many count of threads. Default is 16.
 
+=item PERLFORMANCE_USE_FORKS
+
+If set to true you can activate the C<forks> drop-in replacement for
+threads.
+
+See
+L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>.
+
 =back
 
 =head1 PLUGINS
@@ -154,21 +162,26 @@ Regular expressions
 
 Fibonnacci numbers to stress recursion and function calls.
 
-=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibMoose>
+=item L<Perl::Formance::Plugin::FibMoose|Perl::Formance::Plugin::FibMoose>
 
 Fibonnacci numbers with Moose to stress recursion and method calls.
 
-=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibMouse>
+=item L<Perl::Formance::Plugin::FibMouse|Perl::Formance::Plugin::FibMouse>
 
 Fibonnacci numbers with Mouse to stress recursion and method calls.
 
-=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibOO>
+=item L<Perl::Formance::Plugin::FibOO|Perl::Formance::Plugin::FibOO>
 
 Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
 
-=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::FibThreads>
+=item L<Perl::Formance::Plugin::FibThreads|Perl::Formance::Plugin::FibThreads>
 
 Fibonnacci numbers with threads to stress thread handling.
+
+=item L<Perl::Formance::Plugin::FibForks|Perl::Formance::Plugin::FibForks>
+
+Fibonnacci numbers with forks to stress fork handling. Uses the
+C<forks.pm> drop in replacement for C<threads.pm>.
 
 =item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
 
