@@ -174,14 +174,11 @@ Fibonnacci numbers with Mouse to stress recursion and method calls.
 
 Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
 
-=item L<Perl::Formance::Plugin::FibThreads|Perl::Formance::Plugin::FibThreads>
+=item L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>
 
-Fibonnacci numbers with threads to stress thread handling.
-
-=item L<Perl::Formance::Plugin::FibForks|Perl::Formance::Plugin::FibForks>
-
-Fibonnacci numbers with forks to stress fork handling. Uses the
-C<forks.pm> drop in replacement for C<threads.pm>.
+Fibonnacci numbers with threads to stress thread handling. Set
+PERLFORMANCE_USE_FORKS to activate the C<forks> drop-in replacement
+for threads.
 
 =item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
 

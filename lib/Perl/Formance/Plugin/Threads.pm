@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::FibThreads;
+package Perl::Formance::Plugin::Threads;
 
 # Fibonacci numbers
 
@@ -16,7 +16,7 @@ use threads;
 
 sub fib
 {
-        my $n = shift; sleep 1;
+        my $n = shift;
 
         if ($n < 2) {
                 return 1;

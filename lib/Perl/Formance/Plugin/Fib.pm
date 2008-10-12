@@ -12,7 +12,7 @@ use Time::HiRes qw(gettimeofday);
 
 sub fib
 {
-        my $n = shift; sleep 1;
+        my $n = shift;
 
         $n < 2
          ? 1
