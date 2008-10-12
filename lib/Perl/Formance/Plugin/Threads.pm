@@ -1,19 +1,24 @@
 package Perl::Formance::Plugin::Threads;
 
-# Fibonacci numbers
+# Create threads to evaluate Fibonacci numbers
+
+use 5.008;
 
 use warnings;
 use strict;
 
-use vars qw($goal $threadcount $useforks);
+use vars qw($goal $threadcount);
+
 $goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 25;
 $threadcount = $ENV{PERLFORMANCE_THREADCOUNT} || 16;
-$useforks    = $ENV{PERLFORMANCE_USE_FORKS}   || 0;
+
+
+use threads;
+use threads::shared;
+
+my $counted_threads : shared;
 
 use Time::HiRes 'gettimeofday';
-use 5.008;
-BEGIN { eval "use forks" if  $useforks }
-use threads;
 
 sub fib
 {
@@ -24,6 +29,7 @@ sub fib
         } else {
                 my $res;
                 if (threads->list(threads::running) <= $threadcount-2) {
+                        $counted_threads++;
                         my $t1 = async { fib($n-1) };
                         my $t2 = async { fib($n-2) };
                         return $t1->join + $t2->join;
@@ -37,16 +43,17 @@ sub main
 {
         my ($options) = @_;
 
+        my $ret;
         my $before = gettimeofday();
-        my $ret    = fib($goal);
+        do { $ret  = fib($goal) } for 1..20;
         my $after  = gettimeofday();
         my $diff   = ($after - $before);
 
         return {
-                plain_time  => sprintf("%0.4f", $diff),
-                threadcount => $threadcount,
-                useforks    => $useforks,
-                result      => $ret,
+                plain_time      => sprintf("%0.4f", $diff),
+                threadcount     => $threadcount,
+                result          => $ret,
+                counted_threads => $counted_threads,
                };
 }
 
@@ -64,11 +71,10 @@ You can define how many threads should maximally be started. Default
 is 16.
 
   $ export PERLFORMANCE_THREADCOUNT=64
-  $ perl-formance --plugins=FibThreads
+  $ perl-formance --plugins=Threads
 
-You can use the C<forks> drop-in replacement for threads when setting
-this variable to true:
+=head1 BUGS
 
-  $ export PERLFORMANCE_USE_FORKS=1
+Too naive. Really.
 
 =cut

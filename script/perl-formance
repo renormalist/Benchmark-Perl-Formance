@@ -176,9 +176,7 @@ Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
 
 =item L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>
 
-Fibonnacci numbers with threads to stress thread handling. Set
-PERLFORMANCE_USE_FORKS to activate the C<forks> drop-in replacement
-for threads.
+Fibonnacci numbers with threads to stress thread handling.
 
 =item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
 
