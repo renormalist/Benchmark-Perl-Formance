@@ -5,13 +5,14 @@ package Perl::Formance::Plugin::Threads;
 use warnings;
 use strict;
 
-use vars qw($goal $threadcount);
+use vars qw($goal $threadcount $useforks);
 $goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 25;
 $threadcount = $ENV{PERLFORMANCE_THREADCOUNT} || 16;
+$useforks    = $ENV{PERLFORMANCE_USE_FORKS}   || 0;
 
 use Time::HiRes 'gettimeofday';
 use 5.008;
-BEGIN { eval "use forks" if  $ENV{PERLFORMANCE_USE_FORKS} }
+BEGIN { eval "use forks" if  $useforks }
 use threads;
 
 sub fib
@@ -44,6 +45,7 @@ sub main
         return {
                 plain_time  => sprintf("%0.4f", $diff),
                 threadcount => $threadcount,
+                useforks    => $useforks,
                 result      => $ret,
                };
 }
