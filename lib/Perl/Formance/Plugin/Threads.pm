@@ -9,34 +9,31 @@ use strict;
 
 use vars qw($goal $threadcount);
 
-$goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 25;
-$threadcount = $ENV{PERLFORMANCE_THREADCOUNT} || 16;
-
+$goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 10 : 25;
+$threadcount = $ENV{PERLFORMANCE_THREADCOUNT} || 100;
 
 use threads;
 use threads::shared;
 
-my $counted_threads : shared;
+my $result : shared;
 
 use Time::HiRes 'gettimeofday';
 
-sub fib
+sub thread_storm
 {
-        my $n = shift;
-
-        if ($n < 2) {
-                return 1;
-        } else {
-                my $res;
-                if (threads->list(threads::running) <= $threadcount-2) {
-                        $counted_threads++;
-                        my $t1 = async { fib($n-1) };
-                        my $t2 = async { fib($n-2) };
-                        return $t1->join + $t2->join;
-                } else {
-                        return fib($n-1) + fib($n-2);
-                }
+        my $val    = 25;
+        my $expect = $threadcount * $val;
+        my $result = 0;
+        my $t;
+        foreach (1..$threadcount) {
+                $t = async {
+                        print STDERR ".";
+                        $result += $val
+                };
+                $t->join;
         }
+        print STDERR "\n";
+        return $result;
 }
 
 sub main
@@ -45,7 +42,7 @@ sub main
 
         my $ret;
         my $before = gettimeofday();
-        do { $ret  = fib($goal) } for 1..20;
+        do { $ret  = thread_storm() } for 1..20;
         my $after  = gettimeofday();
         my $diff   = ($after - $before);
 
@@ -53,7 +50,6 @@ sub main
                 plain_time      => sprintf("%0.4f", $diff),
                 threadcount     => $threadcount,
                 result          => $ret,
-                counted_threads => $counted_threads,
                };
 }
 
