@@ -5,16 +5,18 @@ name           'Perl-Formance';
 all_from       'lib/Perl/Formance.pm';
 
 # Specific dependencies
-requires       'Net::IP';
-requires       'Net::DNS';
-requires       'Pod::Help';
-requires       'Time::HiRes';
-requires       'Regexp::Common';
-requires       'Data::YAML::Writer';
-requires       'Mail::SpamAssassin';
-requires       'Perl::Formance::Cargo';
-requires       'Moose';
-requires       'Mouse';
+requires      'Net::IP';
+requires      'Net::DNS';
+requires      'Pod::Help';
+requires      'Time::HiRes';
+requires      'Data::YAML::Writer';
+requires      'Perl::Formance::Cargo';
+
+recommendends 'Mail::SpamAssassin';
+recommendends 'Regexp::Common';
+
+recommendends 'Moose';
+recommendends 'Mouse';
 
 install_script('script/perl-formance');
 WriteAll;

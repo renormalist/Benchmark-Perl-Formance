@@ -4,9 +4,13 @@ blib\b
 \.(?:bak|o|c|bs)$
 ^Makefile$
 ^Makefile.old$
+^MANIFEST.bak$
 ^Debian
 ^Perl-Formance-
 experiments
 t/00-suite-meta.t
 nytprof.out
 nytprof
+Perl-Formance-*.*.tar.gz
+^.git
+xyz
