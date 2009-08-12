@@ -1,2 +1,6 @@
 Perl-Formance-*.*.tar.gz
-^.git$
+^.git
+Makefile
+MANIFEST.bak
+xyz
+        
