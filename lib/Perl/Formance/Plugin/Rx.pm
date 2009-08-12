@@ -9,120 +9,58 @@ use Time::HiRes qw(gettimeofday);
 use Benchmark;
 
 use vars qw($goal);
-$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 10_000 : 10_000_000;
-
-# find sequence in large sequence
-sub large_seq
-{
-        my ($options) = @_;
-
-        my $before;
-        my $after;
-        my $diff;
-        my @count;
-        my %results = ();
-
-        srand(17); # same seed, same sequence everytime
-        # ----------------------------------------------------
-        $before = gettimeofday();
-        my $search_seq = '';
-        foreach (1..100_000) {
-                my $c = chr 64 + int rand 27;
-                $c = $c eq '@' ? ' ' : $c;
-                $search_seq .= $c;
-        }
-        my $rand_seq = '';
-        foreach (1..100_000) {
-                my $c = chr(65 + int (rand 62));
-                $c = $c eq '\\' ? 'X' : $c;
-                $rand_seq .= $c;
-        }
-        $after  = gettimeofday();
-        # ----------------------------------------------------
-        $diff   = ($after - $before);
-        $results{silly_str_copy_time} = sprintf("%0.4f", $diff);
-        # ----------------------------------------------------
-
-        # place what we search at begin, middle and end
-        $rand_seq
-         =
-          $search_seq
-           .$rand_seq
-            .$search_seq
-             .$rand_seq
-              .$search_seq;
-
-        # ----------------------------------------------------
-        $before = gettimeofday();
-        @count  = $rand_seq =~ /($search_seq(.*?)$search_seq)/g;
-        $after  = gettimeofday();
-        # ----------------------------------------------------
-        $diff   = ($after - $before);
-        $results{large_seq_time} = sprintf("%0.4f", $diff);
-        $results{large_seq_time_count} = @count;
-        # ----------------------------------------------------
-
-        return \%results;
-}
+$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 20; # probably 28 or more
 
 sub pathological
 {
         my ($options) = @_;
 
-        # TODO, collection of known pathological stressful regexes
-        #  //
-        #  a*.*a* on large strings
+        # http://swtch.com/~rsc/regexp/regexp1.html
 
         my $before;
         my $after;
         my $count;
+        my $n;
+        my $re;
+        my $string;
         my %results = ();
-        my $i;
 
-        my $aaa;
-        my $bbb;
-
-
-        # ----------------------------------------------------
-        $aaa = "a" x $goal;
         $before = gettimeofday();
-        for ($i=0; $i < 1; $i++) { # 100
-                $count = scalar @{[ $aaa =~ /(a?a?a?aaa)/g ]};
-        }
+        $n      = $goal;
+        $re     = ("a?" x $n) . ("a" x $n);
+        $string = "a" x $n;
+        $string =~ /$re/;
         $after  = gettimeofday();
-        $results{_01_anaaa} = sprintf("%0.4f", $after - $before);
-        $results{_01_anaaa_count} = $count;
-        # ----------------------------------------------------
+
+        $results{pathology} = sprintf("%0.4f", $after - $before);
 
         # ----------------------------------------------------
-        $aaa = "a" x $goal;
-        print STDERR "1...\n";
+
+        # { "abcdefg",	"abcdefg"	},
+        # { "(a|b)*a",	"ababababab"	},
+        # { "(a|b)*a",	"aaaaaaaaba"	},
+        # { "(a|b)*a",	"aaaaaabac"	},
+        # { "a(b|c)*d",	"abccbcccd"	},
+        # { "a(b|c)*d",	"abccbcccde"	},
+        # { "a(b|c)*d",	"abcccccccc"	},
+        # { "a(b|c)*d",	"abcd"		},
+
+        # ----------------------------------------------------
+
+        $re     = '(.*) (.*) (.*) (.*) (.*)';
+        $string = ("a" x 10_000_000) . " ";
+        $string = $string x 5;
+        chop $string;
+
+        print STDERR "3...\n";
         $before = gettimeofday();
-        $count  = scalar @{[ $aaa =~ /(a*?.*?a*?)/g]};
+        my @r = $string =~ /$re/;
 
-        print STDERR "2...$count\n";
+        print STDERR "res: ", ~~@r, "\n";
         $after  = gettimeofday();
-        $results{_02_a_stars} = sprintf("%0.4f", $after - $before);
-        $results{_02_a_stars_count} = $count;
-        # ----------------------------------------------------
 
-        # ----------------------------------------------------
-        $bbb = "b" x $goal;
-        $before = gettimeofday();
-        #for ($i=0; $i < 10_000; $i++) {
-                $count = scalar @{[ $bbb =~ /(a*.*a*)/g ]};
-        #}
-        $after  = gettimeofday();
-        $results{_03_not_a_stars} = sprintf("%0.4f", $after - $before);
-        $results{_03_not_a_stars_count} = $count;
-        # ----------------------------------------------------
-
-        # ----------------------------------------------------
-#         $before = gettimeofday();
-#         $count  = scalar @{[ split (//, $aaa) ]};
-#         $after  = gettimeofday();
-#         $results{split_empty} = sprintf("%0.4f", $after - $before);
-#         $results{split_empty_count} = $count;
+        print STDERR "4...\n";
+        $results{fieldsplit} = sprintf("%0.4f", $after - $before);
         # ----------------------------------------------------
 
         return \%results;
@@ -133,7 +71,6 @@ sub main
         my ($options) = @_;
 
         return {
-                large_seq    => large_seq($options),
                 pathological => pathological($options),
                };
 }
