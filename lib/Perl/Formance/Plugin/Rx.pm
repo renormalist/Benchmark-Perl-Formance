@@ -98,9 +98,9 @@ sub pathological
         $aaa = "a" x $goal;
         print STDERR "1...\n";
         $before = gettimeofday();
-        $count  = scalar @{[ $aaa =~ /(a*?a*?a*?)/g]};
+        $count  = scalar @{[ $aaa =~ /(a*?.*?a*?)/g]};
 
-        print STDERR "2...\n";
+        print STDERR "2...$count\n";
         $after  = gettimeofday();
         $results{_02_a_stars} = sprintf("%0.4f", $after - $before);
         $results{_02_a_stars_count} = $count;
