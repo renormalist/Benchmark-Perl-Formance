@@ -12,6 +12,7 @@ use vars qw($goal $threadcount);
 $goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 10 : 25;
 $threadcount = $ENV{PERLFORMANCE_THREADCOUNT} || 100;
 
+use forks;
 use threads;
 use threads::shared;
 
