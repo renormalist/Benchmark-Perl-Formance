@@ -6,12 +6,13 @@ use warnings;
 use strict;
 
 use Time::HiRes qw(gettimeofday);
-use Benchmark;
+use Benchmark ':hireswallclock';
+use Data::Dumper;
 
 use vars qw($goal);
-$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 20; # probably 28 or more
+$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 23; # probably 28 or more
 
-sub pathological
+sub regexes
 {
         my ($options) = @_;
 
@@ -19,20 +20,21 @@ sub pathological
 
         my $before;
         my $after;
-        my $count;
-        my $n;
-        my $re;
-        my $string;
+        my $count = 3;
         my %results = ();
 
-        $before = gettimeofday();
-        $n      = $goal;
-        $re     = ("a?" x $n) . ("a" x $n);
-        $string = "a" x $n;
-        $string =~ /$re/;
-        $after  = gettimeofday();
+        {
+                my $subtest = "pathological";
 
-        $results{pathology} = sprintf("%0.4f", $after - $before);
+                my $n      = $goal;
+                my $re     = ("a?" x $n) . ("a" x $n);
+                my $string = "a" x $n;
+
+                print STDERR " - $subtest...\n" if $options->{verbose} > 2;
+                my $t = timeit $count, sub { $string =~ /$re/ };
+                my $time = $t->[1] / $t->[5];
+                $results{$subtest} = sprintf("%0.4f", $time);
+        }
 
         # ----------------------------------------------------
 
@@ -47,20 +49,39 @@ sub pathological
 
         # ----------------------------------------------------
 
-        $re     = '(.*) (.*) (.*) (.*) (.*)';
-        $string = ("a" x 10_000_000) . " ";
-        $string = $string x 5;
-        chop $string;
+        {
+                my $subtest = "fieldsplit1";
 
-        print STDERR "3...\n";
-        $before = gettimeofday();
-        my @r = $string =~ /$re/;
+                my $re     = '(.*) (.*) (.*) (.*) (.*)';
+                my $string = (("a" x 10_000_000) . " ") x 5;
+                chop $string;
 
-        print STDERR "res: ", ~~@r, "\n";
-        $after  = gettimeofday();
+                print STDERR " - $subtest...\n" if $options->{verbose} > 2;
+                my $t = timeit $count, sub { $string =~ /$re/ };
+                my $time = $t->[1] / $t->[5];
+                $results{$subtest} = sprintf("%0.4f", $time);
+        }
 
-        print STDERR "4...\n";
-        $results{fieldsplit} = sprintf("%0.4f", $after - $before);
+        # ----------------------------------------------------
+
+        {
+                my $subtest = "fieldsplit2";
+
+                my $re     = '([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*)';
+                my $string = ( ("a" x 10_000_000) . " " ) x 5;
+                chop $string;
+
+                print STDERR " - $subtest...\n" if $options->{verbose} > 2;
+                my $t = timeit $count, sub { $string =~ /$re/ };
+                my $time = $t->[1] / $t->[5];
+                $results{$subtest} = sprintf("%0.4f", $time);
+        }
+
+        $results{fieldsplitratio} = sprintf(
+                                            "%0.4f",
+                                            $results{fieldsplit2} / $results{fieldsplit1}
+                                           );
+
         # ----------------------------------------------------
 
         return \%results;
@@ -71,7 +92,7 @@ sub main
         my ($options) = @_;
 
         return {
-                pathological => pathological($options),
+                regexes => regexes($options),
                };
 }
 
