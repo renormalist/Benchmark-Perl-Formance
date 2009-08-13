@@ -101,8 +101,9 @@ sub run {
         # run plugins
         my %RESULTS;
         foreach (@run_plugins) {
+                no strict 'refs';
                 print STDERR "Run $_...\n" if $verbose;
-                $RESULTS{results}{$_} = "Perl::Formance::Plugin::$_"->main();
+                $RESULTS{results}{$_} = &{"Perl::Formance::Plugin::${_}::main"}($options);
         }
 
         # Perl Config
