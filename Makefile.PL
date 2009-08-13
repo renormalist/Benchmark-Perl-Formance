@@ -12,11 +12,11 @@ requires      'Time::HiRes';
 requires      'Data::YAML::Writer';
 requires      'Perl::Formance::Cargo';
 
-recommendends 'Mail::SpamAssassin';
-recommendends 'Regexp::Common';
+recommends 'Mail::SpamAssassin';
+recommends 'Regexp::Common';
 
-recommendends 'Moose';
-recommendends 'Mouse';
+recommends 'Moose';
+recommends 'Mouse';
 
 install_script('script/perl-formance');
 WriteAll;
