@@ -86,6 +86,15 @@ sub run {
                     plugins    => $plugins,
                    };
 
+
+        # use forks if requested
+        my $use_forks = 0;
+        if ($ENV{PERLFORMANCE_USE_FORKS}) {
+                eval "use forks";
+                $use_forks = 1 unless $@;
+                print "use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
+        }
+
         # check plugins
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
         my @run_plugins = grep {
