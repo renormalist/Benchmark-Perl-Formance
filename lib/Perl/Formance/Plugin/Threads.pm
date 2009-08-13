@@ -7,10 +7,12 @@ use 5.008;
 use warnings;
 use strict;
 
-use vars qw($goal $threadcount);
+use vars qw($goal $threadcount $val $expect);
 
-$goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 10 : 25;
+$goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 3 : 25;
 $threadcount = $ENV{PERLFORMANCE_THREADCOUNT} || 100;
+$val         = 25;
+$expect      = $threadcount * $val;
 
 use threads;
 use threads::shared;
@@ -21,18 +23,19 @@ use Time::HiRes 'gettimeofday';
 
 sub thread_storm
 {
-        my $val    = 25;
-        my $expect = $threadcount * $val;
-        my $result = 0;
-        my $t;
+        $result = 0;
+        my @t;
         foreach (1..$threadcount) {
-                $t = async {
+                push @t, async {
                         print STDERR ".";
-                        $result += $val
-                };
-                $t->join;
+                        $result += $val;
+                }
         }
-        print STDERR "\n";
+        foreach (@t) {
+                $_->join;
+        }
+
+        print STDERR " == $result\n";
         return $result;
 }
 
@@ -42,7 +45,7 @@ sub main
 
         my $ret;
         my $before = gettimeofday();
-        do { $ret  = thread_storm() } for 1..20;
+        do { $ret  = thread_storm() } for 1..$goal;
         my $after  = gettimeofday();
         my $diff   = ($after - $before);
 
@@ -50,6 +53,7 @@ sub main
                 plain_time      => sprintf("%0.4f", $diff),
                 threadcount     => $threadcount,
                 result          => $ret,
+                expect          => $expect,
                };
 }
 
