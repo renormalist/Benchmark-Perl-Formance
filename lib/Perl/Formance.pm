@@ -115,6 +115,17 @@ sub run {
                 $RESULTS{results}{$_} = &{"Perl::Formance::Plugin::${_}::main"}($options);
         }
 
+        $RESULTS{perlformance_config}{env} =
+        {
+         map { $_ => $ENV{$_} } sort qw(
+                                               PERLFORMANCE_TESTMODE_FAST
+                                               PERLFORMANCE_SALEARN
+                                               PERLFORMANCE_USE_FORKS
+                                               PERLFORMANCE_THREADCOUNT
+                                      )
+        };
+        $RESULTS{perlformance_config}{use_forks} = $use_forks;
+
         # Perl Config
         if ($showconfig)
         {
