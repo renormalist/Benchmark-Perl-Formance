@@ -92,8 +92,8 @@ sub run {
                 eval "use Perl::Formance::Plugin::$_";
                 if ($@) {
                         print "Skip plugin '$_'" if $verbose;
-                        print ":$@"            if $verbose >= 2;
-                        print "\n"             if $verbose;
+                        print ":$@"              if $verbose >= 2;
+                        print "\n"               if $verbose;
                 }
                 not $@;
         } @plugins;
