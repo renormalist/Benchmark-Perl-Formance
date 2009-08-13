@@ -17,7 +17,7 @@ $VERSION = '0.01';
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
-my $DEFAULT_PLUGINS = 'Rx,Fib,FibOO,FibThreads,SA';
+my $DEFAULT_PLUGINS = 'Rx,Fib,FibOO,Threads,SA';
 
 # incrementaly interesting Perl Config keys
 my %CONFIG_KEYS = (
@@ -86,14 +86,23 @@ sub run {
                     plugins    => $plugins,
                    };
 
+
+        # use forks if requested
+        my $use_forks = 0;
+        if ($ENV{PERLFORMANCE_USE_FORKS}) {
+                eval "use forks";
+                $use_forks = 1 unless $@;
+                print "use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
+        }
+
         # check plugins
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
         my @run_plugins = grep {
                 eval "use Perl::Formance::Plugin::$_";
                 if ($@) {
                         print "Skip plugin '$_'" if $verbose;
-                        print ":$@"            if $verbose >= 2;
-                        print "\n"             if $verbose;
+                        print ":$@"              if $verbose >= 2;
+                        print "\n"               if $verbose;
                 }
                 not $@;
         } @plugins;
@@ -101,9 +110,21 @@ sub run {
         # run plugins
         my %RESULTS;
         foreach (@run_plugins) {
+                no strict 'refs';
                 print STDERR "Run $_...\n" if $verbose;
-                $RESULTS{results}{$_} = "Perl::Formance::Plugin::$_"->main();
+                $RESULTS{results}{$_} = &{"Perl::Formance::Plugin::${_}::main"}($options);
         }
+
+        $RESULTS{perlformance_config}{env} =
+        {
+         map { $_ => $ENV{$_} } sort qw(
+                                               PERLFORMANCE_TESTMODE_FAST
+                                               PERLFORMANCE_SALEARN
+                                               PERLFORMANCE_USE_FORKS
+                                               PERLFORMANCE_THREADCOUNT
+                                      )
+        };
+        $RESULTS{perlformance_config}{use_forks} = $use_forks;
 
         # Perl Config
         if ($showconfig)
