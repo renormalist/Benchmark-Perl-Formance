@@ -14,6 +14,9 @@ requires 'Data::YAML::Writer';
 # SpamAssassin
 requires 'Perl::Formance::Cargo';
 requires 'Mail::SpamAssassin';
+requires 'NetAddr::IP'; # really
+requires 'Net::DNS'; # really
+requires 'Net::IP'; # really
 requires 'DB_File';
 
 # OO
