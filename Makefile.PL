@@ -4,18 +4,23 @@ use inc::Module::Install;
 name           'Perl-Formance';
 all_from       'lib/Perl/Formance.pm';
 
-# Specific dependencies
+# general dependencies
+requires 'forks';
 requires 'Pod::Help';
 requires 'Benchmark';
 requires 'Time::HiRes';
 requires 'Data::YAML::Writer';
-requires 'Perl::Formance::Cargo';
 
+# SpamAssassin
+requires 'Perl::Formance::Cargo';
 requires 'Mail::SpamAssassin';
-requires 'forks';
+requires 'DB_File';
+
+# OO
 requires 'Moose';
 requires 'Mouse';
 
+# Rx
 requires 'POSIX::Regex';
 requires 're::engine::Lua';
 requires 're::engine::LPEG';

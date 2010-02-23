@@ -32,7 +32,6 @@ sub regexes
 
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 my $t = timeit $count, sub { $string =~ /$re/ };
-                my $time = $t->[1] / $t->[5];
                 $results{$subtest} = {
                                       Benchmark => $t,
                                       goal      => $goal,
