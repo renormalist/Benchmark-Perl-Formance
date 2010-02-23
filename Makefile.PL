@@ -16,5 +16,10 @@ requires 'forks';
 requires 'Moose';
 requires 'Mouse';
 
+requires 'POSIX::Regex';
+requires 're::engine::Lua';
+requires 're::engine::LPEG';
+requires 're::engine::Oniguruma';
+
 install_script('script/perl-formance');
 WriteAll;

@@ -110,7 +110,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::FibThreads - Stress regular expressions
+Perl::Formance::Plugin::Rx - Stress regular expressions
 
 =cut
 
