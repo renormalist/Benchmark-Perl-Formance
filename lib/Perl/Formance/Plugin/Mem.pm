@@ -3,14 +3,16 @@ package Perl::Formance::Plugin::Mem;
 use warnings;
 use strict;
 
-use vars qw($goal);
-$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
+use vars qw($goal $count);
+$goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
+$count = 5;
 
 use Benchmark ':hireswallclock';
 
-sub fib
+sub lots_of_malloc
 {
         my $n = shift;
+        sleep 1;
 }
 
 sub main {

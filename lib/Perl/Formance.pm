@@ -7,8 +7,9 @@ use strict;
 
 use Config;
 use Exporter;
+use Getopt::Long ":config", "no_ignore_case", "bundling";
+use Data::Structure::Util "unbless";
 use Data::YAML::Writer;
-use Getopt::Long qw(:config no_ignore_case bundling);
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 

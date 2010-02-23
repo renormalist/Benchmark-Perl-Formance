@@ -3,14 +3,13 @@ package Perl::Formance::Plugin::Threads;
 # Create threads to evaluate Fibonacci numbers
 
 use 5.008;
-
-use warnings;
 use strict;
+use warnings;
 
 use vars qw($goal $threadcount $val $expect);
 
 $goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 3 : 25;
-$threadcount = $ENV{PERLFORMANCE_THREADCOUNT} || 100;
+$threadcount = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : ($ENV{PERLFORMANCE_THREADCOUNT} || 100);
 $val         = 25;
 $expect      = $threadcount * $val;
 
@@ -19,15 +18,18 @@ use threads::shared;
 
 my $result : shared;
 
-use Time::HiRes 'gettimeofday';
+use Benchmark ':hireswallclock';
+use Data::Dumper;
 
 sub thread_storm
 {
+        my ($options) = @_;
+
         $result = 0;
         my @t;
         foreach (1..$threadcount) {
                 push @t, async {
-                        print STDERR ".";
+                        #print STDERR "." if $options->{verbose} >= 3;
                         $result += $val;
                 }
         }
@@ -35,7 +37,7 @@ sub thread_storm
                 $_->join;
         }
 
-        print STDERR " == $result\n";
+        #print STDERR " == $result\n" if $options->{verbose} >= 3;
         return $result;
 }
 
@@ -46,6 +48,7 @@ sub main
         my $ret;
         my $t = timeit($goal, sub { $ret = thread_storm($options) });
 
+        print STDERR Dumper ($t);
         return {
                 Benchmark   => $t,
                 threadcount => $threadcount,

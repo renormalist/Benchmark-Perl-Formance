@@ -2,11 +2,12 @@ package Perl::Formance::Plugin::Fib;
 
 # Fibonacci numbers
 
-use warnings;
 use strict;
+use warnings;
 
-use vars qw($goal);
-$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
+use vars qw($goal $count);
+$goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 18 : 35; # same over Fib, FibOO, FibMoose, FibMouse
+$count = 5;
 
 use Benchmark ':hireswallclock';
 
@@ -15,8 +16,8 @@ sub fib
         my $n = shift;
 
         $n < 2
-         ? 1
-          : fib($n-1) + fib($n-2);
+            ? 1
+            : fib($n-1) + fib($n-2);
 }
 
 sub main

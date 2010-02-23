@@ -8,8 +8,10 @@ use strict;
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 
-use vars qw($goal);
-$goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 23; # probably 28 or more
+use vars qw($goal $count $length);
+$goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 29; # probably 28 or more
+$length = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 100_000 : 10_000_000;
+$count  = 5;
 
 sub regexes
 {
@@ -55,7 +57,7 @@ sub regexes
                 my $subtest = "fieldsplit1";
 
                 my $re     = '(.*) (.*) (.*) (.*) (.*)';
-                my $string = (("a" x 10_000_000) . " ") x 5;
+                my $string = (("a" x $length) . " ") x 5;
                 chop $string;
 
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
@@ -73,7 +75,7 @@ sub regexes
                 my $subtest = "fieldsplit2";
 
                 my $re     = '([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*)';
-                my $string = ( ("a" x 10_000_000) . " " ) x 5;
+                my $string = ( ("a" x $length) . " " ) x 5;
                 chop $string;
 
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
