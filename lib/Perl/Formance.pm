@@ -181,7 +181,7 @@ it. Then use that mirror for all your installations of Perl::Formance.
 On the other side this could be used to track the performance of your
 installation over time by continuously upgrading from CPAN.
 
-=head2 It's not scientific
+=head2 It is not scientific
 
 The benchmarks are basically just a collection of already existing
 interesting things like large test suites found on CPAN or just

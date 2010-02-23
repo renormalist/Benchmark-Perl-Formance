@@ -178,8 +178,6 @@ Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
 
 Fibonnacci numbers with threads to stress thread handling.
 
-=item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
-
 =back
 
 
