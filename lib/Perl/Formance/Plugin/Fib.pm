@@ -8,7 +8,7 @@ use strict;
 use vars qw($goal);
 $goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
 
-use Time::HiRes qw(gettimeofday);
+use Benchmark ':hireswallclock';
 
 sub fib
 {
@@ -23,14 +23,12 @@ sub main
 {
         my ($options) = @_;
 
-        my $before = gettimeofday();
-        my $ret    = fib($goal);
-        my $after  = gettimeofday();
-        my $diff   = ($after - $before);
-
+        my $result;
+        my $t = timeit $count, sub { $result = fib $goal };
         return {
-                plain_time => sprintf("%0.4f", $diff),
-                result     => $ret,
+                Benchmark => $t,
+                result    => $result,
+                goal      => $goal,
                };
 }
 

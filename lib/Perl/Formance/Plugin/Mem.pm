@@ -6,7 +6,7 @@ use strict;
 use vars qw($goal);
 $goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
 
-use Time::HiRes qw(gettimeofday);
+use Benchmark ':hireswallclock';
 
 sub fib
 {
@@ -16,15 +16,10 @@ sub fib
 sub main {
         my ($options) = @_;
 
-        my $before   = gettimeofday();
-
-        my $ret      = lots_of_malloc;
-
-        my $after    = gettimeofday();
-        my $duration = ($after - $before);
-
+        my $t = timeit $count, sub { lots_of_malloc($goal) };
         return {
-                skeleton_time => sprintf("%0.4f", $duration)
+                Benchmark => $t,
+                count     => $count,
                };
 }
 

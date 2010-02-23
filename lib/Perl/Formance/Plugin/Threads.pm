@@ -44,16 +44,13 @@ sub main
         my ($options) = @_;
 
         my $ret;
-        my $before = gettimeofday();
-        do { $ret  = thread_storm() } for 1..$goal;
-        my $after  = gettimeofday();
-        my $diff   = ($after - $before);
+        my $t = timeit($goal, sub { $ret = thread_storm($options) });
 
         return {
-                plain_time      => sprintf("%0.4f", $diff),
-                threadcount     => $threadcount,
-                result          => $ret,
-                expect          => $expect,
+                Benchmark   => $t,
+                threadcount => $threadcount,
+                result      => $ret,
+                expect      => $expect,
                };
 }
 

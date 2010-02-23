@@ -5,7 +5,6 @@ package Perl::Formance::Plugin::Rx;
 use warnings;
 use strict;
 
-use Time::HiRes qw(gettimeofday);
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 
@@ -20,7 +19,6 @@ sub regexes
 
         my $before;
         my $after;
-        my $count = 3;
         my %results = ();
 
         {
@@ -33,7 +31,11 @@ sub regexes
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 my $t = timeit $count, sub { $string =~ /$re/ };
                 my $time = $t->[1] / $t->[5];
-                $results{$subtest} = sprintf("%0.4f", $time);
+                $results{$subtest} = {
+                                      Benchmark => $t,
+                                      goal      => $goal,
+                                      count     => $count,
+                                     };
         }
 
         # ----------------------------------------------------
@@ -58,8 +60,11 @@ sub regexes
 
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 my $t = timeit $count, sub { $string =~ /$re/ };
-                my $time = $t->[1] / $t->[5];
-                $results{$subtest} = sprintf("%0.4f", $time);
+                $results{$subtest} = {
+                                      Benchmark => $t,
+                                      goal      => $goal,
+                                      count     => $count,
+                                     };
         }
 
         # ----------------------------------------------------
@@ -73,13 +78,16 @@ sub regexes
 
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 my $t = timeit $count, sub { $string =~ /$re/ };
-                my $time = $t->[1] / $t->[5];
-                $results{$subtest} = sprintf("%0.4f", $time);
+                $results{$subtest} = {
+                                      Benchmark => $t,
+                                      goal      => $goal,
+                                      count     => $count,
+                                     };
         }
 
         $results{fieldsplitratio} = sprintf(
                                             "%0.4f",
-                                            $results{fieldsplit2} / $results{fieldsplit1}
+                                            $results{fieldsplit1}{Benchmark}[1] / $results{fieldsplit2}{Benchmark}[1]
                                            );
 
         # ----------------------------------------------------

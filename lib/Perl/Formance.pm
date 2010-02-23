@@ -137,6 +137,7 @@ sub run {
                 };
         }
 
+        unbless (\%RESULTS);
         return \%RESULTS;
 }
 

@@ -8,7 +8,7 @@ use strict;
 use vars qw($goal);
 $goal = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
 
-use Time::HiRes qw(gettimeofday);
+use Benchmark ':hireswallclock';
 
 sub new {
         bless {}, shift;
@@ -28,15 +28,13 @@ sub main
 {
         my ($options) = @_;
 
-        my $fib    = new Perl::Formance::Plugin::FibOO;
-
-        my $before = gettimeofday();
-        my $ret    = $fib->fib($goal);
-        my $after  = gettimeofday();
-        my $diff   = ($after - $before);
-
+        my $result;
+        my $fib = __PACKAGE__->new;
+        my $t   = timeit $count, sub { $result = $fib->fib($goal) };
         return {
-                plain_time => sprintf("%0.4f", $diff)
+                Benchmark => $t,
+                result    => $result,
+                goal      => $goal,
                };
 }
 
