@@ -1,27 +1,28 @@
 package Perl::Formance::Plugin::Skeleton;
 
-use warnings;
 use strict;
+use warnings;
 
-use Time::HiRes qw(gettimeofday);
+use Benchmark ':hireswallclock';
+
+use vars qw($goal $count);
+$goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 2 :  10; # benchmark parameter that influences single run duration
+$count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 :   5; # run that many iterations
 
 sub main {
         my ($options) = @_;
 
-        # $options->{help}
-        # $options->{verbose}
-        # $options->{plugins}
-        # $options->{showconfig}
-
-        my $before   = gettimeofday();
-
-        sleep 1; # your benchmark runs here
-
-        my $after    = gettimeofday();
-        my $duration = ($after - $before);
-
+        my $result;
+        my $t = timeit $count, sub {
+                                    # REAL CODE HERE
+                                    sleep $goal;
+                                    $result = 7;
+                                   };
         return {
-                skeleton_time => sprintf("%0.4f", $duration)
+                Benchmark             => $t,
+                goal                  => $goal,
+                count                 => $count,
+                result                => $result,
                };
 }
 
