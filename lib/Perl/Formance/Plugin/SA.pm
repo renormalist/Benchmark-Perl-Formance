@@ -9,8 +9,9 @@ use File::ShareDir qw(module_dir);
 use Time::HiRes qw(gettimeofday);
 use Perl::Formance::Cargo;
 
-use vars qw($count);
-$count = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+use vars qw($count $easy_ham);
+$count    = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+$easy_ham = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "easy_ham_subset" : "easy_ham";
 
 use Benchmark ':hireswallclock';
 
@@ -34,7 +35,7 @@ sub main {
         # spam variant:
         # my $cmd    = "time /usr/bin/env perl -T $salearn --spam -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/spam_2/*'";
         # ham variant:
-        my $cmd    = "$^X -T $salearn --ham -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/easy_ham/*'";
+        my $cmd    = "$^X -T $salearn --ham -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/$easy_ham/*'";
         print STDERR "$cmd\n" if $options->{verbose} >= 3;
 
         my $ret;
