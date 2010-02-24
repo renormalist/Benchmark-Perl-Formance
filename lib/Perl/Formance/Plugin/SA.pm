@@ -17,7 +17,7 @@ use Benchmark ':hireswallclock';
 sub main {
         my ($options) = @_;
 
-        my $dstdir = tempdir( CLEANUP => 0 );
+        my $dstdir = tempdir( CLEANUP => 1 );
         my $srcdir = module_dir('Perl::Formance::Cargo')."/SA";
 
         print STDERR "Prepare cargo spam'n'ham files in $dstdir ...\n" if $options->{verbose} >= 3;
@@ -25,7 +25,7 @@ sub main {
         dircopy($srcdir, $dstdir);
 
 
-        my $salearn = $ENV{PERLFORMANCE_SALEARN};
+        my $salearn = `which sa-learn`; chomp $salearn;
         ($salearn = $^X) =~ s!/perl[\d.]*$!/sa-learn! unless $salearn;
         print STDERR "Use sa-learn: $salearn\n" if $options->{verbose};
 
@@ -66,13 +66,8 @@ provided taken from spamassassin.org.
 
 =head1 CONFIGURATION
 
-It uses the executable "sa-learn", that it by default searches in the
-same path of your used perl executable ($^X). In case you want to use
-another "sa-learn" please set an environment variable
-"PERLFORMANCE_SALEARN", e.g.:
-
-  $ export PERLFORMANCE_SALEARN=/usr/local/bin/sa-learn
-  $ perl-formance --plugins=SA
+It uses the executable "sa-learn" that it by default searches in your
+env or in the same path of your used perl executable ($^X).
 
 =cut
 
