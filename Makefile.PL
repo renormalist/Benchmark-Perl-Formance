@@ -11,12 +11,12 @@ requires 'Time::HiRes';
 requires 'Data::YAML::Writer';
 
 # SpamAssassin
-requires 'Perl::Formance::Cargo';
-requires 'Mail::SpamAssassin';
-requires 'NetAddr::IP'; # really
-requires 'Net::DNS'; # really
-requires 'Net::IP'; # really
 requires 'DB_File';
+requires 'Net::IP';               # really
+requires 'Net::DNS';              # really
+requires 'NetAddr::IP';           # really
+requires 'Mail::SpamAssassin';
+requires 'Perl::Formance::Cargo';
 
 # OO
 requires 'Moose';
