@@ -19,6 +19,7 @@ push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,Threads,SA';
+my $DEFAULT_INDENT  = 0;
 
 # incrementaly interesting Perl Config keys
 my %CONFIG_KEYS = (
@@ -68,25 +69,28 @@ sub run {
         my $showconfig = 0;
         my $verbose    = 0;
         my $plugins    = $DEFAULT_PLUGINS;
+        my $indent     = $DEFAULT_INDENT;
         my $options    = {};
 
         # get options
-        my $ok         = GetOptions ("help|h"        => \$help,
-                                     "verbose|v+"    => \$verbose,
-                                     "showconfig|c+" => \$showconfig,
-                                     "plugins=s"     => \$plugins);
-
+        my $ok = GetOptions (
+                             "help|h"        => \$help,
+                             "verbose|v+"    => \$verbose,
+                             "showconfig|c+" => \$showconfig,
+                             "plugins=s"     => \$plugins,
+                             "indent=i"      => \$indent,
+                            );
         do { usage; exit  0 } if $help;
         do { usage; exit -1 } if not $ok;
 
         # fill options
-        $options = {
-                    help       => $help,
-                    verbose    => $verbose,
-                    showconfig => $showconfig,
-                    plugins    => $plugins,
-                   };
-
+        $self->{options} = $options = {
+                                       help       => $help,
+                                       verbose    => $verbose,
+                                       showconfig => $showconfig,
+                                       plugins    => $plugins,
+                                       indent     => $indent,
+                                      };
 
         # use forks if requested
         my $use_forks = 0;
@@ -146,8 +150,12 @@ sub print_results
 {
         my ($self, $RESULTS) = @_;
 
+        my $output = '';
+        my $indent = $self->{options}{indent};
         my $yw = new Data::YAML::Writer;
-        $yw->write($RESULTS, sub { print shift,"\n" });
+        $yw->write($RESULTS, sub { $output .= shift()."\n" });
+        $output =~ s/^/" "x$indent/emsg; # indent
+        print $output;
 }
 
 =head1 NAME
