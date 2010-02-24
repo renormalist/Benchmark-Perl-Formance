@@ -19,7 +19,7 @@ requires 'Mail::SpamAssassin';
 requires 'Perl::Formance::Cargo';
 
 # OO
-requires 'Moose';
+requires 'Moose' => '0.98';
 requires 'Mouse';
 
 # Rx
