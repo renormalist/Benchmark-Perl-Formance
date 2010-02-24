@@ -1,5 +1,3 @@
-Build
-Build.PL
 ChangeLog
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
@@ -11,12 +9,13 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Perl/Formance.pm
 lib/Perl/Formance/Plugin/Fib.pm
-lib/Perl/Formance/Plugin/FibForks.pm
 lib/Perl/Formance/Plugin/FibMoose.pm
 lib/Perl/Formance/Plugin/FibMouse.pm
 lib/Perl/Formance/Plugin/FibOO.pm
 lib/Perl/Formance/Plugin/Mem.pm
+lib/Perl/Formance/Plugin/MooseTS.pm
 lib/Perl/Formance/Plugin/Rx.pm
+lib/Perl/Formance/Plugin/RxCmp.pm
 lib/Perl/Formance/Plugin/SA.pm
 lib/Perl/Formance/Plugin/Skeleton.pm
 lib/Perl/Formance/Plugin/Threads.pm

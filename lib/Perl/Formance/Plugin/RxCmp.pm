@@ -2,7 +2,7 @@ package Perl::Formance::Plugin::RxCmp;
 
 # Compare different Regexes engines plugins (Perl 5.10+)
 
-use 5.010;
+use 5.010; # [sic - pluggable regex engines]
 use strict;
 use warnings;
 
@@ -11,7 +11,7 @@ use Data::Dumper;
 
 use vars qw($goal $count $length);
 $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 29; # probably 28 or more
-$count  = 5;
+$count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
 
 my $n      = $goal;
 my $re     = ("a?" x $n) . ("a" x $n);
@@ -152,8 +152,6 @@ sub regexes
 
         # http://swtch.com/~rsc/regexp/regexp1.html
 
-        my $before;
-        my $after;
         my %results = ();
 
         no strict "refs";
