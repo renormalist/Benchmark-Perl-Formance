@@ -11,7 +11,7 @@ package Perl::Formance::Plugin::Shootout::pidigits;
 use strict;
 use Math::GMP;
 
-my($z0, $z1, $z2) = map Math::GMP->new($_),1,0,1;
+my($z0, $z1, $z2);
 
 sub extract_digit { return ($z0*$_[0]+$z1)/$z2; }
 
@@ -28,7 +28,11 @@ sub compose {
 
 sub main
 {
-        my $n = $ARGV[0];
+        my $output = '';
+
+        ($z0, $z1, $z2) = map Math::GMP->new($_),1,0,1;
+
+        my $n = $_[0];
         ($,, $\) = ("\t", "\n");
         my ($i, $s, $d); my $k = 0;
 
@@ -44,13 +48,14 @@ sub main
                 $s .= $d;
 
                 unless ( $i % 10 ) {
-                        print $s, ":$i"; undef $s;
+                        $output .= $s; undef $s;
                 }
         }
 
         $s .= ' ' x (10-$i) if $i = $n % 10;
 
-        print $s, ":$n" if $s
+        $output .= $s if $s;
+        return $output;
 }
 
 1;
