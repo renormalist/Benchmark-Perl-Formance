@@ -22,7 +22,7 @@ sub pidigits
                 goal      => $goal,
                 count     => $count,
                 #result    => $result, # tooooo long
-                result    => substr($result, 0, $goal <= 10 ? $goal : 10),
+                result    => substr($result, 0, $goal <= 10 ? $goal : 10)."[...]",
                };
 }
 
