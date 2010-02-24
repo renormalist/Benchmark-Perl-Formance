@@ -58,8 +58,32 @@ sub new {
 # show POD from script/perl-formance
 sub usage
 {
-        require Pod::Help;
-        Pod::Help->help;
+        print 'perl-formance - Frontend for Perl::Formance
+
+Usage:
+
+   $ perl-formance
+   $ perl-formance --plugins=SA,Rx,RxCmp -v
+   $ perl-formance -ccccc --indent=2
+
+If run directly it uses the perl in your PATH:
+
+   $ /path/to/perl-formance
+
+To use another perl start it via
+
+   $ /other/path/to/bin/perl /path/to/perl-formance
+
+To provide environment variables (for some plugins) you can do
+
+   $ PERLFORMANCE_TESTMODE_FAST=1 perl-formance
+
+For more details see
+
+   man perl-formance
+   perldoc Perl::Formance
+
+';
 }
 
 sub run {

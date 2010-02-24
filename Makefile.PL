@@ -6,7 +6,6 @@ all_from       'lib/Perl/Formance.pm';
 
 # general dependencies
 requires 'forks';
-requires 'Pod::Help';
 requires 'Benchmark';
 requires 'Time::HiRes';
 requires 'Data::YAML::Writer';
