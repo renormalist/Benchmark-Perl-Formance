@@ -6,27 +6,24 @@ use warnings;
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 
-use Perl::Formance::Plugin::Shootout::pidigits;
-
-use vars qw($goal $count);
-$goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 29;
-$count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
-
 our $VERSION = '0.01';
 
 sub pidigits
 {
         my ($options) = @_;
 
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 100 : 20_000;
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1   : 5;
+
         my $result;
-        my $t = timeit $count, sub { &{"$result = Perl::Formance::Plugin::Shootout::$subtest::main"} };
+        my $t = timeit $count, sub { $result = Perl::Formance::Plugin::Shootout::pidigits::main($goal) };
         return {
                 Benchmark => $t,
                 goal      => $goal,
                 count     => $count,
-                result    => $result,
+                #result    => $result, # tooooo long
+                result    => substr($result, 0, $goal <= 10 ? $goal : 10),
                };
-
 }
 
 sub shootout
@@ -39,7 +36,7 @@ sub shootout
         for my $subtest (qw( pidigits  ))
         {
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
-                require "Perl::Formance::Plugin::Shootout::$subtest";
+                eval "use Perl::Formance::Plugin::Shootout::$subtest";
                 $results{$subtest} = $subtest->($options);
         }
         return \%results;
