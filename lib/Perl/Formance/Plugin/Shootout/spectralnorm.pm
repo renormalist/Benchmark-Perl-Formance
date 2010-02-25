@@ -9,6 +9,8 @@ package Perl::Formance::Plugin::Shootout::spectralnorm;
 # Contributed by Andrew Rodland
 
 use strict;
+use warnings;
+
 use IO::Select;
 use Benchmark ':hireswallclock';
 
@@ -84,9 +86,10 @@ sub num_cpus {
 }
 
 sub init {
+  ($n) = @_;
+
   $size_of_float = length pack "F", 0;
 
-  $n = @ARGV ? $ARGV[0] : 500;
   $threads = num_cpus() || 1;
 
   if ($threads > $n) {
@@ -103,7 +106,9 @@ sub init {
 
 sub run
 {
-        init();
+        my ($goal) = @_;
+
+        init($goal);
 
         my @u = (1) x $n;
         my @v;
@@ -126,8 +131,8 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5500;
-        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 50 : 5500;
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1   : 5;
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };

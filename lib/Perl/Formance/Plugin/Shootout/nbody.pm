@@ -1,7 +1,7 @@
 package Perl::Formance::Plugin::Shootout::nbody;
 
-COMMAND LINE:
-/usr/bin/perl nbody.perl 50000000
+# COMMAND LINE:
+# /usr/bin/perl nbody.perl 50000000
 
 # The Computer Language Shootout
 # http://shootout.alioth.debian.org/
@@ -11,9 +11,14 @@ COMMAND LINE:
 # fixed and cleaned up by Danny Sauer
 # optimized by Jesse Millikan
 
+use strict;
+use warnings;
+
 use constant PI            => 3.141592653589793;
 use constant SOLAR_MASS    => (4 * PI * PI);
 use constant DAYS_PER_YEAR => 365.24;
+
+use Benchmark ':hireswallclock';
 
 #  Globals for arrays... Oh well.
 #  Almost every iteration is a range, so I keep the last index rather than a count.
@@ -84,31 +89,51 @@ sub offset_momentum
   $vzs[0] = - $pz / SOLAR_MASS;
 }
 
-# @ns = ( sun, jupiter, saturn, uranus, neptune )
-@xs = (0, 4.84143144246472090e+00, 8.34336671824457987e+00, 1.28943695621391310e+01, 1.53796971148509165e+01);
-@ys = (0, -1.16032004402742839e+00, 4.12479856412430479e+00, -1.51111514016986312e+01, -2.59193146099879641e+01);
-@zs = (0, -1.03622044471123109e-01, -4.03523417114321381e-01, -2.23307578892655734e-01, 1.79258772950371181e-01);
-@vxs = map {$_ * DAYS_PER_YEAR}
-  (0, 1.66007664274403694e-03, -2.76742510726862411e-03, 2.96460137564761618e-03, 2.68067772490389322e-03);
-@vys = map {$_ * DAYS_PER_YEAR}
-  (0, 7.69901118419740425e-03, 4.99852801234917238e-03, 2.37847173959480950e-03, 1.62824170038242295e-03);
-@vzs = map {$_ * DAYS_PER_YEAR}
-  (0, -6.90460016972063023e-05, 2.30417297573763929e-05, -2.96589568540237556e-05, -9.51592254519715870e-05);
-@mass = map {$_ * SOLAR_MASS}
-  (1, 9.54791938424326609e-04, 2.85885980666130812e-04, 4.36624404335156298e-05, 5.15138902046611451e-05);
+sub run
+{
+        my ($n) = @_;
 
-$last = @xs - 1;
+        # @ns = ( sun, jupiter, saturn, uranus, neptune )
+        @xs = (0, 4.84143144246472090e+00, 8.34336671824457987e+00, 1.28943695621391310e+01, 1.53796971148509165e+01);
+        @ys = (0, -1.16032004402742839e+00, 4.12479856412430479e+00, -1.51111514016986312e+01, -2.59193146099879641e+01);
+        @zs = (0, -1.03622044471123109e-01, -4.03523417114321381e-01, -2.23307578892655734e-01, 1.79258772950371181e-01);
+        @vxs = map {$_ * DAYS_PER_YEAR}
+            (0, 1.66007664274403694e-03, -2.76742510726862411e-03, 2.96460137564761618e-03, 2.68067772490389322e-03);
+        @vys = map {$_ * DAYS_PER_YEAR}
+            (0, 7.69901118419740425e-03, 4.99852801234917238e-03, 2.37847173959480950e-03, 1.62824170038242295e-03);
+        @vzs = map {$_ * DAYS_PER_YEAR}
+            (0, -6.90460016972063023e-05, 2.30417297573763929e-05, -2.96589568540237556e-05, -9.51592254519715870e-05);
+        @mass = map {$_ * SOLAR_MASS}
+            (1, 9.54791938424326609e-04, 2.85885980666130812e-04, 4.36624404335156298e-05, 5.15138902046611451e-05);
 
-offset_momentum();
-printf ("%.9f\n", energy());
+        $last = @xs - 1;
 
-my $n = $ARGV[0];
+        offset_momentum();
+        #printf ("%.9f\n", energy());
 
-# This does not, in fact, consume N*4 bytes of memory
-for (1..$n){
-  advance(0.01);
+        # This does not, in fact, consume N*4 bytes of memory
+        for (1..$n) {
+                advance(0.01);
+        }
+
+        return sprintf ("%.9f", energy());
 }
 
-printf ("%.9f\n", energy());
+sub main
+{
+        my ($options) = @_;
+
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5000 : 50_000_000;
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1    : 5;
+
+        my $result;
+        my $t = timeit $count, sub { $result = run($goal) };
+        return {
+                Benchmark     => $t,
+                goal          => $goal,
+                count         => $count,
+                result        => $result,
+               };
+}
 
 1;
