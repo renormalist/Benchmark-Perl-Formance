@@ -109,14 +109,16 @@ sub run
         $last = @xs - 1;
 
         offset_momentum();
-        #printf ("%.9f\n", energy());
+        my $result = [];
+        push @$result, sprintf("%.9f", energy());
 
         # This does not, in fact, consume N*4 bytes of memory
         for (1..$n) {
                 advance(0.01);
         }
 
-        return sprintf ("%.9f", energy());
+        push @$result, sprintf ("%.9f", energy());
+        return $result;
 }
 
 sub main

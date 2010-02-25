@@ -1,7 +1,7 @@
 package Perl::Formance::Plugin::Shootout::fasta;
 
-COMMAND LINE:
-/usr/bin/perl fasta.perl-4.perl 25000000
+# COMMAND LINE:
+# /usr/bin/perl fasta.perl-4.perl 25000000
 
 # The Computer Language Benchmarks game
 # http://shootout.alioth.debian.org/
@@ -13,6 +13,9 @@ COMMAND LINE:
 
 use strict;
 use warnings;
+
+use Benchmark ':hireswallclock';
+
 use constant IM => 139968;
 use constant IA => 3877;
 use constant IC => 29573;
@@ -50,31 +53,35 @@ sub selectRandom {
 sub makeRandomFasta {
     my ($id, $desc, $n, $genelist) = @_;
 
-    print ">", $id, " ", $desc, "\n";
+    #print ">", $id, " ", $desc, "\n";
 
     # print whole lines
     foreach (1 .. int($n / LINELENGTH) ){
-        print selectRandom($genelist, LINELENGTH), "\n";
+            #print
+            my $dummy = selectRandom($genelist, LINELENGTH);
     }
     # print remaining line (if required)
     if ($n % LINELENGTH){
-        print selectRandom($genelist, $n % LINELENGTH), "\n";
+            #print
+            my $dummy = selectRandom($genelist, $n % LINELENGTH);
     }
 }
 
 sub makeRepeatFasta {
     my ($id, $desc, $s, $n) = @_;
 
-    print ">", $id, " ", $desc, "\n";
+    #print ">", $id, " ", $desc, "\n";
 
     my $r = length $s;
     my $ss = $s . $s . substr($s, 0, $n % $r);
     for my $j(0..int($n / LINELENGTH)-1) {
 	my $i = $j*LINELENGTH % $r;
-	print substr($ss, $i, LINELENGTH), "\n";
+	#print
+        my $dummy = substr($ss, $i, LINELENGTH);
     }
     if ($n % LINELENGTH) {
-	print substr($ss, -($n % LINELENGTH)), "\n";
+            #print
+            substr($ss, -($n % LINELENGTH)), "\n";
     }
 }
 
@@ -116,13 +123,34 @@ my $alu =
 ######################################################################
 #main
 
-my $n = ($ARGV[0] || 1000) ;
+sub run
+{
+        my ($n) = @_;
 
-makeCumulative($iub);
-makeCumulative($homosapiens);
+        makeCumulative($iub);
+        makeCumulative($homosapiens);
 
-makeRepeatFasta ('ONE', 'Homo sapiens alu', $alu, $n*2);
-makeRandomFasta ('TWO', 'IUB ambiguity codes', $n*3, $iub);
-makeRandomFasta ('THREE', 'Homo sapiens frequency', $n*5, $homosapiens);
+        makeRepeatFasta ('ONE', 'Homo sapiens alu', $alu, $n*2);
+        makeRandomFasta ('TWO', 'IUB ambiguity codes', $n*3, $iub);
+        makeRandomFasta ('THREE', 'Homo sapiens frequency', $n*5, $homosapiens);
+
+}
+
+sub main
+{
+        my ($options) = @_;
+
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5_000 : 25_000_000;
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1     : 5;
+
+        my $result;
+        my $t = timeit $count, sub { $result = run($goal) };
+        return {
+                Benchmark     => $t,
+                goal          => $goal,
+                count         => $count,
+                result        => $result,
+               };
+}
 
 1;
