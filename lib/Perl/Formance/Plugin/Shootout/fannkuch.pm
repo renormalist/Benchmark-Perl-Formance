@@ -1,7 +1,7 @@
 package Perl::Formance::Plugin::Shootout::fannkuch;
 
-COMMAND LINE:
-/usr/bin/perl fannkuch.perl-3.perl 12
+# COMMAND LINE:
+# /usr/bin/perl fannkuch.perl-3.perl 12
 
 # The Computer Language Benchmarks Game
 # http://shootout.alioth.debian.org/
@@ -10,6 +10,12 @@ COMMAND LINE:
 # Rewrite by Kalev Soikonen
 # Modified by Kuang-che Wu
 # Multi-threaded by Andrew Rodland
+
+use strict;
+use warnings;
+no warnings 'uninitialized';
+
+use Benchmark ':hireswallclock';
 
 use integer;
 use threads;
@@ -42,10 +48,10 @@ sub fannkuch {
 
 sub print30 {
   my ($n, $iter) = @_;
-  @p = @count = (1..$n);
+  my @p = my @count = (1..$n);
 
   TRY: while (1) {
-    print @p, "\n";
+    #print @p, "\n";
     return if ++$iter >= 30;
     for my $i (1 .. $n - 1) {
       splice @p, $i, 0, shift @p;
@@ -55,20 +61,40 @@ sub print30 {
   }
 }
 
-my $n = shift || 7;
+sub run
+{
+        my ($n) = @_;
 
-print30($n);
+        print30($n);
 
-my @threads;
-for my $i (1 .. $n) {
-  push @threads, threads->create(\&fannkuch, $n, $i);
+        my @threads;
+        for my $i (1 .. $n) {
+                push @threads, threads->create(\&fannkuch, $n, $i);
+        }
+
+        my $max = 0;
+        for my $thread (@threads) {
+                my $val = $thread->join;
+                $max = $val if $val > $max;
+        }
+        return $max;
 }
 
-my $max = 0;
-for my $thread (@threads) {
-  my $val = $thread->join;
-  $max = $val if $val > $max;
+sub main
+{
+        my ($options) = @_;
+
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 3 : 12;
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+
+        my $result;
+        my $t = timeit $count, sub { $result = run($goal) };
+        return {
+                Benchmark     => $t,
+                goal          => $goal,
+                count         => $count,
+                result        => $result,
+               };
 }
-print "Pfannkuchen($n) = $max\n";
 
 1;
