@@ -10,6 +10,7 @@ package Perl::Formance::Plugin::Shootout::pidigits;
 
 use strict;
 use Math::GMP;
+use Benchmark ':hireswallclock';
 
 my($z0, $z1, $z2);
 
@@ -26,7 +27,7 @@ sub compose {
     return;
 }
 
-sub main
+sub run
 {
         my $output = '';
 
@@ -56,6 +57,23 @@ sub main
 
         $output .= $s if $s;
         return $output;
+}
+
+sub main
+{
+        my ($options) = @_;
+
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 100 : 20_000;
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1   : 5;
+
+        my $result;
+        my $t = timeit $count, sub { $result = run($goal) };
+        return {
+                Benchmark => $t,
+                goal      => $goal,
+                count     => $count,
+                result    => substr($result, 0, $goal <= 10 ? $goal : 10)."[...]",
+               };
 }
 
 1;

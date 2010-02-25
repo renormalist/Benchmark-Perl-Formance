@@ -8,24 +8,6 @@ use Data::Dumper;
 
 our $VERSION = '0.01';
 
-sub pidigits
-{
-        my ($options) = @_;
-
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 100 : 20_000;
-        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1   : 5;
-
-        my $result;
-        my $t = timeit $count, sub { $result = Perl::Formance::Plugin::Shootout::pidigits::main($goal) };
-        return {
-                Benchmark => $t,
-                goal      => $goal,
-                count     => $count,
-                #result    => $result, # tooooo long
-                result    => substr($result, 0, $goal <= 10 ? $goal : 10)."[...]",
-               };
-}
-
 sub shootout
 {
         my ($options) = @_;
@@ -37,7 +19,8 @@ sub shootout
         {
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 eval "use Perl::Formance::Plugin::Shootout::$subtest";
-                $results{$subtest} = $subtest->($options);
+                my $main = "Perl::Formance::Plugin::Shootout::$subtest"."::main";
+                $results{$subtest} = $main->($options);
         }
         return \%results;
 }
