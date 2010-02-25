@@ -1,7 +1,7 @@
 package Perl::Formance::Plugin::Shootout::spectralnorm;
 
-COMMAND LINE:
-/usr/bin/perl spectralnorm.perl-3.perl 5500
+# COMMAND LINE:
+# /usr/bin/perl spectralnorm.perl-3.perl 5500
 
 # The Computer Language Benchmarks Game
 # http://shootout.alioth.debian.org/
@@ -10,6 +10,7 @@ COMMAND LINE:
 
 use strict;
 use IO::Select;
+use Benchmark ':hireswallclock';
 
 our ($n, $size_of_float, $threads, @ranges, $begin, $end);
 
@@ -74,10 +75,10 @@ sub multiplyAtAv {
 }
 
 sub num_cpus {
-  open my $fh, '</proc/cpuinfo' or return;
+  open my $fh, '</proc/cpuinfo' or return; # '
   my $cpus;
   while (<$fh>) {
-    $cpus ++ if /^processor\s+:/;
+          $cpus ++ if /^processor[\s]+:/; # 0][]0]; # for emacs cperl-mode indent bug
   }
   return $cpus;
 }
@@ -100,21 +101,48 @@ sub init {
   }
 }
 
-init();
+sub run
+{
+        init();
 
-my @u = (1) x $n;
-my @v;
-for (0 .. 9) {
-  @v = multiplyAtAv( @u );
-  @u = multiplyAtAv( @v );
+        my @u = (1) x $n;
+        my @v;
+        for (0 .. 9) {
+                @v = multiplyAtAv( @u );
+                @u = multiplyAtAv( @v );
+        }
+
+        my ($vBv, $vv);
+        for my $i (0 .. $#u) {
+                $vBv += $u[$i] * $v[$i];
+                $vv += $v[$i] ** 2;
+        }
+
+        printf( "%0.9f\n", sqrt( $vBv / $vv ) );
 }
 
-my ($vBv, $vv);
-for my $i (0 .. $#u) {
-  $vBv += $u[$i] * $v[$i];
-  $vv += $v[$i] ** 2;
-}
 
-printf( "%0.9f\n", sqrt( $vBv / $vv ) );
+sub main
+{
+        my ($options) = @_;
+
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5500;
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+
+        my $result;
+        my $t = timeit $count, sub { $result = run($goal) };
+        return {
+                Benchmark     => $t,
+                goal          => $goal,
+                count         => $count,
+                result        => $result,
+                n             => $n,
+                size_of_float => $size_of_float,
+                threads       => $threads,
+                ranges        => [ @ranges ],
+                begin         => $begin,
+                end           => $end,
+               };
+}
 
 1;
