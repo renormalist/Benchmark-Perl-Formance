@@ -28,10 +28,9 @@ Usage:
 
   $ perl-formance
   $ perl-formance --plugins=SA,Fib,Rx
+  $ perl-formance --plugins=SA,Fib,Rx -q
   $ perl-formance --plugins=SA,Fib,Rx -v
-  $ perl-formance --plugins=SA,Fib,Rx -v -c
-  $ perl-formance --plugins=SA,Fib,Rx -v -ccccc
-
+  $ perl-formance --plugins=SA,Fib,Rx -vv -ccccc
 
 If run directly it uses the perl in your PATH:
 
@@ -87,6 +86,10 @@ Please note that only one single -v is not enough to see errors that
 occur when trying to load a plugin. They are only marked as
 "skipped". Use -vv to see the error message; -vvv for progress
 information; -vvvv or more should be used for debugging info.
+
+=item -q
+
+Be quiet; do not output results.
 
 =item --showconfig
 

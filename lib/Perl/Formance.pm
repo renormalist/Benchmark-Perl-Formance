@@ -65,6 +65,7 @@ Usage:
    $ perl-formance
    $ perl-formance --plugins=SA,Rx,RxCmp -v
    $ perl-formance -ccccc --indent=2
+   $ perl-formance -q
 
 If run directly it uses the perl in your PATH:
 
@@ -92,6 +93,7 @@ sub run {
         my $help       = 0;
         my $showconfig = 0;
         my $verbose    = 0;
+        my $quiet      = 0;
         my $plugins    = $DEFAULT_PLUGINS;
         my $indent     = $DEFAULT_INDENT;
         my $options    = {};
@@ -99,6 +101,7 @@ sub run {
         # get options
         my $ok = GetOptions (
                              "help|h"        => \$help,
+                             "quiet|q"       => \$quiet,
                              "verbose|v+"    => \$verbose,
                              "showconfig|c+" => \$showconfig,
                              "plugins=s"     => \$plugins,
@@ -110,6 +113,7 @@ sub run {
         # fill options
         $self->{options} = $options = {
                                        help       => $help,
+                                       quiet      => $quiet,
                                        verbose    => $verbose,
                                        showconfig => $showconfig,
                                        plugins    => $plugins,
@@ -121,7 +125,7 @@ sub run {
         if ($ENV{PERLFORMANCE_USE_FORKS}) {
                 eval "use forks";
                 $use_forks = 1 unless $@;
-                print "use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
+                print STDERR "use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
         }
 
         # check plugins
@@ -129,9 +133,9 @@ sub run {
         my @run_plugins = grep {
                 eval "use Perl::Formance::Plugin::$_";
                 if ($@) {
-                        print "Skip plugin '$_'" if $verbose;
-                        print ":$@"              if $verbose >= 2;
-                        print "\n"               if $verbose;
+                        print STDERR "Skip plugin '$_'" if $verbose;
+                        print STDERR ":$@"              if $verbose >= 2;
+                        print STDERR "\n"               if $verbose;
                 }
                 not $@;
         } @plugins;
@@ -172,6 +176,8 @@ sub print_results
 {
         my ($self, $RESULTS) = @_;
 
+        return if $self->{options}{quiet};
+
         my $output = '';
         my $indent = $self->{options}{indent};
         my $yw = new Data::YAML::Writer;
@@ -179,6 +185,10 @@ sub print_results
         $output =~ s/^/" "x$indent/emsg; # indent
         print $output;
 }
+
+1;
+
+__END__
 
 =head1 NAME
 
@@ -269,11 +279,7 @@ L<http://search.cpan.org/dist/Perl-Formance>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 Steffen Schwigon.
+Copyright 2010 Steffen Schwigon.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
-
-=cut
-
-1; # End of Perl::Formance
