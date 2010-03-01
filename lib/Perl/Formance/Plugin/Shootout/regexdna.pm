@@ -54,14 +54,15 @@ sub run
                 unless ($pid) {
                         my $cnt = 0;
                         ++$cnt while $content =~ /$pat/gi;
-                        #print "$s $cnt\n";
+                        print "$s $cnt\n";
                         exit 0;
                 }
                 push @procs, $fh;
         }
 
         for my $proc (@procs) {
-                print <$proc>;
+                print
+                <$proc>;
                 close $proc;
         }
 
