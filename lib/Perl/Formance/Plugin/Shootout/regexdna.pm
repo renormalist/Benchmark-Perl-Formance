@@ -23,12 +23,14 @@ sub run
 {
         my ($infile) = @_;
 
-        my $srcdir  = module_dir(__PACKAGE__);
+        my $srcdir = module_dir('Perl::Formance::Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
-        open FILE, "<", $srcfile or die "Cannot read $srcfile";
-        my $l_file  = -s FILE;
-        my $content; read FILE, $content, $l_file;
+        open INFILE, "<", $srcfile or die "Cannot read $srcfile";
+
+        my $l_file  = -s INFILE;
+        my $content; read INFILE, $content, $l_file;
         # this is significantly faster than using <> in this case
+        close INFILE;
 
         $content =~ s/^>.*//mg;
         $content =~ tr/\n//d;
@@ -86,7 +88,7 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "regexdna-input-mini.txt" : "regexdna-input.txt";
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "fasta-10000.txt" : "fasta-100000.txt";
         my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
 
         my $result;
