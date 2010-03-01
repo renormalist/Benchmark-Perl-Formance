@@ -124,7 +124,7 @@ sub run
                 $vv += $v[$i] ** 2;
         }
 
-        printf( "%0.9f\n", sqrt( $vBv / $vv ) );
+        return sprintf( "%0.9f\n", sqrt( $vBv / $vv ) );
 }
 
 
