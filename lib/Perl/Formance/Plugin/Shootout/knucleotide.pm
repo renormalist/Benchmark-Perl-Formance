@@ -11,6 +11,7 @@ COMMAND LINE:
 # Corrected again by Jesse Millikan
 # revised by Kuang-che Wu
 # Multi-threaded by Andrew Rodland
+# Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use threads;

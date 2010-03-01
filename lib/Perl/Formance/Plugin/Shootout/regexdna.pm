@@ -15,6 +15,7 @@ package Perl::Formance::Plugin::Shootout::regexdna;
 use strict;
 use warnings;
 
+use Perl::Formance::Cargo;
 use File::ShareDir qw(module_dir);
 use Benchmark ':hireswallclock';
 

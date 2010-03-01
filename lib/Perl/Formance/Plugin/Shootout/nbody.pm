@@ -10,6 +10,7 @@ package Perl::Formance::Plugin::Shootout::nbody;
 # converted into Perl by Márton Papp
 # fixed and cleaned up by Danny Sauer
 # optimized by Jesse Millikan
+# Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;

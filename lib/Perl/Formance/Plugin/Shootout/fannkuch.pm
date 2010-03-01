@@ -10,6 +10,7 @@ package Perl::Formance::Plugin::Shootout::fannkuch;
 # Rewrite by Kalev Soikonen
 # Modified by Kuang-che Wu
 # Multi-threaded by Andrew Rodland
+# Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;

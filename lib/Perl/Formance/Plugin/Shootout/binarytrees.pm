@@ -9,6 +9,7 @@ package Perl::Formance::Plugin::Shootout::binarytrees;
 # Contributed by Doug King
 # Corrected by Heiner Marxen
 # Tree-building made non-recursive by Steffen Mueller
+# Perl::Formance plugin by Steffen Schwigon
 
 use integer;
 use Benchmark ':hireswallclock';

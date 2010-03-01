@@ -7,6 +7,7 @@ package Perl::Formance::Plugin::Shootout::spectralnorm;
 # http://shootout.alioth.debian.org/
 #
 # Contributed by Andrew Rodland
+# Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;

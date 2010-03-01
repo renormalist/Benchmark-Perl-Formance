@@ -10,6 +10,7 @@ package Perl::Formance::Plugin::Shootout::fasta;
 # tweaked by Danny Sauer
 # optimized by Steffen Mueller
 # tweaked by Kuang-che Wu
+# Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;
