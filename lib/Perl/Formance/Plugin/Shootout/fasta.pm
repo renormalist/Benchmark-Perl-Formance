@@ -53,35 +53,35 @@ sub selectRandom {
 sub makeRandomFasta {
     my ($id, $desc, $n, $genelist) = @_;
 
-    #print ">", $id, " ", $desc, "\n";
+    print ">", $id, " ", $desc, "\n";
 
     # print whole lines
     foreach (1 .. int($n / LINELENGTH) ){
-            #print
-            my $dummy = selectRandom($genelist, LINELENGTH);
+            my $dummy = selectRandom($genelist, LINELENGTH)."\n";
+            print $dummy;
     }
     # print remaining line (if required)
     if ($n % LINELENGTH){
-            #print
-            my $dummy = selectRandom($genelist, $n % LINELENGTH);
+            my $dummy = selectRandom($genelist, $n % LINELENGTH)."\n";
+            print $dummy;
     }
 }
 
 sub makeRepeatFasta {
     my ($id, $desc, $s, $n) = @_;
 
-    #print ">", $id, " ", $desc, "\n";
+    print ">", $id, " ", $desc, "\n";
 
     my $r = length $s;
     my $ss = $s . $s . substr($s, 0, $n % $r);
     for my $j(0..int($n / LINELENGTH)-1) {
 	my $i = $j*LINELENGTH % $r;
-	#print
-        my $dummy = substr($ss, $i, LINELENGTH);
+        my $dummy = substr($ss, $i, LINELENGTH)."\n";
+	print $dummy;
     }
     if ($n % LINELENGTH) {
-            #print
-            substr($ss, -($n % LINELENGTH)), "\n";
+            my $dummy = substr($ss, -($n % LINELENGTH)). "\n";
+            print $dummy;
     }
 }
 
@@ -140,7 +140,7 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5_000 : 25_000_000;
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5_000 : 5_000_000;
         my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1     : 5;
 
         my $result;
