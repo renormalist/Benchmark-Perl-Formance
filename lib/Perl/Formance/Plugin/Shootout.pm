@@ -15,7 +15,17 @@ sub shootout
         no strict "refs";
 
         my %results = ();
-        for my $subtest (qw( pidigits  ))
+        for my $subtest (qw( binarytrees
+                             fannkuch
+                             fasta
+                             knucleotide
+                             mandelbrot
+                             nbody
+                             pidigits
+                             regexdna
+                             revcomp
+                             spectralnorm
+                          ))
         {
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 eval "use Perl::Formance::Plugin::Shootout::$subtest";
