@@ -1,7 +1,7 @@
 package Perl::Formance::Plugin::Shootout::knucleotide;
 
-COMMAND LINE:
-/usr/bin/perl knucleotide.perl 0 < knucleotide-input25000000.txt
+# COMMAND LINE:
+# /usr/bin/perl knucleotide.perl 0 < knucleotide-input25000000.txt
 
 #  The Computer Language Benchmarks Game
 #  http://shootout.alioth.debian.org/
@@ -16,25 +16,47 @@ COMMAND LINE:
 use strict;
 use threads;
 
-my $threads = num_cpus() || 1;
+use Perl::Formance::Cargo;
+use File::ShareDir qw(module_dir);
+use Benchmark ':hireswallclock';
 
+my $threads;
+my ($l,%h,$sum);
 my ($sequence, $begin, $end);
-$/ = ">";
-/^THREE/ and $sequence = uc(join "", grep !/^THREE/, split /\n+/) while <STDIN>;
+my $output;
 
-my ($l,%h,$sum) = (length $sequence);
+sub run
+{
+        my ($infile) = @_;
 
-foreach my $frame (1,2) {
-  %h = ();
-  update_hash_for_frame($frame);
-  $sum = $l - $frame + 1;
-  printf "$_ %.3f\n", $h{$_}*100/$sum for sort { $h{$b} <=> $h{$a} || $a cmp $b } keys %h;
-  print "\n";
-}
+        $output = '';
+        $threads = 2*num_cpus() || 1;
 
-foreach my $s (qw(GGT GGTA GGTATT GGTATTTTAATT GGTATTTTAATTTATAGT)) {
-  update_hash_for_frame(length($s));
-  printf "%d\t$s\n", $h{$s};
+        my $srcdir = module_dir('Perl::Formance::Cargo')."/Shootout";
+        my $srcfile = "$srcdir/$infile";
+        open INFILE, "<", $srcfile or die "Cannot read $srcfile";
+
+        $/ = ">";
+        /^THREE/ and $sequence = uc(join "", grep !/^THREE/, split /\n+/) while <INFILE>;
+
+        close INFILE;
+
+        ($l,%h,$sum) = (length $sequence);
+
+        foreach my $frame (1,2) {
+                %h = ();
+                update_hash_for_frame($frame);
+                $sum = $l - $frame + 1;
+                $output .= sprintf "$_ %.3f\n", $h{$_}*100/$sum for sort { $h{$b} <=> $h{$a} || $a cmp $b } keys %h;
+                $output .= "\n";
+        }
+
+        foreach my $s (qw(GGT GGTA GGTATT GGTATTTTAATT GGTATTTTAATTTATAGT)) {
+                update_hash_for_frame(length($s));
+                $output .= sprintf "%d\t$s\n", $h{$s};
+        }
+
+        print $output if $ENV{PERLFORMANCE_SHOOTOUT_KNUCLEOTIDE_PRINT};
 }
 
 sub update_hash_for_frame {
@@ -67,9 +89,29 @@ sub num_cpus {
   open my $fh, '</proc/cpuinfo' or return;
   my $cpus;
   while (<$fh>) {
-    $cpus ++ if /^processor\s+:/;
+          $cpus ++ if /^processor[\s]+:/; # 0][]0]; # for emacs cperl-mode indent bug
   }
   return $cpus;
+}
+
+sub main
+{
+        my ($options) = @_;
+
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "fasta-25000.txt" : "fasta-100000.txt";
+        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+
+        my $result;
+        my $t = timeit $count, sub { $result = run($goal) };
+        return {
+                Benchmark => $t,
+                goal      => $goal,
+                count     => $count,
+                result    => $result,
+                threads   => $threads,
+                l         => $l,
+                sum       => $sum,
+               };
 }
 
 1;
