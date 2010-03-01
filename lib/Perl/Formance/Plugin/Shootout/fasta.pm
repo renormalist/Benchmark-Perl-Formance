@@ -54,35 +54,35 @@ sub selectRandom {
 sub makeRandomFasta {
     my ($id, $desc, $n, $genelist) = @_;
 
-    print ">", $id, " ", $desc, "\n";
+    print ">", $id, " ", $desc, "\n" if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
 
     # print whole lines
     foreach (1 .. int($n / LINELENGTH) ){
             my $dummy = selectRandom($genelist, LINELENGTH)."\n";
-            print $dummy;
+            print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
     }
     # print remaining line (if required)
     if ($n % LINELENGTH){
             my $dummy = selectRandom($genelist, $n % LINELENGTH)."\n";
-            print $dummy;
+            print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
     }
 }
 
 sub makeRepeatFasta {
     my ($id, $desc, $s, $n) = @_;
 
-    print ">", $id, " ", $desc, "\n";
+    print ">", $id, " ", $desc, "\n" if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
 
     my $r = length $s;
     my $ss = $s . $s . substr($s, 0, $n % $r);
     for my $j(0..int($n / LINELENGTH)-1) {
 	my $i = $j*LINELENGTH % $r;
         my $dummy = substr($ss, $i, LINELENGTH)."\n";
-	print $dummy;
+	print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
     }
     if ($n % LINELENGTH) {
             my $dummy = substr($ss, -($n % LINELENGTH)). "\n";
-            print $dummy;
+            print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
     }
 }
 
@@ -134,15 +134,14 @@ sub run
         makeRepeatFasta ('ONE', 'Homo sapiens alu', $alu, $n*2);
         makeRandomFasta ('TWO', 'IUB ambiguity codes', $n*3, $iub);
         makeRandomFasta ('THREE', 'Homo sapiens frequency', $n*5, $homosapiens);
-
 }
 
 sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5_000 : 5_000_000;
-        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1     : 5;
+        my $goal   = $ENV{PERLFORMANCE_SHOOTOUT_FASTA_N}     || ($ENV{PERLFORMANCE_TESTMODE_FAST} ? 5000 : 5_000_000);
+        my $count  = $ENV{PERLFORMANCE_SHOOTOUT_FASTA_COUNT} || ($ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5);
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };
@@ -155,3 +154,30 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Perl::Formance::Plugin::Shootout::fasta - Language shootout fasta plugin
+
+=head1 ABOUT
+
+This plugin does some runs of the "fasta" benchmark from the Language
+Shootout.
+
+=head1 CONFIGURATION
+
+Because the "fasta" plugin's output can be used to feed other
+benchmarks you control its output via the environment variables:
+
+   $ PERLFORMANCE_SHOOTOUT_FASTA_N=1000 \
+     PERLFORMANCE_SHOOTOUT_FASTA_PRINT=1 \
+     PERLFORMANCE_SHOOTOUT_FASTA_COUNT=1 \
+     perl-formance [...]
+
+where "_N" is the algorithm's parameter, "_PRINT" is a boolean 1 or 0
+and _COUNT is the repetition counter which in benchmark runs is
+usually 5 but only needed 1 for generating the output.
+
+=cut
