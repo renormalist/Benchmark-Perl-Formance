@@ -41,7 +41,7 @@ sub main {
         my $ret;
         my $t = timeit $count, sub {
                                     print STDERR "Run cmd...\n" if $options->{verbose} >= 3;
-                                    $ret = system ($cmd)
+                                    $ret = qx($cmd); # catch stdout
                                    };
         return {
                 salearn => {

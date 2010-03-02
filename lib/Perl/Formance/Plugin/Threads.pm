@@ -48,7 +48,6 @@ sub main
         my $ret;
         my $t = timeit($goal, sub { $ret = thread_storm($options) });
 
-        print STDERR Dumper ($t);
         return {
                 Benchmark   => $t,
                 threadcount => $threadcount,
