@@ -11,7 +11,7 @@ $pf->print_results($results);
 
 =head1 NAME
 
-perl-formance - Frontend for Perl::Formance
+benchmark-perlformance - Frontend for Perl::Formance
 
 =head1 ABOUT
 
@@ -26,25 +26,25 @@ compile time configuration or on different machines.
 
 Usage:
 
-  $ perl-formance
-  $ perl-formance --plugins=SA,Fib,Rx
-  $ perl-formance --plugins=SA,Fib,Rx -q
-  $ perl-formance --plugins=SA,Fib,Rx -v
-  $ perl-formance --plugins=SA,Fib,Rx -vv -ccccc
+  $ benchmark-perlformance
+  $ benchmark-perlformance --plugins=SA,Fib,Rx
+  $ benchmark-perlformance --plugins=SA,Fib,Rx -q
+  $ benchmark-perlformance --plugins=SA,Fib,Rx -v
+  $ benchmark-perlformance --plugins=SA,Fib,Rx -vv -ccccc
 
 If run directly it uses the perl in your PATH:
 
-  $ /path/to/perl-formance
+  $ /path/to/benchmark-perlformance
 
 
 To use another Perl start it via
 
-  $ /other/path/to/bin/perl /path/to/perl-formance
+  $ /other/path/to/bin/perl /path/to/benchmark-perlformance
 
 
 To provide environment variables (for some plugins) you can do
 
-  $ PERLFORMANCE_SALEARN="/path/to/sa-learn" perl-formance
+  $ PERLFORMANCE_SHOOTOUT_FASTA_N=5500 benchmark-perlformance [...]
 
 =head1 OPTIONS
 
