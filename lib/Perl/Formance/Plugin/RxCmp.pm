@@ -179,7 +179,7 @@ sub regexes
         my %results = ();
 
         no strict "refs";
-        for my $subtest (qw( native POSIX Oniguruma Lua  )) { #  LPeg PCRE
+        for my $subtest (qw( native POSIX Lua )) { #  LPeg PCRE Oniguruma
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 $results{$subtest} = $subtest->($options);
         }
