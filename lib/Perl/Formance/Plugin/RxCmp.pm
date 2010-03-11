@@ -9,13 +9,13 @@ use warnings;
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 
-use vars qw($goal $count $length);
+use vars qw($goal $count $length $n $re $string);
 $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 29; # probably 28 or more
 $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
 
-my $n      = $goal;
-my $re     = ("a?" x $n) . ("a" x $n);
-my $string = "a" x $n;
+$n      = $goal;
+$re     = ("a?" x $n) . ("a" x $n);
+$string = "a" x $n;
 
 sub native
 {
@@ -39,8 +39,16 @@ sub POSIX
 {
         my ($options) = @_;
 
-        use POSIX::Regex qw(:all);
-        my $reg = POSIX::Regex->new($re, REG_EXTENDED);
+        my $reg;
+        eval '
+                use POSIX::Regex qw(:all);
+                $reg = POSIX::Regex->new($re, REG_EXTENDED);
+        ';
+        if ($@) {
+                print STDERR $@ if $options->{verbose} > 2;
+                return { failed => "use failed" };
+        }
+
 
         my $result;
         my $t = timeit $count, sub { $result = $reg->match($string) };
@@ -62,9 +70,13 @@ sub LPeg
         # LPEG regexes seemingly don't work the same way as usual regexes
         # therefore the pattern below does not match.
         # TODO: Find a equivalent pattern.
-        return { "not yet implemented" => 'not yet implemented' };
+        eval "use re::engine::LPEG";
+        if ($@) {
+                print STDERR $@ if $options->{verbose} > 2;
+                return { failed => "use failed" };
+        }
 
-        use re::engine::LPEG;
+        return { "not yet implemented" => 'missing comparable equivalent regex' };
 
         my $result;
         my $re_local = ("'a'?" x $n) . ("'a'" x $n);
@@ -90,7 +102,11 @@ sub Lua
         # TODO: Find a equivalent pattern.
         # return { "not yet implemented" => 'not yet implemented' };
 
-        use re::engine::Lua;
+        eval "use re::engine::Lua";
+        if ($@) {
+                print STDERR $@ if $options->{verbose} > 2;
+                return { failed => "use failed" };
+        }
 
         my $result;
         #my $reg      = qr/$re/; # using that $reg later segfaults, unfortunately that makes
@@ -106,31 +122,39 @@ sub Lua
                };
 }
 
-# sub PCRE
-# {
-#         my ($options) = @_;
+sub PCRE
+{
+        my ($options) = @_;
 
-#         use re::engine::PCRE;
+        eval "use re::engine::PCRE";
+        if ($@) {
+                print STDERR $@ if $options->{verbose} > 2;
+                return { failed => "use failed" };
+        }
 
-#         my $result;
-#         my $reg = qr/$re/o;
-#         my $t = timeit $count, sub { $result = $string =~ $reg };
-#         return {
-#                 Benchmark => $t,
-#                 goal      => $goal,
-#                 count     => $count,
-#                 result    => $result,
-#                 # string    => $string,
-#                 # re        => $re_local,
-#                 used_qr_or_precompile => 1,
-#                };
-# }
+        my $result;
+        my $reg = qr/$re/o;
+        my $t = timeit $count, sub { $result = $string =~ $reg };
+        return {
+                Benchmark => $t,
+                goal      => $goal,
+                count     => $count,
+                result    => $result,
+                # string    => $string,
+                # re        => $re_local,
+                used_qr_or_precompile => 1,
+               };
+}
 
 sub Oniguruma
 {
         my ($options) = @_;
 
-        use re::engine::Oniguruma;
+        eval "use re::engine::Oniguruma";
+        if ($@) {
+                print STDERR $@ if $options->{verbose} > 2;
+                return { failed => "use failed" };
+        }
 
         my $result;
         my $reg = qr/$re/o;

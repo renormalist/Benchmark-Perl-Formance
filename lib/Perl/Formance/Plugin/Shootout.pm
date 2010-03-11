@@ -29,8 +29,10 @@ sub shootout
         {
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
                 eval "use Perl::Formance::Plugin::Shootout::$subtest";
-                my $main = "Perl::Formance::Plugin::Shootout::$subtest"."::main";
-                $results{$subtest} = $main->($options);
+                if (not $@) {
+                        my $main = "Perl::Formance::Plugin::Shootout::$subtest"."::main";
+                        $results{$subtest} = $main->($options);
+                }
         }
         return \%results;
 }
