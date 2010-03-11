@@ -15,7 +15,7 @@ use warnings;
 use IO::Select;
 use Benchmark ':hireswallclock';
 
-our ($n, $size_of_float, $threads, @ranges, $begin, $end);
+use vars qw($n $size_of_float $threads @ranges $begin $end);
 
 sub eval_A {
   use integer;
