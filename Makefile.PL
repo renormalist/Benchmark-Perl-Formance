@@ -9,12 +9,14 @@ requires 'forks';
 requires 'Benchmark';
 requires 'Time::HiRes';
 requires 'Data::YAML::Writer';
+requires 'Data::Structure::Util';
 
 # SpamAssassin
 requires 'DB_File';
 requires 'Net::IP';               # really
 requires 'Net::DNS';              # really
 requires 'NetAddr::IP';           # really
+requires 'HTML::Parser';          # really
 requires 'Mail::SpamAssassin';
 requires 'Perl::Formance::Cargo';
 
@@ -28,5 +30,8 @@ requires 're::engine::Lua';
 requires 're::engine::LPEG';
 requires 're::engine::Oniguruma';
 
-install_script('script/perl-formance');
+# Shootout
+requires 'Math::GMP';
+
+install_script('script/benchmark-perlformance');
 WriteAll;
