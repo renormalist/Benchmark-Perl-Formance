@@ -8,6 +8,7 @@ all_from       'lib/Perl/Formance.pm';
 requires 'forks';
 requires 'Benchmark';
 requires 'Time::HiRes';
+requires 'File::ShareDir';
 requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
 
