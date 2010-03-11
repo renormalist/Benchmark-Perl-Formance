@@ -35,7 +35,7 @@ sub run
         ($z0, $z1, $z2) = map Math::GMP->new($_),1,0,1;
 
         my $n = $_[0];
-        ($,, $\) = ("\t", "\n");
+        local ($,, $\) = ("\t", "\n");
         my ($i, $s, $d); my $k = 0;
 
         # main loop
