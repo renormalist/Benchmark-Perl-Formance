@@ -89,7 +89,7 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "fasta-10000.txt" : "fasta-100000.txt";
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "fasta-10000.txt" : "fasta-1000000.txt";
         my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
 
         my $result;
