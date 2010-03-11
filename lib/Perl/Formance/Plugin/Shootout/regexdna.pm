@@ -61,7 +61,7 @@ sub run
         }
 
         for my $proc (@procs) {
-                print
+                #print
                 <$proc>;
                 close $proc;
         }
