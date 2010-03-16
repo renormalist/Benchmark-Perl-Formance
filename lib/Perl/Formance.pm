@@ -18,7 +18,7 @@ $VERSION = '0.01';
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
-my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SA,Shootout'; # Threads,
+my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SpamAssassin,Shootout'; # Threads,
 my $DEFAULT_INDENT  = 0;
 
 # incrementaly interesting Perl Config keys
@@ -63,7 +63,7 @@ sub usage
 Usage:
 
    $ perl-formance
-   $ perl-formance --plugins=SA,Rx,RxCmp -v
+   $ perl-formance --plugins=SpamAssassin,Rx,RxCmp -v
    $ perl-formance -ccccc --indent=2
    $ perl-formance -q
 

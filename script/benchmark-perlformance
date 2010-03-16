@@ -27,10 +27,10 @@ compile time configuration or on different machines.
 Usage:
 
   $ benchmark-perlformance
-  $ benchmark-perlformance --plugins=SA,Fib,Rx
-  $ benchmark-perlformance --plugins=SA,Fib,Rx -q
-  $ benchmark-perlformance --plugins=SA,Fib,Rx -v
-  $ benchmark-perlformance --plugins=SA,Fib,Rx -vv -ccccc
+  $ benchmark-perlformance --plugins=SpamAssassin,Fib,Rx
+  $ benchmark-perlformance --plugins=SpamAssassin,Fib,Rx -q
+  $ benchmark-perlformance --plugins=SpamAssassin,Fib,Rx -v
+  $ benchmark-perlformance --plugins=SpamAssassin,Fib,Rx -vv -ccccc
 
 If run directly it uses the perl in your PATH:
 
@@ -58,7 +58,7 @@ There are some options available.
 
 prints out a help page.
 
-=item --plugins=SA,Fib,Rx
+=item --plugins=SpamAssassin,Fib,Rx
 
 Use only a particular list of sub benchmarks. The comma-separated list
 refers to Perl::Formance::Plugin::* respectively.
@@ -132,7 +132,7 @@ easier development.
 
 =item PERLFORMANCE_SALEARN
 
-See L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>. Contains
+See L<Perl::Formance::Plugin::SpamAssassin|Perl::Formance::Plugin::SpamAssassin>. Contains
 the path to the "sa-learn" executable.
 
 =item PERLFORMANCE_THREADCOUNT
@@ -158,7 +158,7 @@ special configuration, usually via environment variables.
 
 =over 4
 
-=item L<Perl::Formance::Plugin::SA|Perl::Formance::Plugin::SA>
+=item L<Perl::Formance::Plugin::SpamAssassin|Perl::Formance::Plugin::SpamAssassin>
 
 SpamAssassin
 

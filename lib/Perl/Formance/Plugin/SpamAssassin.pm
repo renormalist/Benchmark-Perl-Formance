@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::SA;
+package Perl::Formance::Plugin::SpamAssassin;
 
 use warnings;
 use strict;
@@ -19,7 +19,7 @@ sub main {
         my ($options) = @_;
 
         my $dstdir = tempdir( CLEANUP => 1 );
-        my $srcdir = module_dir('Perl::Formance::Cargo')."/SA";
+        my $srcdir = module_dir('Perl::Formance::Cargo')."/SpamAssassin";
 
         print STDERR "Prepare cargo spam'n'ham files in $dstdir ...\n" if $options->{verbose} >= 3;
 
@@ -58,7 +58,7 @@ sub main {
 
 =head1 NAME
 
-Perl::Formance::Plugin::SA - SpamAssassin Benchmarks
+Perl::Formance::Plugin::SpamAssassin - SpamAssassin Benchmarks
 
 =head1 ABOUT
 
