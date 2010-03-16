@@ -11,6 +11,7 @@ requires 'Time::HiRes';
 requires 'File::ShareDir';
 requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
+requires 'File::Copy::Recursive';
 
 # SpamAssassin
 requires 'DB_File';
