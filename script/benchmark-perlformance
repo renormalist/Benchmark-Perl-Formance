@@ -186,6 +186,15 @@ Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
 
 Fibonnacci numbers with threads to stress thread handling.
 
+=item L<Perl::Formance::Plugin::Shootout|Perl::Formance::Plugin::Shootout>
+
+Runs some Perl benchmarks from the Language Shootout on
+alioth.debian.org.
+
+=item L<Perl::Formance::Plugin::MooseTS|Perl::Formance::Plugin::MooseTS>
+
+Runs part of the Moose testsuite.
+
 =back
 
 

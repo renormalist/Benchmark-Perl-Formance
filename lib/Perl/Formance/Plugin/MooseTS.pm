@@ -50,25 +50,11 @@ sub main {
 
 =head1 NAME
 
-Perl::Formance::Plugin::SA - SpamAssassin Benchmarks
+Perl::Formance::Plugin::MooseTS - Moose test suite as benchmark
 
 =head1 ABOUT
 
-This plugin does some runs with SpamAssassin on the public corpus
-provided taken from spamassassin.org.
-
-=head1 CONFIGURATION
-
-It uses the executable "sa-learn", that it by default searches in the
-same path of your used perl executable ($^X). In case you want to use
-another "sa-learn" please set an environment variable
-"PERLFORMANCE_SALEARN", e.g.:
-
-  $ export PERLFORMANCE_SALEARN=/usr/local/bin/sa-learn
-  $ perl-formance --plugins=SA
+This plugin runs a part of the Moose test suite.
 
 =cut
 
-__END__
-
-time perl -T `which sa-learn` --ham -L --config-file=sa-learn.cfg --prefs-file sa-learn.prefs --dbpath db --no-sync  'easy_ham/*'
