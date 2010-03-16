@@ -35,10 +35,8 @@ sub main {
         print STDERR "$cmd\n" if $options->{verbose} >= 3;
 
         my $ret;
-        my $t = timeit $count, sub {
-                                    print STDERR "Run ...\n" if $options->{verbose} >= 3;
-                                    $ret = system ($cmd)
-                                   };
+        print STDERR "Run ...\n" if $options->{verbose} >= 3;
+        my $t = timeit $count, sub { $ret = system ($cmd) };
         return {
                 Benchmark  => $t,
                 prove_path => $prove,
