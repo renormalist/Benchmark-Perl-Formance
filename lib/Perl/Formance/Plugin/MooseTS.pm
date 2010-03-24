@@ -15,7 +15,7 @@ $recurse = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "" : "-r";
 
 use Benchmark ':hireswallclock';
 
-sub main {
+sub prepare {
         my ($options) = @_;
 
         my $dstdir = tempdir( CLEANUP => 0 );
@@ -31,17 +31,48 @@ sub main {
 
         die "Didn't find $prove" unless $prove && -x $prove;
 
-        my $cmd    = "cd $dstdir ; $^X $prove $recurse '$dstdir/t'";
-        print STDERR "$cmd\n" if $options->{verbose} >= 3;
+        return ($dstdir, $prove, $recurse);
+}
 
-        my $ret;
-        print STDERR "Run ...\n" if $options->{verbose} >= 3;
-        my $t = timeit $count, sub { $ret = system ($cmd) };
+sub nonaggregated {
+        my ($dstdir, $prove, $recurse, $options) = @_;
+
+        my $cmd    = "cd $dstdir ; $^X $prove -Q $recurse '$dstdir/t'";
+        print STDERR "$cmd\n" if $options->{verbose} >= 3;
+        print STDERR "Run nonaggregated ...\n" if $options->{verbose} >= 3;
+
+        my $t = timeit $count, sub { system ($cmd) };
         return {
                 Benchmark  => $t,
                 prove_path => $prove,
                 count      => $count,
                };
+}
+
+sub aggregated {
+        my ($dstdir, $prove, $recurse, $options) = @_;
+
+        my $cmd    = "cd $dstdir ; $^X $prove -Q $recurse '$dstdir/aggregate.t'";
+        print STDERR "$cmd\n" if $options->{verbose} >= 3;
+        print STDERR "Run aggregated ...\n" if $options->{verbose} >= 3;
+
+        my $t = timeit $count, sub { system ($cmd) };
+        return {
+                Benchmark  => $t,
+                prove_path => $prove,
+                count      => $count,
+               };
+}
+
+sub main {
+        my ($options) = @_;
+
+        my ($dstdir, $prove, $recurse) = prepare($options);
+        return nonaggregated($dstdir, $prove, $recurse, $options);
+        # return {
+        #         aggregated    => aggregated($dstdir, $prove, $recurse, $options),
+        #         nonaggregated => nonaggregated($dstdir, $prove, $recurse, $options),
+        #        };
 }
 
 1;
