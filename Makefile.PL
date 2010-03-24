@@ -35,5 +35,18 @@ requires 're::engine::Oniguruma';
 # Shootout
 requires 'Math::GMP';
 
+# MooseTS
+requires 'Test::Aggregate::Nested';
+requires 'DateTime::Calendar::Mayan';
+requires 'Regexp::Common';
+requires 'Locale::US';
+requires 'HTTP::Headers';
+requires 'Params::Coerce';
+requires 'URI';
+requires 'Test::Output';
+requires 'Module::Refresh';
+requires 'DBM::Deep';
+requires 'Declare::Constraints::Simple';
+
 install_script('script/benchmark-perlformance');
 WriteAll;
