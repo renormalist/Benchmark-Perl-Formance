@@ -22,6 +22,7 @@ sub main {
         return {
                 Benchmark => $t,
                 count     => $count,
+                not_yet => "implemented, stay tuned...",
                };
 }
 
