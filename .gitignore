@@ -6,10 +6,11 @@ _build*
 pm_to_blib*
 *.tar.gz
 .lwpcookies
-Perl-Formance-*
+Benchmark-Perl-Formance-*
 cover_db
 META.yml
-MANIFEST.bak
+MANIFEST*
+!MANIFEST.SKIP
 nytprof.out
 nytprof
 
