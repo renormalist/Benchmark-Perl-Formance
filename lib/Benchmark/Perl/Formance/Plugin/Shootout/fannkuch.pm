@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::fannkuch;
+package Benchmark::Perl::Formance::Plugin::Shootout::fannkuch;
 
 # COMMAND LINE:
 # /usr/bin/perl fannkuch.perl-3.perl 12
@@ -10,7 +10,7 @@ package Perl::Formance::Plugin::Shootout::fannkuch;
 # Rewrite by Kalev Soikonen
 # Modified by Kuang-che Wu
 # Multi-threaded by Andrew Rodland
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;

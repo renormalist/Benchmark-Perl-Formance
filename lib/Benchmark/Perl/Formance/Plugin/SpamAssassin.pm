@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::SpamAssassin;
+package Benchmark::Perl::Formance::Plugin::SpamAssassin;
 
 use warnings;
 use strict;
@@ -7,7 +7,7 @@ use File::Temp qw(tempfile tempdir);
 use File::Copy::Recursive qw(dircopy);
 use File::ShareDir qw(module_dir);
 use Time::HiRes qw(gettimeofday);
-use Perl::Formance::Cargo;
+use Benchmark::Perl::Formance::Cargo;
 
 use vars qw($count $easy_ham);
 $count    = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
@@ -19,7 +19,7 @@ sub main {
         my ($options) = @_;
 
         my $dstdir = tempdir( CLEANUP => 1 );
-        my $srcdir = module_dir('Perl::Formance::Cargo')."/SpamAssassin";
+        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/SpamAssassin";
 
         print STDERR "Prepare cargo spam'n'ham files in $dstdir ...\n" if $options->{verbose} >= 3;
 
@@ -58,7 +58,7 @@ sub main {
 
 =head1 NAME
 
-Perl::Formance::Plugin::SpamAssassin - SpamAssassin Benchmarks
+Benchmark::Perl::Formance::Plugin::SpamAssassin - SpamAssassin Benchmarks
 
 =head1 ABOUT
 

@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Threads;
+package Benchmark::Perl::Formance::Plugin::Threads;
 
 # Create threads to evaluate Fibonacci numbers
 
@@ -62,7 +62,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::FibThreads - Stress threads
+Benchmark::Perl::Formance::Plugin::FibThreads - Stress threads
 
 =head1 CONFIGURATION
 

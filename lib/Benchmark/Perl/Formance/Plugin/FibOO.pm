@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::FibOO;
+package Benchmark::Perl::Formance::Plugin::FibOO;
 
 # Fibonacci numbers
 
@@ -45,7 +45,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::FibThreads - Stress recursion and method calls
+Benchmark::Perl::Formance::Plugin::FibOO - Stress recursion and method calls (plain OO)
 
 =cut
 

@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::pidigits;
+package Benchmark::Perl::Formance::Plugin::Shootout::pidigits;
 
 # The Computer Language Benchmarks Game
 #   http://shootout.alioth.debian.org/
@@ -7,7 +7,7 @@ package Perl::Formance::Plugin::Shootout::pidigits;
 #   modified by Ruud H.G.van Tol
 #   modified by Emanuele Zeppieri
 #   modified to use Math:GMP by Kuang-che Wu
-#   Perl::Formance plugin by Steffen Schwigon
+#   Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use Math::GMP;

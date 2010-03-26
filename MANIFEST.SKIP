@@ -6,11 +6,11 @@ blib\b
 ^Makefile.old$
 ^MANIFEST.bak$
 ^Debian
-^Perl-Formance-
+^Benchmark-Perl-Formance-
 experiments
 t/00-suite-meta.t
 nytprof.out
 nytprof
-Perl-Formance-*.*.tar.gz
+Benchmark-Perl-Formance-*.*.tar.gz
 ^.git
 xyz

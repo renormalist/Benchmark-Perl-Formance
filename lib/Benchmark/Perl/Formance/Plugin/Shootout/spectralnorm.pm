@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::spectralnorm;
+package Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm;
 
 # COMMAND LINE:
 # /usr/bin/perl spectralnorm.perl-3.perl 5500
@@ -7,7 +7,7 @@ package Perl::Formance::Plugin::Shootout::spectralnorm;
 # http://shootout.alioth.debian.org/
 #
 # Contributed by Andrew Rodland
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;

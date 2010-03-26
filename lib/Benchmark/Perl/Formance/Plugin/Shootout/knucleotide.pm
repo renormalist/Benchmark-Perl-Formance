@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::knucleotide;
+package Benchmark::Perl::Formance::Plugin::Shootout::knucleotide;
 
 # COMMAND LINE:
 # /usr/bin/perl knucleotide.perl 0 < knucleotide-input25000000.txt
@@ -11,12 +11,12 @@ package Perl::Formance::Plugin::Shootout::knucleotide;
 # Corrected again by Jesse Millikan
 # revised by Kuang-che Wu
 # Multi-threaded by Andrew Rodland
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use threads;
 
-use Perl::Formance::Cargo;
+use Benchmark::Perl::Formance::Cargo;
 use File::ShareDir qw(module_dir);
 use Benchmark ':hireswallclock';
 
@@ -32,7 +32,7 @@ sub run
         $output = '';
         $threads = 2*num_cpus() || 1;
 
-        my $srcdir = module_dir('Perl::Formance::Cargo')."/Shootout";
+        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
         open INFILE, "<", $srcfile or die "Cannot read $srcfile";
 

@@ -1,9 +1,9 @@
-package Perl::Formance::Plugin::FibMoose;
+package Benchmark::Perl::Formance::Plugin::FibMouse;
 
 # Fibonacci numbers
 
-use strict;
 use warnings;
+use strict;
 
 use vars qw($goal $count);
 $goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 18 : 35; # same over Fib, FibOO, FibMoose, FibMouse
@@ -11,7 +11,7 @@ $count = 5;
 
 use Benchmark ':hireswallclock';
 
-use Moose;
+use Mouse;
 
 sub fib
 {
@@ -19,8 +19,8 @@ sub fib
         my $n    = shift;
 
         $n < 2
-            ? 1
-            : $self->fib($n-1) + $self->fib($n-2);
+         ? 1
+          : $self->fib($n-1) + $self->fib($n-2);
 }
 
 sub main
@@ -43,7 +43,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::FibThreads - Stress recursion and method calls
+Benchmark::Perl::Formance::Plugin::FibMouse - Stress recursion and method calls (Mouse)
 
 =cut
 

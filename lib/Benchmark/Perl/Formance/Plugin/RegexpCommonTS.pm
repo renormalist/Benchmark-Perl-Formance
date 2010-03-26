@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::RegexpCommonTS;
+package Benchmark::Perl::Formance::Plugin::RegexpCommonTS;
 
 use warnings;
 use strict;
@@ -7,7 +7,7 @@ use File::Temp qw(tempfile tempdir);
 use File::Copy::Recursive qw(dircopy);
 use File::ShareDir qw(module_dir);
 use Time::HiRes qw(gettimeofday);
-use Perl::Formance::Cargo;
+use Benchmark::Perl::Formance::Cargo;
 
 use vars qw($count $recurse);
 $count   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
@@ -19,7 +19,7 @@ sub prepare {
         my ($options) = @_;
 
         my $dstdir = tempdir( CLEANUP => 0 );
-        my $srcdir = module_dir('Perl::Formance::Cargo')."/RegexpCommonTS";
+        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/RegexpCommonTS";
 
         print STDERR "Prepare cargo RegexpCommon testsuite in $dstdir ...\n" if $options->{verbose} >= 3;
 
@@ -62,7 +62,7 @@ sub main {
 
 =head1 NAME
 
-Perl::Formance::Plugin::RegexpCommonTS - RegexpCommon test suite as benchmark
+Benchmark::Perl::Formance::Plugin::RegexpCommonTS - RegexpCommon test suite as benchmark
 
 =head1 ABOUT
 

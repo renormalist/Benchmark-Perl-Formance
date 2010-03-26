@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::fasta;
+package Benchmark::Perl::Formance::Plugin::Shootout::fasta;
 
 # COMMAND LINE:
 # /usr/bin/perl fasta.perl-4.perl 25000000
@@ -10,7 +10,7 @@ package Perl::Formance::Plugin::Shootout::fasta;
 # tweaked by Danny Sauer
 # optimized by Steffen Mueller
 # tweaked by Kuang-che Wu
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;
@@ -159,7 +159,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::Shootout::fasta - Language shootout fasta plugin
+Benchmark::Perl::Formance::Plugin::Shootout::fasta - Language shootout fasta plugin
 
 =head1 ABOUT
 

@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::binarytrees;
+package Benchmark::Perl::Formance::Plugin::Shootout::binarytrees;
 
 # COMMAND LINE:
 # /usr/bin/perl binarytrees.perl-2.perl 20
@@ -9,7 +9,7 @@ package Perl::Formance::Plugin::Shootout::binarytrees;
 # Contributed by Doug King
 # Corrected by Heiner Marxen
 # Tree-building made non-recursive by Steffen Mueller
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use integer;
 use Benchmark ':hireswallclock';

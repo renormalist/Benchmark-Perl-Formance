@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout;
+package Benchmark::Perl::Formance::Plugin::Shootout;
 
 use strict;
 use warnings;
@@ -28,9 +28,9 @@ sub shootout
                           ))
         {
                 print STDERR " - $subtest...\n" if $options->{verbose} > 2;
-                eval "use Perl::Formance::Plugin::Shootout::$subtest";
+                eval "use Benchmark::Perl::Formance::Plugin::Shootout::$subtest";
                 if (not $@) {
-                        my $main = "Perl::Formance::Plugin::Shootout::$subtest"."::main";
+                        my $main = "Benchmark::Perl::Formance::Plugin::Shootout::$subtest"."::main";
                         $results{$subtest} = $main->($options);
                 }
         }
@@ -44,18 +44,18 @@ sub main
         return shootout($options);
 }
 
-1; # End of Perl::Formance::Plugin::Shootout
+1; # End of Benchmark::Perl::Formance::Plugin::Shootout
 
 
 __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::Shootout - Perl::Formance plugin covering Alioth Shootout code
+Benchmark::Perl::Formance::Plugin::Shootout - Benchmark::Perl::Formance plugin covering Shootout code
 
 =head1 SYNOPSIS
 
-Use it as Perl::Formance plugin:
+Use it as Benchmark::Perl::Formance plugin:
 
   $ perl-formance --plugins=Shootout
 
@@ -73,7 +73,7 @@ progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Perl::Formance::Plugin::LanguageShootout
+    perldoc Benchmark::Perl::Formance::Plugin::LanguageShootout
 
 
 You can also look for information at:
@@ -101,7 +101,7 @@ L<http://search.cpan.org/dist/Perl-Formance-Plugin-LanguageShootout/>
 
 =head1 AUTHOR
 
-The plugin wrapper for Perl::Formance benchmark suite is written by
+The plugin wrapper for Benchmark::Perl::Formance suite is written by
 
   Steffen Schwigon c<< <ss5 at renormalist.net> >>
 

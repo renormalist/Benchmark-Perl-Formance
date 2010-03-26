@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::mandelbrot;
+package Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot;
 
 # COMMAND LINE:
 # /usr/bin/perl mandelbrot.perl 16000
@@ -9,7 +9,7 @@ package Perl::Formance::Plugin::Shootout::mandelbrot;
 # streamlined by Kalev Soikonen
 # parallelised by Philip Boulain
 # modified by Jerry D. Hedden
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 # - nr of threads now dynamically
 
 use warnings; use strict; use threads;

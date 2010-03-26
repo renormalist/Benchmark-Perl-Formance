@@ -1,8 +1,8 @@
 #! /usr/bin/env perl
 
-use Perl::Formance;
+use Benchmark::Perl::Formance;
 
-my $pf = Perl::Formance->new;
+my $pf = Benchmark::Perl::Formance->new;
 
 my $results = $pf->run;
 $pf->print_results($results);
@@ -11,7 +11,7 @@ $pf->print_results($results);
 
 =head1 NAME
 
-benchmark-perlformance - Frontend for Perl::Formance
+benchmark-perlformance - Frontend for Benchmark::Perl::Formance
 
 =head1 ABOUT
 
@@ -61,7 +61,7 @@ prints out a help page.
 =item --plugins=SpamAssassin,Fib,Rx
 
 Use only a particular list of sub benchmarks. The comma-separated list
-refers to Perl::Formance::Plugin::* respectively.
+refers to Benchmark::Perl::Formance::Plugin::* respectively.
 
 =item --verbose
 
@@ -132,13 +132,13 @@ easier development.
 
 =item PERLFORMANCE_SALEARN
 
-See L<Perl::Formance::Plugin::SpamAssassin|Perl::Formance::Plugin::SpamAssassin>. Contains
+See L<Benchmark::Perl::Formance::Plugin::SpamAssassin|Benchmark::Perl::Formance::Plugin::SpamAssassin>. Contains
 the path to the "sa-learn" executable.
 
 =item PERLFORMANCE_THREADCOUNT
 
 See
-L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>. Use
+L<Benchmark::Perl::Formance::Plugin::Threads|Benchmark::Perl::Formance::Plugin::Threads>. Use
 this many count of threads. Default is 16.
 
 =item PERLFORMANCE_USE_FORKS
@@ -147,7 +147,7 @@ If set to true you can activate the C<forks> drop-in replacement for
 threads.
 
 See
-L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>.
+L<Benchmark::Perl::Formance::Plugin::Threads|Benchmark::Perl::Formance::Plugin::Threads>.
 
 =back
 
@@ -158,40 +158,40 @@ special configuration, usually via environment variables.
 
 =over 4
 
-=item L<Perl::Formance::Plugin::SpamAssassin|Perl::Formance::Plugin::SpamAssassin>
+=item L<Benchmark::Perl::Formance::Plugin::SpamAssassin|Benchmark::Perl::Formance::Plugin::SpamAssassin>
 
 SpamAssassin
 
-=item L<Perl::Formance::Plugin::Rx|Perl::Formance::Plugin::Rx>
+=item L<Benchmark::Perl::Formance::Plugin::Rx|Benchmark::Perl::Formance::Plugin::Rx>
 
 Regular expressions
 
-=item L<Perl::Formance::Plugin::Fib|Perl::Formance::Plugin::Fib>
+=item L<Benchmark::Perl::Formance::Plugin::Fib|Benchmark::Perl::Formance::Plugin::Fib>
 
 Fibonnacci numbers to stress recursion and function calls.
 
-=item L<Perl::Formance::Plugin::FibMoose|Perl::Formance::Plugin::FibMoose>
+=item L<Benchmark::Perl::Formance::Plugin::FibMoose|Benchmark::Perl::Formance::Plugin::FibMoose>
 
 Fibonnacci numbers with Moose to stress recursion and method calls.
 
-=item L<Perl::Formance::Plugin::FibMouse|Perl::Formance::Plugin::FibMouse>
+=item L<Benchmark::Perl::Formance::Plugin::FibMouse|Benchmark::Perl::Formance::Plugin::FibMouse>
 
 Fibonnacci numbers with Mouse to stress recursion and method calls.
 
-=item L<Perl::Formance::Plugin::FibOO|Perl::Formance::Plugin::FibOO>
+=item L<Benchmark::Perl::Formance::Plugin::FibOO|Benchmark::Perl::Formance::Plugin::FibOO>
 
 Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
 
-=item L<Perl::Formance::Plugin::Threads|Perl::Formance::Plugin::Threads>
+=item L<Benchmark::Perl::Formance::Plugin::Threads|Benchmark::Perl::Formance::Plugin::Threads>
 
 Fibonnacci numbers with threads to stress thread handling.
 
-=item L<Perl::Formance::Plugin::Shootout|Perl::Formance::Plugin::Shootout>
+=item L<Benchmark::Perl::Formance::Plugin::Shootout|Benchmark::Perl::Formance::Plugin::Shootout>
 
 Runs some Perl benchmarks from the Language Shootout on
 alioth.debian.org.
 
-=item L<Perl::Formance::Plugin::MooseTS|Perl::Formance::Plugin::MooseTS>
+=item L<Benchmark::Perl::Formance::Plugin::MooseTS|Benchmark::Perl::Formance::Plugin::MooseTS>
 
 Runs part of the Moose testsuite.
 

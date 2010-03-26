@@ -1,8 +1,8 @@
 use inc::Module::Install;
 
 # Define metadata
-name           'Perl-Formance';
-all_from       'lib/Perl/Formance.pm';
+name           'Benchmark-Perl-Formance';
+all_from       'lib/Benchmark/Perl/Formance.pm';
 
 # general dependencies
 requires 'forks';
@@ -20,7 +20,7 @@ requires 'Net::DNS';              # really
 requires 'NetAddr::IP';           # really
 requires 'HTML::Parser';          # really
 requires 'Mail::SpamAssassin';
-requires 'Perl::Formance::Cargo';
+requires 'Benchmark::Perl::Formance::Cargo';
 
 # OO
 requires 'Moose' => '0.98';

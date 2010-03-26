@@ -21,7 +21,7 @@ lib that you upgraded in the meantime changes its performance.
 If total invariance is important to you, you are responsible to
 provide that invariant environment by yourself. You could, for
 instance, create a local CPAN mirror with CPAN::Mini and never upgrade
-it. Then use that mirror for all your installations of Perl::Formance.
+it. Then use that mirror for all your installations of Benchmark::Perl::Formance.
 
 On the other side the current behaviour could be used to track the
 performance of your installation over time by continuously upgrading
@@ -43,7 +43,7 @@ SUPPORT AND DOCUMENTATION
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Perl::Formance
+    perldoc Benchmark::Perl::Formance
 
 You can also look for information at:
 

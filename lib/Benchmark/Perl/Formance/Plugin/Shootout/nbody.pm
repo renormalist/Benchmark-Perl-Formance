@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::nbody;
+package Benchmark::Perl::Formance::Plugin::Shootout::nbody;
 
 # COMMAND LINE:
 # /usr/bin/perl nbody.perl 50000000
@@ -10,7 +10,7 @@ package Perl::Formance::Plugin::Shootout::nbody;
 # converted into Perl by Márton Papp
 # fixed and cleaned up by Danny Sauer
 # optimized by Jesse Millikan
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;

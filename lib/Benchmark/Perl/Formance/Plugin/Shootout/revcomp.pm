@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::revcomp;
+package Benchmark::Perl::Formance::Plugin::Shootout::revcomp;
 
 # COMMAND LINE:
 # /usr/bin/perl revcomp.perl-4.perl 0 < revcomp-input25000000.txt
@@ -7,11 +7,11 @@ package Perl::Formance::Plugin::Shootout::revcomp;
 # http://shootout.alioth.debian.org/
 #
 # Contributed by Andrew Rodland
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 
-use Perl::Formance::Cargo;
+use Benchmark::Perl::Formance::Cargo;
 use File::ShareDir qw(module_dir);
 use Benchmark ':hireswallclock';
 
@@ -28,7 +28,7 @@ sub run
 
         my $data;
 
-        my $srcdir = module_dir('Perl::Formance::Cargo')."/Shootout";
+        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
         open INFILE, "<", $srcfile or die "Cannot read $srcfile";
 
@@ -70,7 +70,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::Shootout::revcomp - Language shootout revcomp plugin
+Benchmark::Perl::Formance::Plugin::Shootout::revcomp - Language shootout revcomp plugin
 
 =head1 ABOUT
 

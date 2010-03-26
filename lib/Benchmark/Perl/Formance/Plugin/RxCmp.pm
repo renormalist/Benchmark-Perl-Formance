@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::RxCmp;
+package Benchmark::Perl::Formance::Plugin::RxCmp;
 
 # Compare different Regexes engines plugins (Perl 5.10+)
 
@@ -201,7 +201,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::RxCmp - Compare different Regexes engines plugins (Perl 5.10+)
+Benchmark::Perl::Formance::Plugin::RxCmp - Compare different Regexes engines plugins (Perl 5.10+)
 
 =head1 ABOUT
 

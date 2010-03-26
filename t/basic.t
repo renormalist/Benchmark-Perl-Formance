@@ -2,8 +2,8 @@
 
 use Test::More;
 
-use_ok 'Perl::Formance';
-use_ok 'Perl::Formance::Cargo';
+use_ok 'Benchmark::Perl::Formance';
+use_ok 'Benchmark::Perl::Formance::Cargo';
 use_ok 'Benchmark';
 use_ok 'Time::HiRes';
 use_ok 'File::ShareDir';

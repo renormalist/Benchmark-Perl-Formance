@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Shootout::regexdna;
+package Benchmark::Perl::Formance::Plugin::Shootout::regexdna;
 
 # COMMAND LINE:
 # /usr/bin/perl regexdna.perl-2.perl 0 < regexdna-input5000000.txt
@@ -10,12 +10,12 @@ package Perl::Formance::Plugin::Shootout::regexdna;
 # cleaned up for speed and fun by Mirco Wahab
 # improved STDIN read, regex clean up by Jake Berner
 # More speed and multithreading by Andrew Rodland
-# Perl::Formance plugin by Steffen Schwigon
+# Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
 use warnings;
 
-use Perl::Formance::Cargo;
+use Benchmark::Perl::Formance::Cargo;
 use File::ShareDir qw(module_dir);
 use Benchmark ':hireswallclock';
 
@@ -23,7 +23,7 @@ sub run
 {
         my ($infile) = @_;
 
-        my $srcdir = module_dir('Perl::Formance::Cargo')."/Shootout";
+        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
         open INFILE, "<", $srcfile or die "Cannot read $srcfile";
 

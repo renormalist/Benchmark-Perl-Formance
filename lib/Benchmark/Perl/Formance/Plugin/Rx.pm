@@ -1,4 +1,4 @@
-package Perl::Formance::Plugin::Rx;
+package Benchmark::Perl::Formance::Plugin::Rx;
 
 # Regexes
 
@@ -111,7 +111,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance::Plugin::Rx - Stress regular expressions
+Benchmark::Perl::Formance::Plugin::Rx - Stress regular expressions
 
 =cut
 

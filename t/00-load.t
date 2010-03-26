@@ -2,5 +2,5 @@
 
 use Test::More tests => 1;
 
-use_ok( 'Perl::Formance' );
-diag( "Testing Perl::Formance $Perl::Formance::VERSION, Perl $], $^X" );
+use_ok( 'Benchmark::Perl::Formance' );
+diag( "Testing Benchmark::Perl::Formance $Benchmark::Perl::Formance::VERSION, Perl $], $^X" );

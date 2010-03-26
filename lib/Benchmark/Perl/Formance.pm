@@ -1,4 +1,4 @@
-package Perl::Formance;
+package Benchmark::Perl::Formance;
 
 use 5.006001; # I don't really know yet, but that's the goal
 
@@ -58,7 +58,7 @@ sub new {
 # show POD from script/perl-formance
 sub usage
 {
-        print 'perl-formance - Frontend for Perl::Formance
+        print 'perl-formance - Frontend for Benchmark::Perl::Formance
 
 Usage:
 
@@ -82,7 +82,7 @@ To provide environment variables (for some plugins) you can do
 For more details see
 
    man perl-formance
-   perldoc Perl::Formance
+   perldoc Benchmark::Perl::Formance
 
 ';
 }
@@ -131,7 +131,7 @@ sub run {
         # check plugins
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
         my @run_plugins = grep {
-                eval "use Perl::Formance::Plugin::$_";
+                eval "use Benchmark::Perl::Formance::Plugin::$_";
                 if ($@) {
                         print STDERR "Skip plugin '$_'" if $verbose;
                         print STDERR ":$@"              if $verbose >= 2;
@@ -145,7 +145,7 @@ sub run {
         foreach (@run_plugins) {
                 no strict 'refs';
                 print STDERR "Run $_...\n" if $verbose;
-                $RESULTS{results}{$_} = &{"Perl::Formance::Plugin::${_}::main"}($options);
+                $RESULTS{results}{$_} = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($options);
         }
 
         $RESULTS{perlformance_config}{env} =
@@ -192,7 +192,7 @@ __END__
 
 =head1 NAME
 
-Perl::Formance - Perl Performance Benchmark Suite
+Benchmark::Perl::Formance - Perl Performance Benchmark Suite
 
 =head1 ABOUT
 
@@ -218,7 +218,7 @@ dependency libs.
 If total invariance is important to you, you are responsible to
 provide that invariant environment by yourself. You could, for
 instance, create a local CPAN mirror with CPAN::Mini and never upgrade
-it. Then use that mirror for all your installations of Perl::Formance.
+it. Then use that mirror for all your installations of Benchmark::Perl::Formance.
 
 On the other side this could be used to track the performance of your
 installation over time by continuously upgrading from CPAN.
@@ -251,7 +251,7 @@ progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Perl::Formance
+    perldoc Benchmark::Perl::Formance
 
 You can also look for information at:
 
