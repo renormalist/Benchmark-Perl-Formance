@@ -41,7 +41,7 @@ sub nonaggregated {
         print STDERR "$cmd\n"   if $options->{verbose} >= 3;
         print STDERR "Run...\n" if $options->{verbose} >= 3;
 
-        my $t = timeit $count, sub { system ($cmd) };
+        my $t = timeit $count, sub { qx($cmd) };
         return {
                 Benchmark  => $t,
                 prove_path => $prove,
