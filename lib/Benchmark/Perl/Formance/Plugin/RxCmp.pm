@@ -76,7 +76,7 @@ sub LPeg
                 return { failed => "use failed" };
         }
 
-        return { "not yet implemented" => 'missing comparable equivalent regex' };
+        return { not_yet_implemented => 'missing comparable equivalent regex' };
 
         my $result;
         my $re_local = ("'a'?" x $n) . ("'a'" x $n);
@@ -100,7 +100,7 @@ sub Lua
         # LPEG regexes seemingly don't work the same way as usual regexes
         # therefore the pattern below does not match.
         # TODO: Find a equivalent pattern.
-        # return { "not yet implemented" => 'not yet implemented' };
+        # return { not_yet_implemented => 'need to find a equivalent pattern' };
 
         eval "use re::engine::Lua";
         if ($@) {
