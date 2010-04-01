@@ -6,6 +6,9 @@
 	- verbose text now looks like TAP # diagnostics
 	- new commandline to generate a leading "ok description" line
 
+	* took out some benchmarks from default plugin list that
+	occasionally segfault
+
 2008-08-12  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.01
