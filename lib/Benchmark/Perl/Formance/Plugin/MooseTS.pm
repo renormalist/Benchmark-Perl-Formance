@@ -21,14 +21,14 @@ sub prepare {
         my $dstdir = tempdir( CLEANUP => 0 );
         my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/MooseTS";
 
-        print STDERR "Prepare cargo Moose testsuite in $dstdir ...\n" if $options->{verbose} >= 3;
+        print STDERR "# Prepare cargo Moose testsuite in $dstdir ...\n" if $options->{verbose} >= 3;
 
         dircopy($srcdir, $dstdir);
 
         my $prove = `which prove`;
         $prove =~ s/\s*$//;
         ($prove = $^X) =~ s!/perl([\d.]*)$!/prove$1! unless $prove;
-        print STDERR "Use prove: $prove.\n" if $options->{verbose};
+        print STDERR "# Use prove: $prove.\n" if $options->{verbose};
 
         die "Didn't find $prove" unless $prove && -x $prove;
 
@@ -39,8 +39,8 @@ sub nonaggregated {
         my ($dstdir, $prove, $recurse, $options) = @_;
 
         my $cmd    = "cd $dstdir ; $^X $prove -Q $recurse '$dstdir/t'";
-        print STDERR "$cmd\n" if $options->{verbose} >= 3;
-        print STDERR "Run nonaggregated ...\n" if $options->{verbose} >= 3;
+        print STDERR "# $cmd\n" if $options->{verbose} >= 3;
+        print STDERR "# Run nonaggregated ...\n" if $options->{verbose} >= 3;
 
         my $t = timeit $count, sub { qx($cmd) };
         return {
@@ -54,8 +54,8 @@ sub aggregated {
         my ($dstdir, $prove, $recurse, $options) = @_;
 
         my $cmd    = "cd $dstdir ; $^X $prove -Q $recurse '$dstdir/aggregate.t'";
-        print STDERR "$cmd\n" if $options->{verbose} >= 3;
-        print STDERR "Run aggregated ...\n" if $options->{verbose} >= 3;
+        print STDERR "# $cmd\n" if $options->{verbose} >= 3;
+        print STDERR "# Run aggregated ...\n" if $options->{verbose} >= 3;
 
         my $t = timeit $count, sub { qx($cmd) };
         return {

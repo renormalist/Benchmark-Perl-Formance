@@ -45,7 +45,7 @@ sub POSIX
                 $reg = POSIX::Regex->new($re, REG_EXTENDED);
         ';
         if ($@) {
-                print STDERR $@ if $options->{verbose} > 2;
+                print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use failed" };
         }
 
@@ -72,7 +72,7 @@ sub LPeg
         # TODO: Find a equivalent pattern.
         eval "use re::engine::LPEG";
         if ($@) {
-                print STDERR $@ if $options->{verbose} > 2;
+                print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use failed" };
         }
 
@@ -104,7 +104,7 @@ sub Lua
 
         eval "use re::engine::Lua";
         if ($@) {
-                print STDERR $@ if $options->{verbose} > 2;
+                print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use failed" };
         }
 
@@ -128,7 +128,7 @@ sub PCRE
 
         eval "use re::engine::PCRE";
         if ($@) {
-                print STDERR $@ if $options->{verbose} > 2;
+                print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use failed" };
         }
 
@@ -152,7 +152,7 @@ sub Oniguruma
 
         eval "use re::engine::Oniguruma";
         if ($@) {
-                print STDERR $@ if $options->{verbose} > 2;
+                print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use failed" };
         }
 
@@ -180,7 +180,7 @@ sub regexes
 
         no strict "refs";
         for my $subtest (qw( native POSIX Lua LPeg PCRE Oniguruma )) { #  LPeg PCRE Oniguruma
-                print STDERR " - $subtest...\n" if $options->{verbose} > 2;
+                print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
                 $results{$subtest} = $subtest->($options);
         }
         # ----------------------------------------------------

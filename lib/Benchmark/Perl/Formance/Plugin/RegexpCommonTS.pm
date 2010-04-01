@@ -21,13 +21,13 @@ sub prepare {
         my $dstdir = tempdir( CLEANUP => 0 );
         my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/RegexpCommonTS";
 
-        print STDERR "Prepare cargo RegexpCommon testsuite in $dstdir ...\n" if $options->{verbose} >= 3;
+        print STDERR "# Prepare cargo RegexpCommon testsuite in $dstdir ...\n" if $options->{verbose} >= 3;
 
         dircopy($srcdir, $dstdir);
 
         my $prove = `which prove`; chomp $prove;
         ($prove = $^X) =~ s!/perl([\d.]*)$!/prove$1! unless $prove;
-        print STDERR "Use prove: $prove\n" if $options->{verbose};
+        print STDERR "# Use prove: $prove\n" if $options->{verbose};
 
         die "Didn't find $prove" unless $prove && -x $prove;
 
@@ -38,8 +38,8 @@ sub nonaggregated {
         my ($dstdir, $prove, $recurse, $options) = @_;
 
         my $cmd = "cd $dstdir ; $^X $prove -Q $recurse '$dstdir/t'";
-        print STDERR "$cmd\n"   if $options->{verbose} >= 3;
-        print STDERR "Run...\n" if $options->{verbose} >= 3;
+        print STDERR "# $cmd\n"   if $options->{verbose} >= 3;
+        print STDERR "# Run...\n" if $options->{verbose} >= 3;
 
         my $t = timeit $count, sub { qx($cmd) };
         return {

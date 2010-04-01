@@ -21,14 +21,14 @@ sub main {
         my $dstdir = tempdir( CLEANUP => 1 );
         my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/SpamAssassin";
 
-        print STDERR "Prepare cargo spam'n'ham files in $dstdir ...\n" if $options->{verbose} >= 3;
+        print STDERR "# Prepare cargo spam'n'ham files in $dstdir ...\n" if $options->{verbose} >= 3;
 
         dircopy($srcdir, $dstdir);
 
 
         my $salearn = `which sa-learn`; chomp $salearn;
         ($salearn = $^X) =~ s!/perl[\d.]*$!/sa-learn! unless $salearn;
-        print STDERR "Use sa-learn: $salearn\n" if $options->{verbose};
+        print STDERR "# Use sa-learn: $salearn\n" if $options->{verbose};
 
         die "Didn't find $salearn" unless $salearn && -x $salearn;
 
@@ -36,11 +36,11 @@ sub main {
         # my $cmd    = "time /usr/bin/env perl -T $salearn --spam -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/spam_2/*'";
         # ham variant:
         my $cmd    = "$^X -T $salearn --ham -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/$easy_ham/*'";
-        print STDERR "$cmd\n" if $options->{verbose} >= 3;
+        print STDERR "# $cmd\n" if $options->{verbose} >= 3;
 
         my $ret;
         my $t = timeit $count, sub {
-                                    print STDERR "Run...\n" if $options->{verbose} >= 3;
+                                    print STDERR "# Run...\n" if $options->{verbose} >= 3;
                                     $ret = qx($cmd); # catch stdout
                                    };
         return {

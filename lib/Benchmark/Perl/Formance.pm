@@ -124,7 +124,7 @@ sub run {
         if ($ENV{PERLFORMANCE_USE_FORKS}) {
                 eval "use forks";
                 $use_forks = 1 unless $@;
-                print STDERR "use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
+                print STDERR "# use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
         }
 
         # check plugins
@@ -132,9 +132,9 @@ sub run {
         my @run_plugins = grep {
                 eval "use Benchmark::Perl::Formance::Plugin::$_";
                 if ($@) {
-                        print STDERR "Skip plugin '$_'" if $verbose;
-                        print STDERR ":$@"              if $verbose >= 2;
-                        print STDERR "\n"               if $verbose;
+                        print STDERR "# Skip plugin '$_'" if $verbose;
+                        print STDERR ":$@"                if $verbose >= 2;
+                        print STDERR "\n"                 if $verbose;
                 }
                 not $@;
         } @plugins;
@@ -143,7 +143,7 @@ sub run {
         my %RESULTS;
         foreach (@run_plugins) {
                 no strict 'refs';
-                print STDERR "Run $_...\n" if $verbose;
+                print STDERR "# Run $_...\n" if $verbose;
                 $RESULTS{results}{$_} = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($options);
         }
 

@@ -37,7 +37,7 @@ sub thread_storm
                 $_->join;
         }
 
-        #print STDERR " == $result\n" if $options->{verbose} >= 3;
+        #print STDERR "#  == $result\n" if $options->{verbose} >= 3;
         return $result;
 }
 
