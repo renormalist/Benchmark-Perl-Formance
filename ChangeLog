@@ -4,10 +4,11 @@
 
 	* YAML improvements for easier embedding into TAP
 	- verbose text now looks like TAP # diagnostics
-	- new commandline to generate a leading "ok description" line
+	- new commandline --tapdescription="some description" to generate
+	  a leading "ok some description" line before the YAML
 
 	* took out some benchmarks from default plugin list that
-	occasionally segfault
+	occasionally segfaulted
 
 2008-08-12  Steffen Schwigon  <ss5@renormalist.net>
 

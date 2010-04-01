@@ -116,6 +116,16 @@ currently does not increase information.
 
 includes all info from Perls %Config hash.
 
+=item --tapdescription="some description"
+
+When given this will preprend the YAML with a TAP line
+
+  ok some description
+
+This makes it easier for wrappers to embed the output into TAP which
+otherwise need to differentiate between output (verbose and other) and
+the YAML.
+
 =back
 
 =head1 ENVIRONMENT VARIABLES
