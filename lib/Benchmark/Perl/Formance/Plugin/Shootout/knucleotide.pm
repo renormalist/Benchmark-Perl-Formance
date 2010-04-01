@@ -115,3 +115,14 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Benchmark::Perl::Formance::Plugin::Shootout::knucleotide - Language shootout knucleotide plugin
+
+=head1 ABOUT
+
+This plugin does some runs the "knucleotide" benchmark from the
+Language Shootout.

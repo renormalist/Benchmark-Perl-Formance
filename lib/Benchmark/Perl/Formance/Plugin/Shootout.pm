@@ -6,8 +6,6 @@ use warnings;
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 
-our $VERSION = '0.01';
-
 sub shootout
 {
         my ($options) = @_;

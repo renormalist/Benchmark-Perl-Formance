@@ -103,3 +103,14 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Benchmark::Perl::Formance::Plugin::Shootout::regexdna - Language shootout regexdna plugin
+
+=head1 ABOUT
+
+This plugin does some runs the "regexdna" benchmark from the Language
+Shootout.

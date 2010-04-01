@@ -62,7 +62,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::FibThreads - Stress threads
+Benchmark::Perl::Formance::Plugin::Threads - Stress threading
 
 =head1 CONFIGURATION
 

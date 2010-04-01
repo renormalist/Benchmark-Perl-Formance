@@ -140,3 +140,14 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Benchmark::Perl::Formance::Plugin::Shootout::nbody - Language shootout nbody plugin
+
+=head1 ABOUT
+
+This plugin does some runs the "nbody" benchmark from the Language
+Shootout.

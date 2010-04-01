@@ -39,7 +39,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::FibThreads - Stress recursion and function calls
+Benchmark::Perl::Formance::Plugin::Fib - Stress recursion and function calls
 
 =cut
 

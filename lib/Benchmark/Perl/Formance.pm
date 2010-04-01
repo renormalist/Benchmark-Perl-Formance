@@ -13,7 +13,7 @@ use Data::YAML::Writer;
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 

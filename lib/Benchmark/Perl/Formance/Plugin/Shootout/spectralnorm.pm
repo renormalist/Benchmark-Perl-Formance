@@ -152,3 +152,14 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm - Language shootout spectralnorm plugin
+
+=head1 ABOUT
+
+This plugin does some runs the "spectralnorm" benchmark from the
+Language Shootout.

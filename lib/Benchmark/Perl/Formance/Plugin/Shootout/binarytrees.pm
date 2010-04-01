@@ -96,3 +96,14 @@ sub main
 
 
 1;
+
+__END__
+
+=head1 NAME
+
+Benchmark::Perl::Formance::Plugin::Shootout::binarytrees - Language shootout binarytrees plugin
+
+=head1 ABOUT
+
+This plugin does some runs the "binarytrees" benchmark from the
+Language Shootout.

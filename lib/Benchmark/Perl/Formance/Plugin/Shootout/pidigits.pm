@@ -78,3 +78,14 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Benchmark::Perl::Formance::Plugin::Shootout::pidigits - Language shootout pidigits plugin
+
+=head1 ABOUT
+
+This plugin does some runs the "pidigits" benchmark from the Language
+Shootout.

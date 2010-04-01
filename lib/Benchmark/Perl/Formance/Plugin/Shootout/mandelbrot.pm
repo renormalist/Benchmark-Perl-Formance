@@ -106,3 +106,14 @@ sub main
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot - Language shootout mandelbrot plugin
+
+=head1 ABOUT
+
+This plugin does some runs the "mandelbrot" benchmark from the
+Language Shootout.
