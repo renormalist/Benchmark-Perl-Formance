@@ -13,12 +13,12 @@ use Data::YAML::Writer;
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
-my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SpamAssassin,Shootout'; # Threads,
+my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SpamAssassin,Shootout,MooseTS,RegexpCommonTS,Threads';
 my $DEFAULT_INDENT  = 0;
 
 # incrementaly interesting Perl Config keys
@@ -55,33 +55,32 @@ sub new {
         bless {}, shift;
 }
 
-# show POD from script/perl-formance
 sub usage
 {
-        print 'perl-formance - Frontend for Benchmark::Perl::Formance
+        print 'benchmark-perlformance - Frontend for Benchmark::Perl::Formance
 
 Usage:
 
-   $ perl-formance
-   $ perl-formance --plugins=SpamAssassin,Rx,RxCmp -v
-   $ perl-formance -ccccc --indent=2
-   $ perl-formance -q
+   $ benchmark-perlformance
+   $ benchmark-perlformance --plugins=SpamAssassin,RegexpCommonTS,RxCmp -v
+   $ benchmark-perlformance -ccccc --indent=2
+   $ benchmark-perlformance -q
 
 If run directly it uses the perl in your PATH:
 
-   $ /path/to/perl-formance
+   $ /path/to/benchmark-perlformance
 
 To use another perl start it via
 
-   $ /other/path/to/bin/perl /path/to/perl-formance
+   $ /other/path/to/bin/perl /path/to/benchmark-perlformance
 
 To provide environment variables (for some plugins) you can do
 
-   $ PERLFORMANCE_TESTMODE_FAST=1 perl-formance
+   $ PERLFORMANCE_TESTMODE_FAST=1 benchmark-perlformance
 
 For more details see
 
-   man perl-formance
+   man benchmark-perlformance
    perldoc Benchmark::Perl::Formance
 
 ';

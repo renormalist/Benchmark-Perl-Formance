@@ -25,9 +25,10 @@ sub prepare {
 
         dircopy($srcdir, $dstdir);
 
-        my $prove = `which prove`; chomp $prove;
+        my $prove = `which prove`;
+        $prove =~ s/\s*$//;
         ($prove = $^X) =~ s!/perl([\d.]*)$!/prove$1! unless $prove;
-        print STDERR "Use prove: $prove\n" if $options->{verbose};
+        print STDERR "Use prove: $prove.\n" if $options->{verbose};
 
         die "Didn't find $prove" unless $prove && -x $prove;
 
