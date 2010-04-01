@@ -18,7 +18,7 @@ $VERSION = '0.02';
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
-my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SpamAssassin,Shootout,MooseTS,RegexpCommonTS,Threads';
+my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SpamAssassin,Shootout,MooseTS,RegexpCommonTS';#,Threads
 my $DEFAULT_INDENT  = 0;
 
 # incrementaly interesting Perl Config keys

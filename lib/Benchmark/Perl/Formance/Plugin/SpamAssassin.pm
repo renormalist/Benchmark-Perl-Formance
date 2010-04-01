@@ -40,7 +40,7 @@ sub main {
 
         my $ret;
         my $t = timeit $count, sub {
-                                    print STDERR "Run cmd...\n" if $options->{verbose} >= 3;
+                                    print STDERR "Run...\n" if $options->{verbose} >= 3;
                                     $ret = qx($cmd); # catch stdout
                                    };
         return {

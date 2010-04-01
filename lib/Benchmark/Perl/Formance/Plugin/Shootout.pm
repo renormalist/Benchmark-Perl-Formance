@@ -15,11 +15,11 @@ sub shootout
         no strict "refs";
 
         my %results = ();
+                             #fannkuch
+                             #knucleotide
+                             #mandelbrot
         for my $subtest (qw( binarytrees
-                             fannkuch
                              fasta
-                             knucleotide
-                             mandelbrot
                              nbody
                              pidigits
                              regexdna
