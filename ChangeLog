@@ -1,6 +1,14 @@
+2010-04-01  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.02
+
+	* YAML improvements for easier embedding into TAP
+	- verbose text now looks like TAP # diagnostics
+	- new commandline to generate a leading "ok description" line
+
 2008-08-12  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.01
-	
+
 	* Initial version
 

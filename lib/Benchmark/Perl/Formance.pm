@@ -89,34 +89,37 @@ For more details see
 sub run {
         my ($self) = @_;
 
-        my $help       = 0;
-        my $showconfig = 0;
-        my $verbose    = 0;
-        my $quiet      = 0;
-        my $plugins    = $DEFAULT_PLUGINS;
-        my $indent     = $DEFAULT_INDENT;
-        my $options    = {};
+        my $help           = 0;
+        my $showconfig     = 0;
+        my $verbose        = 0;
+        my $quiet          = 0;
+        my $options        = {};
+        my $plugins        = $DEFAULT_PLUGINS;
+        my $indent         = $DEFAULT_INDENT;
+        my $tapdescription = "";
 
         # get options
         my $ok = GetOptions (
-                             "help|h"        => \$help,
-                             "quiet|q"       => \$quiet,
-                             "verbose|v+"    => \$verbose,
-                             "showconfig|c+" => \$showconfig,
-                             "plugins=s"     => \$plugins,
-                             "indent=i"      => \$indent,
+                             "help|h"           => \$help,
+                             "quiet|q"          => \$quiet,
+                             "indent=i"         => \$indent,
+                             "plugins=s"        => \$plugins,
+                             "verbose|v+"       => \$verbose,
+                             "showconfig|c+"    => \$showconfig,
+                             "tapdescription=s" => \$tapdescription,
                             );
         do { usage; exit  0 } if $help;
         do { usage; exit -1 } if not $ok;
 
         # fill options
         $self->{options} = $options = {
-                                       help       => $help,
-                                       quiet      => $quiet,
-                                       verbose    => $verbose,
-                                       showconfig => $showconfig,
-                                       plugins    => $plugins,
-                                       indent     => $indent,
+                                       help           => $help,
+                                       quiet          => $quiet,
+                                       verbose        => $verbose,
+                                       showconfig     => $showconfig,
+                                       plugins        => $plugins,
+                                       tapdescription => $tapdescription,
+                                       indent         => $indent,
                                       };
 
         # use forks if requested
@@ -182,6 +185,9 @@ sub print_results
         my $yw = new Data::YAML::Writer;
         $yw->write($RESULTS, sub { $output .= shift()."\n" });
         $output =~ s/^/" "x$indent/emsg; # indent
+
+        my $tapdescription = $self->{options}{tapdescription};
+        $output = "ok $tapdescription\n".$output if $tapdescription;
         print $output;
 }
 
