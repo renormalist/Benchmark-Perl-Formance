@@ -146,6 +146,30 @@ sub PCRE
                };
 }
 
+sub Plan9
+{
+        my ($options) = @_;
+
+        eval "use re::engine::Plan9";
+        if ($@) {
+                print STDERR "# ".$@ if $options->{verbose} > 2;
+                return { failed => "use failed" };
+        }
+
+        my $result;
+        my $reg = qr/$re/o;
+        my $t = timeit $count, sub { $result = $string =~ $reg };
+        return {
+                Benchmark => $t,
+                goal      => $goal,
+                count     => $count,
+                result    => $result,
+                # string    => $string,
+                # re        => $re_local,
+                used_qr_or_precompile => 1,
+               };
+}
+
 sub Oniguruma
 {
         my ($options) = @_;
@@ -179,7 +203,7 @@ sub regexes
         my %results = ();
 
         no strict "refs";
-        for my $subtest (qw( native POSIX Lua LPeg PCRE Oniguruma )) { #  LPeg PCRE Oniguruma
+        for my $subtest (qw( native POSIX Lua LPeg PCRE Oniguruma Plan9 )) {
                 print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
                 $results{$subtest} = $subtest->($options);
         }

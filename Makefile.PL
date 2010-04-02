@@ -30,6 +30,7 @@ requires 'Mouse';
 requires 'POSIX::Regex';
 requires 're::engine::Lua';
 requires 're::engine::LPEG';
+requires 're::engine::Plan9';
 requires 're::engine::Oniguruma';
 
 # Shootout
