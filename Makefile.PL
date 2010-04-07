@@ -49,5 +49,9 @@ requires 'Module::Refresh';
 requires 'DBM::Deep';
 requires 'Declare::Constraints::Simple';
 
+# Primes
+requires 'Crypt::Primes';
+requires 'Math::Primality';
+
 install_script('script/benchmark-perlformance');
 WriteAll;
