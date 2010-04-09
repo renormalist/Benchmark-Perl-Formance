@@ -54,4 +54,8 @@ requires 'Crypt::Primes';
 requires 'Math::Primality';
 
 install_script('script/benchmark-perlformance');
+
+repository 'git://github.com/renormalist/Benchmark-Perl-Formance.git';
+bugtracker 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Benchmark-Perl-Formance';
+
 WriteAll;
