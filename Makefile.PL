@@ -5,13 +5,16 @@ name           'Benchmark-Perl-Formance';
 all_from       'lib/Benchmark/Perl/Formance.pm';
 
 # general dependencies
-requires 'forks';
 requires 'Benchmark';
 requires 'Time::HiRes';
 requires 'File::ShareDir';
 requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
 requires 'File::Copy::Recursive';
+
+recommends 'forks'; # forks sucks in my env for some reason currently I don't know why
+
+test_requires 'YAML::XS';
 
 # SpamAssassin
 recommends 'DB_File';
