@@ -25,11 +25,13 @@ sub prepare {
 
         dircopy($srcdir, $dstdir);
 
-        my $prove = `which prove`; chomp $prove;
-        ($prove = $^X) =~ s!/perl([\d.]*)$!/prove$1! unless $prove;
+        (my $prove = $^X) =~ s!/perl([\d.]*)$!/prove$1!;
         print STDERR "# Use prove: $prove\n" if $options->{verbose};
 
-        die "Didn't find $prove" unless $prove && -x $prove;
+        return {
+                failed => "did not find executable prove",
+                prove  => $prove,
+               } unless $prove && -x $prove;
 
         return ($dstdir, $prove, $recurse);
 }

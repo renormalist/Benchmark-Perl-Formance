@@ -150,7 +150,16 @@ sub run {
                 no strict 'refs';
                 my @resultkeys = split(/::/);
                 print STDERR "# Run $_...\n" if $verbose;
-                my $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($options);
+                my $res;
+                eval {
+                        $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($options);
+                };
+                if ($@) {
+                        $res = {
+                                failed => "Plugin $_ failed",
+                                error  => $@,
+                               }
+                }
                 eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res";
         }
         my $after  = gettimeofday();
