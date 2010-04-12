@@ -148,8 +148,10 @@ sub run {
         my %RESULTS;
         foreach (@run_plugins) {
                 no strict 'refs';
+                my @resultkeys = split(/::/);
                 print STDERR "# Run $_...\n" if $verbose;
-                $RESULTS{results}{$_} = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($options);
+                my $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($options);
+                eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res";
         }
         my $after  = gettimeofday();
         $RESULTS{perlformance}{overall_runtime} = $after - $before;
