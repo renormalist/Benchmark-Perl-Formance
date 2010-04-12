@@ -1,7 +1,7 @@
 #! /usr/bin/env perl
 
 use Test::More;
-use YAML::XS;
+use YAML::Any;
 use Data::Dumper;
 
 use_ok 'Benchmark::Perl::Formance';

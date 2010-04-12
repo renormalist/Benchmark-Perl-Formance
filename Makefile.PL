@@ -14,7 +14,8 @@ requires 'File::Copy::Recursive';
 
 recommends 'forks'; # forks sucks in my env for some reason currently I don't know why
 
-test_requires 'YAML::XS';
+recommends 'YAML::Syck';
+test_requires 'YAML::Any';
 
 # SpamAssassin
 recommends 'DB_File';
