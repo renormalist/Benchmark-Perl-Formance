@@ -12,6 +12,7 @@ sub shootout
 
         no strict "refs";
 
+        my $verbose = $options->{verbose};
         my %results = ();
                              #fannkuch
                              #knucleotide
@@ -27,7 +28,12 @@ sub shootout
         {
                 print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
                 eval "use Benchmark::Perl::Formance::Plugin::Shootout::$subtest";
-                if (not $@) {
+                if ($@) {
+                        print STDERR "# Skip Shootout plugin '$subtest'" if $verbose;
+                        print STDERR ":$@"                               if $verbose >= 2;
+                        print STDERR "\n"                                if $verbose;
+                }
+                else {
                         my $main = "Benchmark::Perl::Formance::Plugin::Shootout::$subtest"."::main";
                         $results{$subtest} = $main->($options);
                 }
