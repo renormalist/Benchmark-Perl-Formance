@@ -14,44 +14,44 @@ requires 'Data::Structure::Util';
 requires 'File::Copy::Recursive';
 
 # SpamAssassin
-requires 'DB_File';
-requires 'Net::IP';               # really
-requires 'Net::DNS';              # really
-requires 'NetAddr::IP';           # really
-requires 'HTML::Parser';          # really
-requires 'Mail::SpamAssassin';
-requires 'Benchmark::Perl::Formance::Cargo';
+recommends 'DB_File';
+recommends 'Net::IP';               # really
+recommends 'Net::DNS';              # really
+recommends 'NetAddr::IP';           # really
+recommends 'HTML::Parser';          # really
+recommends 'Mail::SpamAssassin';
+recommends 'Benchmark::Perl::Formance::Cargo';
 
 # OO
-requires 'Moose' => '0.98';
-requires 'Mouse';
+recommends 'Moose' => '0.98';
+recommends 'Mouse';
 
 # Rx
-requires 'POSIX::Regex';
-requires 're::engine::Lua';
-requires 're::engine::LPEG';
-requires 're::engine::Plan9';
-requires 're::engine::Oniguruma';
+recommends 'POSIX::Regex';
+recommends 're::engine::Lua';
+recommends 're::engine::LPEG';
+recommends 're::engine::Plan9';
+recommends 're::engine::Oniguruma';
 
 # Shootout
-requires 'Math::GMP';
+recommends 'Math::GMP';
 
 # MooseTS
-requires 'Test::Aggregate::Nested';
-requires 'DateTime::Calendar::Mayan';
-requires 'Regexp::Common';
-requires 'Locale::US';
-requires 'HTTP::Headers';
-requires 'Params::Coerce';
-requires 'URI';
-requires 'Test::Output';
-requires 'Module::Refresh';
-requires 'DBM::Deep';
-requires 'Declare::Constraints::Simple';
+recommends 'Test::Aggregate::Nested';
+recommends 'DateTime::Calendar::Mayan';
+recommends 'Regexp::Common';
+recommends 'Locale::US';
+recommends 'HTTP::Headers';
+recommends 'Params::Coerce';
+recommends 'URI';
+recommends 'Test::Output';
+recommends 'Module::Refresh';
+recommends 'DBM::Deep';
+recommends 'Declare::Constraints::Simple';
 
 # Primes
-requires 'Crypt::Primes';
-requires 'Math::Primality';
+recommends 'Crypt::Primes';
+recommends 'Math::Primality';
 
 install_script('script/benchmark-perlformance');
 
