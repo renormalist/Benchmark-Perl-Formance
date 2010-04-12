@@ -25,12 +25,15 @@ sub main {
 
         dircopy($srcdir, $dstdir);
 
-
-        my $salearn = `which sa-learn`; chomp $salearn;
-        ($salearn = $^X) =~ s!/perl[\d.]*$!/sa-learn! unless $salearn;
+        (my $salearn = $^X) =~ s!/perl[\d.]*$!/sa-learn!;
         print STDERR "# Use sa-learn: $salearn\n" if $options->{verbose};
 
-        die "Didn't find $salearn" unless $salearn && -x $salearn;
+        return {
+                salearn => {
+                            failed       => "did not find executable sa-learn",
+                            salearn_path => $salearn,
+                           }
+               } unless $salearn && -x $salearn;
 
         # spam variant:
         # my $cmd    = "time /usr/bin/env perl -T $salearn --spam -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/spam_2/*'";
@@ -67,8 +70,8 @@ provided taken from spamassassin.org.
 
 =head1 CONFIGURATION
 
-It uses the executable "sa-learn" that it by default searches in your
-env or in the same path of your used perl executable ($^X).
+It uses the executable "sa-learn" that it by default searches in
+the same path of your used perl executable ($^X).
 
 =cut
 
