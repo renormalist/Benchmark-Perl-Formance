@@ -17,10 +17,10 @@ my $out = qx"PERLFORMANCE_TESTMODE_FAST=1 $^X -Ilib script/benchmark-perlformanc
 #diag Dumper($out);
 my $outdata = Load($out);
 
-ok(defined $outdata->{results}, "basic stuff - results");
-ok(defined $outdata->{perl_config}, "basic stuff - perl_config");
-ok(defined $outdata->{perlformance}, "basic stuff - perlformance meta info");
-ok(defined $outdata->{perlformance}{config}, "basic stuff - performance config");
-ok(defined $outdata->{perlformance}{overall_runtime}, "basic stuff - performance runtime");
+ok(defined $outdata->{results}, "results");
+ok(defined $outdata->{perl_config}, "perl_config");
+ok(defined $outdata->{perlformance}, "perlformance meta info");
+ok(defined $outdata->{perlformance}{config}, "perlformance config");
+ok(defined $outdata->{perlformance}{overall_runtime}, "perlformance runtime");
 
 done_testing();

@@ -1,3 +1,20 @@
+2010-04-12  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.04
+
+	* sub-plugins (like Shootout/*.pm) now get same place in result
+	hash regardless of beeing started as part of bundle, i.e via
+	--plugins=Shootout or directly via --plugins=Shootout::foo. This
+	makes evaluation easier.
+
+	* most dependencies now only "recommends" but take care cou
+	install them anyway, eg. via PERL_AUTOINSTALL=--defaultdeps
+
+	* output overall runtime
+
+	* distro maintenance: meta info, test cleanup, verbose debug
+	printing
+
 2010-04-03  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.03
