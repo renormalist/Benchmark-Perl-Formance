@@ -12,10 +12,10 @@ requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
 requires 'File::Copy::Recursive';
 
+test_requires 'Data::YAML::Reader';
+
 recommends 'forks'; # forks sucks in my env for some reason currently I don't know why
 
-recommends 'YAML::Syck';
-test_requires 'YAML::Any';
 
 # SpamAssassin
 recommends 'DB_File';
