@@ -14,7 +14,7 @@ use Time::HiRes qw(gettimeofday);
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
-$VERSION = '0.04';
+$VERSION = '0.06';
 
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 

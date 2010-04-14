@@ -1,3 +1,22 @@
+2010-04-14  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.06
+
+	* Bummer! "More robustness" in 0.05 must have sounded like an
+	euphemism for "now crashing reliably". Fix tests by using the
+	Data::YAML::Reader which is the sister of of the YAML generating
+	module Data::YAML::Writer. Other YAML modules occasionally break.
+
+2010-04-12  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.05
+
+	* search executables like sa-learn or prove only besides $^X
+
+	* more yaml robustness tries as they all crash in a different
+	way on strange platforms; do some some eval-style try/catch
+	en passant...
+
 2010-04-12  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.04
