@@ -118,7 +118,7 @@ includes all info from Perls %Config hash.
 
 =item --tapdescription="some description"
 
-When given this will preprend the YAML with a TAP line
+When given this will prepend the YAML with a TAP line
 
   ok some description
 
