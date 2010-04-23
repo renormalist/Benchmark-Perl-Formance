@@ -132,7 +132,7 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 50 : 5500;
+        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 50 : 750;
         my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1   : 5;
 
         my $result;
