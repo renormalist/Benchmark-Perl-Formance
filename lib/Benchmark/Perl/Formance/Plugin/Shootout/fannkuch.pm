@@ -104,7 +104,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::fannkuch - Language shootout fannkuch plugin
+Benchmark::Perl::Formance::Plugin::Shootout::fannkuch - Language shootout plugin: fannkuch
 
 =head1 ABOUT
 

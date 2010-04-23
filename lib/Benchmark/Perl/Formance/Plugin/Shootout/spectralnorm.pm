@@ -157,7 +157,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm - Language shootout spectralnorm plugin
+Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm - Language shootout plugin: spectralnorm
 
 =head1 ABOUT
 

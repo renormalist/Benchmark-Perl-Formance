@@ -70,7 +70,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::revcomp - Language shootout revcomp plugin
+Benchmark::Perl::Formance::Plugin::Shootout::revcomp - Language shootout plugin: revcomp
 
 =head1 ABOUT
 

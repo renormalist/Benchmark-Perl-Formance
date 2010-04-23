@@ -111,7 +111,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot - Language shootout mandelbrot plugin
+Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot - Language shootout plugin: mandelbrot
 
 =head1 ABOUT
 

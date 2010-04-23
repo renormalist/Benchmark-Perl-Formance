@@ -101,7 +101,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::binarytrees - Language shootout binarytrees plugin
+Benchmark::Perl::Formance::Plugin::Shootout::binarytrees - Language shootout plugin: binarytrees
 
 =head1 ABOUT
 

@@ -83,7 +83,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::pidigits - Language shootout pidigits plugin
+Benchmark::Perl::Formance::Plugin::Shootout::pidigits - Language shootout plugin: pidigits
 
 =head1 ABOUT
 

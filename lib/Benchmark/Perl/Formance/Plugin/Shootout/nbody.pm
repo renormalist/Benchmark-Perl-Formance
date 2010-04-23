@@ -145,7 +145,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::nbody - Language shootout nbody plugin
+Benchmark::Perl::Formance::Plugin::Shootout::nbody - Language shootout plugin: nbody
 
 =head1 ABOUT
 

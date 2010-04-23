@@ -108,7 +108,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::regexdna - Language shootout regexdna plugin
+Benchmark::Perl::Formance::Plugin::Shootout::regexdna - Language shootout plugin: regexdna
 
 =head1 ABOUT
 

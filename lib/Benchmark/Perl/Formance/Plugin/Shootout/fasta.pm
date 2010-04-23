@@ -159,7 +159,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::fasta - Language shootout fasta plugin
+Benchmark::Perl::Formance::Plugin::Shootout::fasta - Language shootout plugin: fasta
 
 =head1 ABOUT
 

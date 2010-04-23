@@ -120,7 +120,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Shootout::knucleotide - Language shootout knucleotide plugin
+Benchmark::Perl::Formance::Plugin::Shootout::knucleotide - Language shootout plugin: knucleotide
 
 =head1 ABOUT
 
