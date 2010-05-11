@@ -57,9 +57,11 @@ sub crypt_primes
 }
 
 sub main {
+        my ($options) = @_;
+
         return {
-                math_primality => math_primality(),
-                crypt_primes   => crypt_primes(),
+                math_primality => math_primality($options),
+                crypt_primes   => crypt_primes($options),
                };
 }
 1;
