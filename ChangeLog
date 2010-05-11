@@ -1,3 +1,17 @@
+2010-05-11  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.08
+
+	* new benchmark around running Perl6 STD.pm / gimme5 / viv
+
+	* new benchmark using DPath to stress lookup, traversing and
+	copying data structures
+
+	* scaled down too aggressive Shootdown benchmarks: 
+	- knucleotide
+	- binarytrees
+	- nbody
+
 2010-04-16  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.07
@@ -10,7 +24,7 @@
 
 	* Bummer! "More robustness" in 0.05 must have sounded like an
 	euphemism for "now crashing reliably". Fix tests by using the
-	Data::YAML::Reader which is the sister of of the YAML generating
+	Data::YAML::Reader which is the sister of the YAML generating
 	module Data::YAML::Writer. Other YAML modules occasionally break.
 
 2010-04-12  Steffen Schwigon  <ss5@renormalist.net>
