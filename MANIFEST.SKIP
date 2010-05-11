@@ -14,3 +14,5 @@ nytprof
 Benchmark-Perl-Formance-*.*.tar.gz
 ^.git
 xyz
+lex
+syml
