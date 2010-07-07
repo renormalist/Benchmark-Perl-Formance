@@ -5,9 +5,8 @@ package Benchmark::Perl::Formance::Plugin::Prime;
 use strict;
 use warnings;
 
-use vars qw($goal $count);
-$goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 22;
-$count = 5;
+our $goal;
+our $count;
 
 use Benchmark ':hireswallclock';
 
@@ -58,6 +57,9 @@ sub crypt_primes
 
 sub main {
         my ($options) = @_;
+
+        $goal  = $options->{fastmode} ? 15 : 22;
+        $count = 5;
 
         return {
                 math_primality => math_primality($options),

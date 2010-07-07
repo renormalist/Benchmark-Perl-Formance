@@ -9,13 +9,12 @@ use warnings;
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 
-use vars qw($goal $count $length $n $re $string);
-$goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 29; # probably 28 or more
-$count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
-
-$n      = $goal;
-$re     = ("a?" x $n) . ("a" x $n);
-$string = "a" x $n;
+our $goal;
+our $count;
+our $length;
+our $n;
+our $re;
+our $string;
 
 sub native
 {
@@ -215,6 +214,12 @@ sub regexes
 sub main
 {
         my ($options) = @_;
+
+        $goal   = $options->{fastmode} ? 5 : 29; # probably 28 or more
+        $count  = $options->{fastmode} ? 1 : 5;
+        $n      = $goal;
+        $re     = ("a?" x $n) . ("a" x $n);
+        $string = "a" x $n;
 
         return regexes($options);
 }

@@ -63,6 +63,8 @@ sub usage
 Usage:
 
    $ benchmark-perlformance
+   $ benchmark-perlformance --fast
+   $ benchmark-perlformance --useforks
    $ benchmark-perlformance --plugins=SpamAssassin,RegexpCommonTS,RxCmp -v
    $ benchmark-perlformance -ccccc --indent=2
    $ benchmark-perlformance -q
@@ -74,10 +76,6 @@ If run directly it uses the perl in your PATH:
 To use another perl start it via
 
    $ /other/path/to/bin/perl /path/to/benchmark-perlformance
-
-To provide environment variables (for some plugins) you can do
-
-   $ PERLFORMANCE_TESTMODE_FAST=1 benchmark-perlformance
 
 For more details see
 
@@ -93,6 +91,8 @@ sub run {
         my $help           = 0;
         my $showconfig     = 0;
         my $verbose        = 0;
+        my $fastmode       = 0;
+        my $useforks       = 0;
         my $quiet          = 0;
         my $options        = {};
         my $plugins        = $DEFAULT_PLUGINS;
@@ -107,6 +107,8 @@ sub run {
                              "indent=i"         => \$indent,
                              "plugins=s"        => \$plugins,
                              "verbose|v+"       => \$verbose,
+                             "fastmode"         => \$fastmode,
+                             "useforks"         => \$useforks,
                              "showconfig|c+"    => \$showconfig,
                              "tapdescription=s" => \$tapdescription,
                              "D=s%"             => \$D,
@@ -119,6 +121,7 @@ sub run {
                                        help           => $help,
                                        quiet          => $quiet,
                                        verbose        => $verbose,
+                                       fastmode       => $fastmode,
                                        showconfig     => $showconfig,
                                        plugins        => $plugins,
                                        tapdescription => $tapdescription,
@@ -127,10 +130,9 @@ sub run {
                                       };
 
         # use forks if requested
-        my $use_forks = 0;
-        if ($ENV{PERLFORMANCE_USE_FORKS}) {
+        if ($useforks) {
                 eval "use forks";
-                $use_forks = 1 unless $@;
+                $useforks = 0 if $@;
                 print STDERR "# use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
         }
 
@@ -167,15 +169,7 @@ sub run {
         }
         my $after  = gettimeofday();
         $RESULTS{perlformance}{overall_runtime} = $after - $before;
-
-        $RESULTS{perlformance}{config}{env} =
-        {
-         map { $_ => $ENV{$_} }
-         sort
-         grep { /^PERLFORMANCE_/ }
-         keys %ENV
-        };
-        $RESULTS{perlformance}{config}{use_forks} = $use_forks;
+        $RESULTS{perlformance}{config}{use_forks} = $useforks;
 
         # Perl Config
         if ($showconfig)

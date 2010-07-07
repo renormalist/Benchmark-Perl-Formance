@@ -6,12 +6,11 @@ use 5.008;
 use strict;
 use warnings;
 
-use vars qw($goal $threadcount $val $expect);
-
-$goal        = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 3 : 25;
-$threadcount = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : ($ENV{PERLFORMANCE_THREADCOUNT} || 100);
-$val         = 25;
-$expect      = $threadcount * $val;
+our $goal;
+our $count;
+our $threadcount;
+our $val;
+our $expect;
 
 use threads;
 use threads::shared;
@@ -45,6 +44,11 @@ sub main
 {
         my ($options) = @_;
 
+        $goal        = $options->{fastmode} ? 3 : 25;
+        $threadcount = $options->{fastmode} ? 5 : ($options->{D}{Threads_threadcount} || 100);
+        $val         = 25;
+        $expect      = $threadcount * $val;
+
         my $ret;
         my $t = timeit($goal, sub { $ret = thread_storm($options) });
 
@@ -64,13 +68,13 @@ __END__
 
 Benchmark::Perl::Formance::Plugin::Threads - Stress threading
 
-=head1 CONFIGURATION
+=head1 SYNOPSIS
 
-You can define how many threads should maximally be started. Default
-is 16.
+Run it as any other plugin.
+You can define how many threads should maximally be started.
+Default is 16.
 
-  $ export PERLFORMANCE_THREADCOUNT=64
-  $ perl-formance --plugins=Threads
+  $ perl-formance --plugins=Threads -DThreads_threadcount=64
 
 =head1 BUGS
 

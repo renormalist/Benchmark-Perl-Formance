@@ -3,9 +3,8 @@ package Benchmark::Perl::Formance::Plugin::Mem;
 use warnings;
 use strict;
 
-use vars qw($goal $count);
-$goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 35;
-$count = 5;
+our $goal;
+our $count;
 
 use Benchmark ':hireswallclock';
 
@@ -17,6 +16,9 @@ sub lots_of_malloc
 
 sub main {
         my ($options) = @_;
+
+        $goal  = $options->{fastmode} ? 15 : 35;
+        $count = 5;
 
         my $t = timeit $count, sub { lots_of_malloc($goal) };
         return {

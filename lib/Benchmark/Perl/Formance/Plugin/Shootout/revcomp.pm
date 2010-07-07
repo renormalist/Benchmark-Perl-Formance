@@ -15,10 +15,12 @@ use Benchmark::Perl::Formance::Cargo;
 use File::ShareDir qw(module_dir);
 use Benchmark ':hireswallclock';
 
+our $PRINT = 0;
+
 sub print_reverse {
   while (my $chunk = substr $_[0], -60, 60, '') {
           my $dummy = scalar reverse($chunk);
-          print $dummy, "\n" if $ENV{PERLFORMANCE_SHOOTOUT_REVCOMP_PRINT};
+          print $dummy, "\n" if $PRINT;
   }
 }
 
@@ -35,7 +37,7 @@ sub run
         while (<INFILE>) {
                 if (/^>/) {
                         print_reverse $data;
-                        print if $ENV{PERLFORMANCE_SHOOTOUT_REVCOMP_PRINT};
+                        print if $PRINT;
                 } else {
                         chomp;
                         tr{wsatugcyrkmbdhvnATUGCYRKMBDHVN}
@@ -51,8 +53,9 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "fasta-1000.txt" : "fasta-1000000.txt";
-        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+        $PRINT     = $options->{D}{Shootout_revcomp_print};
+        my $goal   = $options->{fastmode} ? "fasta-1000.txt" : "fasta-1000000.txt";
+        my $count  = $options->{fastmode} ? 1 : 5;
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };
@@ -79,8 +82,10 @@ Shootout.
 
 =head1 CONFIGURATION
 
-The output can be controlled via the environment variable:
+You can control whether to output the result in case you want to reuse
+it:
 
-   $ PERLFORMANCE_SHOOTOUT_REVCOMP_PRINT=1 perl-formance [...]
+   $ perl-formance --plugins=Shootout::revcomp \
+                   -DShootout_revcomp_print=1
 
 =cut

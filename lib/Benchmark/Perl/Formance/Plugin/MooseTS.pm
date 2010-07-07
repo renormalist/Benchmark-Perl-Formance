@@ -9,9 +9,8 @@ use File::ShareDir qw(module_dir);
 use Time::HiRes qw(gettimeofday);
 use Benchmark::Perl::Formance::Cargo;
 
-use vars qw($count $recurse);
-$count   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
-$recurse = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "" : "-r";
+our $count;
+our $recurse;
 
 use Benchmark ':hireswallclock';
 
@@ -67,6 +66,9 @@ sub aggregated {
 
 sub main {
         my ($options) = @_;
+
+        $count   = $options->{fastmode} ? 1 : 5;
+        $recurse = $options->{fastmode} ? "" : "-r";
 
         my ($dstdir, $prove, $recurse) = prepare($options);
         return nonaggregated($dstdir, $prove, $recurse, $options);

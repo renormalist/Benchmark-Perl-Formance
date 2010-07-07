@@ -5,12 +5,14 @@ use warnings;
 
 use Benchmark ':hireswallclock';
 
-use vars qw($goal $count);
-$goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 2 :  10; # benchmark parameter that influences single run duration
-$count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 :   5; # run that many iterations
+our $goal;
+our $count;
 
 sub main {
         my ($options) = @_;
+
+        $goal   = $options->{fastmode} ? 2 :  10; # benchmark parameter that influences single run duration
+        $count  = $options->{fastmode} ? 1 :   5; # run that many iterations
 
         my $result;
         my $t = timeit $count, sub {

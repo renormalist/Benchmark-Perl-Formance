@@ -20,6 +20,8 @@ use Benchmark::Perl::Formance::Cargo;
 use File::ShareDir qw(module_dir);
 use Benchmark ':hireswallclock';
 
+our $PRINT = 0;
+
 my $threads;
 my ($l,%h,$sum);
 my ($sequence, $begin, $end);
@@ -56,7 +58,7 @@ sub run
                 $output .= sprintf "%d\t$s\n", $h{$s};
         }
 
-        print $output if $ENV{PERLFORMANCE_SHOOTOUT_KNUCLEOTIDE_PRINT};
+        print $output if $PRINT;
 }
 
 sub update_hash_for_frame {
@@ -98,8 +100,9 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "fasta-25000.txt" : "fasta-1000000.txt";
-        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+        $PRINT     = $options->{D}{Shootout_knucleotide_print};
+        my $goal   = $options->{fastmode} ? "fasta-25000.txt" : "fasta-1000000.txt";
+        my $count  = $options->{fastmode} ? 1 : 5;
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };

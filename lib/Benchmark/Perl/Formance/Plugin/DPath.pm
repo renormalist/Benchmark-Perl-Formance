@@ -3,9 +3,8 @@ package Benchmark::Perl::Formance::Plugin::DPath;
 use strict;
 use warnings;
 
-use vars qw($goal $count);
-$goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 15 : 1000;
-$count = 5;
+our $goal;
+our $count;
 
 use Clone 'clone';
 use Devel::Size 'total_size';
@@ -455,6 +454,11 @@ sub run_dpath
 
 
 sub main {
+        my ($options) = @_;
+
+        $goal  = $options->{fastmode} ? 15 : 1000;
+        $count = 5;
+
         return {
                 dpath => run_dpath(),
                };

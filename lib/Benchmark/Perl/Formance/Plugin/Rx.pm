@@ -8,10 +8,9 @@ use strict;
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 
-use vars qw($goal $count $length);
-$goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 5 : 29; # probably 28 or more
-$length = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 100_000 : 10_000_000;
-$count  = 5;
+our $goal;
+our $count;
+our $length;
 
 sub regexes
 {
@@ -99,6 +98,10 @@ sub regexes
 sub main
 {
         my ($options) = @_;
+
+        $goal   = $options->{fastmode} ? 5 : 29; # probably 28 or more
+        $length = $options->{fastmode} ? 100_000 : 10_000_000;
+        $count  = 5;
 
         return {
                 regexes => regexes($options),

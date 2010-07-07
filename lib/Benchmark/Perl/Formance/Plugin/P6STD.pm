@@ -3,9 +3,8 @@ package Benchmark::Perl::Formance::Plugin::P6STD;
 use strict;
 use warnings;
 
-use vars qw($goal $count);
-$goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "hello.p6" : "STD.pm6";
-$count = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1          : 5;
+our $goal;
+our $count;
 
 use Benchmark ':all', ':hireswallclock';
 use File::Temp qw(tempfile tempdir);
@@ -63,6 +62,9 @@ sub viv
 
 sub main {
         my ($options) = @_;
+
+        $goal  = $options->{fastmode} ? "hello.p6" : "STD.pm6";
+        $count = $options->{fastmode} ? 1          : 5;
 
         my $workdir = prepare($options);
         return {

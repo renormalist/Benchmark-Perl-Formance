@@ -9,14 +9,16 @@ use File::ShareDir qw(module_dir);
 use Time::HiRes qw(gettimeofday);
 use Benchmark::Perl::Formance::Cargo;
 
-use vars qw($count $easy_ham);
-$count    = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
-$easy_ham = $ENV{PERLFORMANCE_TESTMODE_FAST} ? "easy_ham_subset" : "easy_ham";
+our $count;
+our $easy_ham;
 
 use Benchmark ':hireswallclock';
 
 sub main {
         my ($options) = @_;
+
+        $count    = $options->{fastmode} ? 1 : 5;
+        $easy_ham = $options->{fastmode} ? "easy_ham_subset" : "easy_ham";
 
         my $dstdir = tempdir( CLEANUP => 1 );
         my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/SpamAssassin";

@@ -17,6 +17,8 @@ use warnings;
 
 use Benchmark ':hireswallclock';
 
+our $PRINT = 0;
+
 use constant IM => 139968;
 use constant IA => 3877;
 use constant IC => 29573;
@@ -54,35 +56,35 @@ sub selectRandom {
 sub makeRandomFasta {
     my ($id, $desc, $n, $genelist) = @_;
 
-    print ">", $id, " ", $desc, "\n" if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
+    print ">", $id, " ", $desc, "\n" if $PRINT;
 
     # print whole lines
     foreach (1 .. int($n / LINELENGTH) ){
             my $dummy = selectRandom($genelist, LINELENGTH)."\n";
-            print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
+            print $dummy if $PRINT;
     }
     # print remaining line (if required)
     if ($n % LINELENGTH){
             my $dummy = selectRandom($genelist, $n % LINELENGTH)."\n";
-            print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
+            print $dummy if $PRINT;
     }
 }
 
 sub makeRepeatFasta {
     my ($id, $desc, $s, $n) = @_;
 
-    print ">", $id, " ", $desc, "\n" if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
+    print ">", $id, " ", $desc, "\n" if $PRINT;
 
     my $r = length $s;
     my $ss = $s . $s . substr($s, 0, $n % $r);
     for my $j(0..int($n / LINELENGTH)-1) {
 	my $i = $j*LINELENGTH % $r;
         my $dummy = substr($ss, $i, LINELENGTH)."\n";
-	print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
+	print $dummy if $PRINT;
     }
     if ($n % LINELENGTH) {
             my $dummy = substr($ss, -($n % LINELENGTH)). "\n";
-            print $dummy if $ENV{PERLFORMANCE_SHOOTOUT_FASTA_PRINT};
+            print $dummy if $PRINT;
     }
 }
 
@@ -140,8 +142,9 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_SHOOTOUT_FASTA_N}     || ($ENV{PERLFORMANCE_TESTMODE_FAST} ? 5000 : 5_000_000);
-        my $count  = $ENV{PERLFORMANCE_SHOOTOUT_FASTA_COUNT} || ($ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5);
+        $PRINT     = $options->{D}{Shootout_fasta_print};
+        my $goal   = $options->{D}{Shootout_fasta_n}     || ($options->{fastmode} ? 5000 : 5_000_000);
+        my $count  = $options->{D}{Shootout_fasta_count} || ($options->{fastmode} ? 1 : 5);
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };
@@ -169,15 +172,17 @@ Shootout.
 =head1 CONFIGURATION
 
 Because the "fasta" plugin's output can be used to feed other
-benchmarks you control its output via the environment variables:
+benchmarks that work on "fasta" data you control its output
+via defines:
 
-   $ PERLFORMANCE_SHOOTOUT_FASTA_N=1000 \
-     PERLFORMANCE_SHOOTOUT_FASTA_PRINT=1 \
-     PERLFORMANCE_SHOOTOUT_FASTA_COUNT=1 \
-     perl-formance [...]
+   $ perl-formance --plugins=Shootout::fast \
+                   -DShootout_fasta_n=1000 \
+                   -DShootout_fasta_print=1 \
+                   -DShootout_fasta_count=1
 
-where "_N" is the algorithm's parameter, "_PRINT" is a boolean 1 or 0
-and _COUNT is the repetition counter which in benchmark runs is
-usually 5 but only needed 1 for generating the output.
+where C<_n> is the algorithm's parameter, C<_print=1>
+means print out the result and C<_count> is the repetition
+counter is usually 5 but should be 1 when generating
+the output for other plugins.
 
 =cut

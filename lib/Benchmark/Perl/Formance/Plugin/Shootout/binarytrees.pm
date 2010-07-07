@@ -81,8 +81,8 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 2 : 15;
-        my $count  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 1 : 5;
+        my $goal   = $options->{fastmode} ? 2 : 15;
+        my $count  = $options->{fastmode} ? 1 : 5;
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };

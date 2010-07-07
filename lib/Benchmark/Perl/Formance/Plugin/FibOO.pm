@@ -5,9 +5,8 @@ package Benchmark::Perl::Formance::Plugin::FibOO;
 use strict;
 use warnings;
 
-use vars qw($goal $count);
-$goal  = $ENV{PERLFORMANCE_TESTMODE_FAST} ? 18 : 35; # same over Fib, FibOO, FibMoose, FibMouse
-$count = 5;
+our $goal;
+our $count;
 
 use Benchmark ':hireswallclock';
 
@@ -28,6 +27,10 @@ sub fib
 sub main
 {
         my ($options) = @_;
+
+        # ensure same values over all Fib* plugins!
+        $goal  = $options->{fastmode} ? 18 : 35;
+        $count = 5;
 
         my $result;
         my $fib = __PACKAGE__->new;
