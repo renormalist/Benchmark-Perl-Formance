@@ -172,7 +172,8 @@ sub run {
                 eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res";
         }
         my $after  = gettimeofday();
-        $RESULTS{perlformance}{overall_runtime} = $after - $before;
+        $RESULTS{perlformance}{overall_runtime}   = $after - $before;
+        $RESULTS{perlformance}{config}{fastmode}  = $fastmode;
         $RESULTS{perlformance}{config}{use_forks} = $useforks;
 
         # Perl Config

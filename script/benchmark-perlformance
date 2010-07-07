@@ -126,6 +126,12 @@ currently does not increase information.
 
 includes all info from Perls %Config hash.
 
+=item -p
+
+includes platform info via Devel::Platform::Info
+
+(Users who want to greet the 80s combine it this way: C<-cccp>. :-)
+
 =item --tapdescription="some description"
 
 When given this will prepend the YAML with a TAP line
