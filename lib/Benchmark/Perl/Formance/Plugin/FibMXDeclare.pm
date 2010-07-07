@@ -13,7 +13,7 @@ use Benchmark ':hireswallclock';
 use MooseX::Declare;
 
 class Fib {
-        method fib($n) {
+        method fib(Int $n) {
                 $n < 2
                   ? 1
                     : $self->fib($n-1) + $self->fib($n-2);

@@ -1,6 +1,6 @@
 package Benchmark::Perl::Formance;
 
-use 5.006001; # I don't really know yet, but that's the goal
+use 5.008;
 
 use warnings;
 use strict;
@@ -15,7 +15,7 @@ use Devel::Platform::Info;
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
-$VERSION = '0.08';
+$VERSION = '0.09';
 
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 

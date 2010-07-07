@@ -1,3 +1,22 @@
+2010-07-07  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.09
+
+	* new benchmark to stress MooseX::Declare method calls
+
+	* provide Devel::Platform::Info with cmdline option -p
+
+	* allow generic defines vie -Dkey=value
+	- usually to configure plugins
+
+	* refactored use of env variables, now all set via cmdline
+	options:
+	  --fastmode
+	  --usethreads
+	  -DThreads_threadcount=64
+
+	* now requires Perl 5.8
+
 2010-05-11  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.08
