@@ -11,6 +11,7 @@ use Getopt::Long ":config", "no_ignore_case", "bundling";
 use Data::Structure::Util "unbless";
 use Data::YAML::Writer;
 use Time::HiRes qw(gettimeofday);
+use Devel::Platform::Info;
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
@@ -90,6 +91,7 @@ sub run {
 
         my $help           = 0;
         my $showconfig     = 0;
+        my $platforminfo   = 0;
         my $verbose        = 0;
         my $fastmode       = 0;
         my $useforks       = 0;
@@ -110,6 +112,7 @@ sub run {
                              "fastmode"         => \$fastmode,
                              "useforks"         => \$useforks,
                              "showconfig|c+"    => \$showconfig,
+                             "platforminfo|p"   => \$platforminfo,
                              "tapdescription=s" => \$tapdescription,
                              "D=s%"             => \$D,
                             );
@@ -123,6 +126,7 @@ sub run {
                                        verbose        => $verbose,
                                        fastmode       => $fastmode,
                                        showconfig     => $showconfig,
+                                       platforminfo   => $platforminfo,
                                        plugins        => $plugins,
                                        tapdescription => $tapdescription,
                                        indent         => $indent,
@@ -180,6 +184,13 @@ sub run {
                 {
                  map { $_ => $Config{$_} } sort @cfgkeys
                 };
+        }
+
+        # Perl Config
+        if ($platforminfo)
+        {
+                $RESULTS{platform_info} = Devel::Platform::Info->new->get_info;
+                delete $RESULTS{platform_info}{source}; # this currently breaks the simplified YAMLish
         }
 
         unbless (\%RESULTS);

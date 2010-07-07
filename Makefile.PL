@@ -11,6 +11,7 @@ requires 'File::ShareDir';
 requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
 requires 'File::Copy::Recursive';
+requires 'Devel::Platform::Info';
 requires 'Benchmark::Perl::Formance::Cargo';
 
 test_requires 'Data::YAML::Reader';

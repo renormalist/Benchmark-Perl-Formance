@@ -13,11 +13,12 @@ use_ok 'Data::YAML::Writer';
 use_ok 'Data::Structure::Util';
 use_ok 'File::Copy::Recursive';
 
-my $out = qx"$^X -Ilib script/benchmark-perlformance --fastmode -c --plugins=Fib";
+my $out = qx"$^X -Ilib script/benchmark-perlformance --fastmode -c -p --plugins=Fib";
 my $yr = Data::YAML::Reader->new;
 my $outdata =  $yr->read($out);
 ok(defined $outdata->{results}, "results");
 ok(defined $outdata->{perl_config}, "perl_config");
+ok(defined $outdata->{platform_info}, "platform_info");
 ok(defined $outdata->{perlformance}, "perlformance meta info");
 ok(defined $outdata->{perlformance}{config}, "perlformance config");
 ok(defined $outdata->{perlformance}{overall_runtime}, "perlformance runtime");
