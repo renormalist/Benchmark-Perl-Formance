@@ -41,10 +41,14 @@ To use another Perl start it via
 
   $ /other/path/to/bin/perl /path/to/benchmark-perlformance
 
+To provide configuration, general and plugin specific, you can use the
+C<-D> option to define key/value pairs:
 
-To provide environment variables (for some plugins) you can do
+  $ benchmark-perlformance -DShootout_fasta_n=5500  [...]
 
-  $ PERLFORMANCE_SHOOTOUT_FASTA_N=5500 benchmark-perlformance [...]
+Plugins usually follow the convention that the options are prefixed
+with the plugin name, like in the example it means the config value
+C<n> used by the plugin C<Shootout::fasta>.
 
 =head1 OPTIONS
 

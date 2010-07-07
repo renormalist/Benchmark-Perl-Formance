@@ -98,6 +98,7 @@ sub run {
         my $plugins        = $DEFAULT_PLUGINS;
         my $indent         = $DEFAULT_INDENT;
         my $tapdescription = "";
+        my $D              = {};
 
         # get options
         my $ok = GetOptions (
@@ -108,6 +109,7 @@ sub run {
                              "verbose|v+"       => \$verbose,
                              "showconfig|c+"    => \$showconfig,
                              "tapdescription=s" => \$tapdescription,
+                             "D=s%"             => \$D,
                             );
         do { usage; exit  0 } if $help;
         do { usage; exit -1 } if not $ok;
@@ -121,6 +123,7 @@ sub run {
                                        plugins        => $plugins,
                                        tapdescription => $tapdescription,
                                        indent         => $indent,
+                                       D              => $D,
                                       };
 
         # use forks if requested
