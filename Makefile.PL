@@ -28,6 +28,7 @@ recommends 'HTML::Parser';          # really
 recommends 'Mail::SpamAssassin';
 
 # OO
+recommends 'MooseX::Declare';
 recommends 'Moose' => '0.98';
 recommends 'Mouse';
 
