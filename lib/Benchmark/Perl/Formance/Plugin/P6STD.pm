@@ -72,12 +72,13 @@ sub main {
                 viv    => viv($workdir, $options),
                };
 }
+
 1;
 
 __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::DPath - Use DPath to stress lookup, traversing and copying data structures
+Benchmark::Perl::Formance::Plugin::P6STD - Stress using Perl6/Perl5 tools around STD.pm
 
 =cut
