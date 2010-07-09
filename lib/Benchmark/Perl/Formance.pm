@@ -12,16 +12,19 @@ use Data::Structure::Util "unbless";
 use Data::YAML::Writer;
 use Time::HiRes qw(gettimeofday);
 use Devel::Platform::Info;
+use List::Util "max";
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
-$VERSION = '0.09';
+$VERSION = '0.10';
 
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SpamAssassin,Shootout,MooseTS,RegexpCommonTS';#,Threads
 my $DEFAULT_INDENT  = 0;
+
+my @run_plugins;
 
 # incrementaly interesting Perl Config keys
 my %CONFIG_KEYS = (
@@ -64,7 +67,7 @@ sub usage
 Usage:
 
    $ benchmark-perlformance
-   $ benchmark-perlformance --fast
+   $ benchmark-perlformance --fastmode
    $ benchmark-perlformance --useforks
    $ benchmark-perlformance --plugins=SpamAssassin,RegexpCommonTS,RxCmp -v
    $ benchmark-perlformance -ccccc --indent=2
@@ -91,12 +94,12 @@ sub run {
 
         my $help           = 0;
         my $showconfig     = 0;
+        my $outstyle       = "summary";
         my $platforminfo   = 0;
         my $verbose        = 0;
         my $fastmode       = 0;
         my $useforks       = 0;
         my $quiet          = 0;
-        my $options        = {};
         my $plugins        = $DEFAULT_PLUGINS;
         my $indent         = $DEFAULT_INDENT;
         my $tapdescription = "";
@@ -109,6 +112,7 @@ sub run {
                              "indent=i"         => \$indent,
                              "plugins=s"        => \$plugins,
                              "verbose|v+"       => \$verbose,
+                             "outstyle=s"       => \$outstyle,
                              "fastmode"         => \$fastmode,
                              "useforks"         => \$useforks,
                              "showconfig|c+"    => \$showconfig,
@@ -120,18 +124,19 @@ sub run {
         do { usage; exit -1 } if not $ok;
 
         # fill options
-        $self->{options} = $options = {
-                                       help           => $help,
-                                       quiet          => $quiet,
-                                       verbose        => $verbose,
-                                       fastmode       => $fastmode,
-                                       showconfig     => $showconfig,
-                                       platforminfo   => $platforminfo,
-                                       plugins        => $plugins,
-                                       tapdescription => $tapdescription,
-                                       indent         => $indent,
-                                       D              => $D,
-                                      };
+        $self->{options} = {
+                            help           => $help,
+                            quiet          => $quiet,
+                            verbose        => $verbose,
+                            outstyle       => $outstyle,
+                            fastmode       => $fastmode,
+                            showconfig     => $showconfig,
+                            platforminfo   => $platforminfo,
+                            plugins        => $plugins,
+                            tapdescription => $tapdescription,
+                            indent         => $indent,
+                            D              => $D,
+                           };
 
         # use forks if requested
         if ($useforks) {
@@ -142,7 +147,7 @@ sub run {
 
         # check plugins
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
-        my @run_plugins = grep {
+        @run_plugins = grep {
                 eval "use Benchmark::Perl::Formance::Plugin::$_";
                 if ($@) {
                         print STDERR "# Skip plugin '$_'" if $verbose;
@@ -161,7 +166,7 @@ sub run {
                 print STDERR "# Run $_...\n" if $verbose;
                 my $res;
                 eval {
-                        $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($options);
+                        $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
                 };
                 if ($@) {
                         $res = {
@@ -198,11 +203,9 @@ sub run {
         return \%RESULTS;
 }
 
-sub print_results
+sub print_outstyle_yaml
 {
         my ($self, $RESULTS) = @_;
-
-        return if $self->{options}{quiet};
 
         my $output = '';
         my $indent = $self->{options}{indent};
@@ -213,6 +216,33 @@ sub print_results
         my $tapdescription = $self->{options}{tapdescription};
         $output = "ok $tapdescription\n".$output if $tapdescription;
         print $output;
+}
+
+sub print_outstyle_summary
+{
+        my ($self, $RESULTS) = @_;
+
+        #my @plugins = keys %{$RESULTS->{results}};
+        my $len = max map { length } @run_plugins;
+
+        foreach (@run_plugins) {
+                no strict 'refs';
+                my @resultkeys = split(/::/);
+                my $res = eval "\$RESULTS->{results}{".join("}{", @resultkeys)."}{Benchmark}[0]";
+                print sprintf("%-${len}s : %f\n", $_, ($res || 0));
+        }
+}
+
+sub print_results
+{
+        my ($self, $RESULTS) = @_;
+        return if $self->{options}{quiet};
+
+        my $outstyle = $self->{options}{outstyle};
+        $outstyle = "summary" unless $outstyle =~ qr/^(summary|yaml)$/;
+        my $sub = "print_outstyle_$outstyle";
+
+        $self->$sub($RESULTS);
 }
 
 1;

@@ -1,3 +1,12 @@
+2010-07-09  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.10
+
+	* introduce output style option
+	  --outstyle=summary
+	  --outstyle=yaml
+	which now defaults to "summary" to ease interactive use.
+
 2010-07-07  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.09

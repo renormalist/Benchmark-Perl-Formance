@@ -67,6 +67,15 @@ prints out a help page.
 Use only a particular list of sub benchmarks. The comma-separated list
 refers to Benchmark::Perl::Formance::Plugin::* respectively.
 
+=item --outstyle=summary
+
+This enables a condensed tabular output instead of YAML.
+Default since v0.10.
+
+=item --outstyle=yaml
+
+This activates YAML formatted output.
+
 =item --fastmode
 
 If this is set then some plugins try to scale down the stress to take
