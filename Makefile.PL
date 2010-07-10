@@ -13,7 +13,7 @@ requires 'Data::Structure::Util';
 requires 'File::Copy::Recursive';
 requires 'Devel::Platform::Info';
 requires 'Benchmark::Perl::Formance::Cargo';
-requires 'Data::DPath' => '0.37';
+requires 'Data::DPath' => '0.38';
 
 test_requires 'Data::YAML::Reader';
 

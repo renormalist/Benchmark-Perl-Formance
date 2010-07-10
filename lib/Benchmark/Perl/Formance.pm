@@ -225,7 +225,8 @@ sub find_interesting_result_paths
 
         my @all_keys = ();
 
-        my $benchmarks = dpathi $RESULTS, "//Benchmark";
+        use Data::Dumper;
+        my $benchmarks = dpathi($RESULTS)->isearch("//Benchmark");
 
         while ($benchmarks->isnt_exhausted) {
                 my @keys;
