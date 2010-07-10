@@ -13,7 +13,7 @@ use Data::YAML::Writer;
 use Time::HiRes qw(gettimeofday);
 use Devel::Platform::Info;
 use List::Util "max";
-use Data::DPath 'dpathi';
+use Data::DPath 'dpath', 'dpathi';
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
@@ -253,8 +253,7 @@ sub print_outstyle_summary
         foreach (@run_plugins) {
                 no strict 'refs';
                 my @resultkeys = split(/\./);
-                my $str = "\$RESULTS->{results}{".join("}{", @resultkeys)."}{Benchmark}[0]";
-                my $res = eval $str;
+                my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
                 print sprintf("%-${len}s : %f\n", $_, ($res || 0));
         }
 }
