@@ -225,7 +225,6 @@ sub find_interesting_result_paths
 
         my @all_keys = ();
 
-        use Data::Dumper;
         my $benchmarks = dpathi($RESULTS)->isearch("//Benchmark");
 
         while ($benchmarks->isnt_exhausted) {
@@ -234,8 +233,7 @@ sub find_interesting_result_paths
                 my $ancestors = $benchmark->isearch ("/::ancestor");
 
                 while ($ancestors->isnt_exhausted) {
-                        my $ancestor = $ancestors->value;
-                        my $key = $ancestor->first_point->{attrs}{key};
+                        my $key = $ancestors->value->first_point->{attrs}{key};
                         push @keys, $key if defined $key;
                 }
                 pop @keys;
