@@ -1,3 +1,9 @@
+2010-07-13  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.12
+
+	* Adapt to changed DPath API v0.40
+
 2010-07-10  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.11

@@ -17,7 +17,7 @@ use Data::DPath 'dpath', 'dpathi';
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
