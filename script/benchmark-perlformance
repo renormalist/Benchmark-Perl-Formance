@@ -161,7 +161,7 @@ L<Benchmark::Perl::Formance::Plugin::Threads|Benchmark::Perl::Formance::Plugin::
 
 =item -Dkey=value
 
-With this you can configure plugins by defining key/value pairs.
+With this you can configure some plugins by defining key/value pairs.
 
 =back
 
