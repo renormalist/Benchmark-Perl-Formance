@@ -7,6 +7,7 @@ all_from       'lib/Benchmark/Perl/Formance.pm';
 # general dependencies
 requires 'Benchmark';
 requires 'Time::HiRes';
+requires 'Devel::Size';
 requires 'File::ShareDir';
 requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
@@ -61,7 +62,6 @@ recommends 'Math::Primality';
 
 # DPath
 recommends 'Data::DPath';
-recommends 'Devel::Size';
 recommends 'Clone';
 
 # P6STD
