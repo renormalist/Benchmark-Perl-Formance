@@ -15,6 +15,14 @@ package Benchmark::Perl::Formance::Plugin::Shootout::nbody;
 use strict;
 use warnings;
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 use constant PI            => 3.141592653589793;
 use constant SOLAR_MASS    => (4 * PI * PI);
 use constant DAYS_PER_YEAR => 365.24;

@@ -16,6 +16,14 @@ use strict;
 use warnings;
 no warnings 'uninitialized';
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 use Benchmark ':hireswallclock';
 
 use integer;

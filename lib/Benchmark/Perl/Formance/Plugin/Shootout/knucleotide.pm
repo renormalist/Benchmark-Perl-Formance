@@ -16,6 +16,14 @@ package Benchmark::Perl::Formance::Plugin::Shootout::knucleotide;
 use strict;
 use threads;
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 use Benchmark::Perl::Formance::Cargo;
 use File::ShareDir qw(module_dir);
 use Benchmark ':hireswallclock';

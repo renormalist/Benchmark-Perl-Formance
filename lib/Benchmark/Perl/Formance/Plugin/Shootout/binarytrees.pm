@@ -14,6 +14,14 @@ package Benchmark::Perl::Formance::Plugin::Shootout::binarytrees;
 use integer;
 use Benchmark ':hireswallclock';
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 sub item_check {
     my ($tree) = @_;
 

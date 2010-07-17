@@ -6,6 +6,14 @@ use 5.010; # [sic - pluggable regex engines]
 use strict;
 use warnings;
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 use Benchmark ':hireswallclock';
 use Data::Dumper;
 

@@ -13,6 +13,14 @@ use strict;
 use Math::GMP;
 use Benchmark ':hireswallclock';
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 my($z0, $z1, $z2);
 
 sub extract_digit { return ($z0*$_[0]+$z1)/$z2; }

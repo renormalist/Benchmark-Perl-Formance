@@ -1,7 +1,15 @@
 package Benchmark::Perl::Formance::Plugin::SpamAssassin;
 
-use warnings;
 use strict;
+use warnings;
+
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
 
 use File::Temp qw(tempfile tempdir);
 use File::Copy::Recursive qw(dircopy);

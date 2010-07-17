@@ -12,6 +12,14 @@ package Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm;
 use strict;
 use warnings;
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 use IO::Select;
 use Benchmark ':hireswallclock';
 

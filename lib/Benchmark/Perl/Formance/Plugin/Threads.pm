@@ -6,6 +6,14 @@ use 5.008;
 use strict;
 use warnings;
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 our $goal;
 our $count;
 our $threadcount;
