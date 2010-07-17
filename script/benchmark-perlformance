@@ -186,38 +186,54 @@ this many count of threads. Default is 16.
 
 =head1 PLUGINS
 
-Please read the documentation for the used plugins, as they might need
-special configuration, usually via environment variables.
+Please read the documentation for the used plugins, as they might accept
+special configuration, usually via C<-Dkey=value> options.
 
 =over 4
 
 =item L<Benchmark::Perl::Formance::Plugin::SpamAssassin|Benchmark::Perl::Formance::Plugin::SpamAssassin>
 
-SpamAssassin
+Run Bayes learning tools from SpamAssassin.
 
 =item L<Benchmark::Perl::Formance::Plugin::Rx|Benchmark::Perl::Formance::Plugin::Rx>
 
-Regular expressions
+Stress using Perl6/Perl5 tools around STD.pm
+
+=item L<Benchmark::Perl::Formance::Plugin::DPath|Benchmark::Perl::Formance::Plugin::DPath>
+
+Use DPath to stress lookup, traversing and copying data structures.
+
+=item L<Benchmark::Perl::Formance::Plugin::Rx|Benchmark::Perl::Formance::Plugin::Rx>
+
+Regular expressions, basic functions and pathological regex stressing.
+
+=item L<Benchmark::Perl::Formance::Plugin::RxCmp|Benchmark::Perl::Formance::Plugin::RxCmp>
+
+Compare differnet regex engines (pluggable since Perl 5.10).
 
 =item L<Benchmark::Perl::Formance::Plugin::Fib|Benchmark::Perl::Formance::Plugin::Fib>
 
 Fibonnacci numbers to stress recursion and function calls.
 
+=item L<Benchmark::Perl::Formance::Plugin::FibOO|Benchmark::Perl::Formance::Plugin::FibOO>
+
+Fibonnacci numbers to stress recursion and method calls, with plain Perl OO.
+
 =item L<Benchmark::Perl::Formance::Plugin::FibMoose|Benchmark::Perl::Formance::Plugin::FibMoose>
 
-Fibonnacci numbers with Moose to stress recursion and method calls.
+Fibonnacci numbers to stress recursion and method calls, with Moose.
 
 =item L<Benchmark::Perl::Formance::Plugin::FibMouse|Benchmark::Perl::Formance::Plugin::FibMouse>
 
-Fibonnacci numbers with Mouse to stress recursion and method calls.
+Fibonnacci numbers to stress recursion and method calls, with Mouse.
 
-=item L<Benchmark::Perl::Formance::Plugin::FibOO|Benchmark::Perl::Formance::Plugin::FibOO>
+=item L<Benchmark::Perl::Formance::Plugin::FibMXDeclare|Benchmark::Perl::Formance::Plugin::FibMXDeclare>
 
-Fibonnacci numbers with plain Perl OO to stress recursion and method calls.
+Fibonnacci numbers to stress recursion and method calls, with MooseX::Declare.
 
 =item L<Benchmark::Perl::Formance::Plugin::Threads|Benchmark::Perl::Formance::Plugin::Threads>
 
-Fibonnacci numbers with threads to stress thread handling.
+Thread handling.
 
 =item L<Benchmark::Perl::Formance::Plugin::Shootout|Benchmark::Perl::Formance::Plugin::Shootout>
 
@@ -226,7 +242,7 @@ alioth.debian.org.
 
 =item L<Benchmark::Perl::Formance::Plugin::MooseTS|Benchmark::Perl::Formance::Plugin::MooseTS>
 
-Runs part of the Moose testsuite.
+Runs the Moose testsuite.
 
 =back
 

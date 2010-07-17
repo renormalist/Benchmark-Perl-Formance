@@ -17,8 +17,7 @@ requires 'Data::DPath' => '0.38';
 
 test_requires 'Data::YAML::Reader';
 
-recommends 'forks'; # forks sucks in my env for some reason currently I don't know why
-
+recommends 'forks';
 
 # SpamAssassin
 recommends 'DB_File';

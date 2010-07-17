@@ -22,7 +22,22 @@ $VERSION = '0.12';
 push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
-my $DEFAULT_PLUGINS = 'Rx,RxCmp,Fib,FibOO,FibMoose,FibMouse,SpamAssassin,Shootout,MooseTS,RegexpCommonTS';#,Threads
+my $DEFAULT_PLUGINS = join ",", qw(Rx
+                                   RxCmp
+                                   DPath
+                                   Fib
+                                   FibOO
+                                   FibMoose
+                                   FibMouse
+                                   FibMXDeclare
+                                   SpamAssassin
+                                   Shootout
+                                   MooseTS
+                                   RegexpCommonTS
+                                   P6STD
+                                   Threads
+                                   Prime
+                                 );
 my $DEFAULT_INDENT  = 0;
 
 my @run_plugins;
@@ -131,6 +146,7 @@ sub run {
                             verbose        => $verbose,
                             outstyle       => $outstyle,
                             fastmode       => $fastmode,
+                            useforks       => $useforks,
                             showconfig     => $showconfig,
                             platforminfo   => $platforminfo,
                             plugins        => $plugins,
