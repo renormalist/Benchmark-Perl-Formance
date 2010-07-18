@@ -1,4 +1,4 @@
-package Benchmark::Perl::Formance::Plugin::Threads;
+package Benchmark::Perl::Formance::Plugin::ThreadsShared;
 
 # Create threads to evaluate Fibonacci numbers
 
@@ -18,31 +18,38 @@ our $goal;
 our $count;
 our $threadcount;
 our $val;
-our $expect2;
+our $expect1;
 
 use threads;
-
-my $result;
+use threads::shared;
 
 use Benchmark ':hireswallclock';
+use Devel::Size 'total_size';
 use Data::Dumper;
 
-sub run_thread_storm_noshared
+my @result : shared;
+$#result = 1_000;
+
+my $size = total_size(\@result);
+
+sub run_thread_storm_shared
 {
         my ($options) = @_;
 
+        $result[-1] = 0;
         my @t;
         foreach (1..$threadcount) {
                 push @t, async {
                         # print STDERR ".";
-                        1; # no-op
+                        $result[-1] += $val;
                 }
         }
         foreach (@t) {
                 $_->join;
         }
 
-        return scalar @t;
+        #print STDERR "#  == ".$result[-1]."\n" if $options->{verbose} >= 3;
+        return $result[-1];
 }
 
 sub threadstorm
@@ -52,16 +59,17 @@ sub threadstorm
         $goal        = $options->{fastmode} ? 3 : 25;
         $threadcount = $options->{fastmode} ? 5 : ($options->{D}{Threads_threadcount} || 100);
         $val         = 25;
-        $expect2     = $threadcount;
+        $expect1     = $threadcount * $val;
 
-        my $ret2;
-        my $t2 = timeit($goal, sub { $ret2 = run_thread_storm_noshared($options) });
+        my $ret1;
+        my $t1 = timeit($goal, sub { $ret1 = run_thread_storm_shared  ($options) });
 
         return {
-                Benchmark   => $t2,
+                Benchmark   => $t1,
                 threadcount => $threadcount,
-                result      => $ret2,
-                expect      => $expect2,
+                total_size  => $size,
+                result      => $ret1,
+                expect      => $expect1,
                 useforks => ($options->{useforks} || 0),
                };
 }
