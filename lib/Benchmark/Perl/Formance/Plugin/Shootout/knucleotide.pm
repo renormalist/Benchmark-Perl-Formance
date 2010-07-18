@@ -14,6 +14,7 @@ package Benchmark::Perl::Formance::Plugin::Shootout::knucleotide;
 # Benchmark::Perl::Formance plugin by Steffen Schwigon
 
 use strict;
+use warnings;
 use threads;
 
 our $VERSION = "0.001";
@@ -44,12 +45,12 @@ sub run
 
         my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
-        open INFILE, "<", $srcfile or die "Cannot read $srcfile";
+        open my $INFILE, "<", $srcfile or die "Cannot read $srcfile";
 
         $/ = ">";
-        /^THREE/ and $sequence = uc(join "", grep !/^THREE/, split /\n+/) while <INFILE>;
+        /^THREE/ and $sequence = uc(join "", grep !/^THREE/, split /\n+/) while <$INFILE>;
 
-        close INFILE;
+        close $INFILE;
 
         ($l,%h,$sum) = (length $sequence);
 
@@ -96,7 +97,7 @@ sub update_hash_slice {
 }
 
 sub num_cpus {
-  open my $fh, '</proc/cpuinfo' or return;
+  open my $fh, '<', '/proc/cpuinfo' or return;
   my $cpus;
   while (<$fh>) {
           $cpus ++ if /^processor[\s]+:/; # 0][]0]; # for emacs cperl-mode indent bug

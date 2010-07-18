@@ -426,7 +426,8 @@ sub run_dpath
 {
         my ($options) = @_;
 
-        eval "use Data::DPath 'dpath'";
+        eval "use Data::DPath 'dpath'"; ## no critic
+
         if ($@) {
                 print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use Data::DPath failed" };

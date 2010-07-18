@@ -18,7 +18,7 @@ sub shootout
 {
         my ($options) = @_;
 
-        no strict "refs";
+        no strict "refs"; ## no critic
 
         my $verbose = $options->{verbose};
         my %results = ();
@@ -35,7 +35,7 @@ sub shootout
                           ))
         {
                 print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
-                eval "use Benchmark::Perl::Formance::Plugin::Shootout::$subtest";
+                eval "use Benchmark::Perl::Formance::Plugin::Shootout::$subtest"; ## no critic
                 if ($@) {
                         print STDERR "# Skip Shootout plugin '$subtest'" if $verbose;
                         print STDERR ":$@"                               if $verbose >= 2;

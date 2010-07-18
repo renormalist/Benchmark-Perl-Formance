@@ -157,7 +157,7 @@ sub run {
 
         # use forks if requested
         if ($useforks) {
-                eval "use forks";
+                eval "use forks"; ## no critic
                 $useforks = 0 if $@;
                 print STDERR "# use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
         }
@@ -165,7 +165,7 @@ sub run {
         # check plugins
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
         @run_plugins = grep {
-                eval "use Benchmark::Perl::Formance::Plugin::$_";
+                eval "use Benchmark::Perl::Formance::Plugin::$_"; ## no critic
                 if ($@) {
                         print STDERR "# Skip plugin '$_'" if $verbose;
                         print STDERR ":$@"                if $verbose >= 2;
@@ -178,7 +178,7 @@ sub run {
         my $before = gettimeofday();
         my %RESULTS;
         foreach (@run_plugins) {
-                no strict 'refs';
+                no strict 'refs'; ## no critic
                 my @resultkeys = split(/::/);
                 print STDERR "# Run $_...\n" if $verbose;
                 my $res;
@@ -192,7 +192,7 @@ sub run {
                                 error  => $@,
                                }
                 }
-                eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res";
+                eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res"; ## no critic
         }
         my $after  = gettimeofday();
         $RESULTS{perlformance}{overall_runtime}   = $after - $before;
@@ -267,7 +267,7 @@ sub print_outstyle_summary
         my $len = max map { length } @run_plugins;
 
         foreach (@run_plugins) {
-                no strict 'refs';
+                no strict 'refs'; ## no critic
                 my @resultkeys = split(/\./);
                 my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
                 print sprintf("%-${len}s : %f\n", $_, ($res || 0));

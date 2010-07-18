@@ -22,7 +22,8 @@ sub math_primality
 {
         my ($options) = @_;
 
-        eval "use Math::Primality 'next_prime'";
+        eval "use Math::Primality 'next_prime'"; ## no critic
+
         if ($@) {
                 print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use Math::Primality failed" };
@@ -44,7 +45,7 @@ sub crypt_primes
 {
         my ($options) = @_;
 
-        eval "use Crypt::Primes 'maurer'";
+        eval "use Crypt::Primes 'maurer'"; ## no critic
         if ($@) {
                 print STDERR "# ".$@ if $options->{verbose} > 2;
                 return { failed => "use Crypt::Primes failed" };

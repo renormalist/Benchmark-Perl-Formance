@@ -11,6 +11,8 @@ package Benchmark::Perl::Formance::Plugin::Shootout::binarytrees;
 # Tree-building made non-recursive by Steffen Mueller
 # Benchmark::Perl::Formance plugin by Steffen Schwigon
 
+use strict;
+use warnings;
 use integer;
 use Benchmark ':hireswallclock';
 

@@ -12,7 +12,9 @@ package Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot;
 # Benchmark::Perl::Formance plugin by Steffen Schwigon
 # - nr of threads now dynamically
 
-use warnings; use strict; use threads;
+use strict;
+use warnings;
+use threads;
 
 our $VERSION = "0.001";
 
@@ -32,7 +34,7 @@ my ($w, $h);
 my $threads;
 
 # Generate pixel data for a single dot
-sub dot($$) {
+sub dot($$) { ## no critic
    my ($Zr, $Zi, $Tr, $Ti) = (0.0,0.0,0.0,0.0);
    my $i = ITER;
    my $Cr = 2 * $_[0] / $w - 1.5;
@@ -47,14 +49,14 @@ sub dot($$) {
 }
 
 # Generate pixel data for range of lines, inclusive
-sub lines($$) {
+sub lines($$) { ## no critic
    map { my $y = $_;
       pack 'B*', pack 'C*', map dot($_, $y), 0..$w-1;
    } $_[0]..$_[1]
 }
 
 sub num_cpus {
-  open my $fh, '</proc/cpuinfo' or return;
+  open my $fh, '<', '/proc/cpuinfo' or return;
   my $cpus;
   while (<$fh>) {
           $cpus ++ if /^processor[\s]+:/; # 0][]0]; # for emacs cperl-mode indent bug

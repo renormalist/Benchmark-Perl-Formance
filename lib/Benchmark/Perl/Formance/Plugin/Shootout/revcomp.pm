@@ -26,6 +26,7 @@ use Benchmark ':hireswallclock';
 our $PRINT = 0;
 
 sub print_reverse {
+  no warnings 'uninitialized'; ## no critic
   while (my $chunk = substr $_[0], -60, 60, '') {
           my $dummy = scalar reverse($chunk);
           print $dummy, "\n" if $PRINT;
@@ -40,9 +41,9 @@ sub run
 
         my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
-        open INFILE, "<", $srcfile or die "Cannot read $srcfile";
+        open my $INFILE, "<", $srcfile or die "Cannot read $srcfile";
 
-        while (<INFILE>) {
+        while (<$INFILE>) {
                 if (/^>/) {
                         print_reverse $data;
                         print if $PRINT;
@@ -53,7 +54,7 @@ sub run
                         $data .= $_;
                 }
         }
-        close INFILE;
+        close $INFILE;
         print_reverse $data;
 }
 

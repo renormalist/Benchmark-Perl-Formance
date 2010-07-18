@@ -86,7 +86,7 @@ sub multiplyAtAv {
 }
 
 sub num_cpus {
-  open my $fh, '</proc/cpuinfo' or return; # '
+  open my $fh, '<', '/proc/cpuinfo' or return; # '
   my $cpus;
   while (<$fh>) {
           $cpus ++ if /^processor[\s]+:/; # 0][]0]; # for emacs cperl-mode indent bug

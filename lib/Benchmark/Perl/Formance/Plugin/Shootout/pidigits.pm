@@ -47,7 +47,7 @@ sub run
         my ($i, $s, $d); my $k = 0;
 
         # main loop
-        for $i (1..$n) {
+        for $i (1..$n) { ## no critic
                 while (
                        $z0>$z2 || ( $d = extract_digit(3) ) != extract_digit(4)
                       ) {
