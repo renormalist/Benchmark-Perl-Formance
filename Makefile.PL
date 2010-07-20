@@ -13,7 +13,7 @@ requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
 requires 'File::Copy::Recursive';
 requires 'Devel::Platform::Info';
-requires 'Benchmark::Perl::Formance::Cargo';
+requires 'Benchmark::Perl::Formance::Cargo' => '0.02';
 requires 'Data::DPath' => '0.38';
 
 test_requires 'Data::YAML::Reader';
@@ -68,6 +68,9 @@ recommends 'Clone';
 recommends 'Text::Balanced';
 recommends 'YAML::XS';
 recommends 'Encode';
+
+# PerlCritic
+recommends 'Perl::Critic';
 
 install_script('script/benchmark-perlformance');
 
