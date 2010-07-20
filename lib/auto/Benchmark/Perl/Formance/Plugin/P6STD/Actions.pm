@@ -1,6 +1,7 @@
 use YAML::XS;
 
-package Actions;
+package # hide from cpan indexer
+  Actions;
 
 # Generic ast translation done via autoload
 
