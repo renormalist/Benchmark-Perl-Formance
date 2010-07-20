@@ -25,7 +25,7 @@ use Benchmark ':hireswallclock';
 sub prepare {
         my ($options) = @_;
 
-        my $dstdir = tempdir( CLEANUP => 0 );
+        my $dstdir = tempdir( CLEANUP => 1 );
         my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/RegexpCommonTS";
 
         print STDERR "# Prepare cargo RegexpCommon testsuite in $dstdir ...\n" if $options->{verbose} >= 3;
