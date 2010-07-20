@@ -184,7 +184,7 @@ sub run {
                 my $res;
                 eval {
                         $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
-                        $res->{VERSION} = ${"Benchmark::Perl::Formance::Plugin::${_}::VERSION"};
+                        $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${_}::VERSION"};
                 };
                 if ($@) {
                         $res = {
