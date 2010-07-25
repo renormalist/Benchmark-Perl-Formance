@@ -3,6 +3,14 @@ package Benchmark::Perl::Formance::Plugin::MooseTS;
 use warnings;
 use strict;
 
+our $VERSION = "0.001";
+
+#############################################################
+#                                                           #
+# Benchmark Code ahead - Don't touch without strong reason! #
+#                                                           #
+#############################################################
+
 use File::Temp qw(tempfile tempdir);
 use File::Copy::Recursive qw(dircopy);
 use File::ShareDir qw(module_dir);
