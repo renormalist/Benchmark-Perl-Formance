@@ -20,21 +20,18 @@ use Storable "fd_retrieve", "store_fd";
 our $VERSION = '0.12';
 
 # comma separated list of default plugins
-my $DEFAULT_PLUGINS = join ",", qw(Rx
-                                   RxCmp
-                                   DPath
+my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Fib
                                    FibOO
-                                   FibMoose
-                                   FibMouse
-                                   FibMXDeclare
-                                   SpamAssassin
-                                   Shootout
-                                   MooseTS
-                                   RegexpCommonTS
-                                   P6STD
-                                   Threads
+                                   Mem
                                    Prime
+                                   Rx
+                                   Shootout::fasta
+                                   Shootout::regexdna
+                                   Shootout::binarytrees
+                                   Shootout::revcomp
+                                   Shootout::nbody
+                                   Shootout::spectralnorm
                                  );
 my $DEFAULT_INDENT  = 0;
 

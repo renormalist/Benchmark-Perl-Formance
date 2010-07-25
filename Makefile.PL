@@ -33,7 +33,7 @@ recommends 'MooseX::Declare';
 recommends 'Moose' => '0.98';
 recommends 'Mouse';
 
-# Rx
+# RxCmp
 recommends 'POSIX::Regex';
 recommends 're::engine::Lua';
 recommends 're::engine::LPEG';

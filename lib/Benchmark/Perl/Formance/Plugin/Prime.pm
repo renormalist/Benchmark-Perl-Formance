@@ -54,7 +54,6 @@ sub crypt_primes
         my $t;
         my $result;
         my $bitgoal = int($goal * 3.36); # bitness in about same size order as int length in math_primality
-        print STDERR "bitgoal: $bitgoal\n";
         $t = timeit $count, sub { $result = maurer(Size => $bitgoal) };
         return {
                 Benchmark => $t,
