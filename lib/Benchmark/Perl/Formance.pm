@@ -178,9 +178,6 @@ sub run {
                              "tapdescription=s" => \$tapdescription,
                              "D=s%"             => \$D,
                             );
-        do { usage; exit  0 } if $help;
-        do { usage; exit -1 } if not $ok;
-
         # fill options
         $self->{options} = {
                             help           => $help,
@@ -196,6 +193,10 @@ sub run {
                             indent         => $indent,
                             D              => $D,
                            };
+
+        do { $self->print_version; exit  0 } if $version;
+        do { usage;                exit  0 } if $help;
+        do { usage;                exit -1 } if not $ok;
 
         # use forks if requested
         if ($useforks) {
@@ -219,7 +220,8 @@ sub run {
         # run plugins
         my $before = gettimeofday();
         my %RESULTS;
-        foreach (@run_plugins) {
+        foreach (@run_plugins)
+        {
                 no strict 'refs'; ## no critic
                 my @resultkeys = split(/::/);
                 print STDERR "# Run $_...\n" if $verbose;
@@ -231,7 +233,7 @@ sub run {
                 if ($@) {
                         $res = {
                                 failed => "Plugin $_ failed",
-                                error  => $@,
+                                ($verbose > 3 ? ( error  => $@ ) : ()),
                                }
                 }
                 eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res"; ## no critic
@@ -308,7 +310,7 @@ sub print_outstyle_summary
         my @run_plugins = $self->find_interesting_result_paths($RESULTS);
         my $len = max map { length } @run_plugins;
 
-        foreach (@run_plugins) {
+        foreach (sort @run_plugins) {
                 no strict 'refs'; ## no critic
                 my @resultkeys = split(/\./);
                 my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
