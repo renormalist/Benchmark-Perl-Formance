@@ -15,6 +15,7 @@ use Devel::Platform::Info;
 use List::Util "max";
 use Data::DPath 'dpath', 'dpathi';
 use File::Find;
+use Storable "fd_retrieve", "store_fd";
 
 our $VERSION = '0.12';
 
@@ -227,7 +228,16 @@ sub run {
                 print STDERR "# Run $_...\n" if $verbose >= 2;
                 my $res;
                 eval {
-                        $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
+                        # run in child process
+                        my $pid = open(my $PLUGIN, "-|");
+                        if ($pid == 0)
+                        {
+                                $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
+                                store_fd($res, \*STDOUT);
+                                exit 0;
+                        }
+                        $res = fd_retrieve(\*$PLUGIN);
+                        close $PLUGIN;
                         $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${_}::VERSION"};
                 };
                 if ($@) {
