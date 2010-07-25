@@ -224,7 +224,7 @@ sub run {
         {
                 no strict 'refs'; ## no critic
                 my @resultkeys = split(/::/);
-                print STDERR "# Run $_...\n" if $verbose;
+                print STDERR "# Run $_...\n" if $verbose >= 2;
                 my $res;
                 eval {
                         $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
