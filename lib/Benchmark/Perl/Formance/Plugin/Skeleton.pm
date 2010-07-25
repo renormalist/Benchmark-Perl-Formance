@@ -47,7 +47,8 @@ Benchmark::Perl::Formance::Plugin::Skeleton - An example plugin
 =head1 ABOUT
 
 You can create your own plugins by just creating a module in the
-namespace C<Benchmark::Perl::Formance::Plugin::*> which simply has to provide a
+namespace C<Benchmark::Perl::Formance::Plugin::*> which simply has to
+provide a
 
  package Benchmark::Perl::Formance::Plugin::HotStuff;
  
@@ -66,8 +67,9 @@ To use it call the frontend tool and provide your pluginname via
 
   $ perl-formance --plugins=HotStuff
 
-If your module should be a default part of the Benchmark::Perl::Formance suite,
-then patch the C<$DEFAULT_PLUGINS> in lib/Benchmark/Perl/Formance.pm.
+If your module should become a default part of the
+Benchmark::Perl::Formance suite, then patch the C<$DEFAULT_PLUGINS> in
+lib/Benchmark/Perl/Formance.pm and/or email me.
 
 =cut
 

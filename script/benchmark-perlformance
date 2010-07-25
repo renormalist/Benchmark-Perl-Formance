@@ -120,30 +120,30 @@ Be quiet; do not output results.
 
 =item -c
 
-gives you the most basic information like Perl version, operating
+Gives you the most basic information like Perl version, operating
 system name and architecture, i.e., C<perlpath>, C<version>,
 C<archname>, C<archname64>, C<osvers>.
 
 =item -cc
 
-adds C<gccversion>, C<gnulibc_version>, C<usemymalloc>,
+Adds C<gccversion>, C<gnulibc_version>, C<usemymalloc>,
 C<config_args>, C<optimize>.
 
 =item -ccc
 
-adds C<ccflags>, C<cppflags>, C<nm_so_opt>.
+Adds C<ccflags>, C<cppflags>, C<nm_so_opt>.
 
 =item -cccc
 
-currently does not increase information.
+Currently does not increase information.
 
 =item -ccccc
 
-includes all info from Perls %Config hash.
+Includes all info from Perls %Config hash.
 
 =item -p
 
-includes platform info via Devel::Platform::Info
+Includes platform info via Devel::Platform::Info
 
 (Users who want to greet the 80s combine it this way: C<-cccp>. :-)
 
@@ -156,6 +156,13 @@ When given this will prepend the YAML with a TAP line
 This makes it easier for wrappers to embed the output into TAP which
 otherwise need to differentiate between output (verbose and other) and
 the YAML.
+
+=item --indent=2
+
+This indents the whole yaml output by some spaces (2 in the
+example). Together with C<--tapdescription> it makes an TAP v13 style
+structured diagnostics block which can, for instance, be evaluated
+using L<TAP::DOM>.
 
 =item --useforks
 
