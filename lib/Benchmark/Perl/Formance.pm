@@ -18,10 +18,6 @@ use File::Find;
 
 our $VERSION = '0.12';
 
-use base 'Exporter';
-our @EXPORT_OK = qw(run print_results);
-
-
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = join ",", qw(Rx
                                    RxCmp
