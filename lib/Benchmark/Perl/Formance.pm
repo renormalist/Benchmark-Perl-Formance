@@ -16,11 +16,11 @@ use List::Util "max";
 use Data::DPath 'dpath', 'dpathi';
 use File::Find;
 
-use vars qw($VERSION @ISA @EXPORT_OK);
+our $VERSION = '0.12';
 
-$VERSION = '0.12';
+use base 'Exporter';
+our @EXPORT_OK = qw(run print_results);
 
-push @ISA, 'Exporter'; @EXPORT_OK = qw(run print_results);
 
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = join ",", qw(Rx
