@@ -82,6 +82,12 @@ If this is set then some plugins try to scale down the stress to take
 less time (with less useful results, of course). Mostly for easier
 development.
 
+=item --version
+
+Print Benchmark::Perl::Formance version.
+In conjunction with C<-v> it prints out all available
+plugins with version.
+
 =item --verbose
 
 =item -v

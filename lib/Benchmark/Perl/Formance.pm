@@ -14,6 +14,7 @@ use Time::HiRes qw(gettimeofday);
 use Devel::Platform::Info;
 use List::Util "max";
 use Data::DPath 'dpath', 'dpathi';
+use File::Find;
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
@@ -76,6 +77,49 @@ sub new {
         bless {}, shift;
 }
 
+sub all_plugins
+{
+        my $path = __FILE__;
+        $path =~ s,\.pmc?$,/Plugin,;
+
+        my %all_plugins;
+        finddepth ({ no_chdir => 1,
+                     follow   => 1,
+                     wanted   => sub { no strict 'refs';
+                                       my $fullname = $File::Find::fullname;
+                                       my $plugin   = $File::Find::name;
+                                       $plugin      =~ s,^$path/*,,;
+                                       $plugin      =~ s,/,::,;
+                                       $plugin      =~ s,\.pmc?$,,;
+
+                                       my $module = "Benchmark::Perl::Formance::Plugin::$plugin";
+                                       eval { require $fullname };
+                                       my $version = $@ ? "~" : ${$module."::VERSION"};
+                                       $all_plugins{$plugin} = $version
+                                         if -f $fullname && $fullname =~ /\.pmc?$/;
+                               },
+                   },
+                   $path);
+        return %all_plugins;
+}
+
+sub print_version
+{
+        my ($self) = @_;
+
+        if ($self->{options}{verbose})
+        {
+                print "Benchmark::Perl::Formance version $VERSION\n";
+                print "Plugins:\n";
+                my %plugins = all_plugins;
+                print "  (v$plugins{$_}) $_\n" foreach sort keys %plugins;
+        }
+        else
+        {
+                print $VERSION, "\n";
+        }
+}
+
 sub usage
 {
         print 'benchmark-perlformance - Frontend for Benchmark::Perl::Formance
@@ -113,6 +157,7 @@ sub run {
         my $outstyle       = "summary";
         my $platforminfo   = 0;
         my $verbose        = 0;
+        my $version        = 0;
         my $fastmode       = 0;
         my $useforks       = 0;
         my $quiet          = 0;
@@ -130,6 +175,7 @@ sub run {
                              "verbose|v+"       => \$verbose,
                              "outstyle=s"       => \$outstyle,
                              "fastmode"         => \$fastmode,
+                             "version"          => \$version,
                              "useforks"         => \$useforks,
                              "showconfig|c+"    => \$showconfig,
                              "platforminfo|p"   => \$platforminfo,
