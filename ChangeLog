@@ -1,3 +1,50 @@
+2010-07-27  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.20
+
+	* default set of plugins now "mostly harmless", ie., which
+	  should work with same dependencies as Perl::Formance itself:
+	- Fib FibOO, Mem, Prime, Rx, fasta, regexdna, binarytrees,
+	  revcomp, nbody, spectralnorm
+	- additionaly a new --plugins=ALL option which runs all known
+	  plugins.
+
+	* all plugins now have their own version numbers
+
+	* RxCmp plugin: new re::engine::RE2
+
+	* Mem plugin: now implemented something
+
+	* Threads plugin:
+	- less inner thread overhead
+	- divides Threads + ThreadsShared
+
+	* PerlCritic plugin: runs Perl::Critic on itself, using a bundled
+          snapshot or the installed CPAN version, both on the snapshot
+	  code
+
+	* Bugfixes and maintenance
+	- forgotten tmpdir cleanups
+	- code cleanup for Perl::Critic
+	- try hiding bundled code from PAUSE indexer
+	- Perl 5.8'ify by using "our"
+	- dropped useless exports
+
+	* new option --version
+	- in combination with -v prints all plugin versions
+
+	* Stabilize OS run environment (mostly Linux)
+	- disk sync
+	- flush caches
+	- disable Core Performance Boost
+	- disable Adress Space Layout Randomization
+	- These features will need "root" to have an effect
+
+	* Now every plugin is forked before running.
+
+	* No more all plugin loading at once; as that used to influence
+	  the runtime of plugins depending on what else was loaded.
+
 2010-07-13  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.12
