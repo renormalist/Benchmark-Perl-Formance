@@ -65,6 +65,9 @@ my $ALL_PLUGINS = join ",", qw(DPath
 
 our $DEFAULT_INDENT          = 0;
 
+our $PROC_RANDOMIZE_VA_SPACE = "/proc/sys/kernel/randomize_va_space";
+our $PROC_DROP_CACHES        = "/proc/sys/vm/drop_caches";
+
 my @run_plugins;
 
 # incrementaly interesting Perl Config keys
@@ -174,6 +177,55 @@ For more details see
 ';
 }
 
+sub set_proc
+{
+        my ($self, $file, $old_value) = @_;
+
+        my $value = defined $old_value ? $old_value : 0;
+
+        my $orig_value = `cat $file`;
+        chomp $orig_value;
+
+        if (open (my $PROCFILE, ">", $file)) {
+                print $PROCFILE $value;
+                close $PROCFILE;
+        } else {
+                print STDERR "# Could not write $file\n" if $self->{options}{verbose} >= 3;
+        }
+
+        return $orig_value;
+}
+
+sub do_sync {
+        my ($self) = @_;
+        system("sync");
+}
+
+# Try to stabilize a system.
+# - Classical disk sync
+# - Drop caches (http://linux-mm.org/Drop_Caches)
+# - disable address space randomization (ASLR) (https://wiki.ubuntu.com/Security/Features)
+sub prepare_stable_system
+{
+        my ($self) = @_;
+
+        my $orig_values;
+        if ($^O eq "linux") {
+                $self->do_sync; # disk sync
+                $self->set_proc ($PROC_DROP_CACHES);
+                $orig_values->{proc_randomize_va_space} = $self->set_proc ($PROC_RANDOMIZE_VA_SPACE);
+        }
+        return $orig_values;
+}
+
+sub restore_stable_system
+{
+        my ($self, $orig_values) = @_;
+        if ($^O eq "linux") {
+                $self->set_proc($PROC_RANDOMIZE_VA_SPACE, $orig_values->{proc_randomize_va_space});
+        }
+}
+
 sub run {
         my ($self) = @_;
 
@@ -259,7 +311,9 @@ sub run {
                                         print STDERR "\n"                 if $verbose;
                                         exit 0;
                                 }
+                                my $orig_values = $self->prepare_stable_system;
                                 $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
+                                $self->restore_stable_system($orig_values);
                                 store_fd($res, \*STDOUT);
                                 exit 0;
                         }
