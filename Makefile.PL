@@ -39,6 +39,7 @@ recommends 're::engine::Lua';
 recommends 're::engine::LPEG';
 recommends 're::engine::Plan9';
 recommends 're::engine::Oniguruma';
+recommends 're::engine::RE2';
 
 # Shootout
 recommends 'Math::GMP';
