@@ -67,6 +67,7 @@ our $DEFAULT_INDENT          = 0;
 
 our $PROC_RANDOMIZE_VA_SPACE = "/proc/sys/kernel/randomize_va_space";
 our $PROC_DROP_CACHES        = "/proc/sys/vm/drop_caches";
+our $SYS_CPB                 = "/sys/devices/system/cpu/cpu0/cpufreq/cpb";
 
 my @run_plugins;
 
@@ -204,16 +205,18 @@ sub do_sync {
 # Try to stabilize a system.
 # - Classical disk sync
 # - Drop caches (http://linux-mm.org/Drop_Caches)
-# - disable address space randomization (ASLR) (https://wiki.ubuntu.com/Security/Features)
+# - Disable address space randomization (ASLR) (https://wiki.ubuntu.com/Security/Features)
+# - Disable "Core Performance Boost" (http://lkml.org/lkml/2010/3/22/333)
 sub prepare_stable_system
 {
         my ($self) = @_;
 
         my $orig_values;
         if ($^O eq "linux") {
-                $self->do_sync; # disk sync
-                $self->set_proc ($PROC_DROP_CACHES);
-                $orig_values->{proc_randomize_va_space} = $self->set_proc ($PROC_RANDOMIZE_VA_SPACE);
+                $orig_values->{aslr} = $self->set_proc ($PROC_RANDOMIZE_VA_SPACE, 0);
+                $orig_values->{cpb}  = $self->set_proc ($SYS_CPB, 0);
+                $self->do_disk_sync;
+                $self->set_proc ($PROC_DROP_CACHES, 1);
         }
         return $orig_values;
 }
@@ -222,7 +225,8 @@ sub restore_stable_system
 {
         my ($self, $orig_values) = @_;
         if ($^O eq "linux") {
-                $self->set_proc($PROC_RANDOMIZE_VA_SPACE, $orig_values->{proc_randomize_va_space});
+                $self->set_proc($PROC_RANDOMIZE_VA_SPACE, $orig_values->{aslr}) if defined $orig_values->{aslr};
+                $self->set_proc($SYS_CPB,                 $orig_values->{cpb} ) if defined $orig_values->{cpb};
         }
 }
 
