@@ -33,7 +33,37 @@ my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Shootout::nbody
                                    Shootout::spectralnorm
                                  );
-my $DEFAULT_INDENT  = 0;
+
+my $ALL_PLUGINS = join ",", qw(DPath
+                               Fib
+                               FibMoose
+                               FibMouse
+                               FibMXDeclare
+                               FibOO
+                               Mem
+                               MooseTS
+                               P6STD
+                               PerlCritic
+                               Prime
+                               RegexpCommonTS
+                               Rx
+                               RxCmp
+                               Shootout::binarytrees
+                               Shootout::fannkuch
+                               Shootout::fasta
+                               Shootout::knucleotide
+                               Shootout::mandelbrot
+                               Shootout::nbody
+                               Shootout::pidigits
+                               Shootout::regexdna
+                               Shootout::revcomp
+                               Shootout::spectralnorm
+                               SpamAssassin
+                               Threads
+                               ThreadsShared
+                             );
+
+our $DEFAULT_INDENT          = 0;
 
 my @run_plugins;
 
@@ -71,7 +101,7 @@ sub new {
         bless {}, shift;
 }
 
-sub all_plugins
+sub load_all_plugins
 {
         my $path = __FILE__;
         $path =~ s,\.pmc?$,/Plugin,;
@@ -87,7 +117,8 @@ sub all_plugins
                                        $plugin      =~ s,\.pmc?$,,;
 
                                        my $module = "Benchmark::Perl::Formance::Plugin::$plugin";
-                                       eval { require $fullname };
+                                       # eval { require $fullname };
+                                       eval "use $module"; ## no critic
                                        my $version = $@ ? "~" : ${$module."::VERSION"};
                                        $all_plugins{$plugin} = $version
                                          if -f $fullname && $fullname =~ /\.pmc?$/;
@@ -105,7 +136,7 @@ sub print_version
         {
                 print "Benchmark::Perl::Formance version $VERSION\n";
                 print "Plugins:\n";
-                my %plugins = all_plugins;
+                my %plugins = load_all_plugins;
                 print "  (v$plugins{$_}) $_\n" foreach sort keys %plugins;
         }
         else
@@ -203,22 +234,14 @@ sub run {
                 print STDERR "# use forks " . ($@ ? "failed" : "") . "\n" if $verbose;
         }
 
-        # check plugins
-        my @plugins = grep /\w/, split '\s*,\s*', $plugins;
-        @run_plugins = grep {
-                eval "use Benchmark::Perl::Formance::Plugin::$_"; ## no critic
-                if ($@) {
-                        print STDERR "# Skip plugin '$_'" if $verbose;
-                        print STDERR ":$@"                if $verbose >= 2;
-                        print STDERR "\n"                 if $verbose;
-                }
-                not $@;
-        } @plugins;
+        # static list because dynamic require influences runtimes
+        $plugins = $ALL_PLUGINS if $plugins eq "ALL";
 
         # run plugins
         my $before = gettimeofday();
         my %RESULTS;
-        foreach (@run_plugins)
+        my @plugins = grep /\w/, split '\s*,\s*', $plugins;
+        foreach (@plugins)
         {
                 no strict 'refs'; ## no critic
                 my @resultkeys = split(/::/);
@@ -229,6 +252,13 @@ sub run {
                         my $pid = open(my $PLUGIN, "-|");
                         if ($pid == 0)
                         {
+                                eval "use Benchmark::Perl::Formance::Plugin::$_"; ## no critic
+                                if ($@) {
+                                        print STDERR "# Skip plugin '$_'" if $verbose;
+                                        print STDERR ":$@"                if $verbose >= 2;
+                                        print STDERR "\n"                 if $verbose;
+                                        exit 0;
+                                }
                                 $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
                                 store_fd($res, \*STDOUT);
                                 exit 0;
