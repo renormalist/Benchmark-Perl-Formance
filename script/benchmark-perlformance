@@ -65,7 +65,15 @@ prints out a help page.
 =item --plugins=SpamAssassin,Fib,Rx
 
 Use only a particular list of sub benchmarks. The comma-separated list
-refers to Benchmark::Perl::Formance::Plugin::* respectively.
+refers to C<Benchmark::Perl::Formance::Plugin::*> respectively.
+
+If you provide C<--plugins=ALL> then all known plugins will be tried.
+
+If you do not provide the C<--plugins> option then a default list of
+"mostly harmless" plugins is used which should work with the same
+dependencies of Benchmark::Perl::Formance itself (currently: C<DPath>,
+C<Fib>, C<FibOO>, C<Mem>, C<Prime>, C<Rx>, C<Shootout::>{C<fasta>,
+C<regexdna>, C<binarytrees>, C<revcomp>, C<nbody>, C<spectralnorm>}).
 
 =item --outstyle=summary
 
