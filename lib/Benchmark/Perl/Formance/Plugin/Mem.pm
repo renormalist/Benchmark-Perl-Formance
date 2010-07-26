@@ -23,16 +23,14 @@ sub allocate
 {
         my ($options, $goal, $count) = @_;
 
-        my $size = 0;
         my $t = timeit $count, sub {
-                my @stuff;
-                $#stuff = $goal;
+                my @stuff1;
+                $#stuff1 = $goal;
         };
         return {
                 Benchmark  => $t,
                 goal       => $goal,
                 count      => $count,
-                total_size => $size,
                };
 }
 
@@ -61,9 +59,10 @@ sub main
         my $size = total_size(\@stuff);
 
         return {
-                total_size => $size,
-                allocate   => allocate ($options, $goal, $count),
-                copy       => copy     ($options, $goal, $count),
+                total_size_bytes        => $size,
+                copy                    => copy     ($options, $goal, $count),
+                allocate                => allocate ($options, $goal, $count),
+                # matrix_multiply_fixsize => matrix_multiply_fixsize ($options, $goal, $count),
                };
 }
 
