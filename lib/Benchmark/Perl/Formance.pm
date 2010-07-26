@@ -244,6 +244,49 @@ sub restore_stable_system
         }
 }
 
+sub run_plugin
+{
+        my ($self, $pluginname) = @_;
+
+        no strict 'refs';       ## no critic
+        print STDERR "# Run $pluginname...\n" if $self->{options}{verbose} >= 2;
+        my $res;
+        eval {
+                use IO::Handle;
+                pipe(PARENT_RDR, CHILD_WTR);
+                CHILD_WTR->autoflush(1);
+                my $pid = open(my $PLUGIN, "-|");
+                if ($pid == 0) {
+                        # run in child process
+                        close PARENT_RDR;
+                        eval "use Benchmark::Perl::Formance::Plugin::$pluginname"; ## no critic
+                        if ($@) {
+                                print STDERR "# Skip plugin '$pluginname'" if $self->{options}{verbose};
+                                print STDERR ":$@"                if $self->{options}{verbose} >= 2;
+                                print STDERR "\n"                 if $self->{options}{verbose};
+                                exit 0;
+                        }
+                        my $orig_values = $self->prepare_stable_system;
+                        $res = &{"Benchmark::Perl::Formance::Plugin::${pluginname}::main"}($self->{options});
+                        $self->restore_stable_system($orig_values);
+                        store_fd($res, \*CHILD_WTR);
+                        close CHILD_WTR;
+                        exit 0;
+                }
+                close CHILD_WTR;
+                $res = fd_retrieve(\*PARENT_RDR);
+                close PARENT_RDR;
+                $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${pluginname}::VERSION"};
+        };
+        if ($@) {
+                $res = {
+                        failed => "Plugin $pluginname failed",
+                        ($self->{options}{verbose} > 3 ? ( error  => $@ ) : ()),
+                       }
+        }
+        return $res;
+}
+
 sub run {
         my ($self) = @_;
 
@@ -313,38 +356,8 @@ sub run {
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
         foreach (@plugins)
         {
-                no strict 'refs'; ## no critic
-                my @resultkeys = split(/::/);
-                print STDERR "# Run $_...\n" if $verbose >= 2;
-                my $res;
-                eval {
-                        # run in child process
-                        my $pid = open(my $PLUGIN, "-|");
-                        if ($pid == 0)
-                        {
-                                eval "use Benchmark::Perl::Formance::Plugin::$_"; ## no critic
-                                if ($@) {
-                                        print STDERR "# Skip plugin '$_'" if $verbose;
-                                        print STDERR ":$@"                if $verbose >= 2;
-                                        print STDERR "\n"                 if $verbose;
-                                        exit 0;
-                                }
-                                my $orig_values = $self->prepare_stable_system;
-                                $res = &{"Benchmark::Perl::Formance::Plugin::${_}::main"}($self->{options});
-                                $self->restore_stable_system($orig_values);
-                                store_fd($res, \*STDOUT);
-                                exit 0;
-                        }
-                        $res = fd_retrieve(\*$PLUGIN);
-                        close $PLUGIN;
-                        $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${_}::VERSION"};
-                };
-                if ($@) {
-                        $res = {
-                                failed => "Plugin $_ failed",
-                                ($verbose > 3 ? ( error  => $@ ) : ()),
-                               }
-                }
+                my @resultkeys = split(/::/, $_);
+                my $res = $self->run_plugin($_);
                 eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res"; ## no critic
         }
         my $after  = gettimeofday();
