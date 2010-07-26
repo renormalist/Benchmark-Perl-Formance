@@ -180,24 +180,38 @@ For more details see
 
 sub set_proc
 {
-        my ($self, $file, $old_value) = @_;
+        my ($self, $file, $value) = @_;
 
-        my $value = defined $old_value ? $old_value : 0;
+        if (! -e $file) {
+                print STDERR "# Could not find $file\n" if $self->{options}{verbose} >= 4;
+                return undef;
+        }
+        if (not defined $value) {
+                print STDERR "# No value given\n" if $self->{options}{verbose} >= 4;
+                return undef;
+        }
 
-        my $orig_value = `cat $file`;
-        chomp $orig_value;
+        my $orig_value;
+        if (open (my $PROCFILE, "<", $file)) {
+                local $/ = undef;
+                $orig_value = <$PROCFILE>;
+                close $PROCFILE;
+        } else {
+                print STDERR "# Could not read old value from $file\n" if $self->{options}{verbose} >= 4;
+        }
+        chomp $orig_value if defined $orig_value;
 
         if (open (my $PROCFILE, ">", $file)) {
                 print $PROCFILE $value;
                 close $PROCFILE;
         } else {
-                print STDERR "# Could not write $file\n" if $self->{options}{verbose} >= 3;
+                print STDERR "# Could not write $value into $file\n" if $self->{options}{verbose} >= 4;
         }
 
         return $orig_value;
 }
 
-sub do_sync {
+sub do_disk_sync {
         my ($self) = @_;
         system("sync");
 }
