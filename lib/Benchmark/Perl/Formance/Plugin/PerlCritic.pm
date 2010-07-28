@@ -99,11 +99,13 @@ sub main {
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::MooseTS - Moose test suite as benchmark
+Benchmark::Perl::Formance::Plugin::PerlCritic - Run Perl::Critic on itself
 
-=head1 ABOUT
+=head1 SYNOPSIS
 
-This plugin runs a part of the Moose test suite.
+Run it as any other plugin.
+
+  $ perl-formance --plugins=PerlCritic
 
 =cut
 
