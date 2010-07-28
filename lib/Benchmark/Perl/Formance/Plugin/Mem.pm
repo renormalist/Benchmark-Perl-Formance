@@ -62,7 +62,6 @@ sub main
                 total_size_bytes        => $size,
                 copy                    => copy     ($options, $goal, $count),
                 allocate                => allocate ($options, $goal, $count),
-                # matrix_multiply_fixsize => matrix_multiply_fixsize ($options, $goal, $count),
                };
 }
 
@@ -72,7 +71,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Plugin::Mem - Stress memory operations (not yet implemented)
+Benchmark::Perl::Formance::Plugin::Mem - Stress memory operations
 
 =cut
 

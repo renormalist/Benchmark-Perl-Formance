@@ -62,7 +62,7 @@ sub threadstorm
                 threadcount => $threadcount,
                 result      => $ret2,
                 expect      => $expect2,
-                useforks => ($options->{useforks} || 0),
+                useforks    => ($options->{useforks} || 0),
                };
 }
 

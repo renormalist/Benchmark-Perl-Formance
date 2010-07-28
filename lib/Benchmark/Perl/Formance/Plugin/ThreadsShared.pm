@@ -48,7 +48,6 @@ sub run_thread_storm_shared
                 $_->join;
         }
 
-        #print STDERR "#  == ".$result[-1]."\n" if $options->{verbose} >= 3;
         return $result[-1];
 }
 
