@@ -268,6 +268,7 @@ sub run_plugin
                         }
                         my $orig_values = $self->prepare_stable_system;
                         $res = &{"Benchmark::Perl::Formance::Plugin::${pluginname}::main"}($self->{options});
+                        $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${pluginname}::VERSION"};
                         $self->restore_stable_system($orig_values);
                         store_fd($res, \*CHILD_WTR);
                         close CHILD_WTR;
@@ -276,7 +277,6 @@ sub run_plugin
                 close CHILD_WTR;
                 $res = fd_retrieve(\*PARENT_RDR);
                 close PARENT_RDR;
-                $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${pluginname}::VERSION"};
         };
         if ($@) {
                 $res = {
