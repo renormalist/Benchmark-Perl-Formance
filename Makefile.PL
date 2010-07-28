@@ -45,7 +45,7 @@ recommends 're::engine::RE2';
 recommends 'Math::GMP';
 
 # MooseTS
-recommends 'Test::Aggregate::Nested';
+#recommends 'Test::Aggregate::Nested';
 recommends 'DateTime::Calendar::Mayan';
 recommends 'Regexp::Common';
 recommends 'Locale::US';
