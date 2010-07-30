@@ -1,3 +1,16 @@
+2010-07-30  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.21
+
+	* Maintenance release
+	- fixed missing PLUGIN_VERSION in output
+	- fix missing plugin titles
+	- document --plugins=ALL
+	- drop dependency to Test::Aggregate::Nested (orphaned experiment)
+
+	* introduced an "Incubator" plugin as an experimental,
+	non-official playing field
+
 2010-07-27  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.20
