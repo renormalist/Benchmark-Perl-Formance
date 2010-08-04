@@ -16,7 +16,7 @@ use strict;
 use warnings;
 use threads;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -99,7 +99,7 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $options->{fastmode} ? 100 : 16_000;
+        my $goal   = $options->{fastmode} ? 100 : 1_000;
         my $count  = $options->{fastmode} ? 1   : 5;
 
         my $result;

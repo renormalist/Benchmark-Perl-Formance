@@ -11,7 +11,7 @@ package Benchmark::Perl::Formance::Plugin::Shootout::revcomp;
 
 use strict;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -63,7 +63,7 @@ sub main
         my ($options) = @_;
 
         $PRINT     = $options->{D}{Shootout_revcomp_print};
-        my $goal   = $options->{fastmode} ? "fasta-1000.txt" : "fasta-1000000.txt";
+        my $goal   = $options->{fastmode} ? "fasta-1000000.txt" : "fasta-1000000.txt";
         my $count  = $options->{fastmode} ? 1 : 5;
 
         my $result;

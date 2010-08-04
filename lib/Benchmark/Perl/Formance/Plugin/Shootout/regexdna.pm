@@ -15,7 +15,7 @@ package Benchmark::Perl::Formance::Plugin::Shootout::regexdna;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -97,7 +97,7 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $options->{fastmode} ? "fasta-10000.txt" : "fasta-1000000.txt";
+        my $goal   = $options->{fastmode} ? "fasta-100000.txt" : "fasta-1000000.txt";
         my $count  = $options->{fastmode} ? 1 : 5;
 
         my $result;

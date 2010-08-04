@@ -16,7 +16,7 @@ use strict;
 use warnings;
 no warnings 'uninitialized';
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -93,7 +93,7 @@ sub main
 {
         my ($options) = @_;
 
-        my $goal   = $options->{fastmode} ? 3 : 12;
+        my $goal   = $options->{fastmode} ? 8 : 10;
         my $count  = $options->{fastmode} ? 1 : 5;
 
         my $result;

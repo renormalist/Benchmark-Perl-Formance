@@ -6,7 +6,7 @@ use 5.010; # [sic - pluggable regex engines]
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -249,7 +249,7 @@ sub main
 {
         my ($options) = @_;
 
-        $goal   = $options->{fastmode} ? 5 : 29; # probably 28 or more
+        $goal   = $options->{fastmode} ? 22 : 29; # probably 28 or more
         $count  = $options->{fastmode} ? 1 : 5;
         $n      = $goal;
         $re     = ("a?" x $n) . ("a" x $n);

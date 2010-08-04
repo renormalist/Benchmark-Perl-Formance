@@ -3,7 +3,7 @@ package Benchmark::Perl::Formance::Plugin::Mem;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -23,13 +23,14 @@ sub allocate
 {
         my ($options, $goal, $count) = @_;
 
+        my $mygoal = ($options->{fastmode} ? 10 : 1) * $goal;
         my $t = timeit $count, sub {
                 my @stuff1;
-                $#stuff1 = $goal;
+                $#stuff1 = $mygoal;
         };
         return {
                 Benchmark  => $t,
-                goal       => $goal,
+                goal       => $mygoal,
                 count      => $count,
                };
 }

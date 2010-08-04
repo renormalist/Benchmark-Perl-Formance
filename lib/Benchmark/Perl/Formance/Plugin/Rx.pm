@@ -5,7 +5,7 @@ package Benchmark::Perl::Formance::Plugin::Rx;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -107,8 +107,8 @@ sub main
 {
         my ($options) = @_;
 
-        $goal   = $options->{fastmode} ? 5 : 29; # probably 28 or more
-        $length = $options->{fastmode} ? 100_000 : 10_000_000;
+        $goal   = $options->{fastmode} ? 20 : 29;
+        $length = $options->{fastmode} ? 1_000_000 : 10_000_000;
         $count  = 5;
 
         return {

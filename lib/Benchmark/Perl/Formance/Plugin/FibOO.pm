@@ -5,7 +5,7 @@ package Benchmark::Perl::Formance::Plugin::FibOO;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -37,7 +37,7 @@ sub main
         my ($options) = @_;
 
         # ensure same values over all Fib* plugins!
-        $goal  = $options->{fastmode} ? 18 : 35;
+        $goal  = $options->{fastmode} ? 20 : 35;
         $count = 5;
 
         my $result;
