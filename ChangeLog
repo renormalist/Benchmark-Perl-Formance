@@ -1,3 +1,17 @@
+2010-08-04  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.22
+
+	* Big Rescale
+	- The --fastmode is now slower but actually returning useful
+	  values for experimenting speed improvements or configurations.
+	  This probably makes it the preferred mode for everyday users.
+	- The normal mode (targeted to compare real strong machines)
+	  now takes less time on some crazy workloads that went mental
+	  even for big machines.
+
+	* some more tests
+
 2010-07-30  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.21
