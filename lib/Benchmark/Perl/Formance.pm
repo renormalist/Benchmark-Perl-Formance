@@ -17,7 +17,7 @@ use Data::DPath 'dpath', 'dpathi';
 use File::Find;
 use Storable "fd_retrieve", "store_fd";
 
-our $VERSION = '0.21';
+our $VERSION = '0.22';
 
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = join ",", qw(DPath
