@@ -1,0 +1,25 @@
+* stabilize
+** background jobs
+   sudo /etc/init.d/atd stop
+   sudo /etc/init.d/cron stop
+   sudo /etc/init.d/fam stop
+   sudo /etc/init.d/xprint stop
+   sudo /etc/init.d/distcc stop
+   sudo /etc/init.d/xfs stop
+   sudo /etc/init.d/smartmontools stop
+   sudo /etc/init.d/rwhod stop
+   sudo /etc/init.d/nscd stop
+   sudo /etc/init.d/exim4 stop
+   sudo /etc/init.d/inetd stop
+   sudo /etc/init.d/dbus-1 stop
+   sudo /etc/init.d/courier-authdaemon stop
+   sudo /etc/init.d/dirmngr stop
+** Drop caches
+   http://linux-mm.org/Drop_Caches
+   echo 1 > /proc/sys/vm/drop_caches
+   echo 2 > /proc/sys/vm/drop_caches
+   echo 3 > /proc/sys/vm/drop_caches
+** sync disks
+** disable address space randomization (ASLR)
+   https://wiki.ubuntu.com/Security/Features
+   
