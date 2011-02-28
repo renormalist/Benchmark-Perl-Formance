@@ -255,7 +255,7 @@ sub run_plugin
                 use IO::Handle;
                 pipe(PARENT_RDR, CHILD_WTR);
                 CHILD_WTR->autoflush(1);
-                my $pid = open(my $PLUGIN, "-|");
+                my $pid = open(my $PLUGIN, "-|"); # implicit fork
                 if ($pid == 0) {
                         # run in child process
                         close PARENT_RDR;
