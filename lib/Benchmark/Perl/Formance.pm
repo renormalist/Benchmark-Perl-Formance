@@ -248,6 +248,7 @@ sub run_plugin
 {
         my ($self, $pluginname) = @_;
 
+        $pluginname =~ s,\.,::,g;
         no strict 'refs';       ## no critic
         print STDERR "# Run $pluginname...\n" if $self->{options}{verbose} >= 2;
         my $res;
@@ -356,7 +357,7 @@ sub run {
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
         foreach (@plugins)
         {
-                my @resultkeys = split(/::/, $_);
+                my @resultkeys = split(qr/::|\./, $_);
                 my $res = $self->run_plugin($_);
                 eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res"; ## no critic
         }
