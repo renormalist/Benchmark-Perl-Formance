@@ -342,10 +342,11 @@ sub generate_codespeed_data
                 no strict 'refs'; ## no critic
                 my @resultkeys = split(/\./);
                 my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
+                my $benchmark =  $self->{options}{fastmode} ? "(FAST)$_" : $_ ;
                 push @codespeed_entries, {
                                           # order matters
                                           %codespeed_meta,
-                                          benchmark => $_,
+                                          benchmark => $benchmark,
                                           result_value => ($res || 0),
                                          };
         }
