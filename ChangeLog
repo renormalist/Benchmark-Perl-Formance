@@ -1,3 +1,12 @@
+2011-08-13  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.23
+
+	* Codespeed support
+	- it can generate additional data blocks in TAP that
+	  already fit the structure needed by Codespeed
+	  (http://github.com/tobami/codespeed)
+
 2010-08-04  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.22
