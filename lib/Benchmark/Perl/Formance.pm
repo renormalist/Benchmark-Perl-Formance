@@ -552,7 +552,7 @@ __END__
 
 =head1 NAME
 
-Benchmark::Perl::Formance - Perl Performance Benchmark Suite
+Benchmark::Perl::Formance - PerlFormance - Benchmark Suite
 
 =head1 ABOUT
 
