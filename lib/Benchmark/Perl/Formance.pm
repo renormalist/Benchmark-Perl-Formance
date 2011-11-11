@@ -320,10 +320,9 @@ sub generate_codespeed_data
         my $len = max map { length } @run_plugins;
 
         my $codespeed_exe_suffix  = $self->{options}{cs_executable_suffix}  || $ENV{CODESPEED_EXE_SUFFIX}  || "";
-        my $codespeed_exe         = $self->{options}{cs_executable}         || sprintf("perl-%s.%s.%s%s",
+        my $codespeed_exe         = $self->{options}{cs_executable}         || sprintf("perl-%s.%s%s",
                                                                                        $Config{PERL_REVISION},
                                                                                        $Config{PERL_VERSION},
-                                                                                       $Config{PERL_SUBVERSION},
                                                                                        $codespeed_exe_suffix,
                                                                                       );
         my $codespeed_project     = $self->{options}{cs_project}            || $ENV{CODESPEED_PROJECT}     || "perl";
