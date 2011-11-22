@@ -293,13 +293,26 @@ sub run_plugin
 # Benchmark::Perl::Formance and should be replaced
 # with something generic
 sub _perl_gitversion {
-        my $perlpath         = "$^X";
-        my $perl_gitversion  = "$perlpath-gitversion";
+        my $perlpath = "$^X";
+        $perlpath    =~ s,/[^/]*$,,;
+        my $perl_gitversion  = "$perlpath/perl-gitversion";
 
         if (-x $perl_gitversion) {
                 my $gitversion = qx!$perl_gitversion! ;
                 chomp $gitversion;
                 return $gitversion;
+        }
+}
+
+sub _perl_codespeed_executable {
+        my $perlpath = "$^X";
+        $perlpath    =~ s,/[^/]*$,,;
+        my $perl_codespeed_executable  = "$perlpath/perl-codespeed-executable";
+
+        if (-x $perl_codespeed_executable) {
+                my $executable = qx!$perl_codespeed_executable! ;
+                chomp $executable;
+                return $executable;
         }
 }
 
@@ -320,11 +333,11 @@ sub generate_codespeed_data
         my $len = max map { length } @run_plugins;
 
         my $codespeed_exe_suffix  = $self->{options}{cs_executable_suffix}  || $ENV{CODESPEED_EXE_SUFFIX}  || "";
-        my $codespeed_exe         = $self->{options}{cs_executable}         || sprintf("perl-%s.%s%s",
-                                                                                       $Config{PERL_REVISION},
-                                                                                       $Config{PERL_VERSION},
-                                                                                       $codespeed_exe_suffix,
-                                                                                      );
+        my $codespeed_exe         = $self->{options}{cs_executable}         || _perl_codespeed_executable  || sprintf("perl-%s.%s%s",
+                                                                                                                      $Config{PERL_REVISION},
+                                                                                                                      $Config{PERL_VERSION},
+                                                                                                                      $codespeed_exe_suffix,
+                                                                                                                     );
         my $codespeed_project     = $self->{options}{cs_project}            || $ENV{CODESPEED_PROJECT}     || "perl";
         my $codespeed_branch      = $self->{options}{cs_branch}             || $ENV{CODESPEED_BRANCH}      || "default";
         my $codespeed_commitid    = $self->{options}{cs_commitid}           || $ENV{CODESPEED_COMMITID}    || $Config{git_commit_id} || _perl_gitversion || "no-commit";
