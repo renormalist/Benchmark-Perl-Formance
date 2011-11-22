@@ -1,3 +1,11 @@
+2011-11-22  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.24
+
+	* modify variation in exe names for codespeed: now only perl-5.15
+	  in contrast to perl-5.15.5, but additionally name threads and
+	  64bit-support.
+
 2011-08-13  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.23
