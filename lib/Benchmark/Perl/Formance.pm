@@ -18,7 +18,7 @@ use File::Find;
 use Storable "fd_retrieve", "store_fd";
 use Sys::Hostname;
 
-our $VERSION = '0.24';
+our $VERSION = '0.25';
 
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = join ",", qw(DPath

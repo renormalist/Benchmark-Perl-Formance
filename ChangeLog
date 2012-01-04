@@ -1,3 +1,9 @@
+2012-01-04  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.25
+
+	* fix SpamAssassin plugin (set used Bayes plugin explicitely)
+
 2011-11-22  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.24
