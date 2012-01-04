@@ -35,8 +35,13 @@ sub main {
 
         dircopy($srcdir, $dstdir);
 
-        (my $salearn = $^X) =~ s!/perl[\d.]*$!/sa-learn!;
-        print STDERR "# Use sa-learn: $salearn\n" if $options->{verbose};
+        (my $salearn     = $^X) =~ s!/perl[\d.]*$!/sa-learn!;
+        my $salearncfg   = "$dstdir/sa-learn.cfg";
+        my $salearnprefs = "$dstdir/sa-learn.prefs";
+
+        print STDERR "# Use sa-learn: $salearn\n"      if $options->{verbose};
+        print STDERR "#          cfg: $salearncfg\n"   if $options->{verbose};
+        print STDERR "#        prefs: $salearnprefs\n" if $options->{verbose};
 
         return {
                 salearn => {
@@ -46,9 +51,15 @@ sub main {
                } unless $salearn && -x $salearn;
 
         # spam variant:
-        # my $cmd    = "time /usr/bin/env perl -T $salearn --spam -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/spam_2/*'";
+        # my $cmd    = "time /usr/bin/env perl -T $salearn --spam -L --config-file=$salearncfg --prefs-file=$salearnprefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/spam_2/*'";
         # ham variant:
-        my $cmd    = "$^X -T $salearn --ham -L --config-file=$dstdir/sa-learn.cfg --prefs-file=$dstdir/sa-learn.prefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/$easy_ham/*'";
+        chmod 0666, $salearncfg;
+        if (open SALEARNCFG, ">", $salearncfg) {
+                print SALEARNCFG "loadplugin Mail::SpamAssassin::Plugin::Bayes\n";
+        } else {
+                print STDERR "# could not write sa-learn.cfg: $salearncfg";
+        }
+        my $cmd = "$^X -T $salearn --ham -L --config-file=$salearncfg --prefs-file=$salearnprefs --siteconfigpath=$dstdir --dbpath=$dstdir/db --no-sync  '$dstdir/$easy_ham/*'";
         print STDERR "# $cmd\n" if $options->{verbose} >= 3;
 
         my $ret;
