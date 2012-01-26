@@ -1,3 +1,15 @@
+2012-01-26  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.26
+
+	* MooseTS: disabled in --plugins=ALL
+	  - This benchmark idea turned out to not work as
+	    expected. Disable it for easier living.
+
+	  RegexpCommonTS: no more in with prove -Q (quiet) mode as under
+	  circumstances with 5.9.x quirks that's not available. It makes
+	  the benchmark slightly slower.
+
 2012-01-04  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.25
