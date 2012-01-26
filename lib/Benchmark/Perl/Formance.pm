@@ -35,6 +35,8 @@ my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Shootout::spectralnorm
                                  );
 
+# non-working:
+#   MooseTS
 my $ALL_PLUGINS = join ",", qw(DPath
                                Fib
                                FibMoose
@@ -42,7 +44,6 @@ my $ALL_PLUGINS = join ",", qw(DPath
                                FibMXDeclare
                                FibOO
                                Mem
-                               MooseTS
                                P6STD
                                PerlCritic
                                Prime
