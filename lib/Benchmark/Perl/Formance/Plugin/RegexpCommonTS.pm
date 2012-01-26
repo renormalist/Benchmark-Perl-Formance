@@ -3,7 +3,7 @@ package Benchmark::Perl::Formance::Plugin::RegexpCommonTS;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -46,7 +46,7 @@ sub prepare {
 sub nonaggregated {
         my ($dstdir, $prove, $recurse, $options) = @_;
 
-        my $cmd = "cd $dstdir ; $^X $prove -Q $recurse '$dstdir/t'";
+        my $cmd = "cd $dstdir ; $^X $prove $recurse '$dstdir/t'";
         print STDERR "# $cmd\n"   if $options->{verbose} >= 3;
         print STDERR "# Run...\n" if $options->{verbose} >= 3;
 
