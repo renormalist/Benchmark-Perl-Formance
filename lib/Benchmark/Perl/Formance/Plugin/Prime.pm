@@ -71,7 +71,7 @@ sub main {
 
         return {
                 math_primality => math_primality($options),
-                crypt_primes   => crypt_primes($options),
+                #crypt_primes   => crypt_primes($options), # disabled - does not run in constant time by nature
                };
 }
 1;
