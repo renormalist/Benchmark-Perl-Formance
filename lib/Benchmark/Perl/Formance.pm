@@ -296,7 +296,7 @@ sub run_plugin
 sub _perl_gitversion {
         my $perlpath = "$^X";
         $perlpath    =~ s,/[^/]*$,,;
-        my $perl_gitversion  = "$perlpath/perl-gitversion";
+        my $perl_gitversion  = "$perlpath/perl-gitchangeset";
 
         if (-x $perl_gitversion) {
                 my $gitversion = qx!$perl_gitversion! ;
