@@ -82,7 +82,7 @@ sub main {
 
         my $workdir = prepare($options);
         return {
-                gimme5 => gimme5($workdir, $options),
+                #gimme5 => gimme5($workdir, $options),
                 viv    => viv($workdir, $options),
                };
 }
