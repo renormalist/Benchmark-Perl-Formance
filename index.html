@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Perl::Formance by renormalist</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/renormalist/Benchmark-Perl-Formance">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Perl::Formance</h1>
+            <h2>Perl benchmark suite</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/renormalist/Benchmark-Perl-Formance/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/renormalist/Benchmark-Perl-Formance/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h3>Welcome to Perl::Formance.</h3>
+
+<p>This is about benchmarking Perl. </p>
+
+<p>It combines several projects: the actual benchmark suite, 
+tools to bootstrap a complete Perl+CPAN from git, a results 
+database and a graph rendering web application.</p>
+
+<h3>Synopsis</h3>
+
+<p>For your local use try the whole mix in one go with:</p>
+
+<pre><code>$ curl -Ls http://perlformance.net/bootstrap-perl | perl - --perlformance
+</code></pre>
+
+<p>This will by default build "blead" Perl, install dependencies, run benchmarks and print out the results on screen at the end. </p>
+
+<p>After <code>--perlformance</code> you can provide other versions 
+via <code>--version=v5.14.2</code> or <code>--version=01725c1</code>; basically
+any rev that "git" understands.</p>
+
+<p>If you want to regularly report results to my central results DB 
+please <a href="mailto:ss5@renormalist.net">contact me</a>.</p>
+
+<h3>The benchmark suite</h3>
+
+<p><a href="https://github.com/renormalist/Benchmark-Perl-Formance">Benchmark::Perl::Formance</a> 
+is the framework for running benchmarks. It requires only some dependencies and runs
+a basic set of benchmarks. Most other heavy weight dependencies are just "recommended".</p>
+
+<h3>More benchmarks</h3>
+
+<p><a href="https://github.com/renormalist/Bundle-PerlFormance">Bundle::PerlFormance</a> provides
+the full set of benchmarks via dependencies from CPAN.</p>
+
+<h3>Bootstrap Perl</h3>
+
+<p><a href="https://github.com/renormalist/app-bootstrap-perl">App::Bootstrap::Perl</a> is 
+yet another Perl builder. It focuses on</p>
+
+<ul>
+<li>building from git</li>
+<li>set up CPAN.pm with <a href="https://github.com/renormalist/cpanpm-distroprefs">distroprefs</a> for unattended installation </li>
+<li>lightweight work-arounds for known build problems (e.g., for old 5.8/5.9 Perls)</li>
+<li>inject auxiliary tools to restore build information later</li>
+<li>optionally start programs from the built Perl (e.g, the benchmark suite)</li>
+</ul><h3>Websites</h3>
+
+<p>There are two related websites:</p>
+
+<ul>
+<li>
+<a href="http://perlformance.net/tapper/reports/days/2">http://perlformance.net/tapper</a> - raw results</li>
+<li>
+<a href="http://speed.perlformance.net/timeline/#/?exe=23,20,22,18,21,19,14&amp;base=14+80&amp;ben=DPath.dpath&amp;env=4&amp;revs=50&amp;equid=off">http://speed.perlformance.net</a> - rendered graphs</li>
+</ul><h3>Used infrastructure</h3>
+
+<ul>
+<li>
+<strong>Tapper</strong> for the overall test infrastructure and results database, see <a href="http://www.amd64.org/support/automated-test-infrastructure.html">amd64.org</a> and <a href="https://github.com/amd">github</a>
+</li>
+<li>
+<strong>Codespeed</strong> for rendering benchmark graphs, see <a href="https://github.com/tobami/codespeed">github</a>
+</li>
+</ul><h3>Overall vision</h3>
+
+<ul>
+<li>See this <a href="http://perlformance.net/res/yapc_eu_2011_perlformance-net.pdf">presentation</a> from YAPC::EU 2011.</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/renormalist">renormalist</a> can be found on <a href="https://github.com/renormalist/Benchmark-Perl-Formance">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
