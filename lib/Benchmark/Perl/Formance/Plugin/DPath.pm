@@ -3,7 +3,7 @@ package Benchmark::Perl::Formance::Plugin::DPath;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -15,7 +15,6 @@ our $goal;
 our $count;
 
 use Clone 'clone';
-use Devel::Size 'total_size';
 use Benchmark ':all', ':hireswallclock';
 
 # example use-case is a medium sized TAP-DOM, which we blow up
@@ -447,7 +446,13 @@ sub run_dpath
 
         my @huge_expected = map   { $expected  }         1..$multi;
         $huge_data->{$_}  = clone ( $base_data ) foreach 1..$multi;
-        my $data_size = total_size ($huge_data);
+        my $data_size;
+        eval qq{use Devel::Size 'total_size'};
+        if ($@) {
+                $data_size = "error-no-Devel-Size-available";
+        } else {
+                $data_size = total_size ($huge_data);
+        }
         print STDERR "# Running benchmark. Can take some time ..." if $options->{verbose} && $options->{verbose} > 2;
 
         my $t;

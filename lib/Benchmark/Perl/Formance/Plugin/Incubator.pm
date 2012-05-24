@@ -3,7 +3,7 @@ package Benchmark::Perl::Formance::Plugin::Incubator;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -12,7 +12,6 @@ our $VERSION = "0.001";
 #############################################################
 
 use Benchmark ':hireswallclock';
-use Devel::Size 'total_size';
 use Math::MatrixReal;
 
 sub matrix_multiply_fixsize
@@ -27,7 +26,13 @@ sub matrix_multiply_fixsize
         my @row;    $row[$_]    = 1        foreach 0..$minigoal-1;
         my @matrix; $matrix[$_] = [ @row ] foreach 0..$minigoal-1;
 
-        my $size = total_size(\@matrix);
+        my $size;
+        eval qq{use Devel::Size 'total_size'};
+        if ($@) {
+                $size = "error-no-Devel-Size-available";
+        } else {
+                $size = total_size(\@matrix);
+        }
 
         my $m = Math::MatrixReal->new_from_rows(\@matrix);
         my $result;

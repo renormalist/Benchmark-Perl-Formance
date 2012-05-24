@@ -6,7 +6,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -24,13 +24,18 @@ use threads;
 use threads::shared;
 
 use Benchmark ':hireswallclock';
-use Devel::Size 'total_size';
 use Data::Dumper;
 
 my @result : shared;
 $#result = 1_000;
 
-my $size = total_size(\@result);
+my $size;
+eval qq{use Devel::Size 'total_size'};
+if ($@) {
+        $size = "error-no-Devel-Size-available";
+} else {
+        $size = total_size(\@result);
+}
 
 sub run_thread_storm_shared
 {

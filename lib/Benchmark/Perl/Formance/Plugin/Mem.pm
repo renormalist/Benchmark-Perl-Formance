@@ -3,7 +3,7 @@ package Benchmark::Perl::Formance::Plugin::Mem;
 use strict;
 use warnings;
 
-our $VERSION = "0.002";
+our $VERSION = "0.003";
 
 #############################################################
 #                                                           #
@@ -15,7 +15,6 @@ our $goal;
 our $count;
 
 use Benchmark ':hireswallclock';
-use Devel::Size 'total_size';
 
 my @stuff;
 
@@ -57,7 +56,13 @@ sub main
         $count = $options->{fastmode} ? 5 : 20;
 
         $#stuff = $goal;
-        my $size = total_size(\@stuff);
+        my $size;
+        eval qq{use Devel::Size 'total_size'};
+        if ($@) {
+                $size = "error-no-Devel-Size-available";
+        } else {
+                $size = total_size(\@stuff);
+        }
 
         return {
                 total_size_bytes        => $size,
