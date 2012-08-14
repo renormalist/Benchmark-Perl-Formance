@@ -44,19 +44,6 @@ recommends 're::engine::RE2';
 # Shootout
 recommends 'Math::GMP';
 
-# MooseTS
-#recommends 'Test::Aggregate::Nested';
-recommends 'DateTime::Calendar::Mayan';
-recommends 'Regexp::Common';
-recommends 'Locale::US';
-recommends 'HTTP::Headers';
-recommends 'Params::Coerce';
-recommends 'URI';
-recommends 'Test::Output';
-recommends 'Module::Refresh';
-recommends 'DBM::Deep';
-recommends 'Declare::Constraints::Simple';
-
 # Primes
 recommends 'Crypt::Primes';
 recommends 'Math::Primality';

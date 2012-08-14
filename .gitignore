@@ -1,4 +1,3 @@
-!.gitignore
 Makefile*
 !Makefile.PL
 META.yml

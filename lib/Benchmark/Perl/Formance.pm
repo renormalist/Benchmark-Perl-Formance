@@ -35,8 +35,6 @@ my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Shootout::spectralnorm
                                  );
 
-# non-working:
-#   MooseTS
 my $ALL_PLUGINS = join ",", qw(DPath
                                Fib
                                FibMoose
