@@ -3,7 +3,7 @@ package Benchmark::Perl::Formance::Plugin::DPath;
 use strict;
 use warnings;
 
-our $VERSION = "0.002";
+our $VERSION = "0.003";
 
 #############################################################
 #                                                           #
@@ -469,6 +469,9 @@ sub run_dpath
 
 sub main {
         my ($options) = @_;
+
+        # we are interested in raw Perl speed
+        local $Data::DPath::USE_SAFE = 0;
 
         $goal  = $options->{fastmode} ? 15 : 1000;
         $count = 5;
