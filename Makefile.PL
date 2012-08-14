@@ -7,7 +7,7 @@ all_from       'lib/Benchmark/Perl/Formance.pm';
 # general dependencies
 requires 'Benchmark';
 requires 'Time::HiRes';
-requires 'Devel::Size';
+requires 'Devel::Size' => '0.78';
 requires 'File::ShareDir';
 requires 'Data::YAML::Writer';
 requires 'Data::Structure::Util';
