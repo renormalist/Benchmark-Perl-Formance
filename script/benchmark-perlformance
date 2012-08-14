@@ -261,9 +261,9 @@ Thread handling.
 Runs some Perl benchmarks from the Language Shootout on
 alioth.debian.org.
 
-=item L<Benchmark::Perl::Formance::Plugin::MooseTS|Benchmark::Perl::Formance::Plugin::MooseTS>
+=item L<Benchmark::Perl::Formance::Plugin::P6STD|Benchmark::Perl::Formance::Plugin::P6STD>
 
-Runs the Moose testsuite.
+Runs tools from Perl6 STD world.
 
 =back
 

@@ -26,7 +26,7 @@ sub prepare {
         my $dstdir = tempdir( CLEANUP => 1 );
         my $cmd;
 
-        my $srcdir = module_dir('Benchmark::Perl::Formance::Plugin::P6STD');
+        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/P6STD";
         print STDERR "# Prepare files in $dstdir ...\n" if $options->{verbose} >= 3;
         dircopy($srcdir, $dstdir);
 
