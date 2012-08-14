@@ -1,3 +1,11 @@
+2012-08-14  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.28
+
+	* depend on newer Devel::Size
+
+	* Plugin::DPath without Safe.pm
+
 2012-05-24  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.27
