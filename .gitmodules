@@ -1,3 +1,0 @@
-[submodule "lib/auto/Benchmark/Perl/Formance/Plugin/P6STD"]
-	path = lib/auto/Benchmark/Perl/Formance/Plugin/P6STD
-	url = git://github.com/perl6/std.git
