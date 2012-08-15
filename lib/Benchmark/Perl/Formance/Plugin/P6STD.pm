@@ -30,29 +30,16 @@ sub prepare {
         print STDERR "# Make viv in $dstdir ...\n" if $options->{verbose} >= 3;
         dircopy($srcdir, $dstdir);
 
-        $cmd = "cd $dstdir ; make PERL=$^X";
-        print STDERR "#   $cmd\n" if $options->{verbose} && $options->{verbose} > 3;
-        qx"$cmd";
-        return $dstdir;
-}
-
-sub gimme5
-{
-        my ($workdir, $options) = @_;
-
-        my $gimme5    = "gimme5";
-        my $perl6file = "$goal";
-        my $cmd       = "cd $workdir ; $^X -I. $gimme5 $perl6file";
-
-        print STDERR "# Running benchmark....\n" if $options->{verbose} && $options->{verbose} > 2;
-        print STDERR "#   $cmd\n"                if $options->{verbose} && $options->{verbose} > 3;
-
-        my $t;
-        $t = timeit ($count, sub { qx"$cmd" });
-        return {
-                Benchmark => $t,
-                goal      => $goal,
-               };
+        my $makeviv = { Benchmark => timeit(1,
+                                            sub {
+                                                 $cmd = "cd $dstdir ; make PERL=$^X 2>&1";
+                                                 print STDERR "#   $cmd\n" if $options->{verbose} && $options->{verbose} >= 4;
+                                                 my $output = qx"$cmd";
+                                                 $output =~ s/^/\# /msg;
+                                                 print STDERR $output if $options->{verbose} && $options->{verbose} >= 4;
+                                                }),
+                      };
+        return $dstdir, $makeviv;
 }
 
 sub viv
@@ -63,8 +50,8 @@ sub viv
         my $perl6file = "$workdir/$goal";
         my $cmd       = "cd $workdir ; $^X -I. $viv $perl6file";
 
-        print STDERR "# Running benchmark...\n" if $options->{verbose} && $options->{verbose} > 2;
-        print STDERR "#   $cmd\n"               if $options->{verbose} && $options->{verbose} > 3;
+        print STDERR "# Running benchmark...\n" if $options->{verbose} && $options->{verbose} >= 3;
+        print STDERR "#   $cmd\n"               if $options->{verbose} && $options->{verbose} >= 4;
 
         my $t;
         $t = timeit ($count, sub { qx"$cmd" });
@@ -80,10 +67,15 @@ sub main {
         $goal  = $options->{fastmode} ? "hello.p6" : "STD.pm6";
         $count = $options->{fastmode} ? 1          : 5;
 
-        my $workdir = prepare($options);
+        my $workdir;
+        my $makeviv;
+        my $viv;
+        ($workdir, $makeviv ) = prepare($options);
+        $viv = viv($workdir, $options);
+
         return {
-                #gimme5 => gimme5($workdir, $options),
-                viv    => viv($workdir, $options),
+                makeviv => $makeviv,
+                viv     => $viv,
                };
 }
 
