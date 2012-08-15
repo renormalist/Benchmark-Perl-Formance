@@ -18,8 +18,6 @@ use File::Find;
 use Storable "fd_retrieve", "store_fd";
 use Sys::Hostname;
 
-our $VERSION = '0.28';
-
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Fib
@@ -138,14 +136,14 @@ sub print_version
 
         if ($self->{options}{verbose})
         {
-                print "Benchmark::Perl::Formance version $VERSION\n";
+                print "Benchmark::Perl::Formance version $Benchmark::Perl::Formance::VERSION\n";
                 print "Plugins:\n";
                 my %plugins = load_all_plugins;
                 print "  (v$plugins{$_}) $_\n" foreach sort keys %plugins;
         }
         else
         {
-                print $VERSION, "\n";
+                print $Benchmark::Perl::Formance::VERSION, "\n";
         }
 }
 

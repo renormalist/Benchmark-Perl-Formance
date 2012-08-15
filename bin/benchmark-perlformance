@@ -1,4 +1,6 @@
 #! /usr/bin/perl
+# PODNAME: benchmark-perlformance
+# ABSTRACT: Frontend for Benchmark::Perl::Formance
 
 use Benchmark::Perl::Formance;
 
@@ -8,10 +10,6 @@ my $results = $pf->run;
 $pf->print_results($results);
 
 =pod
-
-=head1 NAME
-
-benchmark-perlformance - Frontend for Benchmark::Perl::Formance
 
 =head1 ABOUT
 
@@ -266,7 +264,6 @@ alioth.debian.org.
 Runs tools from Perl6 STD world.
 
 =back
-
 
 =cut
 

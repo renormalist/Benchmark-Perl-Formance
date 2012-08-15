@@ -13,7 +13,7 @@ use_ok 'Data::YAML::Writer';
 use_ok 'Data::Structure::Util';
 use_ok 'File::Copy::Recursive';
 
-my $out = qx"$^X -Ilib script/benchmark-perlformance --fastmode --outstyle=yaml -c -p --plugins=Fib";
+my $out = qx"$^X -Ilib bin/benchmark-perlformance --fastmode --outstyle=yaml -c -p --plugins=Fib";
 my $yr = Data::YAML::Reader->new;
 my $outdata =  $yr->read($out);
 ok(defined $outdata->{results}, "results");
@@ -23,7 +23,7 @@ ok(defined $outdata->{perlformance}, "perlformance meta info");
 ok(defined $outdata->{perlformance}{config}, "perlformance config");
 ok(defined $outdata->{perlformance}{overall_runtime}, "perlformance runtime");
 
-$out = qx"$^X -Ilib script/benchmark-perlformance --version -v";
+$out = qx"$^X -Ilib bin/benchmark-perlformance --version -v";
 like($out, qr/\(v\d.* DPath$/m,                  "plugin version DPath");
 like($out, qr/\(v\d.* Fib$/m,                    "plugin version Fib");
 like($out, qr/\(v\d.* FibOO$/m,                  "plugin version FibOO");
