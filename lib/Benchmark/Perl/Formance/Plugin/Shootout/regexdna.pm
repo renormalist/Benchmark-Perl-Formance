@@ -23,15 +23,14 @@ our $VERSION = "0.002";
 #                                                           #
 #############################################################
 
-use Benchmark::Perl::Formance::Cargo;
-use File::ShareDir qw(module_dir);
+use File::ShareDir qw(dist_dir);
 use Benchmark ':hireswallclock';
 
 sub run
 {
         my ($infile) = @_;
 
-        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/Shootout";
+        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
         open my $INFILE, "<", $srcfile or die "Cannot read $srcfile";
 

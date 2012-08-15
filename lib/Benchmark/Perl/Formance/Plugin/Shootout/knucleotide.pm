@@ -25,8 +25,7 @@ our $VERSION = "0.001";
 #                                                           #
 #############################################################
 
-use Benchmark::Perl::Formance::Cargo;
-use File::ShareDir qw(module_dir);
+use File::ShareDir qw(dist_dir);
 use Benchmark ':hireswallclock';
 
 our $PRINT = 0;
@@ -43,7 +42,7 @@ sub run
         $output = '';
         $threads = 2*num_cpus() || 1;
 
-        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/Shootout";
+        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/Shootout";
         my $srcfile = "$srcdir/$infile";
         open my $INFILE, "<", $srcfile or die "Cannot read $srcfile";
 

@@ -16,8 +16,8 @@ our $count;
 
 use Benchmark ':all', ':hireswallclock';
 use File::Temp qw(tempfile tempdir);
-use File::ShareDir qw(module_dir);
-use File::Copy::Recursive qw(dircopy);
+use File::ShareDir qw(dist_dir);
+use File::Copy::Recursive qw(dircopy fcopy);
 use Cwd;
 
 sub prepare {
@@ -26,8 +26,8 @@ sub prepare {
         my $dstdir = tempdir( CLEANUP => 1 );
         my $cmd;
 
-        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/P6STD";
-        print STDERR "# Prepare files in $dstdir ...\n" if $options->{verbose} >= 3;
+        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/P6STD";
+        print STDERR "# Make viv in $dstdir ...\n" if $options->{verbose} >= 3;
         dircopy($srcdir, $dstdir);
 
         $cmd = "cd $dstdir ; make PERL=$^X";

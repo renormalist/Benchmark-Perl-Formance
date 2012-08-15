@@ -13,9 +13,8 @@ our $VERSION = "0.002";
 
 use File::Temp qw(tempfile tempdir);
 use File::Copy::Recursive qw(dircopy);
-use File::ShareDir qw(module_dir);
+use File::ShareDir qw(dist_dir);
 use Time::HiRes qw(gettimeofday);
-use Benchmark::Perl::Formance::Cargo;
 
 our $count;
 our $easy_ham;
@@ -29,7 +28,7 @@ sub main {
         $easy_ham = $options->{fastmode} ? "easy_ham_subset" : "easy_ham";
 
         my $dstdir = tempdir( CLEANUP => 1 );
-        my $srcdir = module_dir('Benchmark::Perl::Formance::Cargo')."/SpamAssassin";
+        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/SpamAssassin";
 
         print STDERR "# Prepare cargo spam'n'ham files in $dstdir ...\n" if $options->{verbose} >= 3;
 
