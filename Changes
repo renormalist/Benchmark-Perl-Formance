@@ -5,6 +5,8 @@ Revision history for {{$dist->name}}
   - depend on newer Devel::Size
   - remove legacy MooseTS code completely
   - Plugin::DPath without Safe.pm
+  - rework P6STD plugin to work again
+  - polish debug/verbose output
 
 0.27      2012-05-24
   - conditionally use Devel::Size only if available
