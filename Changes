@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.28      2012-08-16
   - Dist::Zill'ified
   - depend on newer Devel::Size
   - remove legacy MooseTS code completely
