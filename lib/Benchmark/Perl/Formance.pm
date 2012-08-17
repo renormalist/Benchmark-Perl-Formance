@@ -33,11 +33,11 @@ my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Shootout::spectralnorm
                                  );
 
+# FibMXDeclare
 my $ALL_PLUGINS = join ",", qw(DPath
                                Fib
                                FibMoose
                                FibMouse
-                               FibMXDeclare
                                FibOO
                                Mem
                                P6STD

@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - FibMXDeclare: disabled in --plugins=ALL
+    (it is extremely too slow to make any sense)
 
 0.28      2012-08-16
   - Dist::Zill'ified
