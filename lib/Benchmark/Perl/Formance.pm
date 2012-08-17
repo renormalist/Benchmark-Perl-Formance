@@ -265,6 +265,7 @@ sub run_plugin
                                 print STDERR "\n"                 if $self->{options}{verbose};
                                 exit 0;
                         }
+                        $0 = "benchmark-perl-formance-$pluginname";
                         my $orig_values = $self->prepare_stable_system;
                         $res = &{"Benchmark::Perl::Formance::Plugin::${pluginname}::main"}($self->{options});
                         $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${pluginname}::VERSION"};

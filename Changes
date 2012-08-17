@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - set $0 to plugin name
+    (sorry for the micro releases, I'm on vacation :-))
 
 0.29      2012-08-17
   - FibMXDeclare: disabled in --plugins=ALL
