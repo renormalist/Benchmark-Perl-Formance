@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.30      2012-08-17
   - set $0 to plugin name
     (sorry for the micro releases, I'm on vacation :-))
 
