@@ -236,7 +236,7 @@ sub regexes
         my %results = ();
 
         no strict "refs"; ## no critic
-        for my $subtest (qw( native POSIX Lua LPeg PCRE RE2 Oniguruma Plan9 )) {
+        for my $subtest (qw( native POSIX Lua PCRE RE2 Oniguruma Plan9 )) {
                 print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
                 $results{$subtest} = $subtest->($options);
         }
