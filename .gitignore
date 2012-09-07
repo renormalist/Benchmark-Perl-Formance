@@ -5,6 +5,7 @@ MYMETA.json
 MYMETA.yml
 blib
 build
+.build
 inc
 pm_to_blib
 MANIFEST*
