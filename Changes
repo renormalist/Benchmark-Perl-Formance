@@ -5,6 +5,8 @@ Revision history for {{$dist->name}}
     not even Perl::Formance::Cargo anymore,
     completely rely on Task::PerlFormance for that
   - therefore now more usable for quick microbenchmarks
+  - capture more errors and handle gracefully
+  - avoid output flooding
 
 0.30      2012-08-17
   - set $0 to plugin name
