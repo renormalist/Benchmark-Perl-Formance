@@ -46,11 +46,16 @@ sub prepare {
 sub nonaggregated {
         my ($dstdir, $prove, $recurse, $options) = @_;
 
-        my $cmd = "cd $dstdir ; $^X $prove $recurse '$dstdir/t'";
-        print STDERR "# $cmd\n"   if $options->{verbose} >= 3;
+        my $cmd = "cd $dstdir ; $^X $prove $recurse '$dstdir/t' 2>&1";
+        print STDERR "# $cmd\n"   if $options->{verbose} >= 4;
         print STDERR "# Run...\n" if $options->{verbose} >= 3;
 
-        my $t = timeit $count, sub { qx($cmd) };
+        my @output;
+        my $t = timeit $count, sub { @output = qx($cmd) };
+
+        my $maxerr = ($#output < 10) ? $#output : 10;
+        print STDERR join("\n# ", "", @output[0..$maxerr])    if $options->{verbose} >= 4;
+
         return {
                 Benchmark  => $t,
                 prove_path => $prove,

@@ -46,11 +46,15 @@ sub upstream {
         my $version = `$^X $perlcritic --version`; chomp $version;
         my $cmd     = qq{$^X $perlcritic --exclude RequireFilenameMatchesPackage $datadir};
 
-        print STDERR "$cmd\n" if $options->{verbose} >= 3;
+        print STDERR "# $cmd\n"   if $options->{verbose} && $options->{verbose} >= 4;
+        print STDERR "# Run...\n" if $options->{verbose} && $options->{verbose} >= 3;
 
-        my $t = timeit $count, sub {
-                my $output = qx($cmd);
-        };
+        my @output;
+        my $t = timeit $count, sub { @output = qx($cmd) };
+
+        my $maxerr = ($#output < 10) ? $#output : 10;
+        print STDERR join("\n# ", "", @output[0..$maxerr])    if $options->{verbose} >= 3;
+
         return {
                 Benchmark           => $t,
                 count               => $count,
@@ -66,14 +70,18 @@ sub bundled {
 
         my $perlcritic = "$dstdir/perlcritic";
         my $version = `$^X -I $dstdir $dstdir/perlcritic --version`; chomp $version;
-        my $cmd     = qq{$^X -I $dstdir $dstdir/perlcritic --exclude RequireFilenameMatchesPackage $datadir};
+        my $cmd     = qq{$^X -I $dstdir $dstdir/perlcritic --exclude RequireFilenameMatchesPackage $datadir 2>&1};
 
-        print STDERR "# Use perlcritic: $^X $perlcritic\n" if $options->{verbose} > 2;
-        print STDERR "$cmd\n" if $options->{verbose} >= 3;
+        print STDERR "# Use perlcritic: $^X $perlcritic\n" if $options->{verbose} >= 3;
+        print STDERR "# $cmd\n"   if $options->{verbose} && $options->{verbose} >= 4;
+        print STDERR "# Run...\n" if $options->{verbose} && $options->{verbose} >= 3;
 
-        my $t = timeit $count, sub {
-                my $output = qx($cmd);
-        };
+        my @output;
+        my $t = timeit $count, sub { @output = qx($cmd) };
+
+        my $maxerr = ($#output < 10) ? $#output : 10;
+        print STDERR join("\n# ", "", @output[0..$maxerr])    if $options->{verbose} >= 4;
+
         return {
                 Benchmark           => $t,
                 count               => $count,
