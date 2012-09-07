@@ -51,7 +51,7 @@ sub nonaggregated {
         print STDERR "# Run...\n" if $options->{verbose} >= 3;
 
         my @output;
-        my $t = timeit $count, sub { @output = qx($cmd) };
+        my $t = timeit $count, sub { @output = map { chomp; $_ } qx($cmd) };
 
         my $maxerr = ($#output < 10) ? $#output : 10;
         print STDERR join("\n# ", "", @output[0..$maxerr])    if $options->{verbose} >= 4;
