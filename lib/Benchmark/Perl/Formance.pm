@@ -260,9 +260,12 @@ sub run_plugin
                         close PARENT_RDR;
                         eval "use Benchmark::Perl::Formance::Plugin::$pluginname"; ## no critic
                         if ($@) {
-                                print STDERR "# Skip plugin '$pluginname'" if $self->{options}{verbose};
-                                print STDERR ":$@"                if $self->{options}{verbose} >= 2;
-                                print STDERR "\n"                 if $self->{options}{verbose};
+                                my @errors = split qr/\n/, $@;
+                                my $maxerr = ($#errors < 10) ? $#errors : 10;
+                                print STDERR "# Skip plugin '$pluginname'"             if $self->{options}{verbose};
+                                print STDERR ":".$errors[0]                            if $self->{options}{verbose} > 1;
+                                print STDERR join("\n# ", "", @errors[1..$maxerr])     if $self->{options}{verbose} > 2;
+                                print STDERR "\n"                                      if $self->{options}{verbose};
                                 exit 0;
                         }
                         $0 = "benchmark-perl-formance-$pluginname";
