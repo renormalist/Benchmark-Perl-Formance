@@ -25,7 +25,8 @@ sub prepare {
         my ($options) = @_;
 
         my $dstdir = tempdir( CLEANUP => 1 );
-        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/RegexpCommonTS";
+        my $srcdir; eval { $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/RegexpCommonTS" };
+        return if $@;
 
         print STDERR "# Prepare cargo RegexpCommon testsuite in $dstdir ...\n" if $options->{verbose} >= 3;
 
@@ -64,6 +65,8 @@ sub main {
         $recurse = $options->{fastmode} ? "" : "-r";
 
         my ($dstdir, $prove, $recurse) = prepare($options);
+        return { failed => "no Benchmark-Perl-Formance-Cargo" } if not $dstdir;
+
         return nonaggregated($dstdir, $prove, $recurse, $options);
 }
 

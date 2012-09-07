@@ -25,7 +25,8 @@ sub prepare {
         my ($options) = @_;
 
         my $dstdir = tempdir( CLEANUP => 1 );
-        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/PerlCritic";
+        my $srcdir; eval { $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/PerlCritic" };
+        return if $@;
 
         print STDERR "# Prepare Perl::Critic sources in $dstdir ...\n" if $options->{verbose} >= 3;
         dircopy($srcdir, $dstdir);
@@ -86,6 +87,8 @@ sub main {
         $count   = $options->{fastmode} ? 1 : 2;
 
         my ($dstdir) = prepare($options);
+        return { failed => "no Benchmark-Perl-Formance-Cargo" } if not $dstdir;
+
         return {
                 upstream => upstream ($options, $dstdir),
                 bundled  => bundled  ($options, $dstdir),

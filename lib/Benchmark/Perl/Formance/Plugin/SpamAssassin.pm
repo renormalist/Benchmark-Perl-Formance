@@ -28,7 +28,8 @@ sub main {
         $easy_ham = $options->{fastmode} ? "easy_ham_subset" : "easy_ham";
 
         my $dstdir = tempdir( CLEANUP => 1 );
-        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/SpamAssassin";
+        my $srcdir; eval { $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/SpamAssassin" };
+        return { salearn => { failed => "no Benchmark-Perl-Formance-Cargo" } } if $@;
 
         print STDERR "# Prepare cargo spam'n'ham files in $dstdir ...\n" if $options->{verbose} >= 3;
 

@@ -26,7 +26,9 @@ sub prepare {
         my $dstdir = tempdir( CLEANUP => 1 );
         my $cmd;
 
-        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/P6STD";
+        my $srcdir; eval { $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/P6STD" };
+        return if $@;
+
         print STDERR "# Make viv in $dstdir ...\n" if $options->{verbose} >= 3;
         dircopy($srcdir, $dstdir);
 
@@ -71,6 +73,8 @@ sub main {
         my $makeviv;
         my $viv;
         ($workdir, $makeviv ) = prepare($options);
+        return { failed => "no Benchmark-Perl-Formance-Cargo" } if not $workdir;
+
         $viv = viv($workdir, $options);
 
         return {

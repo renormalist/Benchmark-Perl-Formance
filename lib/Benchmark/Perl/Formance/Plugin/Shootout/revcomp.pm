@@ -38,7 +38,9 @@ sub run
 
         my $data;
 
-        my $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/Shootout";
+        my $srcdir; eval { $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/Shootout" };
+        return { failed => "no Benchmark-Perl-Formance-Cargo" } if $@;
+
         my $srcfile = "$srcdir/$infile";
         open my $INFILE, "<", $srcfile or die "Cannot read $srcfile";
 
@@ -67,6 +69,8 @@ sub main
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };
+        return $result if $result->{failed};
+
         return {
                 Benchmark => $t,
                 goal      => $goal,
