@@ -1,6 +1,10 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - very few dependencies now,
+    not even Perl::Formance::Cargo anymore,
+    completely rely on Task::PerlFormance for that
+  - therefore now more usable for quick microbenchmarks
 
 0.30      2012-08-17
   - set $0 to plugin name
