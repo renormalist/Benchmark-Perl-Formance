@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.32      2012-09-18
   - fix dependency cleanup, no more [AutoPrereqs]
 
 0.31      2012-09-07
