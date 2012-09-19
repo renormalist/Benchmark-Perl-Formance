@@ -2,15 +2,8 @@
 
 use Test::More;
 use Data::YAML::Reader;
-use Data::Dumper;
 
 use_ok 'Benchmark::Perl::Formance';
-use_ok 'Benchmark';
-use_ok 'Time::HiRes';
-use_ok 'File::ShareDir';
-use_ok 'Data::YAML::Writer';
-use_ok 'Data::Structure::Util';
-use_ok 'File::Copy::Recursive';
 
 my $out = qx"$^X -Ilib bin/benchmark-perlformance --fastmode --outstyle=yaml -c -p --plugins=Fib";
 my $yr = Data::YAML::Reader->new;
@@ -26,7 +19,6 @@ $out = qx"$^X -Ilib bin/benchmark-perlformance --version -v";
 like($out, qr/\(v\d.* Fib$/m,                    "plugin version Fib");
 like($out, qr/\(v\d.* FibOO$/m,                  "plugin version FibOO");
 like($out, qr/\(v\d.* Mem$/m,                    "plugin version Mem");
-like($out, qr/\(v\d.* Prime$/m,                  "plugin version Prime");
 like($out, qr/\(v\d.* Rx$/m,                     "plugin version Rx");
 like($out, qr/\(v\d.* Shootout::fasta$/m,        "plugin version Shootout::fasta");
 like($out, qr/\(v\d.* Shootout::binarytrees$/m,  "plugin version Shootout::binarytrees");

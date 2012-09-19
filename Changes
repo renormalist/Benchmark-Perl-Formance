@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - drop tests that require dependencies
 
 0.32      2012-09-18
   - fix dependency cleanup, no more [AutoPrereqs]
