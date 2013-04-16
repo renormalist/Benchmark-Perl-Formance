@@ -100,7 +100,8 @@ my %CONFIG_KEYS = (
                   );
 
 sub new {
-        bless {}, shift;
+        my ($class, %args) = @_;
+        bless { %args }, $class;
 }
 
 sub load_all_plugins
