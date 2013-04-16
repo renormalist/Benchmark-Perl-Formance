@@ -88,6 +88,46 @@ If this is set then some plugins try to scale down the stress to take
 less time (with less useful results, of course). Mostly for easier
 development.
 
+=item --stabilize-cpu
+
+Runs an external utility script
+(C<benchmark-perlformance-set-stable-system>) which stabilizes the
+system to get less deviation on multiple runs.
+
+The system is stabilized using:
+
+=over 4
+
+=item * Disable address space randomization (ASLR)
+
+See L<https://wiki.ubuntu.com/Security/Features>
+
+=item Set maximum frequency of all cpus to minimum frequency
+
+Therefore the system can't scale down further unexpectedly, e.g. when
+it gets hot.
+
+=item * Drop caches
+
+See L<http://linux-mm.org/Drop_Caches>.
+
+=item * Classical disk sync
+
+=back
+
+The external utility script is called via C<sudo> - please configure
+your sudo in advance to suit your needs, e.g. to not ask for
+password. An alternative approach is to run
+C<benchmark-perlformance-set-stable-system lo> once when your system
+boots, like from C</etc/init.d/> (and run your cpu slow all the time,
+obviously).
+
+B<Be careful>: maybe the cpu is not restored perfectly after a run,
+e.g., due to crashes during the benchmarking, or the values are not
+the very same. This could make your next results without
+C<--stabilize-cpu> inconclusive. Reboot your system to ensure a clean
+state or use C<--stabilize-cpu> all the time.
+
 =item --version
 
 Print Benchmark::Perl::Formance version.
