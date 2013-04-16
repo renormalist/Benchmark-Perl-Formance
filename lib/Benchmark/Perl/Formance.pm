@@ -17,6 +17,7 @@ use Data::DPath 'dpath', 'dpathi';
 use File::Find;
 use Storable "fd_retrieve", "store_fd";
 use Sys::Hostname;
+use FindBin qw($Bin);
 
 # comma separated list of default plugins
 my $DEFAULT_PLUGINS = join ",", qw(DPath
@@ -61,11 +62,9 @@ my $ALL_PLUGINS = join ",", qw(DPath
                                ThreadsShared
                              );
 
-our $DEFAULT_INDENT          = 0;
+our $scaling_script = "$Bin/benchmark-perlformance-set-stable-system";
 
-our $PROC_RANDOMIZE_VA_SPACE = "/proc/sys/kernel/randomize_va_space";
-our $PROC_DROP_CACHES        = "/proc/sys/vm/drop_caches";
-our $SYS_CPB                 = "/sys/devices/system/cpu/cpu0/cpufreq/cpb";
+our $DEFAULT_INDENT          = 0;
 
 my @run_plugins;
 
@@ -177,69 +176,39 @@ For more details see
 ';
 }
 
-sub set_proc
-{
-        my ($self, $file, $value) = @_;
-
-        if (! -e $file) {
-                print STDERR "# Could not find $file\n" if $self->{options}{verbose} >= 4;
-                return undef;
-        }
-        if (not defined $value) {
-                print STDERR "# No value given\n" if $self->{options}{verbose} >= 4;
-                return undef;
-        }
-
-        my $orig_value;
-        if (open (my $PROCFILE, "<", $file)) {
-                local $/ = undef;
-                $orig_value = <$PROCFILE>;
-                close $PROCFILE;
-        } else {
-                print STDERR "# Could not read old value from $file\n" if $self->{options}{verbose} >= 4;
-        }
-        chomp $orig_value if defined $orig_value;
-
-        if (open (my $PROCFILE, ">", $file)) {
-                print $PROCFILE $value;
-                close $PROCFILE;
-        } else {
-                print STDERR "# Could not write $value into $file\n" if $self->{options}{verbose} >= 4;
-        }
-
-        return $orig_value;
-}
-
 sub do_disk_sync {
-        my ($self) = @_;
-        system("sync");
+    system("sync ; sync");
 }
 
-# Try to stabilize a system.
-# - Classical disk sync
-# - Drop caches (http://linux-mm.org/Drop_Caches)
-# - Disable address space randomization (ASLR) (https://wiki.ubuntu.com/Security/Features)
-# - Disable "Core Performance Boost" (http://lkml.org/lkml/2010/3/22/333)
 sub prepare_stable_system
 {
         my ($self) = @_;
 
         my $orig_values;
-        if ($^O eq "linux") {
-                $orig_values->{aslr} = $self->set_proc ($PROC_RANDOMIZE_VA_SPACE, 0);
-                $orig_values->{cpb}  = $self->set_proc ($SYS_CPB, 0);
-                $self->do_disk_sync;
-                $self->set_proc ($PROC_DROP_CACHES, 1);
+        if ($self->{options}{stabilize_cpu} and $^O eq "linux") {
+                $self->{orig_system_values} = qx(sudo $scaling_script lo);
+                do_disk_sync();
         }
-        return $orig_values;
 }
 
 sub restore_stable_system
 {
         my ($self, $orig_values) = @_;
-        if ($^O eq "linux") {
-                $self->set_proc($PROC_RANDOMIZE_VA_SPACE, $orig_values->{aslr}) if defined $orig_values->{aslr};
-                $self->set_proc($SYS_CPB,                 $orig_values->{cpb} ) if defined $orig_values->{cpb};
+        if ($self->{options}{stabilize_cpu} and $^O eq "linux") {
+                if (open my $RESTORE, "|-", "sudo $scaling_script restore") {
+                    print $RESTORE $self->{orig_system_values};
+                    close $RESTORE;
+                }
+        }
+}
+
+sub prepare_fast_system
+{
+        my ($self) = @_;
+
+        my $orig_values;
+        if ($self->{options}{stabilize_cpu} and $^O eq "linux") {
+                $self->{orig_system_values} = qx(sudo $scaling_script hi);
         }
 }
 
@@ -270,10 +239,8 @@ sub run_plugin
                                 exit 0;
                         }
                         $0 = "benchmark-perl-formance-$pluginname";
-                        my $orig_values = $self->prepare_stable_system;
                         $res = &{"Benchmark::Perl::Formance::Plugin::${pluginname}::main"}($self->{options});
                         $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${pluginname}::VERSION"};
-                        $self->restore_stable_system($orig_values);
                         store_fd($res, \*CHILD_WTR);
                         close CHILD_WTR;
                         exit 0;
@@ -411,6 +378,7 @@ sub run {
         my $fastmode       = 0;
         my $useforks       = 0;
         my $quiet          = 0;
+        my $stabilize_cpu  = 0;
         my $plugins        = $DEFAULT_PLUGINS;
         my $indent         = $DEFAULT_INDENT;
         my $tapdescription = "";
@@ -427,6 +395,7 @@ sub run {
                              "fastmode"         => \$fastmode,
                              "version"          => \$version,
                              "useforks"         => \$useforks,
+                             "stabilize-cpu"    => \$stabilize_cpu,
                              "showconfig|c+"    => \$showconfig,
                              "platforminfo|p"   => \$platforminfo,
                              "codespeed"        => \$codespeed,
@@ -447,6 +416,7 @@ sub run {
                             outstyle       => $outstyle,
                             fastmode       => $fastmode,
                             useforks       => $useforks,
+                            stabilize_cpu  => $stabilize_cpu,
                             showconfig     => $showconfig,
                             platforminfo   => $platforminfo,
                             codespeed      => $codespeed,
@@ -480,12 +450,16 @@ sub run {
         my $before = gettimeofday();
         my %RESULTS;
         my @plugins = grep /\w/, split '\s*,\s*', $plugins;
+
+        $self->prepare_stable_system;
         foreach (@plugins)
         {
                 my @resultkeys = split(qr/::|\./, $_);
                 my $res = $self->run_plugin($_);
                 eval "\$RESULTS{results}{".join("}{", @resultkeys)."} = \$res"; ## no critic
         }
+        $self->prepare_fast_system; # simply set to max, as restore_stable_system() is no reliable approach anyway
+
         my $after  = gettimeofday();
         $RESULTS{perlformance}{overall_runtime}   = $after - $before;
         $RESULTS{perlformance}{config}{fastmode}  = $fastmode;
