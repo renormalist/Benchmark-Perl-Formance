@@ -285,19 +285,19 @@ sub _perl_gitdescribe {
         }
 }
 
-sub _perl_codespeed_executable {
+sub _perl_symbolic_name {
         my $perlpath = "$^X";
         $perlpath    =~ s,/[^/]*$,,;
         my $perl_symbolic_name  = "$perlpath/perl -MConfig -e 'print \$Config{bootstrap_perl_symbolic_name}";
 
-        if (-x $perl_codespeed_executable) {
-                my $executable = qx!$perl_codespeed_executable! ;
+        if (-x $perl_symbolic_name) {
+                my $executable = qx!$perl_symbolic_name! ;
                 chomp $executable;
                 return $executable;
         }
 }
 
-sub _codespeed_optional_tag {
+sub _optional_tag {
         # only create tags for stable releases
         my $gitdescribe = _perl_gitdescribe;
         if ($gitdescribe =~ /^(v|perl-)?5\.(\d+)\.\d+$/) {
@@ -325,7 +325,7 @@ sub generate_codespeed_data
         my $len = max map { length } @run_plugins;
 
         my $codespeed_exe_suffix  = $self->{options}{cs_executable_suffix}  || $ENV{CODESPEED_EXE_SUFFIX}  || "";
-        my $codespeed_exe         = $self->{options}{cs_executable}         || _perl_codespeed_executable  || sprintf("perl-%s.%s%s",
+        my $codespeed_exe         = $self->{options}{cs_executable}         || _perl_symbolic_name  || sprintf("perl-%s.%s%s",
                                                                                                                       $Config{PERL_REVISION},
                                                                                                                       $Config{PERL_VERSION},
                                                                                                                       $codespeed_exe_suffix,
@@ -341,7 +341,7 @@ sub generate_codespeed_data
                               commitid    => $codespeed_commitid,
                               environment => $codespeed_environment,
                               # do not add tag here, it seems not to be the correct API,
-                              # _codespeed_optional_tag
+                              # _optional_tag()
                              );
 
         foreach (sort @run_plugins) {
