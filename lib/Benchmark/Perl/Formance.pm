@@ -330,7 +330,7 @@ sub generate_codespeed_data
                                                                                                                       $Config{PERL_VERSION},
                                                                                                                       $codespeed_exe_suffix,
                                                                                                                      );
-        my $codespeed_project     = $self->{options}{cs_project}            || $ENV{CODESPEED_PROJECT}     || "perl";
+        my $codespeed_project     = $self->{options}{cs_project}            || $ENV{CODESPEED_PROJECT}     || "perl5";
         my $codespeed_branch      = $self->{options}{cs_branch}             || $ENV{CODESPEED_BRANCH}      || "default";
         my $codespeed_commitid    = $self->{options}{cs_commitid}           || $ENV{CODESPEED_COMMITID}    || $Config{git_commit_id} || _perl_gitversion || "no-commit";
         my $codespeed_environment = $self->{options}{cs_environment}        || $ENV{CODESPEED_ENVIRONMENT} || _get_hostname || "no-env";
