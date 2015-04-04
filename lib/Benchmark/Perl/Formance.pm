@@ -264,7 +264,7 @@ sub run_plugin
 sub _perl_gitversion {
         my $perlpath = "$^X";
         $perlpath    =~ s,/[^/]*$,,;
-        my $perl_gitversion  = "$perlpath/perl-gitchangeset";
+        my $perl_gitversion  = "$perlpath/perl -MConfig -e 'print \$Config{bootstrap_perl_git_changeset}";
 
         if (-x $perl_gitversion) {
                 my $gitversion = qx!$perl_gitversion! ;
@@ -276,7 +276,7 @@ sub _perl_gitversion {
 sub _perl_gitdescribe {
         my $perlpath = "$^X";
         $perlpath    =~ s,/[^/]*$,,;
-        my $perl_gitdescribe  = "$perlpath/perl-gitdescribe";
+        my $perl_gitdescribe  = "$perlpath/perl -MConfig -e 'print \$Config{bootstrap_perl_git_describe}";
 
         if (-x $perl_gitdescribe) {
                 my $gitdescribe = qx!$perl_gitdescribe! ;
@@ -288,7 +288,7 @@ sub _perl_gitdescribe {
 sub _perl_codespeed_executable {
         my $perlpath = "$^X";
         $perlpath    =~ s,/[^/]*$,,;
-        my $perl_codespeed_executable  = "$perlpath/perl-codespeed-executable";
+        my $perl_symbolic_name  = "$perlpath/perl -MConfig -e 'print \$Config{bootstrap_perl_symbolic_name}";
 
         if (-x $perl_codespeed_executable) {
                 my $executable = qx!$perl_codespeed_executable! ;
