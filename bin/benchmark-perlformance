@@ -102,7 +102,7 @@ The system is stabilized using:
 
 See L<https://wiki.ubuntu.com/Security/Features>
 
-=item Set maximum frequency of all cpus to minimum frequency
+=item * Set maximum frequency of all cpus to minimum frequency
 
 Therefore the system can't scale down further unexpectedly, e.g. when
 it gets hot.
@@ -112,6 +112,8 @@ it gets hot.
 See L<http://linux-mm.org/Drop_Caches>.
 
 =item * Classical disk sync
+
+Flush file system buffers, see C<man 1 sync>.
 
 =back
 
