@@ -359,6 +359,52 @@ sub generate_codespeed_data
         return \@codespeed_entries;
 }
 
+sub generate_BenchmarkAnythingData_data
+{
+        my ($self, $RESULTS) = @_;
+
+        my @benchmarkanythingdata_entries = ();
+
+        my @run_plugins = $self->find_interesting_result_paths($RESULTS);
+        my $len = max map { length } @run_plugins;
+
+        my $benchmarkanythingdata_exe_suffix  = $self->{options}{cs_executable_suffix}  || $ENV{BENCHMARKANYTHINGDATA_EXE_SUFFIX}  || "";
+        my $benchmarkanythingdata_exe         = $self->{options}{cs_executable}         || _perl_symbolic_name  || sprintf("perl-%s.%s%s",
+                                                                                                                      $Config{PERL_REVISION},
+                                                                                                                      $Config{PERL_VERSION},
+                                                                                                                      $benchmarkanythingdata_exe_suffix,
+                                                                                                                     );
+        my $benchmarkanythingdata_project     = $self->{options}{cs_project}            || $ENV{BENCHMARKANYTHINGDATA_PROJECT}     || "perl";
+        my $benchmarkanythingdata_branch      = $self->{options}{cs_branch}             || $ENV{BENCHMARKANYTHINGDATA_BRANCH}      || "default";
+        my $benchmarkanythingdata_commitid    = $self->{options}{cs_commitid}           || $ENV{BENCHMARKANYTHINGDATA_COMMITID}    || $Config{git_commit_id} || _perl_gitversion || "no-commit";
+        my $benchmarkanythingdata_environment = $self->{options}{cs_environment}        || $ENV{BENCHMARKANYTHINGDATA_ENVIRONMENT} || _get_hostname || "no-env";
+
+        my %benchmarkanythingdata_meta = (
+                                          executable  => $benchmarkanythingdata_exe,
+                                          project     => $benchmarkanythingdata_project,
+                                          branch      => $benchmarkanythingdata_branch,
+                                          commitid    => $benchmarkanythingdata_commitid,
+                                          environment => $benchmarkanythingdata_environment,
+                                          _optional_tag()
+                                         );
+
+        my %bootstrap_perl_meta = map { ( "perlformance_$_" => $Config{$_} ) } grep { /^bootstrap_perl/ } keys %Config;
+
+        foreach (sort @run_plugins) {
+                no strict 'refs'; ## no critic
+                my @resultkeys = split(/\./);
+                my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
+                my $benchmark =  $self->{options}{fastmode} ? "$_(F)" : $_ ;
+                push @benchmarkanythingdata_entries, {
+                                                      %benchmarkanythingdata_meta,
+                                                      %bootstrap_perl_meta,
+                                                      NAME  => $benchmark,
+                                                      VALUE => ($res || undef),
+                                                     };
+        }
+        return \@benchmarkanythingdata_entries;
+}
+
 sub run {
         my ($self) = @_;
 
