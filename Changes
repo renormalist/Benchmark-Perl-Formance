@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - adapt to bootstrap-perl changes
+  - carved out cpu speed stabilization code
+  - generate results following Tapper's BenchmarkAnythingData schema
 
 0.33      2012-09-19
   - drop tests that require dependencies
