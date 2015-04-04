@@ -413,6 +413,7 @@ sub run {
         my $outstyle       = "summary";
         my $platforminfo   = 0;
         my $codespeed      = 0;
+        my $tapper         = 0;
         my $cs_executable_suffix = "";
         my $cs_executable        = "";
         my $cs_project           = "";
@@ -445,6 +446,7 @@ sub run {
                              "showconfig|c+"    => \$showconfig,
                              "platforminfo|p"   => \$platforminfo,
                              "codespeed"        => \$codespeed,
+                             "tapper"           => \$tapper,
                              "cs-executable-suffix=s" => \$cs_executable_suffix,
                              "cs-executable=s"  => \$cs_executable,
                              "cs-project=s"     => \$cs_project,
@@ -466,6 +468,7 @@ sub run {
                             showconfig     => $showconfig,
                             platforminfo   => $platforminfo,
                             codespeed      => $codespeed,
+                            tapper         => $tapper,
                             cs_executable_suffix => $cs_executable_suffix,
                             cs_executable        => $cs_executable,
                             cs_project           => $cs_project,
@@ -534,6 +537,12 @@ sub run {
         if ($codespeed)
         {
                 $RESULTS{codespeed} = $self->generate_codespeed_data(\%RESULTS, $platform_info);
+        }
+
+        # Tapper BenchmarkAnythingData blocks
+        if ($tapper)
+        {
+                $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS, $platform_info);
         }
 
         unbless (\%RESULTS);
