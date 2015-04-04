@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.34      2015-04-05
   - adapt to bootstrap-perl changes
   - carved out cpu speed stabilization code
   - generate results following Tapper's BenchmarkAnythingData schema
