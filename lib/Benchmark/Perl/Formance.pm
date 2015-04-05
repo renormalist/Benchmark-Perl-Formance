@@ -404,6 +404,14 @@ sub _get_perlformance_config {
         return map { $self->{options}{$_} ? ("perlformance_$_" => $self->{options}{$_}) : () } @config_keys;
 }
 
+sub _get_platforminfo {
+        my ($self) = @_;
+
+        my $get_info = Devel::Platform::Info->new->get_info;
+        delete $get_info->{source}; # this currently breaks the simplified YAMLish
+        return %$get_info;
+}
+
 sub augment_results_with_meta {
         my ($self, $NAME_KEY, $VALUE_KEY, $META, $RESULTS) = @_;
 
@@ -439,7 +447,11 @@ sub generate_BenchmarkAnythingData_data
         my %codespeed_meta = _codespeed_meta;
         my %prefixed_codespeed_meta = map { ("codespeed_$_" => $codespeed_meta{$_}) } keys %codespeed_meta;
 
+        my %platforminfo = $self->_get_platforminfo;
+        my %prefixed_platforminfo = map { ("platforminfo_$_" => $platforminfo{$_}) } keys %platforminfo;
+
         my %META =  (
+                     %prefixed_platforminfo,
                      %prefixed_codespeed_meta,
                      $self->_get_bootstrap_perl_meta,
                      $self->_get_perl_config,
@@ -572,20 +584,19 @@ sub run {
         my $platform_info = Devel::Platform::Info->new->get_info;
         if ($platforminfo)
         {
-                $RESULTS{platform_info} = $platform_info;
-                delete $RESULTS{platform_info}{source}; # this currently breaks the simplified YAMLish
+                $RESULTS{platform_info} = { $self->_get_platforminfo };
         }
 
         # Codespeed data blocks
         if ($codespeed)
         {
-                $RESULTS{codespeed} = $self->generate_codespeed_data(\%RESULTS, $platform_info);
+                $RESULTS{codespeed} = $self->generate_codespeed_data(\%RESULTS);
         }
 
         # Tapper BenchmarkAnythingData blocks
         if ($tapper)
         {
-                $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS, $platform_info);
+                $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS);
         }
 
         unbless (\%RESULTS);
