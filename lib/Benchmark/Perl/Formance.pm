@@ -374,7 +374,7 @@ sub generate_BenchmarkAnythingData_data
                                                                                                                       $Config{PERL_VERSION},
                                                                                                                       $benchmarkanythingdata_exe_suffix,
                                                                                                                      );
-        my $benchmarkanythingdata_project     = $self->{options}{cs_project}            || $ENV{BENCHMARKANYTHINGDATA_PROJECT}     || "perl";
+        my $benchmarkanythingdata_project     = $self->{options}{cs_project}            || $ENV{BENCHMARKANYTHINGDATA_PROJECT}     || "perl5";
         my $benchmarkanythingdata_branch      = $self->{options}{cs_branch}             || $ENV{BENCHMARKANYTHINGDATA_BRANCH}      || "default";
         my $benchmarkanythingdata_commitid    = $self->{options}{cs_commitid}           || $ENV{BENCHMARKANYTHINGDATA_COMMITID}    || $Config{git_commit_id} || _perl_gitversion || "no-commit";
         my $benchmarkanythingdata_environment = $self->{options}{cs_environment}        || $ENV{BENCHMARKANYTHINGDATA_ENVIRONMENT} || _get_hostname || "no-env";
