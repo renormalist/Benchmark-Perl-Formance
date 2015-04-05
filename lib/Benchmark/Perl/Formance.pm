@@ -343,14 +343,17 @@ sub _get_hostname {
         return $host;
 }
 
-sub generate_codespeed_data
-{
+sub _plugin_results {
+        my ($self, $plugin, $RESULTS) = @_;
+
+        my @resultkeys = split(/\./, $plugin);
+        my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
+
+        return $res;
+}
+
+sub _codespeed_meta {
         my ($self, $RESULTS) = @_;
-
-        my @codespeed_entries = ();
-
-        my @run_plugins = $self->find_interesting_result_paths($RESULTS);
-        my $len = max map { length } @run_plugins;
 
         my $codespeed_exe_suffix  = $self->{options}{cs_executable_suffix}  || $ENV{CODESPEED_EXE_SUFFIX}  || "";
         my $codespeed_exe         = $self->{options}{cs_executable}         || _perl_symbolic_name  || sprintf("perl-%s.%s%s",
@@ -368,69 +371,81 @@ sub generate_codespeed_data
                               branch      => $codespeed_branch,
                               commitid    => $codespeed_commitid,
                               environment => $codespeed_environment,
-                              # do not add tag here, it seems not to be the correct API,
-                              # _optional_tag()
                              );
 
-        foreach (sort @run_plugins) {
+        return %codespeed_meta;
+}
+
+sub _get_bootstrap_perl_meta {
+        my ($self) = @_;
+
+        return map { ("$_" => $Config{$_}) } grep { /^bootstrap_perl/ } keys %Config;
+}
+
+sub _get_perl_config {
+        my ($self) = @_;
+
+        my @cfgkeys;
+        my $showconfig = 4;
+        push @cfgkeys, @{$CONFIG_KEYS{$_}} foreach 1..$showconfig;
+        return map { ("perlconfig_$_" => $Config{$_}) } @cfgkeys;
+}
+
+sub _get_perlformance_config {
+        my ($self) = @_;
+
+        # only easy printable data (i.e., no "D" hash)
+        my @config_keys = (qw(stabilize_cpu
+                              fastmode
+                              useforks
+                              plugins
+                            ));
+
+        return map { $self->{options}{$_} ? ("perlformance_$_" => $self->{options}{$_}) : () } @config_keys;
+}
+
+sub augment_results_with_meta {
+        my ($self, $NAME_KEY, $VALUE_KEY, $META, $RESULTS) = @_;
+
+        my @run_plugins = $self->find_interesting_result_paths($RESULTS);
+        my @new_entries = ();
+        foreach my $plugin (sort @run_plugins) {
                 no strict 'refs'; ## no critic
-                my @resultkeys = split(/\./);
-                my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
-                my $benchmark =  $self->{options}{fastmode} ? "$_(F)" : $_ ;
-                push @codespeed_entries, {
-                                          # order matters
-                                          %codespeed_meta,
-                                          benchmark => $benchmark,
-                                          result_value => ($res || 0),
-                                         };
+                my $res = $self->_plugin_results($plugin, $RESULTS);
+                my $benchmark =  $self->{options}{fastmode} ? "$plugin(F)" : $plugin;
+                push @new_entries, {
+                                    %$META,
+                                    # metric name and value at last position to override
+                                    $NAME_KEY  => $benchmark,
+                                    $VALUE_KEY => ($res || 0),
+                                   };
         }
-        return \@codespeed_entries;
+        return \@new_entries;
+}
+
+sub generate_codespeed_data
+{
+        my ($self, $RESULTS) = @_;
+
+        my %META = _codespeed_meta();
+        return $self->augment_results_with_meta("benchmark", "result_value", \%META, $RESULTS);
 }
 
 sub generate_BenchmarkAnythingData_data
 {
         my ($self, $RESULTS) = @_;
 
-        my @benchmarkanythingdata_entries = ();
+        # share a common dataset with Codespeed, yet prefix it
+        my %codespeed_meta = _codespeed_meta;
+        my %prefixed_codespeed_meta = map { ("codespeed_$_" => $codespeed_meta{$_}) } keys %codespeed_meta;
 
-        my @run_plugins = $self->find_interesting_result_paths($RESULTS);
-        my $len = max map { length } @run_plugins;
-
-        my $benchmarkanythingdata_exe_suffix  = $self->{options}{cs_executable_suffix}  || $ENV{BENCHMARKANYTHINGDATA_EXE_SUFFIX}  || "";
-        my $benchmarkanythingdata_exe         = $self->{options}{cs_executable}         || _perl_symbolic_name  || sprintf("perl-%s.%s%s",
-                                                                                                                      $Config{PERL_REVISION},
-                                                                                                                      $Config{PERL_VERSION},
-                                                                                                                      $benchmarkanythingdata_exe_suffix,
-                                                                                                                     );
-        my $benchmarkanythingdata_project     = $self->{options}{cs_project}            || $ENV{BENCHMARKANYTHINGDATA_PROJECT}     || "perl5";
-        my $benchmarkanythingdata_branch      = $self->{options}{cs_branch}             || $ENV{BENCHMARKANYTHINGDATA_BRANCH}      || "default";
-        my $benchmarkanythingdata_commitid    = $self->{options}{cs_commitid}           || $ENV{BENCHMARKANYTHINGDATA_COMMITID}    || $Config{git_commit_id} || _perl_gitversion || "no-commit";
-        my $benchmarkanythingdata_environment = $self->{options}{cs_environment}        || $ENV{BENCHMARKANYTHINGDATA_ENVIRONMENT} || _get_hostname || "no-env";
-
-        my %benchmarkanythingdata_meta = (
-                                          executable  => $benchmarkanythingdata_exe,
-                                          project     => $benchmarkanythingdata_project,
-                                          branch      => $benchmarkanythingdata_branch,
-                                          commitid    => $benchmarkanythingdata_commitid,
-                                          environment => $benchmarkanythingdata_environment,
-                                          _optional_tag()
-                                         );
-
-        my %bootstrap_perl_meta = map { ( "perlformance_$_" => $Config{$_} ) } grep { /^bootstrap_perl/ } keys %Config;
-
-        foreach (sort @run_plugins) {
-                no strict 'refs'; ## no critic
-                my @resultkeys = split(/\./);
-                my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
-                my $benchmark =  $self->{options}{fastmode} ? "$_(F)" : $_ ;
-                push @benchmarkanythingdata_entries, {
-                                                      %benchmarkanythingdata_meta,
-                                                      %bootstrap_perl_meta,
-                                                      NAME  => $benchmark,
-                                                      VALUE => ($res || undef),
-                                                     };
-        }
-        return \@benchmarkanythingdata_entries;
+        my %META =  (
+                     %prefixed_codespeed_meta,
+                     $self->_get_bootstrap_perl_meta,
+                     $self->_get_perl_config,
+                     $self->_get_perlformance_config,
+                    );
+        return $self->augment_results_with_meta("NAME", "VALUE", \%META, $RESULTS);
 }
 
 sub run {
