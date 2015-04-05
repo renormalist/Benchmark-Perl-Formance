@@ -88,10 +88,49 @@ my %CONFIG_KEYS = (
                             optimize
                           )],
                    3 => [qw(ccflags
+                            ccname
+                            cccdlflags
+                            ccdlflags
                             cppflags
                             nm_so_opt
                           )],
-                   4 => [qw(
+                   4 => [qw(PERL_REVISION
+                            PERL_VERSION
+                            PERL_SUBVERSION
+                            PERL_PATCHLEVEL
+
+                            api_revision
+                            api_version
+                            api_subversion
+                            api_versionstring
+
+                            gnulibc_version
+                            dtrace
+                            doublesize
+                            alignbytes
+                            bin_ELF
+                            git_commit_date
+                            version_patchlevel_string
+                            d_mymalloc
+
+                            i16size
+                            i16type
+                            i32size
+                            i32type
+                            i64size
+                            i64type
+                            i8size
+                            i8type
+
+                            longdblsize
+                            longlongsize
+                            longsize
+
+                            perllibs
+                            ptrsize
+                            quadkind
+                            quadtype
+                            randbits
                           )],
                    5 => [
                          sort keys %Config
