@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - rework metainformation, mostly for Tapper augmentation
 
 0.34      2015-04-05
   - adapt to bootstrap-perl changes
