@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.35      2015-04-06
   - rework metainformation, mostly for Tapper augmentation
 
 0.34      2015-04-05
