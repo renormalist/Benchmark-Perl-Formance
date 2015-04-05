@@ -336,17 +336,6 @@ sub _perl_symbolic_name {
         }
 }
 
-sub _optional_tag {
-        # only create tags for stable releases
-        my $gitdescribe = _perl_gitdescribe;
-        if ($gitdescribe =~ /^(v|perl-)?5\.(\d+)\.\d+$/) {
-                if ($2 % 2 == 0) {
-                        return (tag => $gitdescribe);
-                }
-        }
-        return ();
-}
-
 sub _get_hostname {
         my $host = "unknown-hostname";
         eval { $host = hostname };
