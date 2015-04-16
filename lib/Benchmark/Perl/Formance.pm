@@ -17,6 +17,7 @@ use Data::DPath 'dpath', 'dpathi';
 use File::Find;
 use Storable "fd_retrieve", "store_fd";
 use Sys::Hostname;
+use Sys::Info;
 use FindBin qw($Bin);
 
 # comma separated list of default plugins
@@ -412,6 +413,26 @@ sub _get_platforminfo {
         return %$get_info;
 }
 
+sub _get_sysinfo {
+        my ($self) = @_;
+
+        my %sysinfo = ();
+        my $prefix = "sysinfo";
+        my $cpu = (Sys::Info->new->device("CPU")->identify)[0];
+        $sysinfo{join("_", $prefix, "cpu", $_)} = $cpu->{$_} foreach qw(name
+                                                                        family
+                                                                        model
+                                                                        stepping
+                                                                        architecture
+                                                                        number_of_cores
+                                                                        number_of_logical_processors
+                                                                        architecture
+                                                                        manufacturer
+                                                                      );
+        $sysinfo{join("_", $prefix, "cpu", "l2_cache", "max_cache_size")} = $cpu->{L2_cache}{max_cache_size};
+        return %sysinfo;
+}
+
 sub augment_results_with_meta {
         my ($self, $NAME_KEY, $VALUE_KEY, $META, $RESULTS) = @_;
 
@@ -455,6 +476,7 @@ sub generate_BenchmarkAnythingData_data
                      %prefixed_codespeed_meta,
                      $self->_get_bootstrap_perl_meta,
                      $self->_get_perl_config,
+                     $self->_get_sysinfo,
                      $self->_get_perlformance_config,
                     );
         return $self->augment_results_with_meta("NAME", "VALUE", \%META, $RESULTS);
@@ -581,7 +603,6 @@ sub run {
         }
 
         # Perl Config
-        my $platform_info = Devel::Platform::Info->new->get_info;
         if ($platforminfo)
         {
                 $RESULTS{platform_info} = { $self->_get_platforminfo };
