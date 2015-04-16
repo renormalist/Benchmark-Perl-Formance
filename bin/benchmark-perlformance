@@ -179,15 +179,18 @@ C<config_args>, C<optimize>.
 
 =item -ccc
 
-Adds C<ccflags>, C<cppflags>, C<nm_so_opt>.
+Adds C<ccflags>, C<ccname>, C<cccdlflags>, C<ccdlflags>, C<cppflags>, C<nm_so_opt>.
 
 =item -cccc
 
-Currently does not increase information.
+Adds about 40 more keys from Perl's %Config hash - everything that
+sounds like it could either influence performance between different
+hardware, configurations, and compilers, or interesting meta
+information around that.
 
 =item -ccccc
 
-Includes all info from Perls %Config hash.
+Includes all info from Perl's %Config hash.
 
 =item -p
 
