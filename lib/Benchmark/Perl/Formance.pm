@@ -680,6 +680,15 @@ sub print_outstyle_yaml
         print $output;
 }
 
+sub print_outstyle_json
+{
+        my ($self, $RESULTS) = @_;
+
+        require JSON;
+        my $json = JSON->new->allow_nonref;
+        print $json->pretty->encode( $RESULTS );
+}
+
 sub find_interesting_result_paths
 {
         my ($self, $RESULTS) = @_;
@@ -724,7 +733,7 @@ sub print_results
         return if $self->{options}{quiet};
 
         my $outstyle = $self->{options}{outstyle};
-        $outstyle = "summary" unless $outstyle =~ qr/^(summary|yaml)$/;
+        $outstyle = "summary" unless $outstyle =~ qr/^(summary|yaml|json)$/;
         my $sub = "print_outstyle_$outstyle";
 
         $self->$sub($RESULTS);
