@@ -1,0 +1,11 @@
+ x   y     z
+t1   5   high
+t1   2   low
+t1   4   med
+t2   8   high
+t2   1   low
+t2   3   med
+t3  50   high
+t3  12   med
+t3  35   low
+
