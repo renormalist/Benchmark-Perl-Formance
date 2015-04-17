@@ -65,6 +65,7 @@ my $ALL_PLUGINS = join ",", qw(DPath
                              );
 
 our $scaling_script = "$Bin/benchmark-perlformance-set-stable-system";
+our $metric_prefix  = "perlformance.perl5";
 
 our $DEFAULT_INDENT          = 0;
 
@@ -473,11 +474,10 @@ sub augment_results_with_meta {
 
         my @run_plugins = $self->find_interesting_result_paths($RESULTS);
         my @new_entries = ();
-        my $prefix      = "perlformance.perl5";
         foreach my $plugin (sort @run_plugins) {
                 no strict 'refs'; ## no critic
                 my $res = $self->_plugin_results($plugin, $RESULTS);
-                my $benchmark =  join ".", $prefix, ($self->{options}{fastmode} ? "$plugin(F)" : $plugin);
+                my $benchmark =  join ".", $metric_prefix, ($self->{options}{fastmode} ? "$plugin(F)" : $plugin);
                 push @new_entries, {
                                     %$META,
                                     # metric name and value at last position to override
@@ -718,12 +718,13 @@ sub print_outstyle_summary
 
         my @run_plugins = $self->find_interesting_result_paths($RESULTS);
         my $len = max map { length } @run_plugins;
+        $len   += 1+length($metric_prefix);
 
         foreach (sort @run_plugins) {
                 no strict 'refs'; ## no critic
                 my @resultkeys = split(/\./);
                 my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
-                print sprintf("%-${len}s : %f\n", $_, ($res || 0));
+                print sprintf("%-${len}s : %f\n", join(".", $metric_prefix, $_), ($res || 0));
         }
 }
 
