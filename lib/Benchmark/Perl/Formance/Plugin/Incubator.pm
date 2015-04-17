@@ -12,41 +12,17 @@ our $VERSION = "0.002";
 #############################################################
 
 use Benchmark ':hireswallclock';
-use Math::MatrixReal;
 
-sub matrix_multiply_fixsize
+sub incubator
 {
         my ($options) = @_;
 
-        my $goal  = $options->{fastmode} ? 2_000_000 : 15_000_000;
-        my $count = $options->{fastmode} ? 5 : 20;
+        my $count = 1;
 
-        my $minigoal = int ($goal / 20_000);
-
-        my @row;    $row[$_]    = 1        foreach 0..$minigoal-1;
-        my @matrix; $matrix[$_] = [ @row ] foreach 0..$minigoal-1;
-
-        my $size;
-        eval qq{use Devel::Size 'total_size'};
-        if ($@) {
-                $size = "error-no-Devel-Size-available";
-        } else {
-                $size = total_size(\@matrix);
-        }
-
-        my $m = Math::MatrixReal->new_from_rows(\@matrix);
-        my $result;
-        my ($rows,$columns) = $m->dim;
-        my $t = timeit $count, sub {
-                $result = $m->multiply($m);
-        };
+        my $t = timeit $count, sub { sleep 2 };
         return {
-                Benchmark         => $t,
-                goal              => $minigoal,
-                count             => $count,
-                matrix_size_bytes => $size,
-                rows              => $rows,
-                columns           => $columns,
+                Benchmark => $t,
+                goal      => $count,
                };
 }
 
@@ -55,7 +31,7 @@ sub main
         my ($options) = @_;
 
         return {
-                matrix_multiply_fixsize => matrix_multiply_fixsize ($options),
+                incubator => incubator ($options),
                };
 }
 
