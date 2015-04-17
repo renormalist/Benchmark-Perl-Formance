@@ -1,11 +1,15 @@
- x   y     z
-t1   5   high
-t1   2   low
-t1   4   med
-t2   8   high
-t2   1   low
-t2   3   med
-t3  50   high
-t3  12   med
-t3  35   low
+version   cfg_t_64     value
+5.8.9     nothr-no64   1
+5.8.9     nothr-64     11
+5.8.9     thr-no64     12
+5.8.9     thr-64       13
 
+5.10.0    nothr-no64   10
+5.10.0    nothr-64     11
+5.10.0    thr-no64     12
+5.10.0    thr-64       13
+
+5.12.0    nothr-no64   10
+5.12.0    nothr-64     11
+5.12.0    thr-no64     12
+5.12.0    thr-64       13
