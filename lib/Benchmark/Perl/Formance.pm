@@ -6,6 +6,7 @@ use warnings;
 use strict;
 
 use Config;
+use Config::Perl::V;
 use Exporter;
 use Getopt::Long ":config", "no_ignore_case", "bundling";
 use Data::Structure::Util "unbless";
@@ -392,6 +393,40 @@ sub _get_perl_config {
         return map { ("perlconfig_$_" => $Config{$_}) } @cfgkeys;
 }
 
+sub _get_perl_config_v {
+        my ($self) = @_;
+
+        # only when ultimate verbose config requested
+        return unless $self->{options}{showconfig} >= 5;
+
+        my $config_v_myconfig = Config::Perl::V::myconfig ();
+        my @config_v_keys = sort keys %$config_v_myconfig;
+
+        # --- flat configs ---
+        my $prefix      = "perlconfigv";
+        my %perlconfigv = ();
+        my %focus       = (
+                           derived     => [ qw( Off_t uname) ],
+                           build       => [ qw( osname stamp ) ],
+                           environment => [ keys %{$config_v_myconfig->{environment}} ], # all
+                    );
+        foreach my $subcfg (keys %focus) {
+                foreach my $k (@{$focus{$subcfg}}) {
+                        $perlconfigv{join("_", $prefix, $subcfg, $k)} = $config_v_myconfig->{$subcfg}{$k};
+                }
+        }
+
+        # --- nested configs ---
+
+        # build options
+        my @buildoptionkeys = keys %{$config_v_myconfig->{build}{options}};
+        foreach my $k (keys %focus) {
+                $perlconfigv{join("_", $prefix, "build", "options", $k)} = $config_v_myconfig->{build}{options}{$k};
+        }
+
+        return %perlconfigv;
+}
+
 sub _get_perlformance_config {
         my ($self) = @_;
 
@@ -477,6 +512,7 @@ sub generate_BenchmarkAnythingData_data
                      %prefixed_codespeed_meta,
                      $self->_get_bootstrap_perl_meta,
                      $self->_get_perl_config,
+                     $self->_get_perl_config_v,
                      $self->_get_sysinfo,
                      $self->_get_perlformance_config,
                     );
@@ -595,12 +631,16 @@ sub run {
         # Perl Config
         if ($showconfig)
         {
+                # Config
                 my @cfgkeys;
                 push @cfgkeys, @{$CONFIG_KEYS{$_}} foreach 1..$showconfig;
                 $RESULTS{perl_config} =
                 {
                  map { $_ => $Config{$_} } sort @cfgkeys
                 };
+
+                # Config::Perl::V
+                $RESULTS{perl_config_v} = Config::Perl::V::myconfig;
         }
 
         # Perl Config
