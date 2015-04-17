@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.36      2015-04-17
   - meta information overhaul (Sys::Info, Config, Config::Perl::V)
   - metric names now always prefixed with "perlformance.perl5."
   - plugin:FibOOSig - stress functions with signatures
