@@ -42,6 +42,8 @@ my $ALL_PLUGINS = join ",", qw(DPath
                                FibMoose
                                FibMouse
                                FibOO
+                               FibOOSig
+                               MatrixReal
                                Mem
                                P6STD
                                PerlCritic
