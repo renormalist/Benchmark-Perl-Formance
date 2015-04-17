@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.38      2015-04-17
         - plugin:MatrixReal - new - pure perl matrix operations
         - plugin:Prime - maintenance - install Math::Primality by default
         - plugin:SpamAssassin - maintenance
