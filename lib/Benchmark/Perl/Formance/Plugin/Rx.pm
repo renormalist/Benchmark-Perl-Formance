@@ -37,7 +37,6 @@ sub regexes
                 my $re     = ("a?" x $n) . ("a" x $n);
                 my $string = "a" x $n;
 
-                print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
                 my $t = timeit $count, sub { $string =~ /$re/ };
                 $results{$subtest} = {
                                       Benchmark => $t,
@@ -66,7 +65,6 @@ sub regexes
                 my $string = (("a" x $length) . " ") x 5;
                 chop $string;
 
-                print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
                 my $t = timeit $count, sub { $string =~ /$re/ };
                 $results{$subtest} = {
                                       Benchmark => $t,
@@ -84,7 +82,6 @@ sub regexes
                 my $string = ( ("a" x $length) . " " ) x 5;
                 chop $string;
 
-                print STDERR "#  - $subtest...\n" if $options->{verbose} > 2;
                 my $t = timeit $count, sub { $string =~ /$re/ };
                 $results{$subtest} = {
                                       Benchmark => $t,
