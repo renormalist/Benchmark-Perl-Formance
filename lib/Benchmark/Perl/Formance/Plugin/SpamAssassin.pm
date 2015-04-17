@@ -3,7 +3,7 @@ package Benchmark::Perl::Formance::Plugin::SpamAssassin;
 use strict;
 use warnings;
 
-our $VERSION = "0.002";
+our $VERSION = "0.003";
 
 #############################################################
 #                                                           #
@@ -23,6 +23,9 @@ use Benchmark ':hireswallclock';
 
 sub main {
         my ($options) = @_;
+
+        require Mail::SpamAssassin;
+        my $sa_version = $Mail::SpamAssassin::VERSION;
 
         my $srcdir; eval { $srcdir = dist_dir('Benchmark-Perl-Formance-Cargo')."/SpamAssassin" };
         if ($@) {
@@ -74,6 +77,7 @@ sub main {
                 $results{salearn}{$pass->{metric}} = {
                                                       Benchmark    => [@$t],
                                                       salearn_path => $salearn,
+                                                      sa_version   => $sa_version,
                                                       count        => $count,
                                                      };
         }
