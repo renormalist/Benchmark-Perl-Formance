@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - plugin: MatrixReal - pure perl matrix operations
+  - deps: JSON mandatory
 
 0.37      2015-04-17
   - fix missing dependencies
