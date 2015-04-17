@@ -21,11 +21,12 @@ use Sys::Hostname;
 use Sys::Info;
 use FindBin qw($Bin);
 
-# comma separated list of default plugins
+# comma separated list of default plugins - basically the non-troublemakers
 my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Fib
                                    FibOO
                                    Mem
+                                   MatrixReal
                                    Prime
                                    Rx
                                    Shootout::fasta
