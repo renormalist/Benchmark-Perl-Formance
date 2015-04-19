@@ -10,7 +10,6 @@ use Config::Perl::V;
 use Exporter;
 use Getopt::Long ":config", "no_ignore_case", "bundling";
 use Data::Structure::Util "unbless";
-use Data::YAML::Writer;
 use Time::HiRes qw(gettimeofday);
 use Devel::Platform::Info;
 use List::Util "max";
@@ -672,15 +671,8 @@ sub print_outstyle_yaml
 {
         my ($self, $RESULTS) = @_;
 
-        my $output = '';
-        my $indent = $self->{options}{indent};
-        my $yw = new Data::YAML::Writer;
-        $yw->write($RESULTS, sub { $output .= shift()."\n" });
-        $output =~ s/^/" "x$indent/emsg; # indent
-
-        my $tapdescription = $self->{options}{tapdescription};
-        $output = "ok $tapdescription\n".$output if $tapdescription;
-        print $output;
+        require YAML;
+        print YAML::Dump($RESULTS);
 }
 
 sub print_outstyle_json
@@ -688,8 +680,24 @@ sub print_outstyle_json
         my ($self, $RESULTS) = @_;
 
         require JSON;
-        my $json = JSON->new->allow_nonref;
-        print $json->pretty->encode( $RESULTS );
+        print JSON->new->allow_nonref->pretty->encode( $RESULTS );
+}
+
+sub print_outstyle_yamlish
+{
+        my ($self, $RESULTS) = @_;
+
+        require Data::YAML::Writer;
+
+        my $output = '';
+        my $indent = $self->{options}{indent};
+        my $yw = Data::YAML::Writer->new;
+        $yw->write($RESULTS, sub { $output .= shift()."\n" });
+        $output =~ s/^/" "x$indent/emsg; # indent
+
+        my $tapdescription = $self->{options}{tapdescription};
+        $output = "ok $tapdescription\n".$output if $tapdescription;
+        print $output;
 }
 
 sub find_interesting_result_paths
@@ -736,8 +744,8 @@ sub print_results
         my ($self, $RESULTS) = @_;
         return if $self->{options}{quiet};
 
-        my $outstyle = $self->{options}{outstyle};
-        $outstyle = "summary" unless $outstyle =~ qr/^(summary|yaml|json)$/;
+        my $outstyle = lc $self->{options}{outstyle};
+        $outstyle = "summary" unless $outstyle =~ qr/^(summary|yaml|yamlish|json)$/;
         my $sub = "print_outstyle_$outstyle";
 
         $self->$sub($RESULTS);
