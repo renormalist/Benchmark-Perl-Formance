@@ -5,7 +5,7 @@ use Data::YAML::Reader;
 
 use_ok 'Benchmark::Perl::Formance';
 
-my $out = qx"$^X -Ilib bin/benchmark-perlformance --fastmode --outstyle=yaml -c -p --plugins=Fib";
+my $out = qx"$^X -Ilib bin/benchmark-perlformance --fastmode --outstyle=yamlish -c -p --plugins=Fib";
 my $yr = Data::YAML::Reader->new;
 my $outdata =  $yr->read($out);
 ok(defined $outdata->{results}, "results");
