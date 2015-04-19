@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::binarytrees;
+# ABSTRACT: benchmark plugin - Shootout::binarytrees - Language shootout plugin: binarytrees
 
 # COMMAND LINE:
 # /usr/bin/perl binarytrees.perl-2.perl 20
@@ -104,16 +105,4 @@ sub main
                };
 }
 
-
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::binarytrees - Language shootout plugin: binarytrees
-
-=head1 ABOUT
-
-This plugin does some runs the "binarytrees" benchmark from the
-Language Shootout.

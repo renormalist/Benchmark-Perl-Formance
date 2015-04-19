@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Threads;
+# ABSTRACT: benchmark plugin - Threads - Stress threading
 
 # Create threads to evaluate Fibonacci numbers
 
@@ -76,12 +77,6 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Threads - Stress threading
 
 =head1 SYNOPSIS
 

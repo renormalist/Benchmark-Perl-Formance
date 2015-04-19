@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::PerlCritic;
+# ABSTRACT: benchmark plugin - PerlCritic - Run Perl::Critic on itself
 
 use strict;
 use warnings;
@@ -104,18 +105,3 @@ sub main {
 }
 
 1;
-
-=pod
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::PerlCritic - Run Perl::Critic on itself
-
-=head1 SYNOPSIS
-
-Run it as any other plugin.
-
-  $ perl-formance --plugins=PerlCritic
-
-=cut
-

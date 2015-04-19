@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::FibOOSig;
+# ABSTRACT: benchmark plugin - FibOOSig - Stress recursion and method calls (plain OO with function signatures)
 
 # Fibonacci numbers, using methods with signatures (Perl 5.20+)
 
@@ -59,11 +60,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::FibOOSig - Stress recursion and method calls (plain OO with function signatures)
-
-=cut

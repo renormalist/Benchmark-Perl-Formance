@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::nbody;
+# ABSTRACT: benchmark plugin - Shootout::nbody - Language shootout plugin: nbody
 
 # COMMAND LINE:
 # /usr/bin/perl nbody.perl 50000000
@@ -148,14 +149,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::nbody - Language shootout plugin: nbody
-
-=head1 ABOUT
-
-This plugin does some runs the "nbody" benchmark from the Language
-Shootout.

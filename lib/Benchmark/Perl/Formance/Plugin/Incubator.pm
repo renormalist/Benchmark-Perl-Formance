@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Incubator;
+# ABSTRACT: benchmark plugin - Incubator - everchanging benchmark experiments
 
 use strict;
 use warnings;
@@ -39,14 +40,11 @@ sub main
 
 __END__
 
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Incubator - Incubator plugin for benchmark experiments
-
 =head1 ABOUT
 
 This is a B<free style> plugin where I collect ideas. Although it
-might contain interesting code you should never rely on this plugin.
+might contain interesting code you should never rely on this plugin as
+it will continuously change.
 
 =cut
 

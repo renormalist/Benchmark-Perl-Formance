@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot;
+# ABSTRACT: benchmark plugin - Shootout::mandelbrot - Language shootout plugin: mandelbrot
 
 # COMMAND LINE:
 # /usr/bin/perl mandelbrot.perl 16000
@@ -116,14 +117,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot - Language shootout plugin: mandelbrot
-
-=head1 ABOUT
-
-This plugin does some runs the "mandelbrot" benchmark from the
-Language Shootout.

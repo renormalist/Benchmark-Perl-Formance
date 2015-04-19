@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm;
+# ABSTRACT: benchmark plugin - Shootout::spectralnorm - Language shootout plugin: spectralnorm
 
 # COMMAND LINE:
 # /usr/bin/perl spectralnorm.perl-3.perl 5500
@@ -160,14 +161,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm - Language shootout plugin: spectralnorm
-
-=head1 ABOUT
-
-This plugin does some runs the "spectralnorm" benchmark from the
-Language Shootout.

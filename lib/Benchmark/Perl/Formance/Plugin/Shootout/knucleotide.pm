@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::knucleotide;
+# ABSTRACT: benchmark plugin - Shootout::knucleotide - Language shootout plugin: knucleotide
 
 # COMMAND LINE:
 # /usr/bin/perl knucleotide.perl 0 < knucleotide-input25000000.txt
@@ -130,14 +131,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::knucleotide - Language shootout plugin: knucleotide
-
-=head1 ABOUT
-
-This plugin does some runs the "knucleotide" benchmark from the
-Language Shootout.

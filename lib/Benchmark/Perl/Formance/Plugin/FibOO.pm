@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::FibOO;
+# ABSTRACT: benchmark plugin - FibOO - Stress recursion and method calls (plain OO)
 
 # Fibonacci numbers
 
@@ -51,12 +52,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::FibOO - Stress recursion and method calls (plain OO)
-
-=cut
-

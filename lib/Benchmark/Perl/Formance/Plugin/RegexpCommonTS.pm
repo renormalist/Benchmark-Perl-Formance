@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::RegexpCommonTS;
+# ABSTRACT: benchmark plugin - RegexpCommonTS - RegexpCommon test suite as benchmark
 
 use strict;
 use warnings;
@@ -76,16 +77,3 @@ sub main {
 }
 
 1;
-
-=pod
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::RegexpCommonTS - RegexpCommon test suite as benchmark
-
-=head1 ABOUT
-
-This plugin runs a part of the RegexpCommon test suite.
-
-=cut
-

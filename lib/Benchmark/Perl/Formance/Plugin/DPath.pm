@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::DPath;
+# ABSTRACT: benchmark plugin - DPath - stress lookup, traversing and copying data structures
 
 use strict;
 use warnings;
@@ -480,12 +481,5 @@ sub main {
                 dpath => run_dpath(),
                };
 }
+
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::DPath - Use DPath to stress lookup, traversing and copying data structures
-
-=cut

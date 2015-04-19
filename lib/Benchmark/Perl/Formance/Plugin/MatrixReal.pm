@@ -1,4 +1,11 @@
 package Benchmark::Perl::Formance::Plugin::MatrixReal;
+# ABSTRACT: benchmark plugin - MatrixReal - Pure Perl matrix operations
+
+=head1 ABOUT
+
+Benchmarks taken from L<https://metacpan.org/source/LETO/Math-MatrixReal-2.12/example/bench.pl>.
+
+=cut
 
 use strict;
 use warnings;
@@ -52,15 +59,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::MatrixReal - Pure Perl matrix operations
-
-=head1 ABOUT
-
-Benchmarks taken from L<https://metacpan.org/source/LETO/Math-MatrixReal-2.12/example/bench.pl>.
-
-=cut

@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Skeleton;
+# ABSTRACT: benchmark plugin - Skeleton - An example plugin
 
 use strict;
 use warnings;
@@ -38,12 +39,6 @@ sub main {
 
 1;
 
-=pod
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Skeleton - An example plugin
-
 =head1 ABOUT
 
 You can create your own plugins by just creating a module in the
@@ -72,4 +67,3 @@ Benchmark::Perl::Formance suite, then patch the C<$DEFAULT_PLUGINS> in
 lib/Benchmark/Perl/Formance.pm and/or email me.
 
 =cut
-

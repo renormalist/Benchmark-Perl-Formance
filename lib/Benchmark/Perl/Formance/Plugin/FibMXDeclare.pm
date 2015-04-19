@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::FibMXDeclare;
+# ABSTRACT: benchmark plugin - FibMXDeclare - Stress recursion and method calls (MooseX::Declare)
 
 # Fibonacci numbers
 
@@ -48,12 +49,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::FibMXDeclare - Stress recursion and method calls (MooseX::Declare)
-
-=cut
-

@@ -2,7 +2,7 @@
 
 use Test::More;
 
-diag "Sample run. May take some seconds...";
+diag "\nSample run. May take some seconds...";
 my $out = qx"$^X -Ilib bin/benchmark-perlformance --fastmode";
 ok($out, "sample run");
 diag "\n".$out;

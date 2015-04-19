@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Fib;
+# ABSTRACT: benchmark plugin - Fib - Stress recursion and function calls
 
 # Fibonacci numbers
 
@@ -45,12 +46,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Fib - Stress recursion and function calls
-
-=cut
-

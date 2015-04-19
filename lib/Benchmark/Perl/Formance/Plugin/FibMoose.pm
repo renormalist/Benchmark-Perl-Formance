@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::FibMoose;
+# ABSTRACT: benchmark plugin - FibMoose - Stress recursion and method calls (Moose)
 
 # Fibonacci numbers
 
@@ -49,12 +50,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::FibMoose - Stress recursion and method calls (Moose)
-
-=cut
-

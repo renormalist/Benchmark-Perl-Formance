@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::FibMouse;
+# ABSTRACT: benchmark plugin - FibMouse - Stress recursion and method calls (Mouse)
 
 # Fibonacci numbers
 
@@ -49,12 +50,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::FibMouse - Stress recursion and method calls (Mouse)
-
-=cut
-

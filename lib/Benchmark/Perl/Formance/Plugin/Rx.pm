@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Rx;
+# ABSTRACT: benchmark plugin - Rx - Stress regular expressions
 
 # Regexes
 
@@ -114,12 +115,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Rx - Stress regular expressions
-
-=cut
-

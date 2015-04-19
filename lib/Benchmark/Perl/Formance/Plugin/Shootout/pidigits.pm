@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::pidigits;
+# ABSTRACT: benchmark plugin - Shootout::pidigits - Language shootout plugin: pidigits
 
 # The Computer Language Benchmarks Game
 #   http://shootout.alioth.debian.org/
@@ -86,14 +87,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::pidigits - Language shootout plugin: pidigits
-
-=head1 ABOUT
-
-This plugin does some runs the "pidigits" benchmark from the Language
-Shootout.

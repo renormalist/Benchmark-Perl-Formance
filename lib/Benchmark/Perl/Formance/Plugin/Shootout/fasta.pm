@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::fasta;
+# ABSTRACT: benchmark plugin - Shootout::fasta - Language shootout plugin: fasta
 
 # COMMAND LINE:
 # /usr/bin/perl fasta.perl-4.perl 25000000
@@ -168,15 +169,6 @@ sub main
 
 __END__
 
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::fasta - Language shootout plugin: fasta
-
-=head1 ABOUT
-
-This plugin does some runs of the "fasta" benchmark from the Language
-Shootout.
-
 =head1 CONFIGURATION
 
 Because the "fasta" plugin's output can be used to feed other
@@ -184,9 +176,9 @@ benchmarks that work on "fasta" data you control its output
 via defines:
 
    $ perl-formance --plugins=Shootout::fast \
-                   -DShootout_fasta_n=1000 \
-                   -DShootout_fasta_print=1 \
-                   -DShootout_fasta_count=1
+                    -DShootout_fasta_n=1000 \
+                    -DShootout_fasta_print=1 \
+                    -DShootout_fasta_count=1
 
 where C<_n> is the algorithm's parameter, C<_print=1>
 means print out the result and C<_count> is the repetition

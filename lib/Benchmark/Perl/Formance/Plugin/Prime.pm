@@ -1,6 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Prime;
-
-# Prime numbers
+# ABSTRACT: benchmark plugin - Prime - Stress math libs (Math::GMPz)
 
 use strict;
 use warnings;
@@ -74,13 +73,5 @@ sub main {
                 #crypt_primes   => crypt_primes($options), # disabled - does not run in constant time by nature
                };
 }
+
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Prime - Stress math libs (Math::GMPz)
-
-=cut
-

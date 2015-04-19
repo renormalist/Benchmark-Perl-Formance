@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::fannkuch;
+# ABSTRACT: benchmark plugin - Shootout::fannkuch - Language shootout plugin: fannkuch
 
 # COMMAND LINE:
 # /usr/bin/perl fannkuch.perl-3.perl 12
@@ -107,14 +108,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::fannkuch - Language shootout plugin: fannkuch
-
-=head1 ABOUT
-
-This plugin does some runs the "fannkuch" benchmark from the Language
-Shootout.

@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::P6STD;
+# ABSTRACT: benchmark plugin - P6STD - Stress using Perl6/Perl5 tools around STD.pm
 
 use strict;
 use warnings;
@@ -88,11 +89,3 @@ sub main {
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::P6STD - Stress using Perl6/Perl5 tools around STD.pm
-
-=cut

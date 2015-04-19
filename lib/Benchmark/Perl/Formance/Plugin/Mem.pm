@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Mem;
+# ABSTRACT: benchmark plugin - Mem - Stress memory operations
 
 use strict;
 use warnings;
@@ -72,12 +73,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Mem - Stress memory operations
-
-=cut
-

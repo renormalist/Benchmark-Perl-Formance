@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::revcomp;
+# ABSTRACT: benchmark plugin - Shootout::revcomp - Language shootout plugin: revcomp
 
 # COMMAND LINE:
 # /usr/bin/perl revcomp.perl-4.perl 0 < revcomp-input25000000.txt
@@ -81,23 +82,12 @@ sub main
 
 1;
 
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::revcomp - Language shootout plugin: revcomp
-
-=head1 ABOUT
-
-This plugin does some runs the "revcomp" benchmark from the Language
-Shootout.
-
 =head1 CONFIGURATION
 
 You can control whether to output the result in case you want to reuse
 it:
 
    $ perl-formance --plugins=Shootout::revcomp \
-                   -DShootout_revcomp_print=1
+                    -DShootout_revcomp_print=1
 
 =cut

@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout;
+# ABSTRACT: benchmark plugin - Shootout - Benchmark::Perl::Formance plugin covering Shootout code
 
 use strict;
 use warnings;
@@ -60,56 +61,6 @@ sub main
 
 
 __END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout - Benchmark::Perl::Formance plugin covering Shootout code
-
-=head1 SYNOPSIS
-
-Use it as Benchmark::Perl::Formance plugin:
-
-  $ perl-formance --plugins=Shootout
-
-=head1 BUGS
-
-Please report any bugs or feature requests to
-C<bug-perl-formance-plugin-languageshootout at rt.cpan.org>, or
-through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Perl-Formance-Plugin-LanguageShootout>.
-I will be notified, and then you'll automatically be notified of
-progress on your bug as I make changes.
-
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Benchmark::Perl::Formance::Plugin::LanguageShootout
-
-
-You can also look for information at:
-
-=over 4
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Perl-Formance-Plugin-LanguageShootout>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Perl-Formance-Plugin-LanguageShootout>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Perl-Formance-Plugin-LanguageShootout>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Perl-Formance-Plugin-LanguageShootout/>
-
-=back
-
 
 =head1 AUTHOR
 

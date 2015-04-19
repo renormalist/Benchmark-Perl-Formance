@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::regexdna;
+# ABSTRACT: benchmark plugin - Shootout::regexdna - Language shootout plugin: regexdna
 
 # COMMAND LINE:
 # /usr/bin/perl regexdna.perl-2.perl 0 < regexdna-input5000000.txt
@@ -114,14 +115,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::Shootout::regexdna - Language shootout plugin: regexdna
-
-=head1 ABOUT
-
-This plugin does some runs the "regexdna" benchmark from the Language
-Shootout.

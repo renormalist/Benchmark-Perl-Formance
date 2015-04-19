@@ -1,6 +1,14 @@
 package Benchmark::Perl::Formance::Plugin::RxCmp;
+# ABSTRACT: benchmark plugin - RxCmp - Compare different Regex engines
 
-# Compare different Regexes engines plugins (Perl 5.10+)
+=head1 ABOUT
+
+Perl 5.10 allows to plug in other Regular expression engines. So we
+compare different Regexes engines with pathological regular
+expressions. Inspired by and examples taken from
+L<http://swtch.com/~rsc/regexp/regexp1.html>.
+
+=cut
 
 use 5.010; # [sic - pluggable regex engines]
 use strict;
@@ -259,19 +267,3 @@ sub main
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::RxCmp - Compare different Regexes engines plugins (Perl 5.10+)
-
-=head1 ABOUT
-
-Perl 5.10 allows to plug in other Regular expression engines. So we
-compare different Regexes engines with pathological regular
-expressions. Inspired by and examples taken from
-L<http://swtch.com/~rsc/regexp/regexp1.html>.
-
-=cut
-

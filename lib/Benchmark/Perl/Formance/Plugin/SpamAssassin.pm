@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::SpamAssassin;
+# ABSTRACT: benchmark plugin - SpamAssassin - SpamAssassin Benchmarks
 
 use strict;
 use warnings;
@@ -86,12 +87,6 @@ sub main {
 
 1;
 
-=pod
-
-=head1 NAME
-
-Benchmark::Perl::Formance::Plugin::SpamAssassin - SpamAssassin Benchmarks
-
 =head1 ABOUT
 
 This plugin does some runs with SpamAssassin on the public corpus
@@ -103,7 +98,3 @@ It uses the executable "sa-learn" that it by default searches in
 the same path of your used perl executable ($^X).
 
 =cut
-
-__END__
-
-time perl -T `which sa-learn` --ham -L --config-file=sa-learn.cfg --prefs-file sa-learn.prefs --dbpath db --no-sync  'easy_ham/*'
