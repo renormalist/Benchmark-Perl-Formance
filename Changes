@@ -1,6 +1,10 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - split outstyle into --outstyle=yaml and --outstyle=yamlish so we
+          can have real YAML and YAMLish suitable for TAP embedding
+        - only --outstyle=yamlish applies --indent and --tapdescription
+        - --outstyle now case-insensitive
 
 0.38      2015-04-17
         - plugin:MatrixReal - new - pure perl matrix operations
