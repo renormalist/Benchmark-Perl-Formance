@@ -527,6 +527,7 @@ sub run {
         my $help           = 0;
         my $showconfig     = 0;
         my $outstyle       = "summary";
+        my $outfile        = "";
         my $platforminfo   = 0;
         my $codespeed      = 0;
         my $tapper         = 0;
@@ -555,6 +556,7 @@ sub run {
                              "plugins=s"        => \$plugins,
                              "verbose|v+"       => \$verbose,
                              "outstyle=s"       => \$outstyle,
+                             "outfile=s"        => \$outfile,
                              "fastmode"         => \$fastmode,
                              "version"          => \$version,
                              "useforks"         => \$useforks,
@@ -577,6 +579,7 @@ sub run {
                             help           => $help,
                             quiet          => $quiet,
                             verbose        => $verbose,
+                            outfile        => $outfile,
                             outstyle       => $outstyle,
                             fastmode       => $fastmode,
                             useforks       => $useforks,
@@ -672,7 +675,7 @@ sub print_outstyle_yaml
         my ($self, $RESULTS) = @_;
 
         require YAML;
-        print YAML::Dump($RESULTS);
+        return YAML::Dump($RESULTS);
 }
 
 sub print_outstyle_json
@@ -680,7 +683,7 @@ sub print_outstyle_json
         my ($self, $RESULTS) = @_;
 
         require JSON;
-        print JSON->new->allow_nonref->pretty->encode( $RESULTS );
+        return JSON->new->allow_nonref->pretty->encode( $RESULTS );
 }
 
 sub print_outstyle_yamlish
@@ -697,7 +700,7 @@ sub print_outstyle_yamlish
 
         my $tapdescription = $self->{options}{tapdescription};
         $output = "ok $tapdescription\n".$output if $tapdescription;
-        print $output;
+        return $output;
 }
 
 sub find_interesting_result_paths
@@ -727,6 +730,8 @@ sub print_outstyle_summary
 {
         my ($self, $RESULTS) = @_;
 
+        my $output = '';
+
         my @run_plugins = $self->find_interesting_result_paths($RESULTS);
         my $len = max map { length } @run_plugins;
         $len   += 1+length($metric_prefix);
@@ -735,8 +740,9 @@ sub print_outstyle_summary
                 no strict 'refs'; ## no critic
                 my @resultkeys = split(/\./);
                 my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
-                print sprintf("%-${len}s : %f\n", join(".", $metric_prefix, $_), ($res || 0));
+                $output .= sprintf("%-${len}s : %f\n", join(".", $metric_prefix, $_), ($res || 0));
         }
+        return $output;
 }
 
 sub print_results
@@ -748,7 +754,21 @@ sub print_results
         $outstyle = "summary" unless $outstyle =~ qr/^(summary|yaml|yamlish|json)$/;
         my $sub = "print_outstyle_$outstyle";
 
-        $self->$sub($RESULTS);
+        my $output = $self->$sub($RESULTS);
+
+        if (my $outfile = $self->{options}{outfile})
+        {
+                open my $OUTFILE, ">", $outfile or do {
+                        warn "Can not open $outfile. Printing to STDOUT.\n";
+                        print $output;
+                };
+                print $OUTFILE $output;
+                close $OUTFILE;
+        }
+        else
+        {
+                print $output;
+        }
 }
 
 1;

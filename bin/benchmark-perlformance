@@ -82,6 +82,10 @@ Similar to C<--outstyle=yaml>, except the produced YAML is actually
 the lightweight variant YAMLish produced by L<Data::YAML::Writer|Data::YAML::Writer>,
 which can easily be embedded into TAP.
 
+=item --outfile=FILE
+
+Write results into FILE. If FILE can not be opened then it prints to STDOUT.
+
 =item --fastmode
 
 If this is set then some plugins try to scale down the stress to take
