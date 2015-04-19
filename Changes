@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - new option --outfile=FILE
 
 0.39      2015-04-19
         - split outstyle into --outstyle=yaml and --outstyle=yamlish so we
