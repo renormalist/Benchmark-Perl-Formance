@@ -66,12 +66,21 @@ C<regexdna>, C<binarytrees>, C<revcomp>, C<nbody>, C<spectralnorm>}).
 
 =item --outstyle=summary
 
-This enables a condensed tabular output instead of YAML.
-Default since v0.10.
+This activates a condensed tabular output. Default since v0.10.
+
+=item --outstyle=json
+
+This activates JSON formatted output containing meta information.
 
 =item --outstyle=yaml
 
-This activates YAML formatted output.
+This activates YAML formatted output containing meta information.
+
+=item --outstyle=yamlish
+
+Similar to C<--outstyle=yaml>, except the produced YAML is actually
+the lightweight variant YAMLish produced by L<Data::YAML::Writer|Data::YAML::Writer>,
+which can easily be embedded into TAP.
 
 =item --fastmode
 
@@ -187,24 +196,25 @@ Includes all info from Perl's %Config hash.
 
 Includes platform info via Devel::Platform::Info
 
-(Users who want to greet the 80s combine it this way: C<-cccp>. :-)
+(Users who want to greet the 80s combine it this way: C<-cccp>. :-))
 
 =item --tapdescription="some description"
 
-When given this will prepend the YAML with a TAP line
+When given together with C<--outstyle=yamlish> this will prepend the
+YAMLish with a TAP line
 
   ok some description
 
 This makes it easier for wrappers to embed the output into TAP which
 otherwise need to differentiate between output (verbose and other) and
-the YAML.
+the YAMLish.
 
 =item --indent=2
 
-This indents the whole yaml output by some spaces (2 in the
-example). Together with C<--tapdescription> it makes an TAP v13 style
-structured diagnostics block which can, for instance, be evaluated
-using L<TAP::DOM>.
+This indents the output of C<--outstyle=yamlish> by some spaces (2 in
+the example). Together with C<--tapdescription> it makes an TAP v13
+style structured diagnostics block which can, for instance, be
+evaluated using L<TAP::DOM>.
 
 =item --useforks
 
@@ -302,4 +312,3 @@ Runs tools from Perl6 STD world.
 =back
 
 =cut
-
