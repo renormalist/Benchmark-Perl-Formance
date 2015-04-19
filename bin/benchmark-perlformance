@@ -30,15 +30,6 @@ Usage:
   $ benchmark-perlformance --plugins=SpamAssassin,Fib,Rx -v
   $ benchmark-perlformance --plugins=SpamAssassin,Fib,Rx -vv -ccccc
 
-If run directly it uses the perl in your PATH:
-
-  $ /path/to/benchmark-perlformance
-
-
-To use another Perl start it via
-
-  $ /other/path/to/bin/perl /path/to/benchmark-perlformance
-
 To provide configuration, general and plugin specific, you can use the
 C<-D> option to define key/value pairs:
 
