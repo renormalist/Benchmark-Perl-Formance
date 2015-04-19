@@ -1,4 +1,5 @@
 package Benchmark::Perl::Formance;
+# ABSTRACT: Perl 5 performance benchmarking framework
 
 use 5.008;
 
@@ -772,12 +773,6 @@ sub print_results
 }
 
 1;
-
-__END__
-
-=head1 NAME
-
-Benchmark::Perl::Formance - PerlFormance - Benchmark Suite
 
 =head1 ABOUT
 
