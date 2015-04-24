@@ -262,56 +262,79 @@ special configuration, usually via C<-Dkey=value> options.
 
 =item L<Benchmark::Perl::Formance::Plugin::SpamAssassin|Benchmark::Perl::Formance::Plugin::SpamAssassin>
 
-Run Bayes learning tools from SpamAssassin.
+Macro benchmark. Run sa-learn learning tool from SpamAssassin, which stresses string, regex and data structures operations.
 
-=item L<Benchmark::Perl::Formance::Plugin::Rx|Benchmark::Perl::Formance::Plugin::Rx>
+=item L<Benchmark::Perl::Formance::Plugin::Mem|Benchmark::Perl::Formance::Plugin::Mem>
 
-Stress using Perl6/Perl5 tools around STD.pm
+Micro benchmarks. Stress memory operations.
+
+=item L<Benchmark::Perl::Formance::Plugin::Prime|Benchmark::Perl::Formance::Plugin::Prime>
+
+Micro benchmarks. Prime numbers.
 
 =item L<Benchmark::Perl::Formance::Plugin::DPath|Benchmark::Perl::Formance::Plugin::DPath>
 
-Use DPath to stress lookup, traversing and copying data structures.
+Macro benchmark. Use DPath to stress lookup, traversing and copying data structures.
 
 =item L<Benchmark::Perl::Formance::Plugin::Rx|Benchmark::Perl::Formance::Plugin::Rx>
 
-Regular expressions, basic functions and pathological regex stressing.
+Micro benchmarks. Regular expressions, basic functions and pathological regex stressing.
 
 =item L<Benchmark::Perl::Formance::Plugin::RxCmp|Benchmark::Perl::Formance::Plugin::RxCmp>
 
-Compare differnet regex engines (pluggable since Perl 5.10).
+Micro benchmarks. Compare differnet regex engines (pluggable since Perl 5.10).
+
+=item L<Benchmark::Perl::Formance::Plugin::RegexpCommonTS|Benchmark::Perl::Formance::Plugin::RegexpCommonTS>
+
+Micro benchmarks. Stress regexes by running the Regexp::Common testsuite.
+
+=item L<Benchmark::Perl::Formance::Plugin::MatrixReal|Benchmark::Perl::Formance::Plugin::MatrixReal>
+
+Micro benchmarks. Pure Perl matrix operations.
 
 =item L<Benchmark::Perl::Formance::Plugin::Fib|Benchmark::Perl::Formance::Plugin::Fib>
 
-Fibonnacci numbers to stress recursion and function calls.
+Micro benchmarks. Fibonnacci numbers to stress recursion and function calls.
 
 =item L<Benchmark::Perl::Formance::Plugin::FibOO|Benchmark::Perl::Formance::Plugin::FibOO>
 
-Fibonnacci numbers to stress recursion and method calls, with plain Perl OO.
+Micro benchmarks. Fibonnacci numbers to stress recursion and method calls, with plain Perl OO.
+
+=item L<Benchmark::Perl::Formance::Plugin::FibOOSig|Benchmark::Perl::Formance::Plugin::FibOOSig>
+
+Micro benchmarks. Fibonnacci numbers to stress recursion and method calls, with plain Perl OO using 5.20 signatures.
 
 =item L<Benchmark::Perl::Formance::Plugin::FibMoose|Benchmark::Perl::Formance::Plugin::FibMoose>
 
-Fibonnacci numbers to stress recursion and method calls, with Moose.
+Micro benchmarks. Fibonnacci numbers to stress recursion and method calls, with Moose.
 
 =item L<Benchmark::Perl::Formance::Plugin::FibMouse|Benchmark::Perl::Formance::Plugin::FibMouse>
 
-Fibonnacci numbers to stress recursion and method calls, with Mouse.
+Micro benchmarks. Fibonnacci numbers to stress recursion and method calls, with Mouse.
 
 =item L<Benchmark::Perl::Formance::Plugin::FibMXDeclare|Benchmark::Perl::Formance::Plugin::FibMXDeclare>
 
-Fibonnacci numbers to stress recursion and method calls, with MooseX::Declare.
+Micro benchmarks. Fibonnacci numbers to stress recursion and method calls, with MooseX::Declare.
 
 =item L<Benchmark::Perl::Formance::Plugin::Threads|Benchmark::Perl::Formance::Plugin::Threads>
 
-Thread handling.
+Micro benchmarks. Stress thread handling.
+
+=item L<Benchmark::Perl::Formance::Plugin::ThreadsShared|Benchmark::Perl::Formance::Plugin::ThreadsShared>
+
+Micro benchmarks. Stress thread handling with shared variables.
+
+=item L<Benchmark::Perl::Formance::Plugin::PerlCritic|Benchmark::Perl::Formance::Plugin::PerlCritic>
+
+Macro benchmarks. Run PerlCritic on itself.
 
 =item L<Benchmark::Perl::Formance::Plugin::Shootout|Benchmark::Perl::Formance::Plugin::Shootout>
 
-Runs some Perl benchmarks from the Language Shootout on
-alioth.debian.org.
+Micro benchmarks. Runs some Perl benchmarks from the Language Shootout on alioth.debian.org.
 
 =item L<Benchmark::Perl::Formance::Plugin::P6STD|Benchmark::Perl::Formance::Plugin::P6STD>
 
-Runs tools from Perl6 STD world.
+Macro benchmarks. Stress using Perl6/Perl5 tools around Perl6 STD.pm.
 
 =back
 
