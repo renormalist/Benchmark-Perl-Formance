@@ -11,13 +11,10 @@ BEGIN {
 
 use strict;
 use warnings;
-no warnings 'experimental';
 use experimental 'signatures';
+no warnings 'experimental::signatures';
 
-use strict;
-use warnings;
-
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
