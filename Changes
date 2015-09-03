@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.42      2015-09-03
         - new benchmarks for several accessor modules
 
 0.41      2015-09-03
