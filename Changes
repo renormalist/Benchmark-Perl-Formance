@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - new benchmarks for several accessor modules
 
 0.41      2015-09-03
         - new regex benchmarks (RxMicro.*)
