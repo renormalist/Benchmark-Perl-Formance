@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.41      2015-09-03
         - new regex benchmarks (RxMicro.*)
 
 0.40      2015-04-20
