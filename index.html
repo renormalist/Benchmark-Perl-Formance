@@ -58,11 +58,9 @@ database and chart rendering.</p>
 <h3>
 <a id="where-are-the-results" class="anchor" href="#where-are-the-results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where are the results?</h3>
 
-<ul>
-<li>Perl 5 results:
-<a href="http://perlformance.net/charts/"><img src="http://perlformance.net/charts/chart-thumbnail.png" alt="Here are the charts!"></a>
-</li>
-</ul>
+<p>Click herefor Perl 5 results:</p>
+
+<p><a href="http://perlformance.net/charts/"><img src="http://perlformance.net/charts/chart-thumbnail.png" alt="Here are the charts!"></a></p>
 
 <h3>
 <a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Synopsis</h3>
@@ -79,28 +77,28 @@ via <code>--version=v5.14.2</code> or <code>--version=01725c1~3</code>; basicall
 any rev that "git" understands.</p>
 
 <h3>
-<a id="the-benchmark-suite" class="anchor" href="#the-benchmark-suite" aria-hidden="true"><span class="octicon octicon-link"></span></a>The benchmark suite</h3>
+<a id="the-benchmark-storage" class="anchor" href="#the-benchmark-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Benchmark Storage</h3>
+
+<p><a href="http://benchmarkanything.org">benchmarkanything.org</a> has more info about the used benchmark result abstraction.</p>
+
+<h3>
+<a id="the-benchmark-suite" class="anchor" href="#the-benchmark-suite" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Benchmark Suite</h3>
 
 <p><a href="https://github.com/renormalist/Benchmark-Perl-Formance">Benchmark::Perl::Formance</a> 
 is the framework for running benchmarks. It requires just a few dependencies and runs
 a basic set of benchmarks.</p>
 
 <h3>
-<a id="the-benchmark-storage" class="anchor" href="#the-benchmark-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>The benchmark storage</h3>
-
-<p>The benchmark result abstraction is its own project, see  <a href="http://benchmarkanything.org">http://benchmarkanything.org</a></p>
-
-<h3>
-<a id="more-benchmarks" class="anchor" href="#more-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>More benchmarks</h3>
+<a id="more-benchmarks" class="anchor" href="#more-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Benchmarks</h3>
 
 <p><a href="https://github.com/renormalist/Task-PerlFormance">Task::PerlFormance</a> provides
 the full set of benchmarks via dependencies from CPAN.</p>
 
 <h3>
-<a id="your-benchmarks" class="anchor" href="#your-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Your benchmarks</h3>
+<a id="your-benchmarks" class="anchor" href="#your-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Your Benchmarks</h3>
 
 <ul>
-<li>You have a code snippet worth to measure over many Perls? <a href="https://github.com/renormalist/Benchmark-Perl-Formance/issues/new">Create a ticket</a> with details.</li>
+<li>You have a code snippet worth to measure over many Perl versions? <a href="https://github.com/renormalist/Benchmark-Perl-Formance/issues/new">Create a ticket</a> with details, or even better a Pull Request.</li>
 <li>You have a server from where you want to regularly report results to my central results DB? <a href="mailto:ss5@renormalist.net">Contact me</a>.</li>
 </ul>
 
@@ -113,9 +111,9 @@ yet another Perl builder. It focuses on</p>
 <ul>
 <li>building from git</li>
 <li>set up CPAN.pm with <a href="https://github.com/renormalist/cpanpm-distroprefs">distroprefs</a> for unattended installation </li>
-<li>lightweight work-arounds for known build problems (e.g., for old 5.8/5.9 Perls)</li>
-<li>inject auxiliary tools to restore build information later</li>
-<li>optionally start programs from the built Perl (e.g, the benchmark suite)</li>
+<li>lightweight work-arounds for known build problems (e.g., for old 5.8/5.9 Perl versions)</li>
+<li>inject meta information into the built Perl to augment the benchmark results</li>
+<li>optionally start programs from the built Perl (in particular the benchmark suite)</li>
 </ul>
 
 <h3>
