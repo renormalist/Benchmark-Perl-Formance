@@ -29,6 +29,7 @@ my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    MatrixReal
                                    Prime
                                    Rx
+                                   RxMicro
                                    Shootout::fasta
                                    Shootout::regexdna
                                    Shootout::binarytrees
@@ -51,6 +52,7 @@ my $ALL_PLUGINS = join ",", qw(DPath
                                Prime
                                RegexpCommonTS
                                Rx
+                               RxMicro
                                RxCmp
                                Shootout::binarytrees
                                Shootout::fannkuch
