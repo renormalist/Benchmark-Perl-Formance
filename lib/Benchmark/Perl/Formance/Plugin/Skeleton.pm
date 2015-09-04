@@ -30,10 +30,10 @@ sub main {
                                     $result = 7;
                                    };
         return {
-                Benchmark             => $t,
-                goal                  => $goal,
-                count                 => $count,
-                result                => $result,
+                Benchmark             => $t,        # "Benchmark" is the only important key
+                goal                  => $goal,     # \
+                count                 => $count,    #  | Just meta info for debugging / arguing / questioning.
+                result                => $result,   # /
                };
 }
 
