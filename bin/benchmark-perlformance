@@ -82,6 +82,25 @@ Similar to C<--outstyle=yaml>, except the produced YAML is actually
 the lightweight variant YAMLish produced by L<Data::YAML::Writer|Data::YAML::Writer>,
 which can easily be embedded into TAP.
 
+=item --benchmarkanything
+
+This option produces benchmarks result entries following the
+L<BenchmarkAnything::Schema|BenchmarkAnything schema>.
+
+Implicitely enables C<--outstyle=json> (unless you specify
+--outstyle=yaml/yamlish), C<-cccc> (extensive config info), C<-p>
+(platform info).
+
+=item --benchmarkanything-report
+
+This reports the results to a L<BenchmarkAnything
+store|BenchmarkAnything::Storage::Frontend::Lib>, as configured in
+your BenchmarkAnything config ($BENCHMARKANYTHING_CONFIGFILE or
+C<~/.benchmarkanything.cfg>).
+
+Implicitely enables C<--benchmarkanything>, C<--outstyle=json>,
+C<-cccc> (extensive config info), C<-p> (platform info).
+
 =item --outfile=FILE
 
 Write results into FILE. If FILE can not be opened then it prints to STDOUT.

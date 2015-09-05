@@ -534,6 +534,8 @@ sub run {
         my $platforminfo   = 0;
         my $codespeed      = 0;
         my $tapper         = 0;
+        my $benchmarkanything = 0;
+        my $benchmarkanything_report = 0;
         my $cs_executable_suffix = "";
         my $cs_executable        = "";
         my $cs_project           = "";
@@ -568,6 +570,8 @@ sub run {
                              "platforminfo|p"   => \$platforminfo,
                              "codespeed"        => \$codespeed,
                              "tapper"           => \$tapper,
+                             "benchmarkanything" => \$benchmarkanything,
+                             "benchmarkanything-report" => \$benchmarkanything_report,
                              "cs-executable-suffix=s" => \$cs_executable_suffix,
                              "cs-executable=s"  => \$cs_executable,
                              "cs-project=s"     => \$cs_project,
@@ -577,6 +581,15 @@ sub run {
                              "tapdescription=s" => \$tapdescription,
                              "D=s%"             => \$D,
                             );
+
+        # special meta options - order matters!
+        $benchmarkanything = 1 if $tapper; # legacy option
+        $benchmarkanything = 1 if $benchmarkanything_report;
+        $platforminfo      = 1 if $benchmarkanything; # -p
+        $showconfig        = 4 if $benchmarkanything; # -cccc
+        $outstyle          = 'json' if $benchmarkanything and $outstyle !~ /^(json|yaml|yamlish)$/;
+        $outstyle          = 'json' if $benchmarkanything_report;
+
         # fill options
         $self->{options} = {
                             help           => $help,
@@ -591,6 +604,8 @@ sub run {
                             platforminfo   => $platforminfo,
                             codespeed      => $codespeed,
                             tapper         => $tapper,
+                            benchmarkanything => $benchmarkanything,
+                            benchmarkanything_report => $benchmarkanything_report,
                             cs_executable_suffix => $cs_executable_suffix,
                             cs_executable        => $cs_executable,
                             cs_project           => $cs_project,
@@ -664,7 +679,7 @@ sub run {
         }
 
         # Tapper BenchmarkAnythingData blocks
-        if ($tapper)
+        if ($tapper or $benchmarkanything)
         {
                 $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS);
         }
@@ -767,6 +782,11 @@ sub print_results
                 };
                 print $OUTFILE $output;
                 close $OUTFILE;
+        }
+        elsif ($self->{options}{benchmarkanything_report}) {
+            require BenchmarkAnything::Storage::Frontend::Lib;
+            my $balib = BenchmarkAnything::Storage::Frontend::Lib->new(verbose => 1);
+            $balib->add({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
         }
         else
         {
