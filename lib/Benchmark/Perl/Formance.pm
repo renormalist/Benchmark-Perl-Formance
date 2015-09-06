@@ -446,6 +446,16 @@ sub _get_perlformance_config {
         return map { $self->{options}{$_} ? ("perlformance_$_" => $self->{options}{$_}) : () } @config_keys;
 }
 
+sub _get_perlformance_env
+{
+        my ($self) = @_;
+
+        # environment variables matching /^PERLFORMANCE_/
+        my @config_keys = grep { $ENV{$_} ne '' } grep /^PERLFORMANCE_/, keys %ENV;
+
+        return map { lc("env_$_") => $ENV{$_} } @config_keys;
+}
+
 sub _get_platforminfo {
         my ($self) = @_;
 
@@ -520,6 +530,7 @@ sub generate_BenchmarkAnythingData_data
                      $self->_get_perl_config_v,
                      $self->_get_sysinfo,
                      $self->_get_perlformance_config,
+                     $self->_get_perlformance_env,
                     );
         return $self->augment_results_with_meta("NAME", "VALUE", \%META, $RESULTS);
 }
