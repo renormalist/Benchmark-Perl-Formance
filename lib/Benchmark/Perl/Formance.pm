@@ -796,7 +796,7 @@ sub print_results
         }
         elsif ($self->{options}{benchmarkanything_report}) {
             require BenchmarkAnything::Storage::Frontend::Lib;
-            my $balib = BenchmarkAnything::Storage::Frontend::Lib->new(verbose => 1);
+            my $balib = BenchmarkAnything::Storage::Frontend::Lib->new(verbose => $self->{options}{verbose});
             $balib->add({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
         }
         else
