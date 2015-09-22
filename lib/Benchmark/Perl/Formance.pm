@@ -819,10 +819,36 @@ sub print_results
                 print $OUTFILE $output;
                 close $OUTFILE;
         }
-        elsif ($self->{options}{benchmarkanything_report}) {
-            require BenchmarkAnything::Storage::Frontend::Lib;
-            my $balib = BenchmarkAnything::Storage::Frontend::Lib->new(verbose => $self->{options}{verbose});
-            $balib->add({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
+        elsif ($self->{options}{benchmarkanything_report})
+        {
+                require BenchmarkAnything::Storage::Frontend::Lib;
+                my $balib = BenchmarkAnything::Storage::Frontend::Lib->new(verbose => $self->{options}{verbose});
+
+                eval {
+                        $balib->add({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
+                };
+                if ($@)
+                {
+                        print STDERR "# Could not add results to storage: $@\n";
+
+                        require JSON;
+                        require File::Path;
+                        require File::Temp;
+                        require File::Basename;
+
+                        my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
+
+                        my $home_ba            = File::Basename::dirname($balib->{cfgfile});
+                        my $timestamp1         = sprintf("%04d-%02d-%02d", 1900+$year, $mon, $mday);
+                        my $timestamp2         = sprintf("%02d-%02d-%02d", $hour, $min, $sec);
+                        my $result_path        = "$home_ba/unreported_results/$timestamp1";
+
+                        File::Path::make_path($result_path);
+
+                        my ($FH, $result_file) = File::Temp::tempfile ("$timestamp2-XXXX", DIR => $result_path, SUFFIX => ".json");
+                        print STDERR "# Writing them to file: $result_file\n";
+                        print $FH JSON->new->allow_nonref->pretty->encode({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
+                }
         }
         else
         {
