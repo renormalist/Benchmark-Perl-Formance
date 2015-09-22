@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.44      2015-09-22
         - new modes --benchmarkanything[-report]
             --benchmarkanything
               enables other options to do The Right Thing for storing
