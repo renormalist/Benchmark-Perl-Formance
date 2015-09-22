@@ -1,6 +1,18 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - new modes --benchmarkanything[-report]
+            --benchmarkanything
+              enables other options to do The Right Thing for storing
+              results in a BenchmarkAnything store (but does not send).
+            --benchmarkanything-report
+              additionally sends the results by using
+              BenchmarkAnything::Storage::Frontend::Lib which in turn
+              follows its configuration
+        - With those you should never think about storing your results,
+          for more info see http://benchmarkanything.org
+        - store perlformance env vars
+          env vars of ^perlformance_ become env_perlformance_...
 
 0.43      2015-09-03
         - yet another accessor benchmark: Moo
