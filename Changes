@@ -1,6 +1,12 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - --benchmarkanything-report now uses more lightweight
+          BenchmarkAnything::Reporter for sending results via HTTP
+        - no more checking if receiver exists before we run benchmark, as
+          it was not reliable anyway.
+        - instead we now have a more robust local result file writing in
+          case report sending fails
 
 0.44      2015-09-22
         - new modes --benchmarkanything[-report]
