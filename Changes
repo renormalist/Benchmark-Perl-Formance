@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - no compile tests for benchmark plugins, as they
+          depend on optional CPAN deps
 
 0.45      2015-09-24
         - --benchmarkanything-report now uses more lightweight
