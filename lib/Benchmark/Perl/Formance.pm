@@ -821,11 +821,10 @@ sub print_results
         }
         elsif ($self->{options}{benchmarkanything_report})
         {
-                require BenchmarkAnything::Storage::Frontend::Lib;
-                my $balib = BenchmarkAnything::Storage::Frontend::Lib->new(verbose => $self->{options}{verbose});
-
                 eval {
-                        $balib->add({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
+                        require BenchmarkAnything::Reporter;
+                        my $ba_reporter = BenchmarkAnything::Reporter->new(verbose => $self->{options}{verbose});
+                        $ba_reporter->report({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
                 };
                 if ($@)
                 {
