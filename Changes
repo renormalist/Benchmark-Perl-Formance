@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - fix error reporting in some Shootout plugins
 
 0.46      2015-09-24
         - no compile tests for benchmark plugins, as they
