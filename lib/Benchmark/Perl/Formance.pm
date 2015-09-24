@@ -848,11 +848,6 @@ values that you can compare against other runs of this suite,
 e.g. with other versions of Perl, modified compile parameter, or
 another set of dependent libraries.
 
-
-=head1 AUTHOR
-
-Steffen Schwigon, C<< <ss5 at renormalist.net> >>
-
 =head1 BUGS
 
 =head2 No invariant dependencies
@@ -884,49 +879,3 @@ knowledge about "real" benchmark science.
 
 Anyway, feel free to implement "real" benchmark ideas and send me
 patches.
-
-
-=head2 Bug reports
-
-Please report any bugs or feature requests to C<bug-perl-formance at
-rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Perl-Formance>.  I
-will be notified, and then you will automatically be notified of
-progress on your bug as I make changes.
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Benchmark::Perl::Formance
-
-You can also look for information at:
-
-=over 4
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Perl-Formance>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Perl-Formance>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Perl-Formance>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Perl-Formance>
-
-=back
-
-=head1 ACKNOWLEDGEMENTS
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright 2008-2010 Steffen Schwigon.
-
-This program is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
