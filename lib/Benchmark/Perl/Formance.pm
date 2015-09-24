@@ -633,31 +633,6 @@ sub run {
         do { usage;                exit  0 } if $help;
         do { usage;                exit -1 } if not $ok;
 
-        # Verify result storage before we start to avoid wasting benchmark time
-        if ($self->{options}{benchmarkanything_report})
-        {
-                print STDERR "# Wait for result store..." if $self->{options}{verbose} >= 2;
-                my $retry_sleep = 1;
-
-        RETRY:
-                eval {
-                        require BenchmarkAnything::Storage::Frontend::Lib;
-                        my $just_for_checking_balib = BenchmarkAnything::Storage::Frontend::Lib->new(verbose => $self->{options}{verbose});
-
-                        # dies if not available
-                        $just_for_checking_balib->connect;
-                        $just_for_checking_balib->disconnect;
-                        undef($just_for_checking_balib);
-                };
-                if ($@) {
-                        print STDERR "." if $self->{options}{verbose};
-                        sleep $retry_sleep;
-                        $retry_sleep *= 2 unless $retry_sleep > 3600; # exponential back-off until ~1h
-                        goto RETRY;
-                }
-                print STDERR "\n" if $self->{options}{verbose} >= 2;
-        }
-
         # use forks if requested
         if ($useforks) {
                 eval "use forks"; ## no critic
