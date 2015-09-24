@@ -837,10 +837,19 @@ sub print_results
 
                         my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
 
-                        my $home_ba            = File::Basename::dirname($balib->{cfgfile});
+                        my $result_dir = File::Basename::dirname($ba_reporter->{config}{cfgfile});
+                        if (! -w $result_dir) {
+                                require File::HomeDir;
+                                $result_dir = File::HomeDir->my_home;
+                        }
+                        if (! -w $result_dir) {
+                                require File::Temp;
+                                $result_dir = tempdir(CLEANUP => 0);
+                        }
+
                         my $timestamp1         = sprintf("%04d-%02d-%02d", 1900+$year, $mon, $mday);
                         my $timestamp2         = sprintf("%02d-%02d-%02d", $hour, $min, $sec);
-                        my $result_path        = "$home_ba/unreported_results/$timestamp1";
+                        my $result_path        = "$result_dir/unreported_results/$timestamp1";
 
                         File::Path::make_path($result_path);
 
