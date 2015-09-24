@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.45      2015-09-24
         - --benchmarkanything-report now uses more lightweight
           BenchmarkAnything::Reporter for sending results via HTTP
         - no more checking if receiver exists before we run benchmark, as
