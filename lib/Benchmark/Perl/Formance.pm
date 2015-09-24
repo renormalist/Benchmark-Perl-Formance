@@ -796,9 +796,11 @@ sub print_results
         }
         elsif ($self->{options}{benchmarkanything_report})
         {
+                my $ba_reporter;
+                $ba_reporter = BenchmarkAnything::Reporter->new(verbose => $self->{options}{verbose});
+
                 eval {
                         require BenchmarkAnything::Reporter;
-                        my $ba_reporter = BenchmarkAnything::Reporter->new(verbose => $self->{options}{verbose});
                         $ba_reporter->report({BenchmarkAnythingData => $RESULTS->{BenchmarkAnythingData}});
                 };
                 if ($@)
