@@ -43,8 +43,13 @@ sub shootout
                         print STDERR "\n"                                if $verbose;
                 }
                 else {
-                        my $main = "Benchmark::Perl::Formance::Plugin::Shootout::$subtest"."::main";
-                        $results{$subtest} = $main->($options);
+                        eval {
+                                my $main = __PACKAGE__."::$subtest"."::main";
+                                $results{$subtest} = $main->($options);
+                        };
+                        if ($@) {
+                                $results{$subtest} = { failed => $@ };
+                        }
                 }
         }
         return \%results;
