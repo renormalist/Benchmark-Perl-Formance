@@ -22,6 +22,7 @@ our $VERSION = "0.002";
 
 use File::ShareDir qw(dist_dir);
 use Benchmark ':hireswallclock';
+use Scalar::Util "reftype";
 
 our $PRINT = 0;
 
@@ -70,7 +71,7 @@ sub main
 
         my $result;
         my $t = timeit $count, sub { $result = run($goal) };
-        return $result if $result->{failed};
+        return $result if reftype($result) eq "HASH" and $result->{failed};
 
         return {
                 Benchmark => $t,
