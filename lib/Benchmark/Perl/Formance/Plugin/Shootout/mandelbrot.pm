@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot;
-# ABSTRACT: benchmark plugin - Shootout::mandelbrot - Language shootout plugin: mandelbrot
+# ABSTRACT: benchmark - Generate Mandelbrot set portable bitmap file
 
 # COMMAND LINE:
 # /usr/bin/perl mandelbrot.perl 16000

@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::nbody;
-# ABSTRACT: benchmark plugin - Shootout::nbody - Language shootout plugin: nbody
+# ABSTRACT: benchmark - Double-precision N-body simulation
 
 # COMMAND LINE:
 # /usr/bin/perl nbody.perl 50000000

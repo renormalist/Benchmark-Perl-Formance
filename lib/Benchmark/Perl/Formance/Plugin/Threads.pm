@@ -83,7 +83,7 @@ sub main
 Run it as any other plugin. You can define how many threads should
 maximally be started. Default is 100.
 
-  $ perl-formance --plugins=Threads -DThreads_threadcount=64
+  $ benchmark-perlformance --plugins=Threads -DThreads_threadcount=64
 
 =head1 BUGS
 

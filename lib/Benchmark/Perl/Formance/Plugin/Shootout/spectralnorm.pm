@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm;
-# ABSTRACT: benchmark plugin - Shootout::spectralnorm - Language shootout plugin: spectralnorm
+# ABSTRACT: benchmark - Eigenvalue using the power method
 
 # COMMAND LINE:
 # /usr/bin/perl spectralnorm.perl-3.perl 5500

@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::knucleotide;
-# ABSTRACT: benchmark plugin - Shootout::knucleotide - Language shootout plugin: knucleotide
+# ABSTRACT: benchmark - Hashtable update and k-nucleotide strings
 
 # COMMAND LINE:
 # /usr/bin/perl knucleotide.perl 0 < knucleotide-input25000000.txt

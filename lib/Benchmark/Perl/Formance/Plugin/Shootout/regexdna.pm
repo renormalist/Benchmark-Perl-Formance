@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::regexdna;
-# ABSTRACT: benchmark plugin - Shootout::regexdna - Language shootout plugin: regexdna
+# ABSTRACT: benchmark - Match DNA 8-mers and substitute nucleotides for IUB codes
 
 # COMMAND LINE:
 # /usr/bin/perl regexdna.perl-2.perl 0 < regexdna-input5000000.txt

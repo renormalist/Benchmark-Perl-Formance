@@ -60,7 +60,7 @@ provide a
 To use it call the frontend tool and provide your pluginname via
 --plugins:
 
-  $ perl-formance --plugins=HotStuff
+  $ benchmark-perlformance --plugins=HotStuff
 
 If your module should become a default part of the
 Benchmark::Perl::Formance suite, then patch the C<$DEFAULT_PLUGINS> in

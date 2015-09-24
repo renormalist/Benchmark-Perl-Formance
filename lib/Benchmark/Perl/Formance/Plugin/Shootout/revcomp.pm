@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::revcomp;
-# ABSTRACT: benchmark plugin - Shootout::revcomp - Language shootout plugin: revcomp
+# ABSTRACT: benchmark - Read DNA sequences - write their reverse-complement
 
 # COMMAND LINE:
 # /usr/bin/perl revcomp.perl-4.perl 0 < revcomp-input25000000.txt
@@ -87,7 +87,7 @@ sub main
 You can control whether to output the result in case you want to reuse
 it:
 
-   $ perl-formance --plugins=Shootout::revcomp \
-                    -DShootout_revcomp_print=1
+   $ benchmark-perlformance --plugins=Shootout::revcomp \
+                             -DShootout_revcomp_print=1
 
 =cut

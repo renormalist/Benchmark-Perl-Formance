@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::pidigits;
-# ABSTRACT: benchmark plugin - Shootout::pidigits - Language shootout plugin: pidigits
+# ABSTRACT: benchmark - Streaming arbitrary-precision arithmetic
 
 # The Computer Language Benchmarks Game
 #   http://shootout.alioth.debian.org/

@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::fannkuch;
-# ABSTRACT: benchmark plugin - Shootout::fannkuch - Language shootout plugin: fannkuch
+# ABSTRACT: benchmark - Indexed-access to tiny integer-sequence
 
 # COMMAND LINE:
 # /usr/bin/perl fannkuch.perl-3.perl 12

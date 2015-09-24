@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::binarytrees;
-# ABSTRACT: benchmark plugin - Shootout::binarytrees - Language shootout plugin: binarytrees
+# ABSTRACT: benchmark - Allocate and deallocate many many binary trees
 
 # COMMAND LINE:
 # /usr/bin/perl binarytrees.perl-2.perl 20

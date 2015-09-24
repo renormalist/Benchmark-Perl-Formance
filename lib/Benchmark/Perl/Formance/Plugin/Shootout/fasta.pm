@@ -1,5 +1,5 @@
 package Benchmark::Perl::Formance::Plugin::Shootout::fasta;
-# ABSTRACT: benchmark plugin - Shootout::fasta - Language shootout plugin: fasta
+# ABSTRACT: benchmark - Generate and write random DNA sequences
 
 # COMMAND LINE:
 # /usr/bin/perl fasta.perl-4.perl 25000000
@@ -175,10 +175,10 @@ Because the "fasta" plugin's output can be used to feed other
 benchmarks that work on "fasta" data you control its output
 via defines:
 
-   $ perl-formance --plugins=Shootout::fast \
-                    -DShootout_fasta_n=1000 \
-                    -DShootout_fasta_print=1 \
-                    -DShootout_fasta_count=1
+   $ benchmark-perlformance --plugins=Shootout::fasta \
+                             -DShootout_fasta_n=1000 \
+                             -DShootout_fasta_print=1 \
+                             -DShootout_fasta_count=1
 
 where C<_n> is the algorithm's parameter, C<_print=1>
 means print out the result and C<_count> is the repetition
