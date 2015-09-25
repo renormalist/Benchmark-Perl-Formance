@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - fix error catching in Shootout wrapper
 
 0.47      2015-09-24
         - fix error reporting in some Shootout plugins
