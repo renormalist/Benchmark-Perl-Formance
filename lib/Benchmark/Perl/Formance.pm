@@ -259,6 +259,18 @@ sub prepare_fast_system
         }
 }
 
+sub _error_printing
+{
+        my ($self, $pluginname, $error) = @_;
+
+        my @errors = split qr/\n/, $error;
+        my $maxerr = ($#errors < 10) ? $#errors : 10;
+        print STDERR "# Skip plugin '$pluginname'"             if $self->{options}{verbose};
+        print STDERR ":".$errors[0]                            if $self->{options}{verbose} > 1;
+        print STDERR join("\n# ", "", @errors[1..$maxerr])     if $self->{options}{verbose} > 2;
+        print STDERR "\n"                                      if $self->{options}{verbose};
+}
+
 sub run_plugin
 {
         my ($self, $pluginname) = @_;
@@ -277,16 +289,17 @@ sub run_plugin
                         close PARENT_RDR;
                         eval "use Benchmark::Perl::Formance::Plugin::$pluginname"; ## no critic
                         if ($@) {
-                                my @errors = split qr/\n/, $@;
-                                my $maxerr = ($#errors < 10) ? $#errors : 10;
-                                print STDERR "# Skip plugin '$pluginname'"             if $self->{options}{verbose};
-                                print STDERR ":".$errors[0]                            if $self->{options}{verbose} > 1;
-                                print STDERR join("\n# ", "", @errors[1..$maxerr])     if $self->{options}{verbose} > 2;
-                                print STDERR "\n"                                      if $self->{options}{verbose};
+                                $self->_error_printing($pluginname, $@);
                                 exit 0;
                         }
                         $0 = "benchmark-perl-formance-$pluginname";
-                        $res = &{"Benchmark::Perl::Formance::Plugin::${pluginname}::main"}($self->{options});
+                        eval {
+                                $res = &{"Benchmark::Perl::Formance::Plugin::${pluginname}::main"}($self->{options});
+                        };
+                        if ($@) {
+                                $self->_error_printing($pluginname, $@);
+                                $res = { failed => $@ };
+                        }
                         $res->{PLUGIN_VERSION} = ${"Benchmark::Perl::Formance::Plugin::${pluginname}::VERSION"};
                         store_fd($res, \*CHILD_WTR);
                         close CHILD_WTR;
