@@ -780,8 +780,7 @@ sub print_outstyle_summary
 
         foreach (sort @run_plugins) {
                 no strict 'refs'; ## no critic
-                my @resultkeys = split(/\./);
-                my ($res) = dpath("/results/".join("/", map { qq("$_") } @resultkeys)."/Benchmark/*[0]")->match($RESULTS);
+                my $res = $self->_plugin_results($_, $RESULTS);
                 $output .= sprintf("%-${len}s : %f\n", join(".", $metric_prefix, $_), ($res || 0));
         }
         return $output;
