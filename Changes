@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - assert OS=Unix for the time being
 
 0.49      2015-10-01
         - better error handling for executing plugins
