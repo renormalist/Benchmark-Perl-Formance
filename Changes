@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.51      2016-03-31
         - allow cygwin on AssertOS
           (because cpantesters matrix was GREEN there)
 
