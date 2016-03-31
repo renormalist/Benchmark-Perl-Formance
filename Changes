@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - allow cygwin on AssertOS
+          (because cpantesters matrix was GREEN there)
 
 0.50      2016-03-30
         - assert OS=Unix for the time being
