@@ -99,8 +99,9 @@ sub rxmicro
         {
                 # literal code-blocks
 
+                my $cnt;
                 my $subtest = "code-literal";
-                my $t = timeit $count, sub { "1234" =~ /\d+(?{$count++})/ for 1..40000*$goal };
+                my $t = timeit $count, sub { "1234" =~ /\d+(?{$cnt++})/ for 1..40000*$goal };
                 $results{$subtest} = {
                                       Benchmark => $t,
                                       goal      => $goal,
