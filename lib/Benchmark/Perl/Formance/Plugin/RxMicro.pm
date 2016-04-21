@@ -6,7 +6,7 @@ package Benchmark::Perl::Formance::Plugin::RxMicro;
 use strict;
 use warnings;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 #############################################################
 #                                                           #
@@ -95,7 +95,6 @@ sub rxmicro
 
         # ----------------------------------------------------
 
-        # This block here must come *LAST* - it *HEAVILY* influences others!
         {
                 # literal code-blocks
 

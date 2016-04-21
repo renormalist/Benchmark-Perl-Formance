@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - fix rxmicro bug [rurban]
 
 0.51      2016-03-31
         - allow cygwin on AssertOS
