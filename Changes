@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.52      2016-04-22
         - fix rxmicro bug [rurban]
         - scale down RxMicro in 'fast' mode
 
