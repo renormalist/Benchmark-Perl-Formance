@@ -6,7 +6,7 @@ package Benchmark::Perl::Formance::Plugin::RxMicro;
 use strict;
 use warnings;
 
-our $VERSION = "0.002";
+our $VERSION = "0.003";
 
 #############################################################
 #                                                           #
@@ -21,7 +21,6 @@ use Data::Dumper;
 
 our $goal;
 our $count;
-our $length;
 
 sub rxmicro
 {
@@ -84,7 +83,9 @@ sub rxmicro
                 my $code = '(?{$counter++})';
                 use re 'eval';
 
-                my $t = timeit $count, sub { $counter = 0; "1234" =~ /\d+$code/ for 1..20000*$goal };
+                my $mygoal = $options->{fastmode} ? 10_000 : 20_000*$goal;
+
+                my $t = timeit $count, sub { $counter = 0; "1234" =~ /\d+$code/ for 1..$mygoal };
                 $results{$subtest} = {
                                       Benchmark => $t,
                                       goal      => $goal,
@@ -118,8 +119,7 @@ sub main
         my ($options) = @_;
 
         $goal   = $options->{fastmode} ? 20 : 29;
-        $length = $options->{fastmode} ? 1_000_000 : 10_000_000;
-        $count  = 5;
+        $count  = $options->{fastmode} ? 1 : 5;
 
         return rxmicro($options);
 }
