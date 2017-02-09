@@ -21,6 +21,9 @@ use Sys::Hostname;
 use Sys::Info;
 use FindBin qw($Bin);
 
+use Module::Pluggable;
+use Module::Runtime qw/ require_module /;
+
 # comma separated list of default plugins - basically the non-troublemakers
 my $DEFAULT_PLUGINS = join ",", qw(DPath
                                    Fib
@@ -152,29 +155,14 @@ sub new {
 
 sub load_all_plugins
 {
-        my $path = __FILE__;
-        $path =~ s,\.pmc?$,/Plugin,;
+    map {
+        my $version = $_->[1] ? $_->[0]->VERSION : '~';
+       (my $name    = $_->[0]) =~ s/.*::Plugin:://;
 
-        my %all_plugins;
-        finddepth ({ no_chdir => 1,
-                     follow   => 1,
-                     wanted   => sub { no strict 'refs';
-                                       my $fullname = $File::Find::fullname;
-                                       my $plugin   = $File::Find::name;
-                                       $plugin      =~ s,^$path/*,,;
-                                       $plugin      =~ s,/,::,;
-                                       $plugin      =~ s,\.pmc?$,,;
-
-                                       my $module = "Benchmark::Perl::Formance::Plugin::$plugin";
-                                       # eval { require $fullname };
-                                       eval "use $module"; ## no critic
-                                       my $version = $@ ? "~" : ${$module."::VERSION"};
-                                       $all_plugins{$plugin} = $version
-                                         if -f $fullname && $fullname =~ /\.pmc?$/;
-                               },
-                   },
-                   $path);
-        return %all_plugins;
+        $name => $version;
+    } 
+    map { [ $_ => eval { require_module($_) } ] } 
+        __PACKAGE__->plugins;
 }
 
 sub print_version
