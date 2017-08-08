@@ -1,0 +1,118 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "AccessorsMoo.get/threads",
+      "AccessorsMoo.get/nothreads"
+   ],
+   [
+      "5.8.9",
+      2.68,
+      2.25
+   ],
+   [
+      "5.10.0",
+      2.04,
+      null
+   ],
+   [
+      "5.10.1",
+      2,
+      2.08
+   ],
+   [
+      "5.12.0",
+      1.97,
+      2.08
+   ],
+   [
+      "5.13.0",
+      2.1,
+      1.96
+   ],
+   [
+      "5.13.1",
+      2.03,
+      1.92
+   ],
+   [
+      "5.13.2",
+      null,
+      2.01
+   ],
+   [
+      "5.13.3",
+      null,
+      2.12
+   ],
+   [
+      "5.13.4",
+      null,
+      1.95
+   ],
+   [
+      "5.13.5",
+      null,
+      1.91
+   ],
+   [
+      "5.13.6",
+      null,
+      2
+   ],
+   [
+      "5.13.7",
+      null,
+      1.98
+   ],
+   [
+      "5.13.8",
+      null,
+      2.06
+   ],
+   [
+      "5.13.9",
+      null,
+      1.97
+   ],
+   [
+      "5.13.10",
+      1.92,
+      1.96
+   ]
+]
+);
+        var options = {
+            title: 'AccessorsMoo.get',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - classic2015 - AccessorsMoo.get</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/Benchmark::Perl::Formance">Benchmark::Perl::Formance</a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,258 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "salearn.ham/threads",
+      "salearn.ham/nothreads"
+   ],
+   [
+      "5.10.0",
+      0.52,
+      null
+   ],
+   [
+      "5.14.0",
+      0.48,
+      0.45
+   ],
+   [
+      "5.14.4",
+      0.48,
+      0.44
+   ],
+   [
+      "5.16.0",
+      0.51,
+      0.47
+   ],
+   [
+      "5.16.3",
+      0.5,
+      0.46
+   ],
+   [
+      "5.17.6",
+      0.62,
+      0.58
+   ],
+   [
+      "5.17.7",
+      0.63,
+      0.6
+   ],
+   [
+      "5.17.8",
+      0.64,
+      0.59
+   ],
+   [
+      "5.17.9",
+      0.6,
+      0.59
+   ],
+   [
+      "5.18.0",
+      0.53,
+      0.51
+   ],
+   [
+      "5.18.4",
+      0.53,
+      0.51
+   ],
+   [
+      "5.19.1",
+      0.57,
+      0.58
+   ],
+   [
+      "5.19.2",
+      0.62,
+      0.58
+   ],
+   [
+      "5.19.3",
+      0.55,
+      0.55
+   ],
+   [
+      "5.19.4",
+      0.59,
+      0.55
+   ],
+   [
+      "5.19.5",
+      0.56,
+      0.53
+   ],
+   [
+      "5.19.6",
+      0.56,
+      0.55
+   ],
+   [
+      "5.19.7",
+      0.61,
+      0.55
+   ],
+   [
+      "5.19.8",
+      0.55,
+      0.56
+   ],
+   [
+      "5.19.9",
+      0.57,
+      0.54
+   ],
+   [
+      "5.19.10",
+      0.55,
+      0.54
+   ],
+   [
+      "5.19.11",
+      0.55,
+      0.53
+   ],
+   [
+      "5.20.0",
+      0.54,
+      0.5
+   ],
+   [
+      "5.20.2",
+      0.54,
+      0.51
+   ],
+   [
+      "5.21.1",
+      0.59,
+      0.58
+   ],
+   [
+      "5.21.2",
+      0.58,
+      0.56
+   ],
+   [
+      "5.21.3",
+      0.57,
+      0.54
+   ],
+   [
+      "5.21.4",
+      0.59,
+      0.59
+   ],
+   [
+      "5.21.5",
+      0.58,
+      0.57
+   ],
+   [
+      "5.21.6",
+      0.6,
+      0.57
+   ],
+   [
+      "5.21.7",
+      0.6,
+      0.54
+   ],
+   [
+      "5.21.8",
+      0.6,
+      0.56
+   ],
+   [
+      "5.22.0",
+      0.59,
+      0.55
+   ],
+   [
+      "5.23.1",
+      0.61,
+      0.57
+   ],
+   [
+      "5.23.2",
+      0.58,
+      0.58
+   ],
+   [
+      "5.23.3",
+      0.6,
+      0.56
+   ],
+   [
+      "5.23.4",
+      0.59,
+      0.54
+   ],
+   [
+      "5.23.5",
+      0.59,
+      0.6
+   ],
+   [
+      "5.23.6",
+      0.58,
+      0.56
+   ],
+   [
+      "5.23.7",
+      0.59,
+      0.54
+   ],
+   [
+      "5.23.8",
+      0.58,
+      0.56
+   ],
+   [
+      "5.23.9",
+      0.57,
+      0.57
+   ],
+   [
+      "5.24.0",
+      0.52,
+      null
+   ]
+]
+);
+        var options = {
+            title: 'SpamAssassin.learn - macro benchmark',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - perlformance-f - SpamAssassin.learn - macro benchmark</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/"></a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

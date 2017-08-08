@@ -1,0 +1,82 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "Shootout.knucleotide/threads"
+   ],
+   [
+      "5.8.9",
+      39.62
+   ],
+   [
+      "5.12.0",
+      41.58
+   ],
+   [
+      "5.14.0",
+      36.62
+   ],
+   [
+      "5.14.4",
+      37.05
+   ],
+   [
+      "5.16.0",
+      40.34
+   ],
+   [
+      "5.16.3",
+      40.62
+   ],
+   [
+      "5.18.0",
+      40.86
+   ],
+   [
+      "5.18.4",
+      40.14
+   ],
+   [
+      "5.20.0",
+      38.34
+   ],
+   [
+      "5.20.2",
+      38.27
+   ]
+]
+);
+        var options = {
+            title: 'Shootout.knucleotide',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - classic2015 - Shootout.knucleotide</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/Benchmark::Perl::Formance">Benchmark::Perl::Formance</a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

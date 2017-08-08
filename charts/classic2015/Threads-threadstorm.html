@@ -1,0 +1,282 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "Threads.threadstorm/threads"
+   ],
+   [
+      "5.10.1",
+      71.15
+   ],
+   [
+      "5.13.0",
+      90.4
+   ],
+   [
+      "5.13.1",
+      78.28
+   ],
+   [
+      "5.13.2",
+      75.46
+   ],
+   [
+      "5.13.3",
+      79.37
+   ],
+   [
+      "5.13.4",
+      77.3
+   ],
+   [
+      "5.13.5",
+      68.37
+   ],
+   [
+      "5.13.6",
+      69
+   ],
+   [
+      "5.13.7",
+      72.71
+   ],
+   [
+      "5.13.8",
+      66.77
+   ],
+   [
+      "5.13.9",
+      67.68
+   ],
+   [
+      "5.13.10",
+      70.63
+   ],
+   [
+      "5.14.0",
+      70.2
+   ],
+   [
+      "5.14.4",
+      70.57
+   ],
+   [
+      "5.15.1",
+      67.19
+   ],
+   [
+      "5.15.2",
+      67.57
+   ],
+   [
+      "5.15.3",
+      69.35
+   ],
+   [
+      "5.15.4",
+      70.03
+   ],
+   [
+      "5.15.5",
+      68.58
+   ],
+   [
+      "5.15.6",
+      68.57
+   ],
+   [
+      "5.15.7",
+      68.86
+   ],
+   [
+      "5.15.8",
+      71.26
+   ],
+   [
+      "5.15.9",
+      70.69
+   ],
+   [
+      "5.16.0",
+      72.83
+   ],
+   [
+      "5.16.3",
+      73.43
+   ],
+   [
+      "5.17.0",
+      70.1
+   ],
+   [
+      "5.17.1",
+      69.67
+   ],
+   [
+      "5.17.2",
+      69.12
+   ],
+   [
+      "5.17.3",
+      69.72
+   ],
+   [
+      "5.17.4",
+      69.46
+   ],
+   [
+      "5.17.5",
+      69.5
+   ],
+   [
+      "5.17.6",
+      68.92
+   ],
+   [
+      "5.17.7",
+      70.15
+   ],
+   [
+      "5.17.8",
+      69.99
+   ],
+   [
+      "5.17.9",
+      71.1
+   ],
+   [
+      "5.18.0",
+      72.57
+   ],
+   [
+      "5.18.4",
+      72.78
+   ],
+   [
+      "5.19.0",
+      71.15
+   ],
+   [
+      "5.19.1",
+      70.4
+   ],
+   [
+      "5.19.2",
+      70.93
+   ],
+   [
+      "5.19.3",
+      70.81
+   ],
+   [
+      "5.19.4",
+      71.45
+   ],
+   [
+      "5.19.5",
+      70.95
+   ],
+   [
+      "5.19.6",
+      71.56
+   ],
+   [
+      "5.19.7",
+      70.99
+   ],
+   [
+      "5.19.8",
+      73.28
+   ],
+   [
+      "5.19.9",
+      71.87
+   ],
+   [
+      "5.19.10",
+      72.49
+   ],
+   [
+      "5.19.11",
+      72.95
+   ],
+   [
+      "5.20.0",
+      74.61
+   ],
+   [
+      "5.20.2",
+      74.57
+   ],
+   [
+      "5.21.0",
+      72.24
+   ],
+   [
+      "5.21.1",
+      78.52
+   ],
+   [
+      "5.21.2",
+      77.28
+   ],
+   [
+      "5.21.3",
+      76.93
+   ],
+   [
+      "5.21.4",
+      77.97
+   ],
+   [
+      "5.21.5",
+      77.42
+   ],
+   [
+      "5.22.0",
+      73.52
+   ],
+   [
+      "5.23.0",
+      73.82
+   ],
+   [
+      "5.23.1",
+      74.01
+   ]
+]
+);
+        var options = {
+            title: 'Threads.threadstorm',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - classic2015 - Threads.threadstorm</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/Benchmark::Perl::Formance">Benchmark::Perl::Formance</a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "salearn.ham/threads",
+      "salearn.ham/nothreads",
+      "salearn.ham2/threads",
+      "salearn.ham2/nothreads",
+      "salearn.spam/threads",
+      "salearn.spam/nothreads",
+      "salearn.spam2/threads",
+      "salearn.spam2/nothreads"
+   ],
+   [
+      "5.10.0",
+      59.62,
+      null,
+      40.78,
+      null,
+      23.89,
+      null,
+      68.2,
+      null
+   ],
+   [
+      "5.14.0",
+      51.59,
+      49.14,
+      35.15,
+      33.4,
+      20.54,
+      19.84,
+      57.65,
+      55.96
+   ],
+   [
+      "5.14.4",
+      51.48,
+      49.14,
+      35.01,
+      33.41,
+      20.58,
+      19.62,
+      57.7,
+      55.36
+   ],
+   [
+      "5.16.0",
+      53.03,
+      51.01,
+      36,
+      34.55,
+      21.2,
+      20.21,
+      59.33,
+      56.84
+   ],
+   [
+      "5.16.3",
+      52.96,
+      50.32,
+      35.92,
+      34.07,
+      21.1,
+      20,
+      59.16,
+      56.22
+   ],
+   [
+      "5.18.0",
+      53.67,
+      51.93,
+      36.53,
+      35.29,
+      21.34,
+      20.61,
+      59.36,
+      57.41
+   ],
+   [
+      "5.18.4",
+      53.49,
+      52.23,
+      36.38,
+      35.5,
+      21.18,
+      20.73,
+      58.75,
+      57.77
+   ],
+   [
+      "5.20.0",
+      53.78,
+      51.36,
+      36.64,
+      35.01,
+      21.29,
+      20.12,
+      59.07,
+      56.1
+   ],
+   [
+      "5.20.2",
+      53.7,
+      51.99,
+      36.61,
+      35.38,
+      21.44,
+      20.32,
+      59.59,
+      56.38
+   ]
+]
+);
+        var options = {
+            title: 'SpamAssassin.learn - macro benchmark',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - perlformance - SpamAssassin.learn - macro benchmark</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/"></a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

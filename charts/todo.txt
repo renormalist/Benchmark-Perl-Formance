@@ -1,0 +1,87 @@
+* TODO Perl::Formance plugins for interesting code
+** Mostly taken from perl release changelogs
+** The entries marked with '+' seem to sound more relevant.
+** http://perltricks.com/article/88/2014/5/12/Benchmarking-subroutine-signatures
+** 5.22
+   - length is up to 20% faster for non-magical/non-tied scalars
+     containing a string if it is a non-utf8 string or if use
+     bytes; is in scope.
+   + @array = split
+   - join is now subject to constant folding. 
+   - qq(@array) is implemented using two ops: a stringify op and a
+     join op. If the qq contains nothing but a single array, the
+     stringification is optimized away.
+   - our $var and our($s,@a,%h) in void context are no longer evaluated at run time.
+   + Subroutines with an empty prototype and bodies containing
+     just undef are now eligible for inlining.
+   + Hash lookups where the key is a constant is faster.
+   - 
+** 5.20
+   + DONE: 5.20 subroutines: FibOOSig
+   + iterate very large arrays
+     (>2**31 elements, stress 64bit support, 5.20+)
+   + regex on very large strings
+     (>2**31 characters, 5.20+)
+   + -Accflags=-DPERL_NEW_COPY_ON_WRITE (5.20+)
+   - -Accflags=-DPERL_NO_COW (5.20+)
+   + regexes with ^ anchors
+   - Precomputed hash values are now used in more places during
+     method lookup.
+   + Constant hash key lookups ($hash{key} as opposed to
+     $hash{$key}) on hash slices
+   + optimization on last return: sub baz { return $cat }
+   + creation of certain sorts of lists, including array and hash
+     slices
+   + optimisation for arrays indexed with a small constant integer
+     is now applied for integers in the range -128..127, rather
+     than 0..255.  This should speed up Perl code using expressions
+     like $x[-1].
+   + The first iteration over a large hash (using "keys" or "each")
+     is now faster.
+   + Dereferencing (as in "$obj->[0]" or "$obj->{k}") is now faster
+     when $obj is an instance of a class that has overloaded
+     methods, but doesn't overload any of the dereferencing methods
+     "@{}", "%{}", and so on.
+   - Perl now does less disk I/O when dealing with Unicode
+     properties that cover up to three ranges of consecutive code
+     points.
+** 5.18
+   - 
+** 5.16
+   - performance for Unicode properties in regular expressions
+   - "local $_" is faster now
+   - Perl 5.12.0 sped up the destruction of objects whose
+     classes define empty "DESTROY" methods (to prevent autoloading),
+     by simply not calling such empty methods.  This release takes
+     this optimization a step further, by not calling any "DESTROY"
+     method that begins with a "return" statement.  This can be useful
+     for destructors that are only used for debugging:
+
+     use constant DEBUG => 1;
+     sub DESTROY { return unless DEBUG; ... }
+   - Assigning to a variable that holds a typeglob or
+     copy-on-write scalar is now much faster.
+   - "substr" no longer calculates a value to return when
+     called in void context.
+   + Perl's "glob" function and its "<...>" equivalent are now
+     much faster.
+   - short-circuiting operators "&&", "||", and "//", when
+     chained (such as "$a || $b || $c"), are now considerably faster
+     to short-circuit
+   - The implementation of "s///r" makes one fewer copy of the
+     scalar's value.
+** 5.14
+   - compare traditional and terse Array and hash container
+     functions, which now accept references (push $ref, $value) - try
+     many iterations or large arrays - probably just compiler change
+   - measure reduced hashes' memory overhead
+   + fewer OPs are used for shift() and pop() calls with no
+     argument (with implicit @_).  This change makes shift() 5%
+     faster than "shift @_" on non-threaded perls, and 25% faster on
+     threaded ones.
+   - case-insensitive comparison of utf8 strings
+   + String appending is up to 100 times faster
+   + optimisation to speed up "my @array = ..." and "my %hash = ..." assignments
+     (though triggered bug in 5.12.0!)
+   - @_ uses less memory
+   + thread shared variable access

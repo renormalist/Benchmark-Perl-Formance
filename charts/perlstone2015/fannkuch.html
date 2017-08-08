@@ -1,0 +1,278 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "fannkuch/threads"
+   ],
+   [
+      "5.13.2",
+      397.79
+   ],
+   [
+      "5.13.3",
+      412.92
+   ],
+   [
+      "5.13.4",
+      368.44
+   ],
+   [
+      "5.13.5",
+      346.83
+   ],
+   [
+      "5.13.6",
+      360.84
+   ],
+   [
+      "5.13.7",
+      443.3
+   ],
+   [
+      "5.13.8",
+      379.47
+   ],
+   [
+      "5.13.9",
+      362.39
+   ],
+   [
+      "5.14.0",
+      479.24
+   ],
+   [
+      "5.14.4",
+      304.97
+   ],
+   [
+      "5.15.1",
+      414.21
+   ],
+   [
+      "5.15.2",
+      438.95
+   ],
+   [
+      "5.15.3",
+      427.64
+   ],
+   [
+      "5.15.4",
+      384.8
+   ],
+   [
+      "5.15.5",
+      328.62
+   ],
+   [
+      "5.15.6",
+      381.15
+   ],
+   [
+      "5.15.7",
+      371.48
+   ],
+   [
+      "5.15.8",
+      316.82
+   ],
+   [
+      "5.15.9",
+      354.22
+   ],
+   [
+      "5.16.0",
+      373.88
+   ],
+   [
+      "5.16.3",
+      367.3
+   ],
+   [
+      "5.17.6",
+      336.38
+   ],
+   [
+      "5.17.7",
+      21.13
+   ],
+   [
+      "5.17.8",
+      20.69
+   ],
+   [
+      "5.17.9",
+      21.67
+   ],
+   [
+      "5.18.0",
+      307.96
+   ],
+   [
+      "5.18.4",
+      369.46
+   ],
+   [
+      "5.19.1",
+      20.52
+   ],
+   [
+      "5.19.2",
+      20.36
+   ],
+   [
+      "5.19.3",
+      21.57
+   ],
+   [
+      "5.19.4",
+      21.15
+   ],
+   [
+      "5.19.5",
+      21.06
+   ],
+   [
+      "5.19.6",
+      21.79
+   ],
+   [
+      "5.19.7",
+      22.16
+   ],
+   [
+      "5.19.8",
+      21.31
+   ],
+   [
+      "5.19.9",
+      20.56
+   ],
+   [
+      "5.19.10",
+      20.98
+   ],
+   [
+      "5.19.11",
+      20.99
+   ],
+   [
+      "5.20.0",
+      21.25
+   ],
+   [
+      "5.20.2",
+      20.97
+   ],
+   [
+      "5.21.1",
+      21.16
+   ],
+   [
+      "5.21.2",
+      20.89
+   ],
+   [
+      "5.21.3",
+      20.95
+   ],
+   [
+      "5.21.4",
+      21.06
+   ],
+   [
+      "5.21.5",
+      20.12
+   ],
+   [
+      "5.21.6",
+      20.57
+   ],
+   [
+      "5.21.7",
+      19.33
+   ],
+   [
+      "5.21.8",
+      19.14
+   ],
+   [
+      "5.22.0",
+      18.77
+   ],
+   [
+      "5.23.1",
+      18.93
+   ],
+   [
+      "5.23.2",
+      19.09
+   ],
+   [
+      "5.23.3",
+      19.19
+   ],
+   [
+      "5.23.4",
+      19.98
+   ],
+   [
+      "5.23.5",
+      19.77
+   ],
+   [
+      "5.23.6",
+      19.67
+   ],
+   [
+      "5.23.7",
+      19.42
+   ],
+   [
+      "5.23.8",
+      18.42
+   ],
+   [
+      "5.23.9",
+      18.58
+   ],
+   [
+      "5.24.0",
+      18.86
+   ]
+]
+);
+        var options = {
+            title: 'fannkuch',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - perlstone2015 - fannkuch</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/Benchmark::Perl::Formance::Plugin::PerlStone2015::fannkuch">Benchmark::Perl::Formance::Plugin::PerlStone2015::fannkuch</a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

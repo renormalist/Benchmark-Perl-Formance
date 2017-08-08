@@ -1,0 +1,73 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "P6STD.viv/threads",
+      "P6STD.viv/nothreads",
+      "P6STD.makeviv/threads",
+      "P6STD.makeviv/nothreads"
+   ],
+   [
+      "5.14.0",
+      488.54,
+      465.96,
+      108.17,
+      103.67
+   ],
+   [
+      "5.14.4",
+      485.68,
+      455.74,
+      108.15,
+      101.76
+   ],
+   [
+      "5.16.0",
+      494.17,
+      476.93,
+      110.92,
+      105.83
+   ],
+   [
+      "5.16.3",
+      495.32,
+      469.25,
+      111.14,
+      105.15
+   ]
+]
+);
+        var options = {
+            title: 'P6STD - parsing Perl6 in Perl5',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - perlformance - P6STD - parsing Perl6 in Perl5</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/"></a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

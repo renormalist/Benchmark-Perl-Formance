@@ -1,0 +1,158 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "Moose.get/threads",
+      "Moose.get/nothreads",
+      "Moose.set/threads",
+      "Moose.set/nothreads"
+   ],
+   [
+      "5.10.0",
+      6.48,
+      null,
+      9.05,
+      null
+   ],
+   [
+      "5.12.0",
+      null,
+      5.51,
+      null,
+      7.34
+   ],
+   [
+      "5.13.1",
+      5.82,
+      5.42,
+      7.66,
+      7.3
+   ],
+   [
+      "5.13.2",
+      6.56,
+      5.67,
+      8.59,
+      7.58
+   ],
+   [
+      "5.13.3",
+      null,
+      6.28,
+      null,
+      7.78
+   ],
+   [
+      "5.13.4",
+      null,
+      5.68,
+      null,
+      7.39
+   ],
+   [
+      "5.13.5",
+      null,
+      5.39,
+      null,
+      7.03
+   ],
+   [
+      "5.13.7",
+      null,
+      6.83,
+      null,
+      8.54
+   ],
+   [
+      "5.13.8",
+      null,
+      6.74,
+      null,
+      8.25
+   ],
+   [
+      "5.14.0",
+      6.12,
+      6.91,
+      8.08,
+      8.79
+   ],
+   [
+      "5.14.4",
+      6.3,
+      6.58,
+      8.13,
+      8.47
+   ],
+   [
+      "5.16.0",
+      6.44,
+      6.68,
+      8.32,
+      8.07
+   ],
+   [
+      "5.16.3",
+      6.31,
+      6.46,
+      7.97,
+      8.42
+   ],
+   [
+      "5.18.0",
+      6.24,
+      5.67,
+      8.25,
+      7.81
+   ],
+   [
+      "5.18.4",
+      6.3,
+      5.75,
+      8.41,
+      7.81
+   ],
+   [
+      "5.20.0",
+      5.89,
+      5.25,
+      7.71,
+      7.41
+   ],
+   [
+      "5.20.2",
+      5.72,
+      5.37,
+      7.76,
+      7.51
+   ]
+]
+);
+        var options = {
+            title: 'Perl::Formance - accessors - $obj->foo / $obj->foo(42)',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

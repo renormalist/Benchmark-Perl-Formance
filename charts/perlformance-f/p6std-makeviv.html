@@ -1,0 +1,118 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "P6STD.makeviv/threads",
+      "P6STD.makeviv/nothreads"
+   ],
+   [
+      "5.14.0",
+      108.47,
+      103.92
+   ],
+   [
+      "5.14.4",
+      108.4,
+      102.15
+   ],
+   [
+      "5.15.1",
+      109.61,
+      103.17
+   ],
+   [
+      "5.15.2",
+      109.31,
+      103.49
+   ],
+   [
+      "5.15.3",
+      109.81,
+      103.76
+   ],
+   [
+      "5.15.4",
+      111.15,
+      106.62
+   ],
+   [
+      "5.15.5",
+      112.38,
+      105.75
+   ],
+   [
+      "5.15.6",
+      112.53,
+      106.49
+   ],
+   [
+      "5.15.7",
+      112,
+      108.47
+   ],
+   [
+      "5.15.8",
+      112.47,
+      107.94
+   ],
+   [
+      "5.15.9",
+      111.86,
+      107.12
+   ],
+   [
+      "5.16.0",
+      111.01,
+      106.17
+   ],
+   [
+      "5.16.3",
+      111.38,
+      105.25
+   ],
+   [
+      "5.17.8",
+      106.9,
+      60.7
+   ],
+   [
+      "5.17.9",
+      93.39,
+      74.85
+   ]
+]
+);
+        var options = {
+            title: 'P6STD - parsing Perl6 in Perl5',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - perlformance-f - P6STD - parsing Perl6 in Perl5</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/"></a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

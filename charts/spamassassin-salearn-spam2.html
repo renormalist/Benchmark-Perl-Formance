@@ -1,0 +1,82 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "salearn.spam2/threads",
+      "salearn.spam2/nothreads"
+   ],
+   [
+      "5.10.0",
+      68.2,
+      null
+   ],
+   [
+      "5.14.0",
+      57.65,
+      55.96
+   ],
+   [
+      "5.14.4",
+      57.7,
+      55.36
+   ],
+   [
+      "5.16.0",
+      59.33,
+      56.84
+   ],
+   [
+      "5.16.3",
+      59.16,
+      56.22
+   ],
+   [
+      "5.18.0",
+      59.36,
+      57.41
+   ],
+   [
+      "5.18.4",
+      58.75,
+      57.77
+   ],
+   [
+      "5.20.0",
+      59.07,
+      56.1
+   ],
+   [
+      "5.20.2",
+      59.59,
+      56.38
+   ]
+]
+);
+        var options = {
+            title: 'Perl::Formance - SpamAssassin.learn - macro benchmark',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

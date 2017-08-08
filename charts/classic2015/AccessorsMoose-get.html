@@ -1,0 +1,128 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "AccessorsMoose.get/threads",
+      "AccessorsMoose.get/nothreads"
+   ],
+   [
+      "5.10.0",
+      6.48,
+      null
+   ],
+   [
+      "5.12.0",
+      null,
+      5.51
+   ],
+   [
+      "5.13.1",
+      5.82,
+      5.42
+   ],
+   [
+      "5.13.2",
+      6.56,
+      5.67
+   ],
+   [
+      "5.13.3",
+      null,
+      6.28
+   ],
+   [
+      "5.13.4",
+      null,
+      5.68
+   ],
+   [
+      "5.13.5",
+      null,
+      5.39
+   ],
+   [
+      "5.13.7",
+      null,
+      6.83
+   ],
+   [
+      "5.13.8",
+      null,
+      6.74
+   ],
+   [
+      "5.14.0",
+      6.12,
+      6.91
+   ],
+   [
+      "5.14.4",
+      6.3,
+      6.58
+   ],
+   [
+      "5.16.0",
+      6.44,
+      6.68
+   ],
+   [
+      "5.16.3",
+      6.31,
+      6.46
+   ],
+   [
+      "5.18.0",
+      6.24,
+      5.67
+   ],
+   [
+      "5.18.4",
+      6.3,
+      5.75
+   ],
+   [
+      "5.20.0",
+      5.89,
+      5.25
+   ],
+   [
+      "5.20.2",
+      5.72,
+      5.37
+   ]
+]
+);
+        var options = {
+            title: 'AccessorsMoose.get',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - classic2015 - AccessorsMoose.get</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/Benchmark::Perl::Formance">Benchmark::Perl::Formance</a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

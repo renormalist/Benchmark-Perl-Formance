@@ -1,0 +1,143 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "AccessorsMouse.get/threads",
+      "AccessorsMouse.get/nothreads"
+   ],
+   [
+      "5.10.1",
+      2.43,
+      2.18
+   ],
+   [
+      "5.12.0",
+      2.39,
+      2.02
+   ],
+   [
+      "5.13.0",
+      2.92,
+      2.19
+   ],
+   [
+      "5.13.1",
+      2.6,
+      2.12
+   ],
+   [
+      "5.13.2",
+      null,
+      2.18
+   ],
+   [
+      "5.13.3",
+      null,
+      2.11
+   ],
+   [
+      "5.13.4",
+      null,
+      2.15
+   ],
+   [
+      "5.13.5",
+      null,
+      2.07
+   ],
+   [
+      "5.13.7",
+      null,
+      2.07
+   ],
+   [
+      "5.13.8",
+      null,
+      2.11
+   ],
+   [
+      "5.13.9",
+      null,
+      2.19
+   ],
+   [
+      "5.13.10",
+      2.18,
+      2.16
+   ],
+   [
+      "5.14.0",
+      2.08,
+      2.09
+   ],
+   [
+      "5.14.4",
+      2.1,
+      2.15
+   ],
+   [
+      "5.16.0",
+      2.42,
+      2.38
+   ],
+   [
+      "5.16.3",
+      2.16,
+      2.26
+   ],
+   [
+      "5.18.0",
+      2,
+      1.9
+   ],
+   [
+      "5.18.4",
+      2.05,
+      2.03
+   ],
+   [
+      "5.20.0",
+      2.05,
+      2.02
+   ],
+   [
+      "5.20.2",
+      2.07,
+      1.93
+   ]
+]
+);
+        var options = {
+            title: 'AccessorsMouse.get',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - classic2015 - AccessorsMouse.get</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/Benchmark::Perl::Formance">Benchmark::Perl::Formance</a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>

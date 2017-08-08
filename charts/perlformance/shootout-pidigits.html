@@ -1,0 +1,98 @@
+<html encoding="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      // https://google-developers.appspot.com/chart/interactive/docs/gallery/areachart
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+   [
+      "perlconfig_version",
+      "pidigits/threads",
+      "pidigits/nothreads"
+   ],
+   [
+      "5.8.9",
+      79.81,
+      77.65
+   ],
+   [
+      "5.10.0",
+      79.9,
+      null
+   ],
+   [
+      "5.12.0",
+      78.07,
+      75.55
+   ],
+   [
+      "5.14.0",
+      76.37,
+      76.41
+   ],
+   [
+      "5.14.4",
+      76.82,
+      75.69
+   ],
+   [
+      "5.16.0",
+      76.93,
+      76.31
+   ],
+   [
+      "5.16.3",
+      76.91,
+      75.99
+   ],
+   [
+      "5.18.0",
+      78.83,
+      77.97
+   ],
+   [
+      "5.18.4",
+      78.96,
+      77.71
+   ],
+   [
+      "5.20.0",
+      78.9,
+      77.52
+   ],
+   [
+      "5.20.2",
+      79.03,
+      77.82
+   ]
+]
+);
+        var options = {
+            title: 'Shootout - Language shootout benchmarks',
+            hAxis: {title: 'perlconfig_version',  titleTextStyle: {color: '#333'}, slantedTextAngle: 45},
+            vAxis: {minValue: 0, title:'seconds (smaller is better)'},
+            pointSize: 4,
+            areaOpacity: 0,
+            interpolateNulls: true,
+            isStacked: false
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Perl::Formance - perlformance - Shootout - Language shootout benchmarks</h1>
+    <ul>
+        <li>Back to <a href="index.html">dashboard</a></li>
+        <li>Raw numbers: <a href="raw-numbers.txt">here</a></li>
+        <li>Benchmark code: <a href="https://metacpan.org/pod/"></a></li>
+    </ul>
+    <div id="chart_div" style="width: 700px; height: 500px;"></div>
+  </body>
+</html>
