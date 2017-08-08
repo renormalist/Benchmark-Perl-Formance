@@ -391,6 +391,22 @@ sub _get_bootstrap_perl_meta {
         return map { ("$_" => $Config{$_}) } grep { /^bootstrap_perl/ } keys %Config;
 }
 
+# Convert value:
+#  - Perlish undef   --> 0
+#  - String "define" --> 1
+#  - everything else keep the same
+sub _booleanize_define {
+        my ($value) = @_;
+
+        if (not defined $value) {
+            return 0;
+        } elsif ($value eq "define") {
+            return 1;
+        } else {
+            return $value;
+        }
+}
+
 sub _get_perl_config {
         my ($self) = @_;
 
