@@ -115,6 +115,11 @@ my %CONFIG_KEYS = (
                             api_subversion
                             api_versionstring
 
+                            git_branch
+                            git_commit_id
+                            git_describe
+                            git_uncommitted_changes
+
                             gnulibc_version
                             dtrace
                             doublesize
