@@ -630,7 +630,6 @@ sub run {
                             );
 
         # special meta options - order matters!
-        $benchmarkanything = 1 if $tapper; # legacy option
         $benchmarkanything = 1 if $benchmarkanything_report;
         $platforminfo      = 1 if $benchmarkanything; # -p
         $showconfig        = 4 if $benchmarkanything; # -cccc
@@ -726,7 +725,7 @@ sub run {
         }
 
         # Tapper BenchmarkAnythingData blocks
-        if ($tapper or $benchmarkanything)
+        if ($benchmarkanything)
         {
                 $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS);
         }
