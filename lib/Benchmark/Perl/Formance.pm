@@ -591,6 +591,7 @@ sub run {
         my $codespeed      = 0;
         my $tap            = 0;
         my $tap_plan       = 0;
+        my $tap_headers    = 0;
         my $benchmarkanything = 0;
         my $benchmarkanything_report = 0;
         my $cs_executable_suffix = "";
@@ -628,6 +629,7 @@ sub run {
                              "codespeed"        => \$codespeed,
                              "tap"              => \$tap,
                              "tap-plan"         => \$tap_plan,
+                             "tap-headers"      => \$tap_headers,
                              "benchmarkanything" => \$benchmarkanything,
                              "benchmarkanything-report" => \$benchmarkanything_report,
                              "cs-executable-suffix=s" => \$cs_executable_suffix,
@@ -669,6 +671,7 @@ sub run {
                             codespeed      => $codespeed,
                             tap            => $tap,
                             tap_plan       => $tap_plan,
+                            tap_headers    => $tap_headers,
                             benchmarkanything => $benchmarkanything,
                             benchmarkanything_report => $benchmarkanything_report,
                             cs_executable_suffix => $cs_executable_suffix,
@@ -839,8 +842,16 @@ sub print_results
         my $output = $self->$sub($RESULTS);
 
         # tap
-        my $tap_plan = lc $self->{options}{tap_plan};
-        $output = "1..$tap_plan\n".$output if $tap_plan;
+        my $tap_plan    = lc $self->{options}{tap_plan};
+        my $tap_headers = lc $self->{options}{tap_headers};
+        my $lead_tap    = '';
+        $lead_tap      .= "1..$tap_plan\n" if $tap_plan;
+        if ($tap_headers) {
+          $lead_tap    .= "# Test-suite-name: benchmark-perlformance\n";
+          $lead_tap    .= "# Test-machine-name: "._get_hostname."\n";
+        }
+
+        $output = $lead_tap.$output;
 
         if (my $outfile = $self->{options}{outfile})
         {
