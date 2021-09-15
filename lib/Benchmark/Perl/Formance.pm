@@ -413,15 +413,15 @@ sub _taint_available {
   Scalar::Util::tainted(Cwd::getcwd());
 }
 
-sub _get_perl_config_taintsupport {
+sub _get_perl_config_notaintsupport {
         my ($self) = @_;
 
         my $config_args = $Config{config_args};
-        my $taintsupport = 1; # standard
-        if ($config_args =~ /\b-DNO_TAINT_SUPPORT/ and not _taint_available()) {
-          $taintsupport = 0;
+        my $notaintsupport = 0; # standard
+        if ($config_args =~ /-DNO_TAINT_SUPPORT\b/ and not _taint_available()) {
+          $notaintsupport = 1;
         }
-        return $taintsupport;
+        return $notaintsupport;
 }
 
 sub _get_perl_config {
@@ -431,7 +431,7 @@ sub _get_perl_config {
         my $showconfig = 4;
         push @cfgkeys, @{$CONFIG_KEYS{$_}} foreach 1..$showconfig;
         my %perlconfig = map { ("perlconfig_$_" => $Config{$_}) } @cfgkeys;
-        $perlconfig{perlconfig_derived_taintsupport} = $self->_get_perl_config_taintsupport();
+        $perlconfig{perlconfig_derived_notaintsupport} = $self->_get_perl_config_notaintsupport();
         return %perlconfig;
 }
 
