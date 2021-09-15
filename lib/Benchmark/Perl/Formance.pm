@@ -407,13 +407,32 @@ sub _booleanize_define {
         }
 }
 
+sub _taint_available {
+  require Scalar::Util;
+  require Cwd;
+  Scalar::Util::tainted(Cwd::getcwd());
+}
+
+sub _get_perl_config_taintsupport {
+        my ($self) = @_;
+
+        my $config_args = $Config{config_args};
+        my $taintsupport = 1; # standard
+        if ($config_args =~ /\b-DNO_TAINT_SUPPORT/ and not _taint_available()) {
+          $taintsupport = 0;
+        }
+        return $taintsupport;
+}
+
 sub _get_perl_config {
         my ($self) = @_;
 
         my @cfgkeys;
         my $showconfig = 4;
         push @cfgkeys, @{$CONFIG_KEYS{$_}} foreach 1..$showconfig;
-        return map { ("perlconfig_$_" => $Config{$_}) } @cfgkeys;
+        my %perlconfig = map { ("perlconfig_$_" => $Config{$_}) } @cfgkeys;
+        $perlconfig{perlconfig_derived_taintsupport} = $self->_get_perl_config_taintsupport();
+        return %perlconfig;
 }
 
 sub _get_perl_config_v {
