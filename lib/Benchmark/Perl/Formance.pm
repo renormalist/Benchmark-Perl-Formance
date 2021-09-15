@@ -558,10 +558,10 @@ sub generate_codespeed_data
 
 sub generate_BenchmarkAnythingData_data
 {
-        my ($self, $RESULTS) = @_;
+        my ($self, $RESULTS, $codespeed) = @_;
 
         # share a common dataset with Codespeed, yet prefix it
-        my %codespeed_meta = _codespeed_meta;
+        my %codespeed_meta = $codespeed ? _codespeed_meta : ();
         my %prefixed_codespeed_meta = map { ("codespeed_$_" => $codespeed_meta{$_}) } keys %codespeed_meta;
 
         my %platforminfo = $self->_get_platforminfo;
@@ -746,7 +746,7 @@ sub run {
         # TAP or BenchmarkAnythingData blocks
         if ($tap or $tap_plan or $benchmarkanything)
         {
-                $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS);
+                $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS, $codespeed);
         }
 
         unbless (\%RESULTS);
