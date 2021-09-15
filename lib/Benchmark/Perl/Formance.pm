@@ -635,6 +635,13 @@ sub run {
                             );
 
         # special meta options - order matters!
+        if ($tapper) {
+          $tapdescription    = 'perlformance results';
+          $outstyle          = 'yamlish';
+          $indent            = 2;
+          $platforminfo      = 1;
+          $showconfig        = 4;
+        }
         $benchmarkanything = 1 if $benchmarkanything_report;
         $platforminfo      = 1 if $benchmarkanything; # -p
         $showconfig        = 4 if $benchmarkanything; # -cccc
@@ -730,7 +737,7 @@ sub run {
         }
 
         # Tapper BenchmarkAnythingData blocks
-        if ($benchmarkanything)
+        if ($tapper or $benchmarkanything)
         {
                 $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS);
         }
