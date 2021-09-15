@@ -311,9 +311,11 @@ sub run_plugin
         return $res;
 }
 
-# That's specific to the Tapper wrapper around
-# Benchmark::Perl::Formance and should be replaced
-# with something generic
+# ,-----------------------------------------------------------
+# |
+# | That's specific to the Tapper wrapper around
+# | Benchmark::Perl::Formance and should be replaced
+# | with something generic
 sub _perl_gitversion {
         my $perlpath = "$^X";
         $perlpath    =~ s,/[^/]*$,,;
@@ -349,6 +351,8 @@ sub _perl_symbolic_name {
                 return $executable;
         }
 }
+# |
+# '-----------------------------------------------------------
 
 sub _get_hostname {
         my $host = "unknown-hostname";
@@ -585,7 +589,8 @@ sub run {
         my $outfile        = "";
         my $platforminfo   = 0;
         my $codespeed      = 0;
-        my $tapper         = 0;
+        my $tap            = 0;
+        my $tap_plan       = 0;
         my $benchmarkanything = 0;
         my $benchmarkanything_report = 0;
         my $cs_executable_suffix = "";
@@ -621,7 +626,8 @@ sub run {
                              "showconfig|c+"    => \$showconfig,
                              "platforminfo|p"   => \$platforminfo,
                              "codespeed"        => \$codespeed,
-                             "tapper"           => \$tapper,
+                             "tap"              => \$tap,
+                             "tap-plan"         => \$tap_plan,
                              "benchmarkanything" => \$benchmarkanything,
                              "benchmarkanything-report" => \$benchmarkanything_report,
                              "cs-executable-suffix=s" => \$cs_executable_suffix,
@@ -635,7 +641,7 @@ sub run {
                             );
 
         # special meta options - order matters!
-        if ($tapper) {
+        if ($tap or $tap_plan) {
           $tapdescription    = 'perlformance results';
           $outstyle          = 'yamlish';
           $indent            = 2;
@@ -661,7 +667,8 @@ sub run {
                             showconfig     => $showconfig,
                             platforminfo   => $platforminfo,
                             codespeed      => $codespeed,
-                            tapper         => $tapper,
+                            tap            => $tap,
+                            tap_plan       => $tap_plan,
                             benchmarkanything => $benchmarkanything,
                             benchmarkanything_report => $benchmarkanything_report,
                             cs_executable_suffix => $cs_executable_suffix,
@@ -736,8 +743,8 @@ sub run {
                 $RESULTS{codespeed} = $self->generate_codespeed_data(\%RESULTS);
         }
 
-        # Tapper BenchmarkAnythingData blocks
-        if ($tapper or $benchmarkanything)
+        # TAP or BenchmarkAnythingData blocks
+        if ($tap or $tap_plan or $benchmarkanything)
         {
                 $RESULTS{BenchmarkAnythingData} = $self->generate_BenchmarkAnythingData_data(\%RESULTS);
         }
@@ -830,6 +837,10 @@ sub print_results
         my $sub = "print_outstyle_$outstyle";
 
         my $output = $self->$sub($RESULTS);
+
+        # tap
+        my $tap_plan = lc $self->{options}{tap_plan};
+        $output = "1..$tap_plan\n".$output if $tap_plan;
 
         if (my $outfile = $self->{options}{outfile})
         {
