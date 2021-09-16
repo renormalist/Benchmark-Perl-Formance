@@ -515,6 +515,7 @@ sub _get_sysinfo {
         my %sysinfo = ();
         my $prefix = "sysinfo";
         my $cpu = (Sys::Info->new->device("CPU")->identify)[0];
+        $sysinfo{"${prefix}_hostname"} = _get_hostname;
         $sysinfo{join("_", $prefix, "cpu", $_)} = $cpu->{$_} foreach qw(name
                                                                         family
                                                                         model
