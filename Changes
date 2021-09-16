@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - support for -DNO_TAINT_SUPPORT in metainfo
+        - options --tap et al. to generate TAP with embedded results
 
 0.53      2016-04-23
         - fix calling benchmarkanything reporting
