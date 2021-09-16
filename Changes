@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - also check -DSILENT_NO_TAINT_SUPPORT for metainfo
 
 0.54      2021-09-16
         - support for -DNO_TAINT_SUPPORT in metainfo
