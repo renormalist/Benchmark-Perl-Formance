@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.54      2021-09-16
         - support for -DNO_TAINT_SUPPORT in metainfo
         - options --tap et al. to generate TAP with embedded results
 
