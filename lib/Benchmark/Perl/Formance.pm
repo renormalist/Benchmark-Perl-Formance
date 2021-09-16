@@ -427,8 +427,12 @@ sub _get_perl_config_notaintsupport {
 
         my $config_args = $Config{config_args};
         my $notaintsupport = 0; # standard
-        if ($config_args =~ /-DNO_TAINT_SUPPORT\b/ and not _taint_available()) {
-          $notaintsupport = 1;
+        if ($config_args =~ /(SILENT_)?NO_TAINT_SUPPORT\b/) {
+            if ($config_args =~ /SILENT_NO_TAINT_SUPPORT\b/) {
+                $notaintsupport = 1; # no further check possible
+            } else {
+                $notaintsupport = 1 if not _taint_available();
+            }
         }
         return $notaintsupport;
 }
