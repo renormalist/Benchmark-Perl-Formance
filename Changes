@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.55      2021-09-17
         - also check -DSILENT_NO_TAINT_SUPPORT for metainfo
 
 0.54      2021-09-16
